@@ -341,16 +341,205 @@
   },
   "definitions": {
     "Demande": {
-      "properties": {
-        "prenomClient": {
-          "description": "Demande Type",
-          "type": "string"
+      "type": "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer"
         },
-        "codePostal": {
-          "description": "Demande Code",
-          "type": "integer"
+        "projet":
+        {
+          "$ref" : "#/definitions/Projet"
+        },
+        "patrimoine":
+        {
+          "$ref" : "#/definitions/Patrimoine"
+        },
+        "profession":
+        {
+          "$ref" : "#/definitions/Profession"
+        },
+        "financement":
+        {
+          "$ref" : "#/definitions/Financement"
         }
       }
+    },
+    "Projet": {
+      "properties" : {
+        "id" : {
+          "type" : "integer"
+        },
+        "nom": {
+          "type" : "string"
+        },
+        "type": {
+          "type" : "string"
+        },
+        "etat": {
+          "type" : "string"
+        },
+        "usage": {
+          "type" : "string"
+        },
+        "pays": {
+          "type" : "string"
+        },
+        "ville": {
+          "type" : "string"
+        },
+        "nombreEmpreteur": {
+          "type" : "integer"
+        }
+      }
+    },
+    "Patrimoine":{
+      "properties" : {
+        "id" : {
+          "type" : "integer"
+        },
+        "revenu":
+        {
+          "$ref" : "#/definitions/Revenu"
+        },
+        "profession":
+        {
+          "$ref" : "#/definitions/Profession"
+        }
+      }
+    },
+    "Revenu": {
+      "properties" : {
+        "id" : {
+          "type" : "integer"
+        },
+        "mensuel" : {
+          "type" : "integer"
+        },
+        "prime" : {
+          "type" : "integer"
+        }
+      }
+    },
+    "Profession":{
+      "properties" : {
+        "id" : {
+          "type" : "integer"
+        },
+        "situation":{
+          "enum":[
+            "Employer",
+            "Artisan",
+            "Ouvrier",
+            "Cadre",
+            "Fonctionnaire",
+            "Enseignant",
+            "Retraité",
+            "Sans Emploie",
+            "Etudiant",
+            "Autre"
+          ],
+          "type" : "string"
+        }
+      }
+    },
+    "Financement":{
+      "properties" : {
+        "id" : {
+          "type" : "integer"
+        },
+        "proprietaire": {
+          "type" : "string"
+        },
+        "apport": {
+          "type" : "string"
+        },
+        "dureePret": {
+          "type" : "string"
+        },
+        "versement": {
+          "type" : "decimal"
+        }
+      }
+    },
+    "Personne" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer"
+        },
+        "prenom" : {
+          "type" : "string"
+        },
+        "nom" : {
+          "type" : "string"
+        },
+        "civilite" : {
+          "type" : "string"
+        },
+        "dateNaissance" : {
+          "type" : "date"
+        },
+        "nationalite" : {
+          "type" : "string"
+        },
+        "adresse" : {
+          "$ref" : "#/definitions/Adresse"
+        },
+        "age" : {
+          "type" : "integer"
+        },
+        "sexe" : {
+          "type" : "#/definitions/Sexe"
+        },
+        "telephone" : {
+          "type" : "#/definitions/Telephone"
+        },
+        "active" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "Adresse" : {
+      "type" : "object",
+      "properties" : {
+        "pays" : {
+          "type" : "string"
+        },
+        "ville" : {
+          "type" : "string"
+        },
+        "adresse" : {
+          "type" : "string"
+        },
+        "tel" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        }
+      }
+    },
+    "telephone" : {
+      "type" : "object",
+      "properties" : {
+        "bureau" : {
+          "type" : "string"
+        },
+        "fixe" : {
+          "type" : "string"
+        },
+        "portable" : {
+          "type" : "string"
+        }
+
+      }
+    },
+    "Sexe" : {
+      "enum" : [
+        "M",
+        "F"
+      ],
+      "type" : "string"
     },
     "Entity": {
       "properties": {

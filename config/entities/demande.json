@@ -1,6 +1,6 @@
 {
     "definitions" : {
-        "Demandes": {
+        "Demande": {
             "type": "object",
             "properties" : {
                 "id" : {
