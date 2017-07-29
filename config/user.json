@@ -1,0 +1,84 @@
+{
+    "definitions" : {
+        "Personne" : {
+            "type" : "object",
+            "properties" : {
+                "id" : {
+                    "type" : "integer"
+                },
+                "prenom" : {
+                    "type" : "string"
+                },
+                "nom" : {
+                    "type" : "string"
+                },
+                "civilite" : {
+                    "type" : "string"
+                },
+                 "dateNaissance" : {
+                    "type" : "date"
+                },
+                "nationalite" : {
+                    "type" : "string"
+                },
+                "adresse" : {
+                    "$ref" : "#/definitions/Adresse"
+                },
+                "age" : {
+                    "type" : "integer"
+                },
+                "sexe" : {
+                    "type" : "#/definitions/Sexe"
+                },
+                "telephone" : {
+                    "type" : "#/definitions/Telephone"
+                },
+                "active" : {
+                    "type" : "boolean"
+                }
+            }
+        },
+        "Adresse" : {
+            "type" : "object",
+            "properties" : {
+                "pays" : {
+                    "type" : "string"
+                },
+                "ville" : {
+                    "type" : "string"
+                },
+                "adresse" : {
+                   "type" : "string"
+                },
+                "tel" : {
+                   "type" : "string"
+                },
+                "email" : {
+                   "type" : "string"
+                }
+            }
+        },
+         "telephone" : {
+            "type" : "object",
+            "properties" : {
+                "bureau" : {
+                    "type" : "string"
+                },
+                "fixe" : {
+                    "type" : "string"
+                },
+                "portable" : {
+                   "type" : "string"
+                }
+                
+            }
+        },
+         "Sexe" : {
+            "enum" : [ 
+                "M", 
+                "F"
+            ],
+            "type" : "string"
+        }
+    }
+}

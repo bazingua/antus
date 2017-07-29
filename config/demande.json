@@ -1,0 +1,125 @@
+{
+    "definitions" : {
+        "Demandes": {
+            "type": "object",
+            "properties" : {
+                "id" : {
+                    "type" : "integer"
+                },
+                "projet":
+                {
+                    "$ref" : "#/definitions/Projet"
+                },
+                "patrimoine":
+                {
+                    "$ref" : "#/definitions/Patrimoine"
+                },
+                "profession":
+                {
+                    "$ref" : "#/definitions/Profession"
+                },
+                "financement":
+                {
+                    "$ref" : "#/definitions/Financement"
+                }
+            }
+        },
+        "Projet": {
+            "properties" : {
+                "id" : {
+                    "type" : "integer"
+                },
+                "nom": {
+                    "type" : "string"
+                },
+                "type": {
+                    "type" : "string"
+                },
+                "etat": {
+                    "type" : "string"
+                },
+                "usage": {
+                    "type" : "string"
+                },
+                "pays": {
+                    "type" : "string"
+                },
+                "ville": {
+                    "type" : "string"
+                },
+                "nombreEmpreteur": {
+                    "type" : "integer"
+                }
+            }
+        },
+        "Patrimoine":{
+            "properties" : {
+                "id" : {
+                    "type" : "integer"
+                },
+                 "revenu":
+                {
+                    "$ref" : "#/definitions/Revenu"
+                },
+                 "profession":
+                {
+                    "$ref" : "#/definitions/Profession"
+                }
+            }
+        },
+        "Revenu": {
+            "properties" : {
+                "id" : {
+                    "type" : "integer"
+                },
+                "mensuel" : {
+                    "type" : "integer"
+                },
+                "prime" : {
+                    "type" : "integer"
+                }
+            }
+        },
+        "Profession":{
+            "properties" : {
+                "id" : {
+                    "type" : "integer"
+                    },
+                "situation":{
+                    "enum":[
+                           "Employer",
+                           "Artisan",
+                           "Ouvrier",
+                           "Cadre",
+                           "Fonctionnaire",
+                           "Enseignant",
+                           "Retraité",
+                           "Sans Emploie",
+                           "Etudiant",
+                           "Autre"
+                        ],
+                        "type" : "string"
+                    }
+                }
+        },
+        "Financement":{
+            "properties" : {
+                "id" : {
+                    "type" : "integer"
+                    },
+                    "proprietaire": {
+                    "type" : "string"
+                },
+                "apport": {
+                    "type" : "string"
+                },
+                "dureePret": {
+                    "type" : "string"
+                },
+                "versement": {
+                    "type" : "decimal"
+                }
+            }
+        }
+    }
+}
