@@ -9,7 +9,8 @@
 
   function menuConfig(menuService) {
     menuService.addMenuItem('topbar', {
-      title: 'Demandes',
+    //  title: 'Demandes',
+      title: 'Crédit Immobilier',
       state: 'demandes',
       type: 'dropdown',
       roles: ['*']
@@ -20,6 +21,14 @@
       title: 'List Demandes',
       state: 'demandes.list',
       roles: ['*']
+     // roles: ['admin']
+    });
+
+    menuService.addSubMenuItem('topbar', 'demandes', {
+      title: 'Déposer Votre Demande',
+      state: '',
+      roles: ['*']
+      // roles: ['admin']
     });
   }
 }());

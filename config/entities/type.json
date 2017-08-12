@@ -1,0 +1,28 @@
+{
+    "definitions" : {
+        "Noeud": {
+            "type": "object",
+            "properties" : {
+                "id" : {
+                    "type" : "integer"
+                },
+                "libelle":
+                {
+                  "type" : "String"
+                },
+                "description":
+                {
+                  "type" : "String"
+                },
+                "fils":
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/Noeud"
+                  }
+                }
+            },
+            "required": "id"
+        }
+    }
+}

@@ -1,38 +1,52 @@
-<div class="col-sm-12" >
+<section class="row">
+  <div class="col-xs-offset-2 col-xs-8 col-md-offset-4 col-md-4">
+    <div class="login-logo">
+      <a href="#"><b>ANTUS</b></a>
+    </div>
+    <div class="panel panel-default">
 
-<form class="form-signin"   name="" ng-submit=""  novalidate autocomplete="off" >
-            
-            <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title" style="text-align: center">
-              Bienvenue dans votre espace client
-              </h3>
+      <div class="panel-body">
+
+        <p class="" style="text-align: center">
+          Bienvenue dans votre espace client
+        </p><br>
+
+        <form name="vm.userForm" ng-submit="vm.signin(vm.userForm.$valid)" class="" novalidate autocomplete="off">
+          <fieldset style="">
+            <div class="form-group" show-errors>
+              <uib-alert type="danger" ng-show="vm.error" class="text-center text-danger">
+                <span ng-bind="vm.error"></span>
+              </uib-alert>
+
+              <div class="form-group has-feedback">
+              <input type="text" id="usernameOrEmail" name="usernameOrEmail" class="form-control" ng-model="vm.credentials.usernameOrEmail" placeholder="Email" required autofocus>
+              <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+              </div>
+              <div ng-messages="vm.userForm.usernameOrEmail.$error" role="alert">
+                <p class="help-block error-text" ng-message="required">Email est Obligatoire.</p>
+              </div>
             </div>
-               <div class="panel-body" style="">
-                <table style="width: 100%;">
-                    
-                    <tr style="">
-                        <td>
- 
-                            <input id="utilisateur" ng-model="" required autofocus type="text"  name="utilisateur" class="form-control" placeholder="Email *" />
-                            <br/>
-                            <input type="password" id="password" name="password" class="form-control" ng-model="" placeholder="mot de passe *" required /> 
-                            <br/>
-                            <p style="text-align: right"><button class="btn btn-sm btn-primary btn-block"  type="submit">Connexion</button></p>
-                        </td>
-                    </tr>
-                    <tr>
-                        
-                        <td style="text-align: right">
-                            <br/>
-                            <a href="" >Mot de Passe oublié</a></td>
-                    </tr>
-                </table>    
-               </div>
-                </div>
-                
-</form>
-    
- </div> 
-    
+            <div class="form-group" show-errors>
 
+              <div class="form-group has-feedback">
+              <input type="password" id="password" name="password" class="form-control" ng-model="vm.credentials.password" placeholder="Password" required>
+              <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+              </div>
+              <div ng-messages="vm.userForm.password.$error" role="alert">
+                <p class="help-block error-text" ng-message="required">Le Mot de passe est Obligatoire.</p>
+              </div>
+            </div>
+            <div class="text-center form-group">
+              <button type="submit" class="btn btn-primary btn-block">Connexion</button>
+
+            </div>
+            <div class="forgot-password">
+              <a ui-sref="password.forgot">Mot de passe oublié</a>
+            </div>
+            <br />
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
