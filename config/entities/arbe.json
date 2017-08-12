@@ -1,0 +1,259 @@
+{ 
+    "Credit immobilier":
+        {
+            "id" : "1",
+            "libelle":"Crédit immobilier",
+            "description":"VOTRE PROJET IMMOBILIER",
+            "icone":"account balance",
+            "fils":["2","3","4","5"]
+        },
+        // Les Fils de Credit IMMOBILIER
+        "Acheter un bien":
+        {
+            "id" : "2",
+            "libelle":"Acheter un bien",
+            "description":"VOTRE PROJET IMMOBILIER",
+            "icone":"add shopping cart",
+            "fils":["6","7","8","9","10"]
+        },
+         "Construire":
+        {
+            "id" : "3",
+            "libelle":"Construire",
+            "description":"VOTRE PROJET IMMOBILIER",
+            "icone":"build",
+            "fils":["9","11"]
+        },
+        "Renegocier mon pret immo":
+        {
+            "id" : "4",
+            "libelle":"Renégocier mon prêt immo",
+            "description":"VOTRE PROJET IMMOBILIER",
+            "icone":"equalizer",
+            "fils":["6","7","8","9","10"]
+        },
+        "Autre":
+        {
+            "id" : "5",
+            "libelle":"Autres",
+            "description":"VOTRE PROJET IMMOBILIER",
+            "icone":"settings ethernet",
+            "fils":[]
+        },
+            // Fin du Niveau 2
+            // Les Fils des Object de niveau 3
+
+        "Maison":
+        {
+            "id" : "6",
+            "libelle":"Maison",
+            "description":"TYPE DE BIEN",
+            "icone":"home",
+            "fils":["12","13","14"]
+        },
+        "Appartement":
+        {
+            "id" : "7",
+            "libelle":"Appartement",
+            "description":"TYPE DE BIEN",
+            "icone":"location city",
+            "fils":["12","13","14"]
+        },
+        "Terrain seul":
+        {
+            "id" : "8",
+            "libelle":"Terrain seul",
+            "description":"TYPE DE BIEN",
+            "icone":"",
+            "fils":["15","16","17","18"]
+        },
+        "Terrain + construction":
+        {
+            "id" : "9",
+            "libelle":"Terrain + construction",
+            "description":"TYPE DE BIEN",
+            "icone":"",
+            "fils":["15","16","17","18"]
+        },
+        "Autres":
+        {
+            "id" : "10",
+            "libelle":"Autres",
+            "description":"TYPE DE BIEN",
+            "icone":"",
+            "fils":["12","13","14"]
+        },
+        // Les Fils de Construire
+         "Construction seule":
+        {
+            "id" : "11",
+            "libelle":"Construction seule",
+            "description":"TYPE DE BIEN",
+            "icone":"spa",
+            "fils":[]
+        },
+        // Fin du Niveau 3
+            // Les Fils des Object de niveau 3
+        "Ancien":
+        {
+            "id" : "12",
+            "libelle":"Anciene",
+            "description":"ETAT DU BIEN",
+            "icone":"home",
+            "fils":["15","16","17","18"]
+        },
+        "Neuf":
+        {
+            "id" : "13",
+            "libelle":"Neuf",
+            "description":"ETAT DU BIEN",
+            "icone":"domain",
+            "fils":["15","16","17","18"]
+        },
+        "VFA":
+        {
+            "id" : "14",
+            "libelle":"VFA",
+            "description":"ETAT DU BIEN",
+            "icone":"wallpaper",
+            "fils":["15","16","17","18"]
+        },
+// Fin 
+         "Residence Principal":
+        {
+            "id" : "15",
+            "libelle":"Residence Principale",
+            "description":"USAGE DU BIEN",
+            "icone":"home",
+            "fils":["19","20","21","22"]
+        },
+         "Investissement locatif":
+        {
+            "id" : "16",
+            "libelle":"Investissement locatif",
+            "description":"USAGE DU BIEN",
+            "icone":"euro symbol",
+            "fils":[]
+        },
+        "Usage personnel ou commercial":
+        {
+            "id" : "17",
+            "libelle":"Usage personnel ou commercial",
+            "description":"USAGE DU BIEN",
+            "icone":"people",
+            "fils":[]
+        },
+        "Usage mixte du bien":
+        {
+            "id" : "18",
+            "libelle":"Usage mixte du bien",
+            "description":"USAGE DU BIEN",
+            "icone":"domain",
+            "fils":[]
+        },
+        // Fin du Niveau 4
+            // Les Fils des Object de niveau 4
+        "Locataire":
+        {
+            "id" : "19",
+            "libelle":"Locataire",
+            "description":"VOTRE SITUATION ACTUELLE",
+            "icone":"vpn key",
+            "fils":["23","24","25","26"]
+        },
+        "Proprietaire":
+        {
+            "id" : "20",
+            "libelle":"Propriétaire",
+            "description":"VOTRE SITUATION ACTUELLE",
+            "icone":"location city",
+            "fils":["27","28","29","30"]
+        },
+        "Logement de fonction":
+        {
+            "id" : "21",
+            "libelle":"Logement de fonction",
+            "description":"VOTRE SITUATION ACTUELLE",
+            "icone":"domain",
+            "fils":["23","24","25","26"]
+        },
+        "Hebergement gratuit":
+        {
+            "id" : "22",
+            "libelle":"Hebergement gratuit",
+            "description":"VOTRE SITUATION ACTUELLE",
+            "icone":"domain",
+            "fils":["23","24","25","26"]
+        },
+
+        // Fin du Niveau 4
+        // Les Fils des Object de niveau 4
+        
+        "Vous débutez vos recherches":
+        {
+            "id" : "23",
+            "libelle":"Vous débutez vos recherches",
+            "description":"OÙ EN ÊTES-VOUS DANS VOTRE RECHERCHE DE BIEN ?",
+            "icone":"search",
+            "fils":[]
+        },
+        "Vous êtes en recherche active":
+        {
+            "id" : "24",
+            "libelle":"Vous êtes en recherche active",
+            "description":"OÙ EN ÊTES-VOUS DANS VOTRE RECHERCHE DE BIEN ?",
+            "icone":"search",
+            "fils":[]
+        },
+        "Vous avez trouvé et pensez signer prochainement":
+        {
+            "id" : "25",
+            "libelle":"Vous avez trouvé et pensez signer prochainement",
+            "description":"OÙ EN ÊTES-VOUS DANS VOTRE RECHERCHE DE BIEN ?",
+            "icone":"priority high",
+            "fils":[]
+        },
+        "Vous avez signé une promesse d’achat":
+        {
+            "id" : "26",
+            "libelle":"Vous avez signé une promesse d’achat",
+            "description":"OÙ EN ÊTES-VOUS DANS VOTRE RECHERCHE DE BIEN ?",
+            "icone":"mode edit",
+            "fils":[]
+        },
+        // Fin du Niveau 6
+        // Les Fils des Object de niveau 46
+        "La garder":
+        {
+            "id" : "27",
+            "libelle":"La garder",
+            "description":"SOUHAIT PAR RAPPORT À VOTRE RÉSIDENCE PRINCIPALE ?",
+            "icone":"location city",
+            "fils":["23","24","25","26"]
+        },
+        "La garder pour la louer":
+        {
+            "id" : "28",
+            "libelle":"La garder pour la louer ",
+            "description":"SOUHAIT PAR RAPPORT À VOTRE RÉSIDENCE PRINCIPALE ?",
+            "icone":"location city",
+            "fils":["23","24","25","26"]
+        },
+        "La revendre avant votre achat":
+        {
+            "id" : "29",
+            "libelle":"La revendre avant votre achat",
+            "description":"SOUHAIT PAR RAPPORT À VOTRE RÉSIDENCE PRINCIPALE ?",
+            "icone":"location city",
+            "fils":["23","24","25","26"]
+        },
+        "La revendre après votre achat":
+        {
+            "id" : "30",
+            "libelle":"La revendre après votre achat",
+            "description":"SOUHAIT PAR RAPPORT À VOTRE RÉSIDENCE PRINCIPALE ?",
+            "icone":"location city",
+            "fils":["23","24","25","26"]
+        }
+
+}
