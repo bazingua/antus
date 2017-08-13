@@ -21,6 +21,9 @@
         controllerAs: 'vm',
         data: {
           pageTitle: 'Demandes List'
+        },
+        resolve: {
+          typeDemande: getType
         }
       })
       .state('demandes.view', {
@@ -43,5 +46,12 @@
     return DemandesService.get({
       demandeId: $stateParams.demandeId
     }).$promise;
+  }
+
+
+  getType.$inject = ['TypeService'];
+
+  function getType(TypeService) {
+    return TypeService.get().$promise;
   }
 }());

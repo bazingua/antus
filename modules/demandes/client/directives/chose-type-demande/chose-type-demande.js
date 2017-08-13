@@ -11,7 +11,7 @@
       transclude: false,
       templateUrl: 'modules/demandes/client/directives/chose-type-demande/chose-type-demande.html',
       scope: {
-        type: '='
+        node: '='
       },
       link: link
     };
@@ -23,7 +23,11 @@
      * @return {Object} scope
      */
     function link(scope) {
-      console.log('xxx', scope.type);
+      console.log('xxx', scope.node);
+
+      scope.choiceType = function (node) {
+        scope.node = node;
+      };
     }
   }
 }());

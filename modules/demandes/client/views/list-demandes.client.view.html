@@ -2,31 +2,9 @@
   <div class="page-header">
     <h1> VOTRE PROJET IMMOBILIER</h1>
     <p>Quels taux de crédit immobilier pour votre profil et votre projet ? Comparez plusieurs offres personnalisées parmi 110 partenaires bancaires. Gratuitement, sans engagement, vous pourrez optimiser votre projet immobilier. En 2015, meilleurtaux.com a ainsi accompagné + de 72 000 nouveaux propriétaires !</p>
-
-    <div class="btn-group " role="group" aria-label="..." style="margin-top: 10px">
-      <div class="btn-group  " role="group">
-        <button type="button" class="btn btn-default pad">Acheter un Bien</button>
-        <button type="button" class="btn btn-default pad">Construire</button>
-        <button type="button" class="btn btn-default pad">Renegocier mon Pret</button>
-        <button type="button" class="btn btn-default pad">Autre</button>
-
-      </div>
-
   </div>
-    <div>
-      <chose-type-demande type="vm.typeDemande"></chose-type-demande>
-    </div>
-  <div class="list-group">
-    <a ng-repeat="demande in vm.demandes" ui-sref="demandes.view({ demandeId: demande._id })" class="list-group-item">
-      <small class="list-group-item-text">
-        Posted on
-        <span ng-bind="demande.created | date:'mediumDate'"></span>
-        by
-        <span ng-if="demande.user" ng-bind="demande.user.displayName"></span>
-        <span ng-if="!demande.user">Deleted User</span>
-      </small>
-      <h4 class="list-group-item-heading" ng-bind="demande.title"></h4>
-      <p class="list-group-item-text" ng-bind="demande.content"></p>
-    </a>
+  <div>
+    <chose-type-demande node="vm.typeDemande"></chose-type-demande>
   </div>
+
 </section>

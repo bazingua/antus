@@ -14,6 +14,7 @@ module.exports = {
       ],
       js: [
         // bower:js
+        'public/lib/jquery/dist/jquery.min.js',
         'public/lib/angular/angular.js',
         'public/lib/angular-animate/angular-animate.js',
         'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
@@ -29,7 +30,9 @@ module.exports = {
       tests: ['public/lib/angular-mocks/angular-mocks.js']
     },
     css: [
-      'modules/*/client/{css,less,scss}/*.css'
+      'modules/*/client/{css,less,scss}/*.css',
+      'https://fonts.googleapis.com/icon?family=Material+Icons',
+      'http://fonts.googleapis.com/icon?family=Material+Icons'
     ],
     less: [
       'modules/*/client/less/*.less'
