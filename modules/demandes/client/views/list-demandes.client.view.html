@@ -13,6 +13,9 @@
       </div>
 
   </div>
+    <div>
+      <chose-type-demande type="vm.typeDemande"></chose-type-demande>
+    </div>
   <div class="list-group">
     <a ng-repeat="demande in vm.demandes" ui-sref="demandes.view({ demandeId: demande._id })" class="list-group-item">
       <small class="list-group-item-text">

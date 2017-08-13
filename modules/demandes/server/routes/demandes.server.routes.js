@@ -8,7 +8,7 @@ var demandesPolicy = require('../policies/demandes.server.policy'),
 
 module.exports = function (app) {
   // Demandes collection routes
-  app.route('/api/demandes').all(demandesPolicy.isAllowed)
+  app.route('/api/demandes').all()
     .get(demandes.list)
     .post(demandes.create);
 

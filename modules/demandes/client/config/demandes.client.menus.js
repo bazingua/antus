@@ -23,12 +23,5 @@
       roles: ['*']
      // roles: ['admin']
     });
-
-    menuService.addSubMenuItem('topbar', 'demandes', {
-      title: 'Déposer Votre Demande',
-      state: '',
-      roles: ['*']
-      // roles: ['admin']
-    });
   }
 }());
