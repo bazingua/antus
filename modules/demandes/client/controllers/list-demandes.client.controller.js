@@ -5,11 +5,13 @@
     .module('demandes')
     .controller('DemandesListController', DemandesListController);
 
-  DemandesListController.$inject = ['DemandesService'];
+  DemandesListController.$inject = ['DemandesService', 'TypeService'];
 
-  function DemandesListController(DemandesService) {
+  function DemandesListController(DemandesService, TypeService) {
     var vm = this;
 
     vm.demandes = DemandesService.query();
+
+    vm.typeDemande = TypeService.get().$promise;
   }
 }());
