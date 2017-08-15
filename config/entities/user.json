@@ -1,6 +1,6 @@
 {
     "definitions" : {
-        "Personne" : {
+        "users" : {
             "type" : "object",
             "properties" : {
                 "id" : {

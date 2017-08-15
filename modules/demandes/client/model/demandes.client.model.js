@@ -14,6 +14,11 @@ angular.module('demandes.model').factory('DemandesModel', [
       data = data || {};
       // Demande's Code
       this.id= data.id || 0;
+      this.projet = data.projet;
+      this.patrimoine = data.patrimoine;
+      this.profession = data.profession;
+      this.financement = data.financement;
+      this.client = data.client;
     }
 
     return DemandesModel;
