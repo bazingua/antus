@@ -12,10 +12,9 @@ angular.module('demandes.model').factory('FinancementModel', [
      */
     function FinancementModel(data) {
       data = data || {};
-      this.id= data.id || 0;
-      this.apport = data.apport;
-      this.duree = data.duree;
-      this.versement = data.versement;
+      this.apport = data.apport || '';
+      this.duree = data.duree || 0; // nombre de mois
+      this.versement = data.versement || '';
     }
 
     return FinancementModel;

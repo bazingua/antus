@@ -1,9 +1,9 @@
-angular.module('demandes.model').factory('DemandesModel', ['ProjetModel', 'PatrimoineModel', 'FinancementModel', 'ProfessionModel', 'UserModel',
+angular.module('demandes.model').factory('DemandesModel', ['ProjetModel', 'PatrimoineModel', 'FinancementModel', 'UserModel',
   /**
    * @description Demandes model
    * @returns {DemandesModel}
    */
-  function (ProjetModel, PatrimoineModel, FinancementModel, ProfessionModel, UserModel) {
+  function (ProjetModel, PatrimoineModel, FinancementModel, UserModel) {
     'use strict';
     /**
      *Descript: model's contructor
@@ -15,7 +15,6 @@ angular.module('demandes.model').factory('DemandesModel', ['ProjetModel', 'Patri
       this.id= data.id || 0;
       this.projet = new ProjetModel(data.projet);
       this.patrimoine = new PatrimoineModel(data.patrimoine);
-      this.profession = new ProfessionModel(data.profession);
       this.financement = new FinancementModel(data.financement);
       this.client = new UserModel(data.client);
     }
