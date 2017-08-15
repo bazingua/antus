@@ -30,9 +30,6 @@
                 "sexe" : {
                     "type" : "#/definitions/Sexe"
                 },
-                "telephone" : {
-                    "type" : "#/definitions/Telephone"
-                },
                 "active" : {
                     "type" : "boolean"
                 }
@@ -50,11 +47,11 @@
                 "adresse" : {
                    "type" : "string"
                 },
-                "tel" : {
-                   "type" : "string"
-                },
                 "email" : {
                    "type" : "string"
+                },
+                "telephone" : {
+                    "type" : "#/definitions/Telephone"
                 }
             }
         },
