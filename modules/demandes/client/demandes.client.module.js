@@ -5,6 +5,7 @@
   app.registerModule('demandes.admin', ['core.admin']);
   app.registerModule('demandes.admin.routes', ['core.admin.routes']);
   app.registerModule('demandes.services');
+  app.registerModule('demandes.model');
   app.registerModule('demandes.routes', ['ui.router', 'core.routes', 'demandes.services']);
   app.registerModule('demandes.directives', ['core', 'demandes.services']);
 }(ApplicationConfiguration));

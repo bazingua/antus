@@ -99,6 +99,14 @@
                            "Autre"
                         ],
                         "type" : "string"
+                    },
+                    "typeContrat":
+                    {
+                        "enum":[
+                            "CDI",
+                            "CDD",
+                            "Autre"
+                        ]
                     }
                 }
         },
