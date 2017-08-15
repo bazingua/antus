@@ -1,31 +1,30 @@
-angular.module('demandes.model').factory('ProjetModel', [
+angular.module('users.model').factory('UserModel', ['AdresseModel',
   /**
    * @description Projets model
-   * @returns {ProjetModel}
+   * @returns {UserModel}
    */
-  function () {
+  function (AdresseModel) {
     'use strict';
     /**
      *Descript: model's contructor
      * @param data
      * @constructor
      */
-    function ProjetModel(data) {
+    function UserModel(data) {
       data = data || {};
-      this.id= data.id || 0;
+      this.id = data.id || 0;
       this.prenom = data.prenom;
       this.nom = data.nom;
       this.civilite = data.civilite;
-      this.dateNassance=data.dateNassance;
-      this.nationalite=data.nationalite;
-      this.adresse=data.adresse;
-      this.age=data.age;
-      this.sexe=data.sexe;
-      this.telephone=data.telephone;
-      this.active=data.active;
+      this.dateNassance = data.dateNassance || new Date();
+      this.nationalite = data.nationalite;
+      this.adresse = new AdresseModel(data.adresse);
+      this.age = data.age;
+      this.sexe = data.sexe;
+      this.active = data.active || false;
     }
 
-    return ProjetModel;
+    return UserModel;
   }
 
 ]);
