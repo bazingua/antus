@@ -13,6 +13,7 @@ angular.module('demandes.model').factory('ProfessionModel', [
     function ProfessionModel(data) {
       data = data || {};
       this.id= data.id || 0;
+      this.situation = data.situation;
     }
 
     return ProfessionModel;
