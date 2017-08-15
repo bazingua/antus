@@ -1,15 +1,15 @@
-<div>
-  <div style="background-color: #7a43b6; color: #fff;" class=""> <h3 class="color-white padding">{{node.libelle}}</h3></div>
+<div style="background-color: #7a43b6; color: #fff;" class=""> <h3 class="color-white padding">{{node.libelle}}</h3></div>
+
   <div ng-repeat="type in node.fils" >
-    <a ng-click="choiceType(type)" style="cursor: pointer">
-      <span class=" text-item-choice "><i class="material-icons " style=" color: #555">{{type.icone}}</i></span>
-      <span class="text-item-choice" style=" color: #555">{{type.libelle}}</span>
-    </a>
+    <div  class="btn-group  " role="group">
+    <button ng-click="choiceType(type)" style="cursor: pointer" type="button" class="btn btn-default">
+      {{type.libelle}}
+    </button>
   </div>
 </div>
 
 
-
+<!--
   <div  class="btn-group  " role="group">
     <div ng-repeat="type in node.fils" >
       <button ng-click="choiceType(type)" style="cursor: pointer" type="button" class="btn btn-default pad">
@@ -21,3 +21,4 @@
 
   </div>
 
+-->
