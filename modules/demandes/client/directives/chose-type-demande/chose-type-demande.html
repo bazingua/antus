@@ -7,3 +7,17 @@
     </a>
   </div>
 </div>
+
+
+<div class="btn-group " role="group" aria-label="..." style="margin-top: 10px">
+  <div  class="btn-group  " role="group">
+    <div ng-repeat="type in node.fils" >
+      <button ng-click="choiceType(type)" style="cursor: pointer" type="button" class="btn btn-default pad">
+        <span class=" text-item-choice "><i class="material-icons " style=" color: #555">{{type.icone}}</i></span>
+        <span class="text-item-choice" style=" color: #555">{{type.libelle}}</span>
+      </button>
+
+    </div>
+
+  </div>
+</div>

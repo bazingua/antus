@@ -9,6 +9,7 @@
     var directive = {
       restrict: 'EA',
       transclude: false,
+      //
       templateUrl: 'modules/demandes/client/directives/chose-type-demande/chose-type-demande.html',
       scope: {
         node: '='

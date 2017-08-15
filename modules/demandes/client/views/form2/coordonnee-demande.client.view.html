@@ -1,0 +1,69 @@
+<section class="row">
+  <div class="col-xs-offset-2 col-xs-8 col-md-offset-4 col-md-4">
+    <div class="login-logo">
+      <a href="#"><b></b></a>
+    </div>
+    <div class="panel panel-default">
+
+      <div class="panel-body">
+
+        <p class="" style="text-align: center">
+          Vos Coordonnées
+        </p><hr/>
+
+        <form name="" ng-submit="" class="" novalidate autocomplete="off">
+
+          <fieldset style="">
+            <div class="form-group" show-errors>
+              <label>Civilité</label>
+              <select name="civilite" class="form-control" ng-model="" placeholder="Civilité" required autofocus>
+                <option label="Civilité"></option>
+                <option  value="monsieur">Monsieur</option>
+                <option  value="madame">Madame</option>
+              </select>
+            </div>
+
+            <div class="form-group" show-errors>
+              <label>Nom</label>
+              <input type="text" id="nom" name="nom" class="form-control" ng-model="" placeholder="Nom" required>
+            </div>
+
+            <div class="form-group" show-errors>
+              <label>Date de Naissance</label>
+              <input type="date" id="dateNaissance" name="dateNaissance" class="form-control" ng-model=""  required>
+            </div>
+
+            <div class="form-group" show-errors>
+              <label>Situation familiale</label>
+              <select name="situationFamiliale" class="form-control" ng-model="" placeholder="Situation familiale" required autofocus>
+                <option label="Situation familiale"></option>
+                <option  value="marie">Marié</option>
+                <option  value="celibataire">Célibataire</option>
+              </select>
+            </div>
+
+            <div class="form-group" show-errors>
+              <label>Adresse Actuelle</label>
+              <textarea rows="2" name="AdresseActuelle" class="form-control" ng-model=""  required autofocus>
+
+              </textarea>
+            </div>
+
+            <div class="form-group" show-errors>
+              <label>Numero telephone</label>
+              <input type="text" id="NumeroTelephone" name="NumeroTelephone" class="form-control" ng-model=""  required>
+            </div>
+
+
+            <div class="text-center form-group">
+              <button class="btn btn-primary btn-sm" type="submit"><< Précedant</button>
+              <button class="btn btn-primary btn-sm" type="submit">Suivant >></button>
+
+            </div>
+
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
