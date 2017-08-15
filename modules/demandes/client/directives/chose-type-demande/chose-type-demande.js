@@ -24,8 +24,6 @@
      * @return {Object} scope
      */
     function link(scope) {
-      console.log('xxx', scope.node);
-
       scope.choiceType = function (node) {
         scope.node = node;
       };
