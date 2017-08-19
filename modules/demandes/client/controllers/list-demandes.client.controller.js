@@ -105,7 +105,7 @@
         'checked': false
       }
 
-    ]
+    ];
 
     $scope.endTreeSelect = function () {
       vm.viewTreePanel = false;
