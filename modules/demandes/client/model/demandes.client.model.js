@@ -1,4 +1,4 @@
-angular.module('demandes.model').factory('DemandesModel', ['ProjetModel', 'PatrimoineModel', 'FinancementModel', 'UserModel','ApportModel',
+angular.module('demandes.model').factory('DemandesModel', ['ProjetModel', 'PatrimoineModel', 'FinancementModel', 'UserModel', 'ApportModel',
   /**
    * @description Demandes model
    * @returns {DemandesModel}
@@ -17,7 +17,7 @@ angular.module('demandes.model').factory('DemandesModel', ['ProjetModel', 'Patri
       this.patrimoine = new PatrimoineModel(data.patrimoine);
       this.financement = new FinancementModel(data.financement);
       this.client = new UserModel(data.client);
-      this.ApportModel = new UserModel(data.ApportModel);
+      this.apportModel = new ApportModel(data.apportModel);
     }
 
     return DemandesModel;

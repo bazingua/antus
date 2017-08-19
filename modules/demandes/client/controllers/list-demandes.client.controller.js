@@ -65,42 +65,42 @@
     ];
     $scope.banques = [
       {
-        'libelle' : 'BICIS',
+        'libelle': 'BICIS',
         'logo': '/modules/core/client/img/bank/bicis.jpg',
         'checked': false
       },
       {
-        'libelle' : 'ECOBANK',
+        'libelle': 'ECOBANK',
         'logo': '/modules/core/client/img/bank/eco.jpg',
         'checked': false
       },
       {
-        'libelle' : 'CBAO',
+        'libelle': 'CBAO',
         'logo': '/modules/core/client/img/bank/cbao.jpg',
         'checked': false
       },
       {
-        'libelle' : 'BIS',
+        'libelle': 'BIS',
         'logo': '/modules/core/client/img/bank/bis.png',
         'checked': false
       },
       {
-        'libelle' : 'BGFI',
+        'libelle': 'BGFI',
         'logo': '/modules/core/client/img/bank/bgfi.jpg',
         'checked': false
       },
       {
-        'libelle' : 'BHS',
+        'libelle': 'BHS',
         'logo': '/modules/core/client/img/bank/bhs.jpg',
         'checked': false
       },
       {
-        'libelle' : 'Banque Atlantique',
+        'libelle': 'Banque Atlantique',
         'logo': '/modules/core/client/img/bank/ba.jpg',
         'checked': false
       },
       {
-        'libelle' : 'SGBS',
+        'libelle': 'SGBS',
         'logo': '/modules/core/client/img/bank/sgbs.png',
         'checked': false
       }
