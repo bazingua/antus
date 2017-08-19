@@ -7,16 +7,19 @@
 
           <fieldset style="">
 
+            <div class="row">
 
-            <div class="form-group" show-errors>
-              <label>Residence principale</label>
-              <div class="row">
-                <div class="col-xs-6 col-sm-6">
-                  <input type="text" id="ResidencePrincipalMensualite" name="ResidencePrincipalMensualite" class="form-control" ng-model="" placeholder="mensualite"  required>
+              <div class="form-group">
+                <label class="control-label col-sm-4" style="text-align: right ">Residence principale :
+                  <a href="#" data-toggle="tooltip" title="Residence principale" class="pull-right">
+                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                </label>
+                <div class="col-sm-4">
+                  <input type="text" id="ResidencePrincipalMensualite" name="ResidencePrincipalMensualite" class="form-control" ng-model="demandes.patrimoine.credit.principal.mensualite" placeholder="mensualite"  required>
                 </div>
-                <div class="col-xs-6 col-sm-3">
+                <div class="col-sm-2">
                   <div class="input-group">
-                    <select class="form-control" id="ResidencePrincipalDuree" name="ResidencePrincipalDuree" ng-model="" >
+                    <select class="form-control" id="ResidencePrincipalDuree" name="ResidencePrincipalDuree" ng-model="demandes.patrimoine.credit.principal.nbrMois" >
                       <option label="Durée"></option>
                       <option value="13">10</option>
                       <option value="13">11</option>
@@ -27,25 +30,29 @@
                     <span class="input-group-addon">mois</span>
                   </div>
                 </div>
-                <div class="col-xs-6 col-sm-3">
+
+                <div class="col-sm-2">
                   <div class="input-group">
-                    <input type="text" id="ResidencePrincipalRestant" name="ResidencePrincipalRestant" class="form-control" ng-model=""  placeholder="Restant" required>
+                    <input type="text" id="ResidencePrincipalRestant" name="ResidencePrincipalRestant" class="form-control" ng-model="demandes.patrimoine.credit.principal.restant"  placeholder="Restant" required>
                     <span class="input-group-addon">mois</span>
                   </div>
                 </div>
               </div>
-
             </div>
-            <hr/>
-            <div class="form-group" show-errors>
-              <label>Residence Secondaire</label>
-              <div class="row">
-                <div class="col-xs-6 col-sm-6">
-                  <input type="text" id="ResidenceSecondaireMensualite" name="ResidenceSecondaireMensualite" class="form-control" ng-model="" placeholder="mensualite"  required>
+            <br>
+            <div class="row">
+
+              <div class="form-group">
+                <label class="control-label col-sm-4" style="text-align: right ">Residence Secondaire :
+                  <a href="#" data-toggle="tooltip" title="Residence Secondaire" class="pull-right">
+                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                </label>
+                <div class="col-sm-4">
+                  <input type="text" id="ResidenceSecondaireMensualite" name="ResidenceSecondaireMensualite" class="form-control" ng-model="demandes.patrimoine.credit.secondaire.mensualite" placeholder="mensualite"  required>
                 </div>
-                <div class="col-xs-6 col-sm-3">
+                <div class="col-sm-2">
                   <div class="input-group">
-                    <select class="form-control" id="ResidenceSecondaireDuree" name="ResidenceSecondaireDuree" ng-model="" >
+                    <select class="form-control" id="ResidenceSecondaireDuree" name="ResidenceSecondaireDuree" ng-model="demandes.patrimoine.credit.secondaire.nbrMois" >
                       <option label="Durée"></option>
                       <option value="13">10</option>
                       <option value="13">11</option>
@@ -56,73 +63,79 @@
                     <span class="input-group-addon">mois</span>
                   </div>
                 </div>
-                <div class="col-xs-6 col-sm-3">
+
+                <div class="col-sm-2">
                   <div class="input-group">
-                    <input type="text" id="ResidenceSecondaireRestant" name="ResidenceSecondaireRestant" class="form-control" ng-model=""  placeholder="Restant" required>
+                    <input type="text" id="ResidenceSecondaireRestant" name="ResidenceSecondaireRestant" class="form-control" ng-model="demandes.patrimoine.credit.secondaire.restant"  placeholder="Restant" required>
                     <span class="input-group-addon">mois</span>
                   </div>
                 </div>
               </div>
-
             </div>
-            <hr/>
-            <div class="form-group" show-errors>
-              <label>Investissement Locatif</label>
+            <br>
+            <div class="row">
+            <div class="form-group">
+              <label class="control-label col-sm-4" style="text-align: right ">Investissement Locatif :
+                <a href="#" data-toggle="tooltip" title="Residence principale" class="pull-right">
+                  <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+              </label>
+              <div class="col-sm-4">
+                <input type="text" id="InvestissementLocatifMensualite" name="InvestissementLocatifMensualite" class="form-control" ng-model="demandes.patrimoine.credit.locatif.mensualite" placeholder="mensualite"  required>
+              </div>
+                <div class="col-sm-2">
+                <div class="input-group">
+                  <select class="form-control" id="InvestissementLocatifDuree" name="InvestissementLocatifDuree" ng-model="demandes.patrimoine.credit.locatif.nbrMois" >
+                    <option label="Durée"></option>
+                    <option value="13">10</option>
+                    <option value="13">11</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                  </select>
+                  <span class="input-group-addon">mois</span>
+                </div>
+              </div>
+
+              <div class="col-sm-2">
+                <div class="input-group">
+                  <input type="text" id="InvestissementLocatifRestant" name="InvestissementLocatifRestant" class="form-control" ng-model="demandes.patrimoine.credit.locatif.restant"  placeholder="Restant" required>
+                  <span class="input-group-addon">mois</span>
+                </div>
+              </div>
+            </div>
+          </div>
+            <br>
               <div class="row">
-                <div class="col-xs-6 col-sm-6">
-                  <input type="text" id="InvestissementLocatifMensualite" name="InvestissementLocatifMensualite" class="form-control" ng-model="" placeholder="mensualite"  required>
-                </div>
-                <div class="col-xs-6 col-sm-3">
-                  <div class="input-group">
-                    <select class="form-control" id="InvestissementLocatifDuree" name="InvestissementLocatifDuree" ng-model="" >
-                      <option label="Durée"></option>
-                      <option value="13">10</option>
-                      <option value="13">11</option>
-                      <option value="13">13</option>
-                      <option value="14">14</option>
-                      <option value="15">15</option>
-                    </select>
-                    <span class="input-group-addon">mois</span>
+                <div class="form-group">
+                  <label class="control-label col-sm-4" style="text-align: right ">Autres patrimoines immobilier :
+                    <a href="#" data-toggle="tooltip" title="Residence principale" class="pull-right">
+                      <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                  </label>
+                  <div class="col-sm-4">
+                    <input type="text" id="AutreMensualite" name="AutresMensualite" class="form-control" ng-model="demandes.patrimoine.credit.autre.mensualite" placeholder="mensualite"  required>
                   </div>
-                </div>
-                <div class="col-xs-6 col-sm-3">
-                  <div class="input-group">
-                    <input type="text" id="InvestissementLocatifRestant" name="InvestissementLocatifRestant" class="form-control" ng-model=""  placeholder="Restant" required>
-                    <span class="input-group-addon">mois</span>
-                  </div>
-                </div>
-              </div>
+                    <div class="col-sm-2">
+                      <div class="input-group">
+                        <select class="form-control" id="AutresDuree" name="AutresDuree" ng-model="demandes.patrimoine.credit.autre.nbrMois" >
+                          <option label="Durée"></option>
+                          <option value="13">10</option>
+                          <option value="13">11</option>
+                          <option value="13">13</option>
+                          <option value="14">14</option>
+                          <option value="15">15</option>
+                        </select>
+                        <span class="input-group-addon">mois</span>
+                      </div>
+                    </div>
 
-            </div>
-            <hr/>
-            <div class="form-group" show-errors>
-              <label>Autres patrimoines immobilier</label>
-              <div class="row">
-                <div class="col-xs-6 col-sm-6">
-                  <input type="text" id="AutreMensualite" name="AutresMensualite" class="form-control" ng-model="" placeholder="mensualite"  required>
-                </div>
-                <div class="col-xs-6 col-sm-3">
-                  <div class="input-group">
-                    <select class="form-control" id="AutresDuree" name="AutresDuree" ng-model="" >
-                      <option label="Durée"></option>
-                      <option value="13">10</option>
-                      <option value="13">11</option>
-                      <option value="13">13</option>
-                      <option value="14">14</option>
-                      <option value="15">15</option>
-                    </select>
-                    <span class="input-group-addon">mois</span>
+                    <div class="col-sm-2">
+                      <div class="input-group">
+                        <input type="text" id="AutresRestant" name="AutresRestant" class="form-control" ng-model="demandes.patrimoine.credit.autre.restant"  placeholder="Restant" required>
+                        <span class="input-group-addon">mois</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="col-xs-6 col-sm-3">
-                  <div class="input-group">
-                    <input type="text" id="AutresRestant" name="AutresRestant" class="form-control" ng-model=""  placeholder="Restant" required>
-                    <span class="input-group-addon">mois</span>
-                  </div>
-                </div>
-              </div>
-
-            </div>
 
           </fieldset>
         </form>

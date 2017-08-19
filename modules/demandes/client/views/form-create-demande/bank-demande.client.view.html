@@ -1,28 +1,105 @@
-<section class="row">
+<section>
   <div class="col-xs-offset-2 col-xs-10 col-md-offset-1 col-md-11">
+    <div class="panel-body">
+      <form class="form-horizontal">
 
-      <div class="panel-body">
-
-        <form name="" ng-submit="" class="form-horizontal" novalidate autocomplete="">
-
-          <fieldset style="">
-            <div class="form-group" show-errors>
-              <div class="checkbox" id="choixBank" name="choixBank" class="form-control" ng-model=""  required>
-                <label><input type="checkbox" value="">BICIS</label>
+          <div class="row">
+            <div class="col-sm-3" ng-repeat="banque in banques">
+              <div class="col-sm-12 border-box-black">
+                <!--   <img class="full-width img-responsive" style="height: 400px" > -->
+                <img ng-src="{{banque.logo}}" alt="Image" class="img-thumbnail imgBank img-radio">
+                <div class="btm-space-10">{{banque.libelle}}<input type="checkbox"  name="bankPrincipal" ng-model="demandes.financement.banque"  class="pack_item pull-right"/></div>
               </div>
-              <div class="checkbox">
-                <label><input type="checkbox" value="">SGBS</label>
+
+          </div>
+          </div>
+          <!--  <div class="col-sm-3">
+              <div class="col-sm-12 border-box-black">
+
+                <img ng-src="/modules/core/client/img/bank/eco.jpg" alt="Image" class="img-thumbnail imgBank img-radio">
+                <div class="btm-space-10">ECOBANK<input type="checkbox" class="pack_item pull-right"/></div>
               </div>
-              <div class="checkbox disabled">
-                <label><input type="checkbox" value="" disabled>ECOBANK</label>
+            </div>
+            <div class="col-sm-3">
+              <div class="col-sm-12 border-box-black">
+                <img ng-src="/modules/core/client/img/bank/cbao.jpg" alt="Image" class="img-thumbnail imgBank img-radio">
+                <div class="btm-space-10">CBAO<input type="checkbox" class="pack_item pull-right"/></div>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="col-sm-12 border-box-black">
+                <img ng-src="/modules/core/client/img/bank/bis.png" alt="Image" class="img-thumbnail imgBank img-radio">
+                <div class="btm-space-10">BIS<input type="checkbox" class="pack_item pull-right"/></div>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="col-sm-12 border-box-black">
+                <img ng-src="/modules/core/client/img/bank/bgfi.jpg" alt="Image" class="img-thumbnail imgBank img-radio">
+                <div class="btm-space-10">BGFIBANK<input type="checkbox" class="pack_item pull-right"/></div>
+              </div>
+            </div>
+            <div class="col-sm-3 space-20">
+              <div class="col-sm-12 border-box-black">
+                <img ng-src="/modules/core/client/img/bank/bicis.jpg" alt="Image" class="img-thumbnail imgBank img-radio">
+                <div class="btm-space-10">BICIS<input type="checkbox" class="pack_item pull-right"/></div>
+              </div>
+            </div>
+            <div class="col-sm-3 space-20">
+              <div class="col-sm-12 border-box-black">
+                <img ng-src="/modules/core/client/img/bank/bhs.jpg" alt="Image" class="img-thumbnail imgBank img-radio">
+                <div class="btm-space-10">BHS<input type="checkbox" class="pack_item pull-right"/></div>
+              </div>
+            </div>
+            <div class="col-sm-3 space-20">
+              <div class="col-sm-12 border-box-black">
+                <img ng-src="/modules/core/client/img/bank/ba.jpg" alt="Image" class="img-thumbnail imgBank img-radio">
+                <div class="btm-space-10">Banque Atlantique<input type="checkbox" class="pack_item pull-right"/></div>
+              </div>
+            </div>
+            <div class="col-sm-3 space-20">
+              <div class="col-sm-12 border-box-black">
+                <img ng-src="/modules/core/client/img/bank/sgbs.png" alt="Image" class="img-thumbnail imgBank img-radio">
+                <div class="btm-space-10">SGBS<input type="checkbox" class="pack_item pull-right"/></div>
               </div>
             </div>
 
-          </fieldset>
-        </form>
-      </div>
+ <!--
+          <div class="row">
+
+            <div class="form-group">
+              <label class="control-label col-sm-4" style="text-align: right ">
+              </label>
+              <div class="col-sm-4">
+                <div class="checkbox" id="choixBank" name="choixBank" class="form-control" ng-model=""  required>
+                  <label><input class="" type="checkbox" value="">BICIS</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="">SGBS</label>
+                </div>
+                <div class="checkbox disabled">
+                  <label><input type="checkbox" value="" disabled>ECOBANK</label>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <br>
+
+
+
+
+
+        </div>
+    -->
+
+      </form>
+    </div>
   </div>
 </section>
+
+
+
+
 
 
 

@@ -14,6 +14,7 @@ angular.module('demandes.model').factory('ProfessionModel', [
       data = data || {};
       this.situation = data.situation || '';
       this.typeContrat = data.typeContrat || '';
+      this.dureeContrat = data.dureeContrat || '';
     }
 
     return ProfessionModel;

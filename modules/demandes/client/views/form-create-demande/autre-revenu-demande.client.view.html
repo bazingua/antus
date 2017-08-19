@@ -1,36 +1,39 @@
 <section>
   <div class="col-xs-offset-2 col-xs-10 col-md-offset-1 col-md-11">
+   <div class="panel-body">
               <form class="form-horizontal">
                 <div class="row">
 
                 <div class="form-group">
-                    <label class="control-label col-sm-4" for="email">REVENUS LOCATIFS EXISTANT PAR MOIS:
-                      <a href="#" data-toggle="tooltip" title="Indiquez ici la valeur estimée et le capital restant dû de votre résidence SECONDAIRE." class="pull-right">
+                    <label class="control-label col-sm-4">REVENUS LOCATIFS EXISTANT PAR MOIS:
+                      <a href="#" data-toggle="tooltip" title="" class="pull-right">
                           <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                     </label>
                    <div class="col-sm-4">
-                        <input type="text" name="revenuLocatif" class="form-control" id="revenuLocatif" placeholder="">
+                        <input type="text" ng-model="demandes.patrimoine.revenu.locatif" name="revenuLocatif" class="form-control" id="revenuLocatif" placeholder="">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-sm-4" for="email">PENSION ALIMENTAIRES:
-                      <a href="#" data-toggle="tooltip" title="Indiquez ici la valeur estimée et le capital restant dû de votre résidence SECONDAIRE." class="pull-right">
+                    <label class="control-label col-sm-4">PENSION ALIMENTAIRES:
+                      <a href="#" data-toggle="tooltip" title="" class="pull-right">
                           <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                     </label>
                    <div class="col-sm-4">
-                        <input type="text" name="passionAli" class="form-control" id="passionAli" placeholder="">
+                        <input type="text" name="passionAli" class="form-control" id="passionAli"
+                        ng-model="demandes.patrimoine.revenu.pensionAlimentaire">
                     </div>
                 </div>
 
 
                 <div class="form-group">
-                    <label class="control-label col-sm-4" for="email">CESSION DE SALAIRES:
-                      <a href="#" data-toggle="tooltip" title="Indiquez ici la valeur estimée et le capital restant dû de votre résidence SECONDAIRE." class="pull-right">
+                    <label class="control-label col-sm-4">CESSION DE SALAIRES:
+                      <a href="#" data-toggle="tooltip" title="" class="pull-right">
                           <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                     </label>
                    <div class="col-sm-4">
-                        <input type="text" name="cessionSalaire" class="form-control" id="cessionSalaire" placeholder="">
+                        <input type="text" name="cessionSalaire" class="form-control" id="cessionSalaire"
+                        ng-model="demandes.patrimoine.revenu.cessionSalaire">
                     </div>
                 </div>
 
@@ -41,4 +44,5 @@
             </form>
   </div>
 </div>
+  </div>
 </section>

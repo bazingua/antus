@@ -12,7 +12,7 @@
     var vm = this;
 
     vm.demandes = DemandesService.query();
- // databinding
+    // databinding
     vm.typeDemande = typeDemande;
     $scope.typeDemande = typeDemande;
     vm.viewTreePanel = true;
@@ -32,23 +32,23 @@
       },
       {
         templateUrl: 'modules/demandes/client/views/form-create-demande/revenu-demande.client.veiw.html',
-        title: 'D R D'
+        title: 'Definition des Revenus'
       },
       {
         templateUrl: 'modules/demandes/client/views/form-create-demande/autre-revenu-demande.client.view.html',
-        title: 'A R '
+        title: 'Autres  Revenus '
       },
       {
         templateUrl: 'modules/demandes/client/views/form-create-demande/creditencours-demande.client.view.html',
-        title: 'C E Cours'
+        title: 'Quels sont Vos Crédits Encours'
       },
       {
         templateUrl: 'modules/demandes/client/views/form-create-demande/situationProfessionel-demande.client.view.html',
-        title: 'S P'
+        title: 'Situation Professionnelle'
       },
       {
         templateUrl: 'modules/demandes/client/views/form-create-demande/montantProjet-demande.client.view.html',
-        title: 'M P'
+        title: 'Montant de votre  Pret'
       },
       {
         templateUrl: 'modules/demandes/client/views/form-create-demande/bank-demande.client.view.html',
@@ -63,10 +63,53 @@
         title: 'Coordonnee Demande'
       }
     ];
+    $scope.banques = [
+      {
+        'libelle' : 'BICIS',
+        'logo': '/modules/core/client/img/bank/bicis.jpg',
+        'checked': false
+      },
+      {
+        'libelle' : 'ECOBANK',
+        'logo': '/modules/core/client/img/bank/eco.jpg',
+        'checked': false
+      },
+      {
+        'libelle' : 'CBAO',
+        'logo': '/modules/core/client/img/bank/cbao.jpg',
+        'checked': false
+      },
+      {
+        'libelle' : 'BIS',
+        'logo': '/modules/core/client/img/bank/bis.png',
+        'checked': false
+      },
+      {
+        'libelle' : 'BGFI',
+        'logo': '/modules/core/client/img/bank/bgfi.jpg',
+        'checked': false
+      },
+      {
+        'libelle' : 'BHS',
+        'logo': '/modules/core/client/img/bank/bhs.jpg',
+        'checked': false
+      },
+      {
+        'libelle' : 'Banque Atlantique',
+        'logo': '/modules/core/client/img/bank/ba.jpg',
+        'checked': false
+      },
+      {
+        'libelle' : 'SGBS',
+        'logo': '/modules/core/client/img/bank/sgbs.png',
+        'checked': false
+      }
+
+    ]
 
     $scope.endTreeSelect = function () {
       vm.viewTreePanel = false;
       vm.viewFormPanel = true;
-    }
+    };
   }
 }());

@@ -1336,4 +1336,30 @@ fieldset[disabled] .btn-theme {
 	padding: 15px;
 }
 
+.btn-radio {
+	width: 100%;
+}
+.img-radio {
+	margin-top: 15px;
+	margin-bottom: 5px;
+}
+.border-box-blue {
+	border: 1px solid #d5d5d5;
 
+}
+.border-box-black {
+	border: 1px solid #d5d5d5;
+
+	height: 210px;
+}
+.space-20 {
+	margin-top: 20px;
+}
+.btm-space-10{
+	margin-bottom: 5px;
+}
+
+.imgBank{
+	height: 150px;
+	width: 220px;
+}

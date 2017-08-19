@@ -3,50 +3,90 @@
 
      <div class="panel-body">
 
-        <form name="" ng-submit="" class="form-horizontal" novalidate autocomplete="off">
+        <form name="" ng-submit="" class="" novalidate autocomplete="off">
 
-          <fieldset style="">
-            <div class="form-group" show-errors>
-              <label>Civilité</label>
-              <select name="civilite" class="form-control" ng-model="" placeholder="Civilité" required autofocus>
-                <option label="Civilité"></option>
-                <option  value="monsieur">Monsieur</option>
-                <option  value="madame">Madame</option>
-              </select>
+          <div class="row">
+            <div class="form-group">
+              <label class="control-label col-sm-4"  style="text-align: right">Civilité :
+                <a href="#" data-toggle="tooltip" title="Civilité" class="pull-right">
+                  <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+              </label>
+              <div class="col-sm-4">
+                <select name="civilite" class="form-control" ng-model="" placeholder="Civilité" required autofocus>
+                  <option label="Civilité"></option>
+                  <option  value="monsieur">Monsieur</option>
+                  <option  value="madame">Madame</option>
+                </select>
+              </div>
             </div>
-
-            <div class="form-group" show-errors>
-              <label>Nom</label>
-              <input type="text" id="nom" name="nom" class="form-control" ng-model="" placeholder="Nom" required>
+          </div>
+          <br>
+          <div class="row">
+            <div class="form-group">
+              <label class="control-label col-sm-4" style="text-align: right">Nom :
+                <a href="#" data-toggle="tooltip" title="Nom" class="pull-right">
+                  <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+              </label>
+              <div class="col-sm-4">
+                <input type="text" id="nom" name="nom" class="form-control" ng-model="" placeholder="Nom" required>
+              </div>
             </div>
-
-            <div class="form-group" show-errors>
-              <label>Date de Naissance</label>
-              <input type="date" id="dateNaissance" name="dateNaissance" class="form-control" ng-model=""  required>
+          </div>
+          <br>
+          <div class="row">
+            <div class="form-group">
+              <label class="control-label col-sm-4" style="text-align: right">Date de Naissance :
+                <a href="#" data-toggle="tooltip" title="Date de Naissance" class="pull-right">
+                  <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+              </label>
+              <div class="col-sm-4">
+                <input type="date" id="dateNaissance" name="dateNaissance" class="form-control" ng-model=""  required>
+              </div>
             </div>
-
-            <div class="form-group" show-errors>
-              <label>Situation familiale</label>
-              <select name="situationFamiliale" class="form-control" ng-model="" placeholder="Situation familiale" required autofocus>
-                <option label="Situation familiale"></option>
-                <option  value="marie">Marié</option>
-                <option  value="celibataire">Célibataire</option>
-              </select>
+          </div>
+          <br>
+          <div class="row">
+            <div class="form-group">
+              <label class="control-label col-sm-4" style="text-align: right">Situation familiale :
+                <a href="#" data-toggle="tooltip" title="Date de Naissance" class="pull-right">
+                  <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+              </label>
+              <div class="col-sm-4">
+                <select name="situationFamiliale" class="form-control" ng-model="" placeholder="Situation familiale" required autofocus>
+                  <option label="Situation familiale"></option>
+                  <option  value="marie">Marié</option>
+                  <option  value="celibataire">Célibataire</option>
+                </select>
+              </div>
             </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="form-group">
+              <label class="control-label col-sm-4" style="text-align: right">Adresse Actuelle :
+                <a href="#" data-toggle="tooltip" title="Date de Naissance" class="pull-right">
+                  <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+              </label>
+              <div class="col-sm-4">
+                <textarea rows="2" name="AdresseActuelle" class="form-control" ng-model=""  required autofocus>
 
-            <div class="form-group" show-errors>
-              <label>Adresse Actuelle</label>
-              <textarea rows="2" name="AdresseActuelle" class="form-control" ng-model=""  required autofocus>
-
-              </textarea>
+              </div>
             </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="form-group">
+              <label class="control-label col-sm-4" style="text-align: right">Numero telephone :
+                <a href="#" data-toggle="tooltip" title="Numero telephone" class="pull-right">
+                  <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+              </label>
+              <div class="col-sm-4">
+                <input type="text" id="NumeroTelephone" name="NumeroTelephone" class="form-control" ng-model=""  required>
 
-            <div class="form-group" show-errors>
-              <label>Numero telephone</label>
-              <input type="text" id="NumeroTelephone" name="NumeroTelephone" class="form-control" ng-model=""  required>
+              </div>
             </div>
-
-          </fieldset>
+          </div>
+          <br>
         </form>
     </div>
   </div>

@@ -6,20 +6,44 @@
         <form name="" ng-submit="" class="" novalidate autocomplete="">
 
           <fieldset style="">
-            <div class="form-group" show-errors>
-              <label>Contrat de Travail</label>
-              <select name="contratTravail" class="form-control" ng-model="" placeholder="Contrat de Travail" required autofocus>
-                <option label="Contrat de Travail"></option>
-                <option  value="CDD">CDD</option>
-                <option  value="CDI">CDI</option>
-                <option  value="INTERIM">INTERIM</option>
-              </select>
-            </div>
 
-            <div class="form-group" show-errors>
-              <label>Durée de Travail</label>
-              <input type="text" id="dureeTravail" name="dureeTravail" class="form-control" ng-model=""  required>
+
+            <div class="row">
+
+              <div class="form-group">
+                <label class="control-label col-sm-4" style="text-align: right ">Contrat de Travail :
+                  <a href="#" data-toggle="tooltip" title="Contrat de Travail" class="pull-right">
+                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                </label>
+                <div class="col-sm-4">
+                  <select name="contratTravail" class="form-control" ng-model="demandes.patrimoine.profession.typeContrat" placeholder="Contrat de Travail" required autofocus>
+                    <option label="Contrat de Travail"></option>
+                    <option  value="CDD">CDD</option>
+                    <option  value="CDI">CDI</option>
+                    <option  value="INTERIM">INTERIM</option>
+                  </select>
+                </div>
+
+              </div>
             </div>
+            <br>
+
+            <div class="row">
+
+              <div class="form-group">
+                <label class="control-label col-sm-4" style="text-align: right ">Durée de Travail :
+                  <a href="#" data-toggle="tooltip" title="Durée de Travail" class="pull-right">
+                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                </label>
+                <div class="col-sm-4">
+                  <input type="text" id="dureeTravail" name="dureeTravail" class="form-control" ng-model="demandes.patrimoine.profession.dureeContrat"  required>
+
+                </div>
+
+              </div>
+            </div>
+            <br>
+
 
           </fieldset>
         </form>

@@ -1,13 +1,21 @@
 <div style="background-color: #7a43b6; color: #fff;" class=""> <h3 class="color-white padding">{{node.libelle}}</h3></div>
 
-  <div ng-repeat="type in node.fils" >
-    <div  class="btn-group  " role="group">
+<!--
+    <div  ng-repeat="type in node.fils"  class="btn-group  " role="group">
     <button ng-click="choiceType(type)" style="cursor: pointer" type="button" class="btn btn-default">
       {{type.libelle}}
     </button>
-  </div>
 </div>
+-->
+<br/>
+<nav class="navbar navbar-default" style="margin: 20px">
+  <div class="container-fluid">
+    <ul  ng-repeat="type in node.fils" class="nav navbar-nav">
 
+      <li style="padding:0" class="" ng-click="choiceType(type)" ><a  href="#">{{type.libelle}}</a></li>
+    </ul>
+  </div>
+</nav>
 
 <!--
   <div  class="btn-group  " role="group">

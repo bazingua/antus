@@ -4,60 +4,51 @@
               <form class="form-horizontal">
                 <div class="row">
                 <div class="form-group">
-                    <label class="control-label col-sm-4" for="email">MONTANT ESTIMÉ DE VOTRE ACQUISITION:
-                      <a href="#" data-toggle="tooltip" title="Prix estimé du bien. Si vous ne connaissez pas le montant exact, une estimation est suffisante." class="pull-right">
+                    <label class="control-label col-sm-4">MONTANT ESTIMÉ DE VOTRE ACQUISITION :
+                      <a href="#" data-toggle="tooltip" title="" class="pull-right">
                           <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                     </label>
                     <div class="col-sm-4">
-                        <i class="fa fa-info-circle" aria-hidden="true"></i> <input type="text" name="acquisition" class="form-control" id="acquisition" placeholder="">
+                        <input type="text" name="acquisition" class="form-control" id="acquisition"
+                        ng-model="demandes.projet.montantProjet">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-sm-4" for="email">MONTANT ESTIMÉ DES TRAVAUX:
+                    <label class="control-label col-sm-4">MONTANT ESTIMÉ DES TRAVAUX :
                       <a href="#" data-toggle="tooltip" title="Indiquez le montant du ou des devis des entreprise(s) pour faire les travaux. Si vous ne connaissez pas le montant exact, une estimation est suffisante." class="pull-right">
                           <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                     </label>
                     <div class="col-sm-4">
-                        <i class="fa fa-info-circle" aria-hidden="true"></i> <input type="text" name="travaux" class="form-control" id="travaux" placeholder="">
+                        <input type="text" name="travaux" class="form-control" id="travaux"
+                        ng-model="demandes.projet.montantTravaux">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-sm-4" for="email">FRAIS DE NOTAIRE:
+                    <label class="control-label col-sm-4">FRAIS DE NOTAIRE :
                       <a href="#" data-toggle="tooltip" title="Prix estimé du bien" class="pull-right">
                           <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                     </label>
 
                     <div class="col-sm-4">
-                        <input type="text" name="notaire" class="form-control" id="notaire" placeholder="">
+                        <input type="text" name="notaire" class="form-control" id="notaire"
+                        ng-model="demandes.projet.fraisNotaire">
                     </div>
                 </div>
 
                 </div>
+
                 <!--
-                              <div class="row">
-                              <div class="form-group">
-                                  <div class="col-sm-2">
-                                    <button type="submit"  class="btn btn-info btn-flat btn-block">Precedent</button>
-                                </div>
+                                             <div class="col-sm-12" style="margin-top: 50px">
+                                               <div class="progress">
+                                                 <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" style="width: 29%; height: 50px">
 
-                             <div class="col-sm-8">
-                               <div class="progress">
-                                 <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="29" aria-valuemin="0" aria-valuemax="100" style="width: 29%;">
-                                   29%
-                                 </div>
-                               </div>
+                                                 </div>
+                                               </div>
 
-                             </div>
+                                </div> -->
 
-                              <div class="col-sm-2">
-                                  <button type="submit"  class="btn btn-info btn-block">Suivant</button>
-                                </div>
-                              </div>
-
-                </div>
-                   -->
             </form>
   </div>
 </div>
