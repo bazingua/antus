@@ -35,7 +35,8 @@
           pageTitle: 'Deposez une demandes'
         },
         resolve: {
-          typeDemande: getType
+          typeDemande: getType,
+          banques: getBanques
         }
       })
       .state('demandes.view', {
@@ -65,5 +66,11 @@
 
   function getType(TypeService) {
     return TypeService.get().$promise;
+  }
+
+  getBanques.$inject = ['BanqueDemandeService'];
+
+  function getBanques(BanqueDemandeService) {
+    return BanqueDemandeService.getData().$promise;
   }
 }());

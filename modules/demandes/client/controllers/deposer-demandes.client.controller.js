@@ -5,9 +5,9 @@
     .module('demandes')
     .controller('DeposerDemandesController', DeposerDemandesController);
 
-  DeposerDemandesController.$inject = ['$scope', 'DemandesService', 'typeDemande'];
+  DeposerDemandesController.$inject = ['$scope', 'DemandesService', 'typeDemande', 'banques'];
 
-  function DeposerDemandesController($scope, DemandesService, typeDemande) {
+  function DeposerDemandesController($scope, DemandesService, typeDemande, banques) {
     // typeDemande = arbre
     var vm = this;
 
@@ -61,49 +61,7 @@
         title: 'Coordonnee Demande'
       }
     ];
-    $scope.banques = [
-      {
-        'libelle': 'BICIS',
-        'logo': '/modules/core/client/img/bank/bicis.jpg',
-        'checked': false
-      },
-      {
-        'libelle': 'ECOBANK',
-        'logo': '/modules/core/client/img/bank/eco.jpg',
-        'checked': false
-      },
-      {
-        'libelle': 'CBAO',
-        'logo': '/modules/core/client/img/bank/cbao.jpg',
-        'checked': false
-      },
-      {
-        'libelle': 'BIS',
-        'logo': '/modules/core/client/img/bank/bis.png',
-        'checked': false
-      },
-      {
-        'libelle': 'BGFI',
-        'logo': '/modules/core/client/img/bank/bgfi.jpg',
-        'checked': false
-      },
-      {
-        'libelle': 'BHS',
-        'logo': '/modules/core/client/img/bank/bhs.jpg',
-        'checked': false
-      },
-      {
-        'libelle': 'Banque Atlantique',
-        'logo': '/modules/core/client/img/bank/ba.jpg',
-        'checked': false
-      },
-      {
-        'libelle': 'SGBS',
-        'logo': '/modules/core/client/img/bank/sgbs.png',
-        'checked': false
-      }
-
-    ];
+    $scope.banques = banques;
 
     $scope.endTreeSelect = function () {
       vm.viewTreePanel = false;
