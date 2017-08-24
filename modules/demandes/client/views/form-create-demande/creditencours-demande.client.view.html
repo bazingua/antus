@@ -15,11 +15,11 @@
                     <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                 </label>
                 <div class="col-sm-4">
-                  <input type="text" id="ResidencePrincipalMensualite" name="ResidencePrincipalMensualite" class="form-control" ng-model="demandes.patrimoine.credit.principal.mensualite" placeholder="mensualite"  required>
+                  <input type="text" id="ResidencePrincipalMensualite" name="ResidencePrincipalMensualite" class="form-control" ng-model="demande.patrimoine.credit.principal.mensualite" placeholder="mensualite"  required>
                 </div>
                 <div class="col-sm-2">
                   <div class="input-group">
-                    <select class="form-control" id="ResidencePrincipalDuree" name="ResidencePrincipalDuree" ng-model="demandes.patrimoine.credit.principal.nbrMois" >
+                    <select class="form-control" id="ResidencePrincipalDuree" name="ResidencePrincipalDuree" ng-model="demande.patrimoine.credit.principal.nbrMois" >
                       <option label="Durée"></option>
                       <option value="13">10</option>
                       <option value="13">11</option>
@@ -33,7 +33,7 @@
 
                 <div class="col-sm-2">
                   <div class="input-group">
-                    <input type="text" id="ResidencePrincipalRestant" name="ResidencePrincipalRestant" class="form-control" ng-model="demandes.patrimoine.credit.principal.restant"  placeholder="Restant" required>
+                    <input type="text" id="ResidencePrincipalRestant" name="ResidencePrincipalRestant" class="form-control" ng-model="demande.patrimoine.credit.principal.restant"  placeholder="Restant" required>
                     <span class="input-group-addon">mois</span>
                   </div>
                 </div>
@@ -48,11 +48,11 @@
                     <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                 </label>
                 <div class="col-sm-4">
-                  <input type="text" id="ResidenceSecondaireMensualite" name="ResidenceSecondaireMensualite" class="form-control" ng-model="demandes.patrimoine.credit.secondaire.mensualite" placeholder="mensualite"  required>
+                  <input type="text" id="ResidenceSecondaireMensualite" name="ResidenceSecondaireMensualite" class="form-control" ng-model="demande.patrimoine.credit.secondaire.mensualite" placeholder="mensualite"  required>
                 </div>
                 <div class="col-sm-2">
                   <div class="input-group">
-                    <select class="form-control" id="ResidenceSecondaireDuree" name="ResidenceSecondaireDuree" ng-model="demandes.patrimoine.credit.secondaire.nbrMois" >
+                    <select class="form-control" id="ResidenceSecondaireDuree" name="ResidenceSecondaireDuree" ng-model="demande.patrimoine.credit.secondaire.nbrMois" >
                       <option label="Durée"></option>
                       <option value="13">10</option>
                       <option value="13">11</option>
@@ -66,7 +66,7 @@
 
                 <div class="col-sm-2">
                   <div class="input-group">
-                    <input type="text" id="ResidenceSecondaireRestant" name="ResidenceSecondaireRestant" class="form-control" ng-model="demandes.patrimoine.credit.secondaire.restant"  placeholder="Restant" required>
+                    <input type="text" id="ResidenceSecondaireRestant" name="ResidenceSecondaireRestant" class="form-control" ng-model="demande.patrimoine.credit.secondaire.restant"  placeholder="Restant" required>
                     <span class="input-group-addon">mois</span>
                   </div>
                 </div>
@@ -80,11 +80,11 @@
                   <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
               </label>
               <div class="col-sm-4">
-                <input type="text" id="InvestissementLocatifMensualite" name="InvestissementLocatifMensualite" class="form-control" ng-model="demandes.patrimoine.credit.locatif.mensualite" placeholder="mensualite"  required>
+                <input type="text" id="InvestissementLocatifMensualite" name="InvestissementLocatifMensualite" class="form-control" ng-model="demande.patrimoine.credit.locatif.mensualite" placeholder="mensualite"  required>
               </div>
                 <div class="col-sm-2">
                 <div class="input-group">
-                  <select class="form-control" id="InvestissementLocatifDuree" name="InvestissementLocatifDuree" ng-model="demandes.patrimoine.credit.locatif.nbrMois" >
+                  <select class="form-control" id="InvestissementLocatifDuree" name="InvestissementLocatifDuree" ng-model="demande.patrimoine.credit.locatif.nbrMois" >
                     <option label="Durée"></option>
                     <option value="13">10</option>
                     <option value="13">11</option>
@@ -98,7 +98,7 @@
 
               <div class="col-sm-2">
                 <div class="input-group">
-                  <input type="text" id="InvestissementLocatifRestant" name="InvestissementLocatifRestant" class="form-control" ng-model="demandes.patrimoine.credit.locatif.restant"  placeholder="Restant" required>
+                  <input type="text" id="InvestissementLocatifRestant" name="InvestissementLocatifRestant" class="form-control" ng-model="demande.patrimoine.credit.locatif.restant"  placeholder="Restant" required>
                   <span class="input-group-addon">mois</span>
                 </div>
               </div>
@@ -112,11 +112,11 @@
                       <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                   </label>
                   <div class="col-sm-4">
-                    <input type="text" id="AutreMensualite" name="AutresMensualite" class="form-control" ng-model="demandes.patrimoine.credit.autre.mensualite" placeholder="mensualite"  required>
+                    <input type="text" id="AutreMensualite" name="AutresMensualite" class="form-control" ng-model="demande.patrimoine.credit.autre.mensualite" placeholder="mensualite"  required>
                   </div>
                     <div class="col-sm-2">
                       <div class="input-group">
-                        <select class="form-control" id="AutresDuree" name="AutresDuree" ng-model="demandes.patrimoine.credit.autre.nbrMois" >
+                        <select class="form-control" id="AutresDuree" name="AutresDuree" ng-model="demande.patrimoine.credit.autre.nbrMois" >
                           <option label="Durée"></option>
                           <option value="13">10</option>
                           <option value="13">11</option>
@@ -130,7 +130,7 @@
 
                     <div class="col-sm-2">
                       <div class="input-group">
-                        <input type="text" id="AutresRestant" name="AutresRestant" class="form-control" ng-model="demandes.patrimoine.credit.autre.restant"  placeholder="Restant" required>
+                        <input type="text" id="AutresRestant" name="AutresRestant" class="form-control" ng-model="demande.patrimoine.credit.autre.restant"  placeholder="Restant" required>
                         <span class="input-group-addon">mois</span>
                       </div>
                     </div>

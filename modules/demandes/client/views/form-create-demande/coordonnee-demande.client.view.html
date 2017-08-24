@@ -12,7 +12,7 @@
                   <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
               </label>
               <div class="col-sm-4">
-                <select name="civilite" class="form-control" ng-model="user.civilite" placeholder="Civilité" required autofocus>
+                <select name="civilite" class="form-control" ng-model="demande.client.civilite" placeholder="Civilité" required autofocus>
                   <option label="Civilité"></option>
                   <option  value="monsieur">Monsieur</option>
                   <option  value="madame">Madame</option>
@@ -28,11 +28,24 @@
                   <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
               </label>
               <div class="col-sm-4">
-                <input type="text" id="nom" name="nom" class="form-control" ng-model="user.nom" placeholder="Nom" required>
+                <input type="text" id="nom" name="nom" class="form-control" ng-model="demande.client.nom" placeholder="Nom" required>
               </div>
             </div>
           </div>
           <br>
+          <div class="row">
+            <div class="form-group">
+              <label class="control-label col-sm-4" style="text-align: right">Prénom :
+                <a href="#" data-toggle="tooltip" title="Nom" class="pull-right">
+                  <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+              </label>
+              <div class="col-sm-4">
+                <input type="text" id="prenom" name="prenom" class="form-control" ng-model="demande.client.prenom" placeholder="prénom" required>
+              </div>
+            </div>
+          </div>
+          <br>
+
           <div class="row">
             <div class="form-group">
               <label class="control-label col-sm-4" style="text-align: right">Date de Naissance :
@@ -40,7 +53,7 @@
                   <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
               </label>
               <div class="col-sm-4">
-                <input type="date" id="dateNaissance" name="dateNaissance" class="form-control" ng-model="user.prenom"  required>
+                <input type="date" id="dateNaissance" name="dateNaissance" class="form-control" ng-model="demande.client.dateNassance"  required>
               </div>
             </div>
           </div>
@@ -52,7 +65,7 @@
                   <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
               </label>
               <div class="col-sm-4">
-                <select name="situationFamiliale" class="form-control" ng-model="user.situationfamiliale" placeholder="Situation familiale" required autofocus>
+                <select name="situationFamiliale" class="form-control" ng-model="demande.client.situationfamiliale" placeholder="Situation familiale" required autofocus>
                   <option label="Situation familiale"></option>
                   <option  value="marie">Marié</option>
                   <option  value="celibataire">Célibataire</option>
@@ -68,7 +81,7 @@
                   <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
               </label>
               <div class="col-sm-4">
-                <textarea rows="2" name="AdresseActuelle" class="form-control" ng-model="user.adresse.adresse"  required autofocus>
+                <textarea rows="2" name="AdresseActuelle" class="form-control" ng-model="demande.client.adresse.adresse"  required autofocus>
                 </textarea>
               </div>
             </div>
@@ -81,7 +94,7 @@
                   <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
               </label>
               <div class="col-sm-4">
-                <input type="text" id="NumeroTelephone" name="NumeroTelephone" class="form-control" ng-model="user.adresse.telephonePortable"  required>
+                <input type="text" id="NumeroTelephone" name="NumeroTelephone" class="form-control" ng-model="demande.client.adresse.telephonePortable"  required>
 
               </div>
             </div>
