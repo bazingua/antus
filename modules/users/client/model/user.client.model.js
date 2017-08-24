@@ -16,6 +16,7 @@ angular.module('users.model').factory('UserModel', ['AdresseModel',
       this.prenom = data.prenom;
       this.nom = data.nom;
       this.civilite = data.civilite;
+      this.situationfamiliale = data.situationfamiliale;
       this.dateNassance = data.dateNassance || new Date();
       this.nationalite = data.nationalite;
       this.adresse = new AdresseModel(data.adresse);
