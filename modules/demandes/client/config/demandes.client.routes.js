@@ -26,6 +26,19 @@
           typeDemande: getType
         }
       })
+      .state('demandes.create', {
+        url: '/deposer',
+        templateUrl: '/modules/demandes/client/views/deposer-demandes.client.view.html',
+        controller: 'DeposerDemandesController',
+        controllerAs: 'vm',
+        data: {
+          pageTitle: 'Deposez une demandes'
+        },
+        resolve: {
+          typeDemande: getType,
+          banques: getBanques
+        }
+      })
       .state('demandes.view', {
         url: '/:demandeId',
         templateUrl: '/modules/demandes/client/views/view-demande.client.view.html',
@@ -53,5 +66,11 @@
 
   function getType(TypeService) {
     return TypeService.get().$promise;
+  }
+
+  getBanques.$inject = ['BanqueDemandeService'];
+
+  function getBanques(BanqueDemandeService) {
+    return BanqueDemandeService.getData().$promise;
   }
 }());
