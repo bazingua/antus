@@ -5,14 +5,15 @@
     .module('demandes')
     .controller('DeposerDemandesController', DeposerDemandesController);
 
-  DeposerDemandesController.$inject = ['$scope', 'DemandesService', 'typeDemande', 'banques'];
+  DeposerDemandesController.$inject = ['$scope', 'DemandesService', 'typeDemande', 'banques', 'DemandesModel'];
 
-  function DeposerDemandesController($scope, DemandesService, typeDemande, banques) {
+  function DeposerDemandesController($scope, DemandesService, typeDemande, banques, DemandesModel) {
     // typeDemande = arbre
     var vm = this;
 
     vm.typeDemande = typeDemande;
     $scope.typeDemande = typeDemande;
+    $scope.demande = new DemandesModel();
     vm.viewTreePanel = true;
     vm.viewFormPanel = false;
     vm.steps = [
@@ -66,6 +67,10 @@
     $scope.endTreeSelect = function () {
       vm.viewTreePanel = false;
       vm.viewFormPanel = true;
+    };
+
+    $scope.saveDemande = function () {
+      console.log('save now', $scope.demande);
     };
   }
 }());

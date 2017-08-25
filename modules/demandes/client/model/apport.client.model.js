@@ -1,4 +1,4 @@
-angular.module('demandes.model').factory([
+angular.module('demandes.model').factory('ApportModel', [
   /**
    * @description Apport model
    * @returns {ApportModel}

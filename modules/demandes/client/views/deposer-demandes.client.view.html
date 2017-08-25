@@ -26,8 +26,12 @@
               <span class="glyphicon glyphicon-chevron-left"></span>
               PRECEDENT
             </button>
-            <button ng-disabled="$isLast()" class="btn btn-default" ng-click="$nextStep()">
+            <button ng-show=" ! $isLast()" ng-disabled="$isLast()" class="btn btn-default" ng-click="$nextStep()">
               SUIVANT
+              <span class="glyphicon glyphicon-chevron-right"></span>
+            </button>
+            <button ng-show="$isLast()" class="btn btn-default" ng-click="saveDemande()">
+              Terminer
               <span class="glyphicon glyphicon-chevron-right"></span>
             </button>
           </div>

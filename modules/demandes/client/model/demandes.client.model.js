@@ -17,7 +17,7 @@ angular.module('demandes.model').factory('DemandesModel', ['ProjetModel', 'Patri
       this.patrimoine = new PatrimoineModel(data.patrimoine);
       this.financement = new FinancementModel(data.financement);
       this.client = new UserModel(data.client);
-      this.apportModel = new ApportModel(data.apportModel);
+      this.apport = new ApportModel(data.apport);
     }
 
     return DemandesModel;
