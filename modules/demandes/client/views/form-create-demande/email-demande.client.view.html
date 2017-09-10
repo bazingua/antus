@@ -1,7 +1,7 @@
 <section>
   <div class="col-xs-offset-2 col-xs-10 col-md-offset-1 col-md-11">
 
-              <form class="form-horizontal">
+              <form id="myForm" class="form-horizontal" ng-submit="foo()" novalidate>
                 <div class="row">
                 <div class="form-group">
                     <label class="control-label col-sm-4">ADRESSE E-MAIL EMPREUNTEUR:
@@ -9,8 +9,9 @@
                           <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                     </label>
                     <div class="col-sm-4">
-                        <input type="email" name="acquisition" class="form-control" id="acquisition" required
+                        <input type="email" name="mail" class="form-control" id="acquisition" required
                         ng-model="user.adresse.email">
+                      <div ng-messages="myForm.mail.$error" ng-messages-include="erreurs.html" ng-if="myForm.$submitted"></div>
                     </div>
                 </div>
 

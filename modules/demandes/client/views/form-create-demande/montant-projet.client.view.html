@@ -1,7 +1,7 @@
 <section>
     <div class="col-xs-offset-2 col-xs-10 col-md-offset-1 col-md-11">
 
-              <form class="form-horizontal">
+              <form id="myForm" class="form-horizontal" ng-submit="foo()" novalidate>
                 <div class="row">
                 <div class="form-group">
                     <label class="control-label col-sm-4">MONTANT ESTIMÉ DE VOTRE ACQUISITION :
@@ -9,8 +9,9 @@
                           <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                     </label>
                     <div class="col-sm-4">
-                        <input type="text" name="acquisition" class="form-control" id="acquisition"
-                        ng-model="demande.projet.montantProjet">
+                        <input type="text" name="montantProjet" class="form-control" id="acquisition"
+                        ng-model="demande.projet.montantProjet" required>
+                      <div ng-messages="myForm.montantProjet.$error" ng-messages-include="erreurs.html" ng-if="myForm.$submitted"></div>
                     </div>
                 </div>
 
@@ -33,21 +34,14 @@
 
                     <div class="col-sm-4">
                         <input type="text" name="notaire" class="form-control" id="notaire"
-                        ng-model="demande.projet.fraisNotaire">
+                        ng-model="demande.projet.fraisNotaire" required>
+                      <div ng-messages="myForm.notaire.$error" ng-messages-include="erreurs.html" ng-if="myForm.$submitted"></div>
                     </div>
                 </div>
 
                 </div>
 
-                <!--
-                                             <div class="col-sm-12" style="margin-top: 50px">
-                                               <div class="progress">
-                                                 <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" style="width: 29%; height: 50px">
 
-                                                 </div>
-                                               </div>
-
-                                </div> -->
 
             </form>
   </div>
