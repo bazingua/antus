@@ -3,16 +3,20 @@
     <div class="panel-body">
       <form class="form-horizontal">
 
-          <div class="row">
-            <div class="col-sm-3" ng-repeat="banque in banques">
-              <div class="col-sm-12 border-box-black" ng-click="demande.financement.banque = banque.libelle;">
-                <img ng-src="{{banque.logo}}" alt="Image" class="img-thumbnail imgBank img-radio">
-                <div class="btm-space-10">{{banque.libelle}}</div>
-              </div>
+        <div class="row">
+          <div class="col-sm-3" ng-repeat="banque in banques">
+
+            <div class="col-sm-12 " style="" ng-click="choiceBanquePrincipale(banque);">
+              <div ng-class="{'banque-checked': demande.financement.banque === banque.libelle, 'banque-unchecked': demande.financement.banque !== banque.libelle}" >  <i class="material-icons" style="font-size: 90px;color: #aaa">done</i> </div>
+              <img ng-src="{{banque.logo}}" alt="Image" class="img-thumbnail imgBank img-radio" />
+              <div class="btm-space-10 text-center"  >{{banque.libelle}}</div>
+            </div>
+
           </div>
-          </div>
+        </div>
       </form>
     </div>
+  </div>
   </div>
 </section>
 

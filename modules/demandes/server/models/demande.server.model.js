@@ -17,8 +17,7 @@ var DemandeSchema = new Schema({
   title: {
     type: String,
     default: '',
-    trim: true,
-    required: 'Title cannot be blank'
+    trim: true
   },
   content: {
     type: String,
@@ -29,9 +28,10 @@ var DemandeSchema = new Schema({
     type: Number,
     default: 0
   },
-  user: {
+  client: {
     type: Schema.ObjectId,
-    ref: 'User'
+    ref: 'User',
+    required: 'User is required'
   }
 });
 

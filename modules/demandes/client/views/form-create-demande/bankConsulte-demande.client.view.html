@@ -1,22 +1,20 @@
 <section>
-  <div class="col-xs-offset-2 col-xs-10 col-md-offset-1 col-md-11">
-    <div class="panel-body">
-      <form class="form-horizontal">
+    <div class="col-xs-offset-2 col-xs-10 col-md-offset-1 col-md-11">
+        <div class="panel-body">
+            <form class="form-horizontal">
 
-        <div class="row">
-          <div class="col-sm-3" ng-repeat="banque in banques">
+                <div class="row">
+                    <div class="col-sm-3" ng-repeat="banque in banques">
+                        <div class="col-sm-12 " style="" ng-click="choiceBanqueConsulte(banque);">
+                            <div ng-class="{'banque-checked': banque.checked , 'banque-unchecked': !banque.checked }"> <i class="material-icons" style="font-size: 90px;color: #aaa">done</i> </div>
+                            <img ng-src="{{banque.logo}}" alt="Image" class="img-thumbnail imgBank img-radio" />
+                            <div class="btm-space-10 text-center">{{banque.libelle}}</div>
+                        </div>
 
-            <div class="col-sm-12 border-box-black">
-              <!--   <img class="full-width img-responsive" style="height: 400px" > -->
-              <input type="checkbox" id="banque" />
-              <label for="banque"><img ng-src="{{banque.logo}}" alt="Image" class="img-thumbnail imgBank img-radio"></label>
-              <!-- <div class="btm-space-10"  >{{banque.libelle}}</div>-->
-            </div>
-
+                    </div>
+                </div>
+            </form>
         </div>
-        </div>
-      </form>
     </div>
-  </div>
-  </div>
+    </div>
 </section>
