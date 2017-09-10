@@ -1,17 +1,16 @@
 <section>
     <div class="col-xs-offset-2 col-xs-10 col-md-offset-1 col-md-11">
 
-              <form id="myForm" class="form-horizontal" ng-submit="foo()" novalidate>
-                <div class="row">
+        <form id="myForm" class="form-horizontal" ng-submit="foo()" novalidate>
+            <div class="row">
                 <div class="form-group">
                     <label class="control-label col-sm-4">MONTANT ESTIMÉ DE VOTRE ACQUISITION :
                       <a href="#" data-toggle="tooltip" title="" class="pull-right">
                           <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                     </label>
                     <div class="col-sm-4">
-                        <input type="text" name="montantProjet" class="form-control" id="acquisition"
-                        ng-model="demande.projet.montantProjet" required>
-                      <div ng-messages="myForm.montantProjet.$error" ng-messages-include="erreurs.html" ng-if="myForm.$submitted"></div>
+                        <input type="text" name="montantProjet" class="form-control" id="acquisition" ng-model="demande.projet.montantProjet" required />
+                        <div ng-messages="myForm.montantProjet.$error" ng-messages-include="erreur-demande.client.view.html" ng-if="myForm.$submitted"></div>
                     </div>
                 </div>
 
@@ -21,8 +20,7 @@
                           <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                     </label>
                     <div class="col-sm-4">
-                        <input type="text" name="travaux" class="form-control" id="travaux"
-                        ng-model="demande.projet.montantTravaux">
+                        <input type="text" name="travaux" class="form-control" id="travaux" ng-model="demande.projet.montantTravaux">
                     </div>
                 </div>
 
@@ -33,17 +31,16 @@
                     </label>
 
                     <div class="col-sm-4">
-                        <input type="text" name="notaire" class="form-control" id="notaire"
-                        ng-model="demande.projet.fraisNotaire" required>
-                      <div ng-messages="myForm.notaire.$error" ng-messages-include="erreurs.html" ng-if="myForm.$submitted"></div>
+                        <input type="text" name="notaire" class="form-control" id="notaire" ng-model="demande.projet.fraisNotaire" required>
+                        <div ng-messages="myForm.notaire.$error" ng-messages-include="erreur-demande.client.view.html" ng-if="myForm.$submitted"></div>
                     </div>
                 </div>
 
-                </div>
+            </div>
 
 
 
-            </form>
-  </div>
-</div>
+        </form>
+    </div>
+    </div>
 </section>

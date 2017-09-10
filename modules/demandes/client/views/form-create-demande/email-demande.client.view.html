@@ -11,7 +11,7 @@
                     <div class="col-sm-4">
                         <input type="email" name="mail" class="form-control" id="acquisition" required
                         ng-model="user.adresse.email">
-                      <div ng-messages="myForm.mail.$error" ng-messages-include="erreurs.html" ng-if="myForm.$submitted"></div>
+                      <div ng-messages="myForm.mail.$error" ng-messages-include="erreur-demande.client.view.html" ng-if="myForm.$submitted"></div>
                     </div>
                 </div>
 
@@ -24,27 +24,6 @@
                 </div>
 
                 </div>
-       <!--
-                <div class="row">
-                <div class="form-group">
-                    <div class="col-sm-2">
-                      <button type="submit"  class="btn btn-info btn-flat btn-block">Precedent</button>
-                  </div>
-                <div class="col-sm-8">
-
-                  <div class="progress">
-                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="37" aria-valuemin="0" aria-valuemax="100" style="width: 29%;">
-                      37%
-                    </div>
-                  </div>
-
-                </div>
-                <div class="col-sm-2">
-                    <button type="submit"  class="btn btn-info btn-block">Suivant</button>
-                  </div>
-                </div>
-                </div>
-                -->
             </form>
   </div>
 </section>
