@@ -1,7 +1,7 @@
 <section>
     <div class="col-xs-offset-2 col-xs-10 col-md-offset-1 col-md-11">
 
-        <form id="myForm" class="form-horizontal" ng-submit="foo()" novalidate>
+        <form name="myForm" class="form-horizontal" novalidate>
             <div class="row">
                 <div class="form-group">
                     <label class="control-label col-sm-4">MONTANT ESTIMÉ DE VOTRE ACQUISITION :
@@ -10,7 +10,8 @@
                     </label>
                     <div class="col-sm-4">
                         <input type="text" name="montantProjet" class="form-control" id="acquisition" ng-model="demande.projet.montantProjet" required />
-                        <div ng-messages="myForm.montantProjet.$error" ng-messages-include="erreur-demande.client.view.html" ng-if="myForm.$submitted"></div>
+                        <div ng-show="myForm.$submitted && myForm.montantProjet.$error.required" class="form-text-error">Veuillez entrer le montant de votre projet.</div>
+
                     </div>
                 </div>
 
@@ -32,15 +33,26 @@
 
                     <div class="col-sm-4">
                         <input type="text" name="notaire" class="form-control" id="notaire" ng-model="demande.projet.fraisNotaire" required>
-                        <div ng-messages="myForm.notaire.$error" ng-messages-include="erreur-demande.client.view.html" ng-if="myForm.$submitted"></div>
+                        <span ng-show="myForm.$submitted && myForm.notaire.$error.required" class="form-text-error"> Veuillez entrer le frais de notaire de votre projet.</span>
                     </div>
                 </div>
 
             </div>
 
 
+            <div class="page-header" style="background-color: rebeccapurple; padding:0; margin: 0; padding: 8px; text-align: center ">
+                <button ng-disabled="myForm.notaire.$error.required || myForm.montantProjet.$error.required" type="submit" class="btn btn-default">
+        SUIVANT
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </button>
+
+                <button type="submit" class="btn btn-default">
+        SUIVANT
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </button>
+            </div>
 
         </form>
     </div>
-    </div>
+
 </section>
