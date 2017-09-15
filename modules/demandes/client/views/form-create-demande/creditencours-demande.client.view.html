@@ -2,8 +2,7 @@
   <div class="col-xs-offset-2 col-xs-10 col-md-offset-1 col-md-11">
 
       <div class="panel-body">
-
-        <form name="" ng-submit="" class="" novalidate autocomplete="">
+       <form name="myForm" class="form-horizontal" novalidate>
 
           <fieldset style="">
 
@@ -15,7 +14,9 @@
                     <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                 </label>
                 <div class="col-sm-4">
-                  <input type="text" id="ResidencePrincipalMensualite" name="ResidencePrincipalMensualite" class="form-control" ng-model="demande.patrimoine.credit.principal.mensualite" placeholder="mensualite"  required>
+                  <input type="text" name="ResidencePrincipalMensualite" class="form-control" ng-model="demande.patrimoine.credit.principal.mensualite"   required>
+                  <div ng-show="myForm.$submitted && myForm.ResidencePrincipalMensualite.$error.required" class="form-text-error">Veuillez renseigner ce champ.</div>
+
                 </div>
                 <div class="col-sm-2">
                   <div class="input-group">
@@ -33,7 +34,8 @@
 
                 <div class="col-sm-2">
                   <div class="input-group">
-                    <input type="text" id="ResidencePrincipalRestant" name="ResidencePrincipalRestant" class="form-control" ng-model="demande.patrimoine.credit.principal.restant"  placeholder="Restant" required>
+                    <input type="text"  name="ResidencePrincipalRestant" class="form-control" ng-model="demande.patrimoine.credit.principal.restant"  required>
+                    <div ng-show="myForm.$submitted && myForm.ResidencePrincipalRestant.$error.required" class="form-text-error">Veuillez renseigner ce champ.</div>
                     <span class="input-group-addon">mois</span>
                   </div>
                 </div>
@@ -67,6 +69,7 @@
                 <div class="col-sm-2">
                   <div class="input-group">
                     <input type="text" id="ResidenceSecondaireRestant" name="ResidenceSecondaireRestant" class="form-control" ng-model="demande.patrimoine.credit.secondaire.restant"  placeholder="Restant" required>
+                    <div ng-show="myForm.$submitted && myForm.montantProjet.$error.required" class="form-text-error">Veuillez entrer le montant de votre projet.</div>
                     <span class="input-group-addon">mois</span>
                   </div>
                 </div>
@@ -80,7 +83,9 @@
                   <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
               </label>
               <div class="col-sm-4">
-                <input type="text" id="InvestissementLocatifMensualite" name="InvestissementLocatifMensualite" class="form-control" ng-model="demande.patrimoine.credit.locatif.mensualite" placeholder="mensualite"  required>
+                <input type="text"  name="InvestissementLocatifMensualite"
+                       class="form-control" ng-model="demande.patrimoine.credit.locatif.mensualite" placeholder="mensualite"  required>
+                <div ng-show="myForm.$submitted && myForm.ResidencePrincipalRestant.$error.required" class="form-text-error">Veuillez renseigner ce champ.</div>
               </div>
                 <div class="col-sm-2">
                 <div class="input-group">
@@ -98,7 +103,8 @@
 
               <div class="col-sm-2">
                 <div class="input-group">
-                  <input type="text" id="InvestissementLocatifRestant" name="InvestissementLocatifRestant" class="form-control" ng-model="demande.patrimoine.credit.locatif.restant"  placeholder="Restant" required>
+                  <input type="text" name="InvestissementLocatifRestant" class="form-control" ng-model="demande.patrimoine.credit.locatif.restant"  required>
+                  <div ng-show="myForm.$submitted && myForm.InvestissementLocatifRestant.$error.required" class="form-text-error">Veuillez renseigner ce champ.</div>
                   <span class="input-group-addon">mois</span>
                 </div>
               </div>
@@ -112,7 +118,8 @@
                       <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                   </label>
                   <div class="col-sm-4">
-                    <input type="text" id="AutreMensualite" name="AutresMensualite" class="form-control" ng-model="demande.patrimoine.credit.autre.mensualite" placeholder="mensualite"  required>
+                    <input type="text" name="AutresMensualite" class="form-control" ng-model="demande.patrimoine.credit.autre.mensualite" required>
+                    <div ng-show="myForm.$submitted && myForm.AutresMensualite.$error.required" class="form-text-error">Veuillez renseigner ce champ.</div>
                   </div>
                     <div class="col-sm-2">
                       <div class="input-group">
@@ -130,7 +137,8 @@
 
                     <div class="col-sm-2">
                       <div class="input-group">
-                        <input type="text" id="AutresRestant" name="AutresRestant" class="form-control" ng-model="demande.patrimoine.credit.autre.restant"  placeholder="Restant" required>
+                        <input type="text" name="AutresRestant" class="form-control" ng-model="demande.patrimoine.credit.autre.restant"  required>
+                        <div ng-show="myForm.$submitted && myForm.AutresRestant.$error.required" class="form-text-error">Veuillez renseigner ce champ.</div>
                         <span class="input-group-addon">mois</span>
                       </div>
                     </div>

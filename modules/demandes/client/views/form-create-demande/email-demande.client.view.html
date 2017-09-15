@@ -1,7 +1,7 @@
 <section>
   <div class="col-xs-offset-2 col-xs-10 col-md-offset-1 col-md-11">
 
-              <form id="myForm" class="form-horizontal" ng-submit="foo()" novalidate>
+              <form id="myForm" class="form-horizontal"  novalidate>
                 <div class="row">
                 <div class="form-group">
                     <label class="control-label col-sm-4">ADRESSE E-MAIL EMPREUNTEUR:
@@ -11,7 +11,7 @@
                     <div class="col-sm-4">
                         <input type="email" name="mail" class="form-control" id="acquisition" required
                         ng-model="user.adresse.email">
-                      <div ng-messages="myForm.mail.$error" ng-messages-include="erreur-demande.client.view.html" ng-if="myForm.$submitted"></div>
+                      <div ng-show="myForm.$submitted && myForm.mail.$error.required" class="form-text-error">Veuillez renseigner un mail valide.</div>
                     </div>
                 </div>
 

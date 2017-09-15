@@ -17,12 +17,10 @@
                 </label>
                 <div class="col-sm-4">
                   <select name="contratTravail" class="form-control" ng-model="demande.patrimoine.profession.typeContrat"  required autofocus>
-                    <option label="Contrat de Travail"></option>
                     <option  value="CDD">CDD</option>
                     <option  value="CDI">CDI</option>
                     <option  value="INTERIM">INTERIM</option>
                   </select>
-                  <div ng-messages="myForm.contratTravail.$error" ng-messages-include="erreur-demande.client.view.html" ng-if="myForm.$submitted"></div>
 
                 </div>
 
@@ -38,8 +36,8 @@
                     <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                 </label>
                 <div class="col-sm-4">
-                  <input type="text" id="dureeTravail" name="dureeTravail" class="form-control" ng-model="demande.patrimoine.profession.dureeContrat"  required>
-                  <div ng-messages="myForm.dureeTravail.$error" ng-messages-include="erreur-demande.client.view.html" ng-if="myForm.$submitted"></div>
+                  <input type="text" name="dureeTravail" class="form-control" ng-model="demande.patrimoine.profession.dureeContrat"  required>
+                  <div ng-show="myForm.$submitted && myForm.dureeTravail.$error.required" class="form-text-error">Veuillez renseigner ce champ.</div>
                 </div>
 
               </div>

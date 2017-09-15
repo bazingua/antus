@@ -3,7 +3,7 @@
 
      <div class="panel-body">
 
-        <form id="myForm" class="form-horizontal" ng-submit="foo()" novalidate>
+        <form id="myForm" class="form-horizontal"  novalidate>
 
           <div class="row">
             <div class="form-group">
@@ -28,7 +28,8 @@
                   <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
               </label>
               <div class="col-sm-4">
-                <input type="text" id="nom" name="nom" class="form-control" ng-model="demande.client.nom" placeholder="Nom" required>
+                <input type="text"  name="nom" class="form-control" ng-model="demande.client.nom" placeholder="Nom" required>
+                <div ng-show="myForm.$submitted && myForm.nom.$error.required" class="form-text-error">Veuillez renseigner ce champ</div>
               </div>
             </div>
           </div>
@@ -40,7 +41,8 @@
                   <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
               </label>
               <div class="col-sm-4">
-                <input type="text" id="prenom" name="prenom" class="form-control" ng-model="demande.client.prenom" placeholder="prénom" required>
+                <input type="text" name="prenom" class="form-control" ng-model="demande.client.prenom" placeholder="prénom" required>
+                <div ng-show="myForm.$submitted && myForm.prenom.$error.required" class="form-text-error">Veuillez renseigner ce champ</div>
               </div>
             </div>
           </div>
@@ -53,7 +55,8 @@
                   <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
               </label>
               <div class="col-sm-4">
-                <input type="date" id="dateNaissance" name="dateNaissance" class="form-control" ng-model="demande.client.dateNassance"  required>
+                <input type="date"  name="dateNaissance" class="form-control" ng-model="demande.client.dateNassance"  required>
+                <div ng-show="myForm.$submitted && myForm.dateNaissance.$error.required" class="form-text-error">Veuillez renseigner ce champ</div>
               </div>
             </div>
           </div>
@@ -82,6 +85,7 @@
               </label>
               <div class="col-sm-4">
                 <textarea rows="2" name="AdresseActuelle" class="form-control" ng-model="demande.client.adresse.adresse"  required autofocus>
+                <div ng-show="myForm.$submitted && myForm.AdresseActuelle.$error.required" class="form-text-error">Veuillez renseigner ce champ</div>
                 </textarea>
               </div>
             </div>
@@ -95,6 +99,7 @@
               </label>
               <div class="col-sm-4">
                 <input type="text" id="NumeroTelephone" name="NumeroTelephone" class="form-control" ng-model="demande.client.adresse.telephonePortable"  required>
+                <div ng-show="myForm.$submitted && myForm.NumeroTelephone.$error.required" class="form-text-error">Veuillez renseigner ce champ</div>
 
               </div>
             </div>

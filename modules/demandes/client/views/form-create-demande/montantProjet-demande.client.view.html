@@ -4,7 +4,7 @@
 
         <div class="panel-body">
 
-            <form name="" ng-submit="" class="" novalidate autocomplete="">
+          <form id="myForm" class="form-horizontal"  novalidate>
 
                 <fieldset style="">
 
@@ -16,8 +16,8 @@
                     <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                 </label>
                             <div class="col-sm-4">
-                                <input type="text" id="montantApport" name="montantApport" class="form-control" ng-model="demande.apport.montant" placeholder="" required>
-
+                                <input type="text" name="montantApport" class="form-control" ng-model="demande.apport.montant" required>
+                              <div ng-show="myForm.$submitted && myForm.montantApport.$error.required" class="form-text-error">Veuillez renseigner ce champ.</div>
                             </div>
 
                         </div>
@@ -32,7 +32,8 @@
                     <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                 </label>
                             <div class="col-sm-4">
-                                <input type="text" id="montantFinal" name="montantFinal" class="form-control" ng-model="demande.apport.montantFinale" placeholder="" required>
+                                <input type="text" name="montantFinal" class="form-control" ng-model="demande.apport.montantFinale" placeholder="" required>
+                              <div ng-show="myForm.$submitted && myForm.montantFinal.$error.required" class="form-text-error">Veuillez renseigner ce champ.</div>
 
                             </div>
 

@@ -1,7 +1,7 @@
 <section>
   <div class="col-xs-offset-2 col-xs-10 col-md-offset-1 col-md-11">
    <div class="panel-body">
-              <form id="myForm" class="form-horizontal" ng-submit="foo()" novalidate>
+              <form id="myForm" class="form-horizontal"  novalidate>
                 <div class="row">
 
                 <div class="form-group">
@@ -10,9 +10,10 @@
                           <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                     </label>
                    <div class="col-sm-4">
-                        <input type="text" ng-model="demande.patrimoine.revenu.locatif" name="revenuLocatif" class="form-control" id="revenuLocatif"  required >
-                    </div>
-                  <div ng-messages="myForm.revenuLocatif.$error" ng-messages-include="erreur-demande.client.view.html" ng-if="myForm.$submitted"></div>
+                        <input type="text" ng-model="demande.patrimoine.revenu.locatif" name="revenuLocatif" class="form-control"  required >
+                      <div ng-show="myForm.$submitted && myForm.revenuLocatif.$error.required" class="form-text-error">Veuillez renseigner ce champ</div>
+
+                   </div>
                 </div>
 
                 <div class="form-group">
