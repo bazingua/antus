@@ -10,7 +10,7 @@
                     </label>
                     <div class="col-sm-4">
                         <input type="email" name="mail" class="form-control" id="acquisition" required ng-model="user.adresse.email">
-                        <div ng-show="myForm.$submitted && myForm.mail.$error.required" class="form-text-error">Veuillez renseigner un mail valide.</div>
+                        <div ng-show="myForm.$submitted && (myForm.mail.$error.required || myForm.mail.$error.email)" class="form-text-error">Veuillez renseigner un mail valide.</div>
                     </div>
                 </div>
 
@@ -31,7 +31,7 @@
       PRECEDENT
     </button>
 
-                <button type="submit" class="btn btn-default" ng-click="myForm.mail.$error.required ? error = false : $nextStep();"> 
+                <button type="submit" class="btn btn-default" ng-click="myForm.mail.$error.email || myForm.mail.$error.required ? error = false : $nextStep();"> 
       SUIVANT
       <span class="glyphicon glyphicon-chevron-right"></span>
     </button>
