@@ -1,52 +1,66 @@
 <section class="row">
-  <div class="col-xs-offset-2 col-xs-10 col-md-offset-1 col-md-11">
+    <div class="col-xs-offset-2 col-xs-10 col-md-offset-1 col-md-11">
 
-      <div class="panel-body">
+        <div class="panel-body">
 
-        <form id="myForm" class="form-horizontal" ng-submit="foo()" novalidate>
+            <form name="myForm" class="form-horizontal" ng-submit="foo()" novalidate>
 
-          <fieldset style="">
+                <fieldset>
 
 
-            <div class="row">
+                    <div class="row">
 
-              <div class="form-group">
-                <label class="control-label col-sm-4" style="text-align: right ">Contrat de Travail :
+                        <div class="form-group">
+                            <label class="control-label col-sm-4" style="text-align: right ">Contrat de Travail :
                   <a href="#" data-toggle="tooltip" title="Contrat de Travail" class="pull-right">
                     <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                 </label>
-                <div class="col-sm-4">
-                  <select name="contratTravail" class="form-control" ng-model="demande.patrimoine.profession.typeContrat"  required autofocus>
+                            <div class="col-sm-4">
+                                <select name="contratTravail" class="form-control" ng-model="demande.patrimoine.profession.typeContrat" required autofocus>
                     <option  value="CDD">CDD</option>
                     <option  value="CDI">CDI</option>
                     <option  value="INTERIM">INTERIM</option>
                   </select>
 
-                </div>
+                            </div>
 
-              </div>
-            </div>
-            <br>
+                        </div>
+                    </div>
+                    <br>
 
-            <div class="row">
+                    <div class="row">
 
-              <div class="form-group">
-                <label class="control-label col-sm-4" style="text-align: right ">Durée de Travail :
+                        <div class="form-group">
+                            <label class="control-label col-sm-4" style="text-align: right ">Durée de Travail :
                   <a href="#" data-toggle="tooltip" title="Durée de Travail" class="pull-right">
                     <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                 </label>
-                <div class="col-sm-4">
-                  <input type="text" name="dureeTravail" class="form-control" ng-model="demande.patrimoine.profession.dureeContrat"  required>
-                  <div ng-show="myForm.$submitted && myForm.dureeTravail.$error.required" class="form-text-error">Veuillez renseigner ce champ.</div>
+                            <div class="col-sm-4">
+                                <input type="text" name="dureeTravail" class="form-control" ng-model="demande.patrimoine.profession.dureeContrat" required>
+                                <div ng-show="myForm.$submitted && myForm.dureeTravail.$error.required" class="form-text-error">Veuillez renseigner ce champ.</div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <br>
+
+
+                </fieldset>
+
+
+                <div class="page-header" style="background-color: rebeccapurple; padding:0; margin: 0; padding: 8px; text-align: center ">
+                    <button ng-disabled="$isFirst()" class="btn btn-default" ng-click="$previousStep()">
+<span class="glyphicon glyphicon-chevron-left"></span>
+PRECEDENT
+</button>
+
+                    <button type="submit" class="btn btn-default" ng-click="myForm.dureeTravail.$error.required ? error = false : $nextStep();"> 
+SUIVANT
+<span class="glyphicon glyphicon-chevron-right"></span>
+</button>
                 </div>
 
-              </div>
-            </div>
-            <br>
-
-
-          </fieldset>
-        </form>
-      </div>
+            </form>
+        </div>
     </div>
 </section>

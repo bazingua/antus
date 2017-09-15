@@ -71,9 +71,10 @@
         $scope.saveDemande = function() {
             var demandeToSave = angular.copy($scope.demande);
             console.log('save now', $scope.demande);
-            DemandesService.save(demandeToSave)
+            /*DemandesService.save(demandeToSave)
                 .then(onSaveSuccess)
                 .catch(onSaveError);
+                */
         };
 
         /**

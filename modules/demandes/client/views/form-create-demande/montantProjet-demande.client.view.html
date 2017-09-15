@@ -4,7 +4,7 @@
 
         <div class="panel-body">
 
-          <form id="myForm" class="form-horizontal"  novalidate>
+            <form name="myForm" class="form-horizontal" novalidate>
 
                 <fieldset style="">
 
@@ -17,7 +17,7 @@
                 </label>
                             <div class="col-sm-4">
                                 <input type="text" name="montantApport" class="form-control" ng-model="demande.apport.montant" required>
-                              <div ng-show="myForm.$submitted && myForm.montantApport.$error.required" class="form-text-error">Veuillez renseigner ce champ.</div>
+                                <div ng-show="myForm.$submitted && myForm.montantApport.$error.required" class="form-text-error">Veuillez renseigner ce champ.</div>
                             </div>
 
                         </div>
@@ -33,7 +33,7 @@
                 </label>
                             <div class="col-sm-4">
                                 <input type="text" name="montantFinal" class="form-control" ng-model="demande.apport.montantFinale" placeholder="" required>
-                              <div ng-show="myForm.$submitted && myForm.montantFinal.$error.required" class="form-text-error">Veuillez renseigner ce champ.</div>
+                                <div ng-show="myForm.$submitted && myForm.montantFinal.$error.required" class="form-text-error">Veuillez renseigner ce champ.</div>
 
                             </div>
 
@@ -73,6 +73,20 @@
                     </div>
                     <br>
                 </fieldset>
+
+
+                <div class="page-header" style="background-color: rebeccapurple; padding:0; margin: 0; padding: 8px; text-align: center ">
+                    <button ng-disabled="$isFirst()" class="btn btn-default" ng-click="$previousStep()">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      PRECEDENT
+    </button>
+
+                    <button type="submit" class="btn btn-default" ng-click="myForm.montantFinal.$error.required  && myForm.montantApport.$error.required ? error = false : $nextStep();"> 
+      SUIVANT
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </button>
+                </div>
+
             </form>
         </div>
     </div>

@@ -1,50 +1,60 @@
 <section>
-  <div class="col-xs-offset-2 col-xs-10 col-md-offset-1 col-md-11">
-   <div class="panel-body">
-              <form id="myForm" class="form-horizontal"  novalidate>
+    <div class="col-xs-offset-2 col-xs-10 col-md-offset-1 col-md-11">
+        <div class="panel-body">
+            <form name="myForm" class="form-horizontal" novalidate>
                 <div class="row">
 
-                <div class="form-group">
-                    <label class="control-label col-sm-4">REVENUS LOCATIFS EXISTANT PAR MOIS:
+                    <div class="form-group">
+                        <label class="control-label col-sm-4">REVENUS LOCATIFS EXISTANT PAR MOIS:
                       <a href="#" data-toggle="tooltip" title="" class="pull-right">
                           <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                     </label>
-                   <div class="col-sm-4">
-                        <input type="text" ng-model="demande.patrimoine.revenu.locatif" name="revenuLocatif" class="form-control"  required >
-                      <div ng-show="myForm.$submitted && myForm.revenuLocatif.$error.required" class="form-text-error">Veuillez renseigner ce champ</div>
+                        <div class="col-sm-4">
+                            <input type="text" ng-model="demande.patrimoine.revenu.locatif" name="revenuLocatif" class="form-control" required>
+                            <div ng-show="myForm.$submitted && myForm.revenuLocatif.$error.required" class="form-text-error">Veuillez renseigner ce champ</div>
 
-                   </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="control-label col-sm-4">PENSION ALIMENTAIRES:
-                      <a href="#" data-toggle="tooltip" title="" class="pull-right">
-                          <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
-                    </label>
-                   <div class="col-sm-4">
-                        <input type="text" name="passionAli" class="form-control" id="passionAli"
-                        ng-model="demande.patrimoine.revenu.pensionAlimentaire">
+                        </div>
                     </div>
-                </div>
 
-
-                <div class="form-group">
-                    <label class="control-label col-sm-4">CESSION DE SALAIRES:
+                    <div class="form-group">
+                        <label class="control-label col-sm-4">PENSION ALIMENTAIRES:
                       <a href="#" data-toggle="tooltip" title="" class="pull-right">
                           <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                     </label>
-                   <div class="col-sm-4">
-                        <input type="text" name="cessionSalaire" class="form-control" id="cessionSalaire"
-                        ng-model="demande.patrimoine.revenu.cessionSalaire">
+                        <div class="col-sm-4">
+                            <input type="text" name="passionAli" class="form-control" id="passionAli" ng-model="demande.patrimoine.revenu.pensionAlimentaire">
+                        </div>
                     </div>
-                </div>
+
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-4">CESSION DE SALAIRES:
+                      <a href="#" data-toggle="tooltip" title="" class="pull-right">
+                          <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                    </label>
+                        <div class="col-sm-4">
+                            <input type="text" name="cessionSalaire" class="form-control" id="cessionSalaire" ng-model="demande.patrimoine.revenu.cessionSalaire">
+                        </div>
+                    </div>
 
 
                 </div>
 
+
+                <div class="page-header" style="background-color: rebeccapurple; padding:0; margin: 0; padding: 8px; text-align: center ">
+                    <button ng-disabled="$isFirst()" class="btn btn-default" ng-click="$previousStep()">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        PRECEDENT
+      </button>
+
+                    <button type="submit" class="btn btn-default" ng-click="myForm.revenuLocatif.$error.required ? error = false : $nextStep();"> 
+        SUIVANT
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </button>
+                </div>
 
             </form>
-  </div>
-</div>
-  </div>
+        </div>
+    </div>
+    </div>
 </section>

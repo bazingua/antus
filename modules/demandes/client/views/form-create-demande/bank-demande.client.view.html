@@ -1,28 +1,36 @@
 <section>
-  <div class="col-xs-offset-2 col-xs-10 col-md-offset-1 col-md-11">
-    <div class="panel-body">
-      <form class="form-horizontal">
+    <div class="col-xs-offset-2 col-xs-10 col-md-offset-1 col-md-11">
+        <div class="panel-body">
+            <form class="form-horizontal">
 
-        <div class="row">
-          <div class="col-sm-3" ng-repeat="banque in banques">
+                <div class="row">
+                    <div class="col-sm-3" ng-repeat="banque in banques">
 
-            <div class="col-sm-12 " style="" ng-click="choiceBanquePrincipale(banque);">
-              <div ng-class="{'banque-checked': demande.financement.banque === banque.libelle, 'banque-unchecked': demande.financement.banque !== banque.libelle}" >  <i class="material-icons" style="font-size: 90px;color: #aaa">done</i> </div>
-              <img ng-src="{{banque.logo}}" alt="Image" class="img-thumbnail imgBank img-radio" />
-              <div class="btm-space-10 text-center"  >{{banque.libelle}}</div>
-            </div>
+                        <div class="col-sm-12 " style="" ng-click="choiceBanquePrincipale(banque);">
+                            <div ng-class="{'banque-checked': demande.financement.banque === banque.libelle, 'banque-unchecked': demande.financement.banque !== banque.libelle}"> <i class="material-icons" style="font-size: 90px;color: #aaa">done</i> </div>
+                            <img ng-src="{{banque.logo}}" alt="Image" class="img-thumbnail imgBank img-radio" />
+                            <div class="btm-space-10 text-center">{{banque.libelle}}</div>
+                        </div>
 
-          </div>
+                    </div>
+                </div>
+
+
+                <div class="page-header" style="background-color: rebeccapurple; padding:0; margin: 0; padding: 8px; text-align: center ">
+                    <button ng-disabled="$isFirst()" class="btn btn-default" ng-click="$previousStep()">
+<span class="glyphicon glyphicon-chevron-left"></span>
+PRECEDENT
+</button>
+
+                    <button type="submit" class="btn btn-default" ng-click="false ? error = false : $nextStep();"> 
+SUIVANT
+<span class="glyphicon glyphicon-chevron-right"></span>
+</button>
+                </div>
+
+
+            </form>
         </div>
-      </form>
     </div>
-  </div>
-  </div>
+    </div>
 </section>
-
-
-
-
-
-
-
