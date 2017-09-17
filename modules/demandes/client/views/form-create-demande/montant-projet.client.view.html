@@ -1,54 +1,60 @@
 <section>
-    <div class="col-xs-offset-2 col-xs-10 col-md-offset-1 col-md-11">
-
-        <form name="montantProjetForm" class="form-horizontal" novalidate>
-            <div class="row">
-                <div class="form-group">
-                    <label class="control-label col-sm-4">MONTANT ESTIMÉ DE VOTRE ACQUISITION :
+    <form name="montantProjetForm" class="form-horizontal" novalidate>
+        <div class="row">
+            <div class="form-group">
+                <label class="control-label col-sm-4">MONTANT ESTIMÉ DE VOTRE ACQUISITION :
                       <a href="#" data-toggle="tooltip" title="" class="pull-right">
                           <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                     </label>
-                    <div class="col-sm-4">
-                        <input type="text" name="montantProjet" class="form-control" id="acquisition" ng-model="demande.projet.montantProjet" required />
-                        <span ng-show="montantProjetForm.$submitted && montantProjetForm.montantProjet.$error.required" class="form-text-error">Veuillez entrer le montant de votre projet.</span>
+                <div class="col-sm-4">
+                    <input type="text" name="montantProjet" class="form-control" id="acquisition" ng-model="demande.projet.montantProjet" required />
+                    <span ng-show="montantProjetForm.$submitted && montantProjetForm.montantProjet.$error.required" class="form-text-error">Veuillez entrer le montant de votre projet.</span>
 
-                    </div>
                 </div>
+            </div>
 
-                <div class="form-group">
-                    <label class="control-label col-sm-4">MONTANT ESTIMÉ DES TRAVAUX :
+            <div class="form-group">
+                <label class="control-label col-sm-4">MONTANT ESTIMÉ DES TRAVAUX :
                       <a href="#" data-toggle="tooltip" title="Indiquez le montant du ou des devis des entreprise(s) pour faire les travaux. Si vous ne connaissez pas le montant exact, une estimation est suffisante." class="pull-right">
                           <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                     </label>
-                    <div class="col-sm-4">
-                        <input type="text" name="travaux" class="form-control" id="travaux" ng-model="demande.projet.montantTravaux">
-                    </div>
+                <div class="col-sm-4">
+                    <input type="text" name="travaux" class="form-control" id="travaux" ng-model="demande.projet.montantTravaux">
                 </div>
+            </div>
 
-                <div class="form-group">
-                    <label class="control-label col-sm-4">FRAIS DE NOTAIRE :
+            <div class="form-group">
+                <label class="control-label col-sm-4">FRAIS DE NOTAIRE :
                       <a href="#" data-toggle="tooltip" title="Prix estimé du bien" class="pull-right">
                           <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                     </label>
 
-                    <div class="col-sm-4">
-                        <input type="text" name="notaire" class="form-control" id="notaire" ng-model="demande.projet.fraisNotaire" required>
-                        <span ng-show="montantProjetForm.$submitted && montantProjetForm.notaire.$error.required" class="form-text-error"> Veuillez entrer le frais de notaire de votre projet.</span>
-                    </div>
+                <div class="col-sm-4">
+                    <input type="text" name="notaire" class="form-control" id="notaire" ng-model="demande.projet.fraisNotaire" required>
+                    <span ng-show="montantProjetForm.$submitted && montantProjetForm.notaire.$error.required" class="form-text-error"> Veuillez entrer le frais de notaire de votre projet.</span>
                 </div>
+            </div>
 
+        </div>
+
+
+        <div class="row page-header" style="background-color: rebeccapurple; padding:0px ; margin: 0px;height: 50px">
+            <div class="col-md-2 nopadding">
+                <button ng-disabled="node.next === 'form'" class="btn border-none" style="height: 50px;width: 101%;" ng-click="  vm.viewTreePanel = true;vm.viewFormPanel = false; ">
+          <span class="glyphicon glyphicon-chevron-left "></span>  PRECEDENT
+        </button>
+            </div>
+            <div class="col-md-8"></div>
+            <div class="col-md-2  nopadding text-right">
+                <button type="submit" class="btn  border-none" style="height: 50px;width: 101%" ng-click="montantProjetForm.notaire.$error.required && montantProjetForm.montantProjet.$error.required ? error = false : $nextStep();"> 
+            SUIVANT
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </button>
             </div>
 
 
-            <div class="page-header" style="background-color: rebeccapurple; padding:0; margin: 0; padding: 8px; text-align: center ">
+        </div>
 
-                <button type="submit" class="btn btn-default" ng-click="montantProjetForm.notaire.$error.required && montantProjetForm.montantProjet.$error.required ? error = false : $nextStep();"> 
-        SUIVANT
-        <span class="glyphicon glyphicon-chevron-right"></span>
-      </button>
-            </div>
-
-        </form>
-    </div>
+    </form>
 
 </section>

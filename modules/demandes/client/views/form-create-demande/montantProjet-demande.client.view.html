@@ -1,93 +1,89 @@
-<section class="row">
-    <div class="col-xs-offset-2 col-xs-10 col-md-offset-1 col-md-11">
+<form name="myForm" class="form-horizontal" novalidate>
 
+    <div>
 
-        <div class="panel-body">
+        <div class="row">
 
-            <form name="myForm" class="form-horizontal" novalidate>
-
-                <fieldset style="">
-
-                    <div class="row">
-
-                        <div class="form-group">
-                            <label class="control-label col-sm-4" style="text-align: right ">Montant de l’apport que vous faites :
+            <div class="form-group">
+                <label class="control-label col-sm-4" style="text-align: right ">Montant de l’apport que vous faites :
                   <a href="#" data-toggle="tooltip" title="Montant de l’apport que vous faites" class="pull-right">
                     <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                 </label>
-                            <div class="col-sm-4">
-                                <input type="text" name="montantApport" class="form-control" ng-model="demande.apport.montant" required>
-                                <div ng-show="myForm.$submitted && myForm.montantApport.$error.required" class="form-text-error">Veuillez renseigner ce champ.</div>
-                            </div>
+                <div class="col-sm-4">
+                    <input type="text" name="montantApport" class="form-control" ng-model="demande.apport.montant" required>
+                    <div ng-show="myForm.$submitted && myForm.montantApport.$error.required" class="form-text-error">Veuillez renseigner ce champ.</div>
+                </div>
 
-                        </div>
-                    </div>
-                    <br>
+            </div>
+        </div>
+        <br>
 
-                    <div class="row">
+        <div class="row">
 
-                        <div class="form-group">
-                            <label class="control-label col-sm-4" style="text-align: right ">Montant finale souhaitée :
+            <div class="form-group">
+                <label class="control-label col-sm-4" style="text-align: right ">Montant finale souhaitée :
                   <a href="#" data-toggle="tooltip" title="Montant finale souhaitée" class="pull-right">
                     <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                 </label>
-                            <div class="col-sm-4">
-                                <input type="text" name="montantFinal" class="form-control" ng-model="demande.apport.montantFinale" placeholder="" required>
-                                <div ng-show="myForm.$submitted && myForm.montantFinal.$error.required" class="form-text-error">Veuillez renseigner ce champ.</div>
+                <div class="col-sm-4">
+                    <input type="text" name="montantFinal" class="form-control" ng-model="demande.apport.montantFinale" placeholder="" required>
+                    <div ng-show="myForm.$submitted && myForm.montantFinal.$error.required" class="form-text-error">Veuillez renseigner ce champ.</div>
 
-                            </div>
+                </div>
 
-                        </div>
-                    </div>
-                    <br>
+            </div>
+        </div>
+        <br>
 
-                    <div class="row">
+        <div class="row">
 
-                        <div class="form-group">
-                            <label class="control-label col-sm-4" style="text-align: right ">Duree souhaite :
+            <div class="form-group">
+                <label class="control-label col-sm-4" style="text-align: right ">Duree souhaite :
                   <a href="#" data-toggle="tooltip" title="Montant finale souhaitée" class="pull-right">
                     <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                 </label>
-                            <div class="col-sm-4">
-                                <input type="text" id="dureeSouhaite" name="dureeSouhaite" class="form-control" ng-model="demande.apport.dureeSouhaite" placeholder="" required>
+                <div class="col-sm-4">
+                    <input type="text" id="dureeSouhaite" name="dureeSouhaite" class="form-control" ng-model="demande.apport.dureeSouhaite" placeholder="" required>
 
-                            </div>
+                </div>
 
-                        </div>
-                    </div>
-                    <br>
+            </div>
+        </div>
+        <br>
 
-                    <div class="row">
+        <div class="row">
 
-                        <div class="form-group">
-                            <label class="control-label col-sm-4" style="text-align: right ">Montant maximum mensualite souhaite :
+            <div class="form-group">
+                <label class="control-label col-sm-4" style="text-align: right ">Montant maximum mensualite souhaite :
                   <a href="#" data-toggle="tooltip" title="Montant maximum mensualite souhaite" class="pull-right">
                     <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                 </label>
-                            <div class="col-sm-4">
-                                <input type="text" id="montantMensuelSouhaiter" name="montantMensuelSouhaiter" class="form-control" ng-model="demande.apport.montantMaxSouhaite" placeholder="" required>
+                <div class="col-sm-4">
+                    <input type="text" id="montantMensuelSouhaiter" name="montantMensuelSouhaiter" class="form-control" ng-model="demande.apport.montantMaxSouhaite" placeholder="" required>
 
-                            </div>
-
-                        </div>
-                    </div>
-                    <br>
-                </fieldset>
-
-
-                <div class="page-header" style="background-color: rebeccapurple; padding:0; margin: 0; padding: 8px; text-align: center ">
-                    <button ng-disabled="$isFirst()" class="btn btn-default" ng-click="$previousStep()">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-      PRECEDENT
-    </button>
-
-                    <button type="submit" class="btn btn-default" ng-click="myForm.montantFinal.$error.required  && myForm.montantApport.$error.required ? error = false : $nextStep();"> 
-      SUIVANT
-      <span class="glyphicon glyphicon-chevron-right"></span>
-    </button>
                 </div>
 
-            </form>
+            </div>
+        </div>
+        <br>
+    </div>
+
+    <div class="row page-header" style="background-color: rebeccapurple; padding:0px ; margin: 0px;height: 50px">
+        <div class="col-md-2 nopadding">
+            <button ng-disabled="$isFirst()" class="btn border-none" style="height: 50px;width: 101%;" ng-click="$previousStep()">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        PRECEDENT
+      </button>
+
+        </div>
+        <div class="col-md-8"></div>
+        <div class="col-md-2  nopadding text-right">
+            <button type="submit" class="btn  border-none" style="height: 50px;width: 101%" ng-click="myForm.montantFinal.$error.required  && myForm.montantApport.$error.required ? error = false : $nextStep();"> 
+            SUIVANT
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </button>
+
         </div>
     </div>
-</section>
+
+</form>

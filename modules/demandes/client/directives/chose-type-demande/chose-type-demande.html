@@ -1,4 +1,6 @@
-<div style="background-color: #7a43b6; color: #fff;" class=""> <h3 class="color-white padding">{{node.libelle}}</h3></div>
+<div style="background-color: #7a43b6; color: #fff;" class="">
+    <h3 class="color-white padding">{{node.libelle}}</h3>
+</div>
 
 <!--
     <div  ng-repeat="type in node.fils"  class="btn-group  " role="group">
@@ -9,24 +11,27 @@
 -->
 <br/>
 <nav class="navbar navbar-default" style="margin: 20px">
-  <div class="container-fluid">
-    <ul  ng-repeat="type in node.fils" class="nav navbar-nav">
+    <div class="container-fluid">
+        <ul ng-repeat="type in node.fils" class="nav navbar-nav">
 
-      <li style="padding:0" class="" ng-click="choiceType(type)" ><a  href="#">{{type.libelle}}</a></li>
-    </ul>
-  </div>
+            <li style="padding:0" class="" ng-click=" choiceType(type)"><a href="#">{{type.libelle}}</a></li>
+        </ul>
+    </div>
 </nav>
 
-<!--
-  <div  class="btn-group  " role="group">
-    <div ng-repeat="type in node.fils" >
-      <button ng-click="choiceType(type)" style="cursor: pointer" type="button" class="btn btn-default pad">
-        <span class=" text-item-choice "><i class="material-icons " style=" color: #555">{{type.icone}}</i></span>
-        <span class="text-item-choice" style=" color: #555">{{type.libelle}}</span>
-      </button>
 
+<div class="row page-header" style="background-color: rebeccapurple; padding:0px ; margin: 0px;height: 50px">
+    <div class="col-md-2 nopadding">
+        <button ng-disabled="!node.prev.id" class="btn border-none" style="height: 50px;width: 101%;" ng-click=" navigation(node.prev) ">
+          <span class="glyphicon glyphicon-chevron-left "></span>  PRECEDENT
+        </button>
+    </div>
+    <div class="col-md-8"></div>
+    <div class="col-md-2  nopadding text-right">
+        <button type="submit " class="btn  border-none" style="height: 50px;width: 101%" ng-disabled="!node.next.id && node.next !== 'form' " ng-click=" navigation(node.next, true); "> 
+          SUIVANT <span class="glyphicon glyphicon-chevron-right "></span>
+        </button>
     </div>
 
-  </div>
 
--->
+</div>

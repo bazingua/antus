@@ -16,6 +16,8 @@
         $scope.demande = new DemandesModel();
         vm.viewTreePanel = true;
         vm.viewFormPanel = false;
+        $scope.current = 0;
+        // $scope.node = $scope.typeDemande;
         vm.steps = [{
                 templateUrl: 'modules/demandes/client/views/form-create-demande/montant-projet.client.view.html',
                 title: 'Définir le montant et caractère de votre projet'
@@ -62,11 +64,18 @@
             }
         ];
         $scope.banques = banques;
-
-        $scope.endTreeSelect = function() {
+        $scope.choicedNode;
+        $scope.endTreeSelect = function(type) {
+            $scope.choicedNode = type;
             vm.viewTreePanel = false;
             vm.viewFormPanel = true;
         };
+        $scope.endNavigateTree = function(type) {
+            vm.viewTreePanel = false;
+            vm.viewFormPanel = true;
+        };
+
+
 
         $scope.saveDemande = function() {
             var demandeToSave = angular.copy($scope.demande);
