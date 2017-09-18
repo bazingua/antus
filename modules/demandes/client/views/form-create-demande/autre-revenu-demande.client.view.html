@@ -9,7 +9,7 @@
                     </label>
                 <div class="col-sm-4">
                     <input type="text" ng-model="demande.patrimoine.revenu.locatif" name="revenuLocatif" class="form-control" required>
-                    <div ng-show="myForm.$submitted && myForm.revenuLocatif.$error.required" class="form-text-error">Veuillez renseigner ce champ</div>
+                    <div ng-show="myForm.$submitted && myForm.revenuLocatif.$error.required" class="form-text-error">Veuillez entrer le revenu locatif</div>
 
                 </div>
             </div>
@@ -49,7 +49,7 @@
             <div class="col-md-8"></div>
             <div class="col-md-2  nopadding text-right">
 
-                <button type="submit" class="btn  border-none" style="height: 50px;width: 101%" ng-click="myForm.revenuLocatif.$error.required ? error = false : $nextStep();"> 
+                <button type="submit" class="btn  border-none" style="height: 50px;width: 101%" ng-click="myForm.revenuLocatif.$error.required ? error = false : $nextStep();">
                     SUIVANT
                     <span class="glyphicon glyphicon-chevron-right"></span>
                   </button>

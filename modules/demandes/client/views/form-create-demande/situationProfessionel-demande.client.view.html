@@ -36,7 +36,7 @@
                 </label>
                         <div class="col-sm-4">
                             <input type="text" name="dureeTravail" class="form-control" ng-model="demande.patrimoine.profession.dureeContrat" ng-disabled="demande.patrimoine.profession.typeContrat === 'CDI'" required>
-                            <div ng-show="myForm.$submitted && myForm.dureeTravail.$error.required" class="form-text-error">Veuillez renseigner ce champ.</div>
+                            <div ng-show="myForm.$submitted && myForm.dureeTravail.$error.required" class="form-text-error">Veuillez entrer la duree de votre contrat.</div>
                         </div>
 
                     </div>
@@ -56,7 +56,7 @@
                 </div>
                 <div class="col-md-8"></div>
                 <div class="col-md-2  nopadding text-right">
-                    <button type="submit" class="btn  border-none" style="height: 50px;width: 101%" ng-click="demande.patrimoine.profession.typeContrat === 'CDD' && !demande.patrimoine.profession.dureeContrat ? error = false : $nextStep();"> 
+                    <button type="submit" class="btn  border-none" style="height: 50px;width: 101%" ng-click="demande.patrimoine.profession.typeContrat === 'CDD' && !demande.patrimoine.profession.dureeContrat ? error = false : $nextStep();">
                 SUIVANT
                 <span class="glyphicon glyphicon-chevron-right"></span>
                 </button>

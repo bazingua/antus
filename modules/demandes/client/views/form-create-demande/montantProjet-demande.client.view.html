@@ -11,7 +11,7 @@
                 </label>
                 <div class="col-sm-4">
                     <input type="text" name="montantApport" class="form-control" ng-model="demande.apport.montant" required>
-                    <div ng-show="myForm.$submitted && myForm.montantApport.$error.required" class="form-text-error">Veuillez renseigner ce champ.</div>
+                    <div ng-show="myForm.$submitted && myForm.montantApport.$error.required" class="form-text-error">Veuillez entrer le montant de votre apport du projet.</div>
                 </div>
 
             </div>
@@ -27,7 +27,7 @@
                 </label>
                 <div class="col-sm-4">
                     <input type="text" name="montantFinal" class="form-control" ng-model="demande.apport.montantFinale" placeholder="" required>
-                    <div ng-show="myForm.$submitted && myForm.montantFinal.$error.required" class="form-text-error">Veuillez renseigner ce champ.</div>
+                    <div ng-show="myForm.$submitted && myForm.montantFinal.$error.required" class="form-text-error">Veuillez entrer le montant final de votre projet.</div>
 
                 </div>
 
@@ -78,7 +78,7 @@
         </div>
         <div class="col-md-8"></div>
         <div class="col-md-2  nopadding text-right">
-            <button type="submit" class="btn  border-none" style="height: 50px;width: 101%" ng-click="myForm.montantFinal.$error.required  && myForm.montantApport.$error.required ? error = false : $nextStep();"> 
+            <button type="submit" class="btn  border-none" style="height: 50px;width: 101%" ng-click="myForm.montantFinal.$error.required  && myForm.montantApport.$error.required ? error = false : $nextStep();">
             SUIVANT
             <span class="glyphicon glyphicon-chevron-right"></span>
           </button>
