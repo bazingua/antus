@@ -18,7 +18,8 @@
         vm.viewFormPanel = false;
         $scope.current = 0;
         // $scope.node = $scope.typeDemande;
-        vm.steps = [{
+        vm.steps = [
+            {
                 templateUrl: 'modules/demandes/client/views/form-create-demande/montant-projet.client.view.html',
                 title: 'Définir le montant et caractère de votre projet'
             },
@@ -73,6 +74,9 @@
         $scope.endNavigateTree = function(type) {
             vm.viewTreePanel = false;
             vm.viewFormPanel = true;
+        };
+        $scope.calcuulTauxNotaire = function(type) {
+          $scope.demande.projet.fraisNotaire = ($scope.demande.projet.montantProjet *7) /100;
         };
 
 
