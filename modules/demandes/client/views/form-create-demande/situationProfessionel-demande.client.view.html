@@ -11,8 +11,6 @@
 
                     <div class="form-group">
                         <label class="control-label col-sm-4" style="text-align: right ">Contrat de Travail :
-                  <a href="#" data-toggle="tooltip" title="Contrat de Travail" class="pull-right">
-                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                 </label>
                         <div class="col-sm-4">
                             <select name="contratTravail" class="form-control" ng-model="demande.patrimoine.profession.typeContrat" required autofocus>
@@ -34,8 +32,6 @@
 
                     <div class="form-group">
                         <label class="control-label col-sm-4" style="text-align: right ">Durée de Travail :
-                        <a href="#" data-toggle="tooltip" title="Durée de Travail" class="pull-right">
-                          <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                       </label>
                         <div class="col-sm-4">
                             <input type="text" name="dureeTravail" class="form-control" ng-model="demande.patrimoine.profession.dureeContrat" ng-disabled="demande.patrimoine.profession.typeContrat === 'CDI'" required>
@@ -63,7 +59,7 @@
                 </div>
                 <div class="col-md-8"></div>
                 <div class="col-md-2  nopadding text-right">
-                    <button type="submit" class="btn  border-none" style="height: 50px;width: 101%" ng-click="demande.patrimoine.profession.typeContrat === 'CDD' && !demande.patrimoine.profession.dureeContrat ? error = false : $nextStep();">
+                    <button type="submit" class="btn  border-none" style="height: 50px;width: 101%" ng-click="demande.patrimoine.profession.typeContrat === 'CDD' || !demande.patrimoine.profession.dureeContrat ? error = false : $nextStep();">
                 SUIVANT
                 <span class="glyphicon glyphicon-chevron-right"></span>
                 </button>

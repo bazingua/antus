@@ -9,8 +9,6 @@
 
                     <div class="form-group">
                         <label class="control-label col-sm-4" style="text-align: right ">Residence principale :
-                  <a href="#" data-toggle="tooltip" title="Residence principale" class="pull-right">
-                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                 </label>
                         <div class="col-sm-4">
                             <input type="number" name="ResidencePrincipalMensualite" class="form-control" ng-model="demande.patrimoine.credit.principal.mensualite" required>
@@ -48,8 +46,6 @@
 
                     <div class="form-group">
                         <label class="control-label col-sm-4" style="text-align: right ">Residence Secondaire :
-                  <a href="#" data-toggle="tooltip" title="Residence Secondaire" class="pull-right">
-                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                 </label>
                         <div class="col-sm-4">
                             <input type="text" id="ResidenceSecondaireMensualite" name="ResidenceSecondaireMensualite" class="form-control" ng-model="demande.patrimoine.credit.secondaire.mensualite" placeholder="mensualite" required>
@@ -81,8 +77,6 @@
                 <div class="row">
                     <div class="form-group">
                         <label class="control-label col-sm-4" style="text-align: right ">Investissement Locatif :
-                <a href="#" data-toggle="tooltip" title="Residence principale" class="pull-right">
-                  <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
               </label>
                         <div class="col-sm-4">
                             <input type="number" name="InvestissementLocatifMensualite" class="form-control" ng-model="demande.patrimoine.credit.locatif.mensualite" placeholder="mensualite" required>
@@ -119,8 +113,6 @@
                 <div class="row">
                     <div class="form-group">
                         <label class="control-label col-sm-4" style="text-align: right ">Autres patrimoines immobilier :
-                    <a href="#" data-toggle="tooltip" title="Residence principale" class="pull-right">
-                      <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                   </label>
                         <div class="col-sm-4">
                             <input type="number" name="AutresMensualite" class="form-control" ng-model="demande.patrimoine.credit.autre.mensualite" required>
@@ -168,7 +160,7 @@
                 </div>
                 <div class="col-md-8"></div>
                 <div class="col-md-2  nopadding text-right">
-                    <button type="submit" class="btn  border-none" style="height: 50px;width: 101%" ng-click="myForm.ResidencePrincipalMensualite.$error.required && myForm.ResidencePrincipalRestant.$error.required ? error = false : $nextStep();">
+                    <button type="submit" class="btn  border-none" style="height: 50px;width: 101%" ng-click="myForm.ResidencePrincipalMensualite.$error.required || myForm.ResidencePrincipalRestant.$error.required ? error = false : $nextStep();">
                 SUIVANT
                 <span class="glyphicon glyphicon-chevron-right"></span>
                 </button>
