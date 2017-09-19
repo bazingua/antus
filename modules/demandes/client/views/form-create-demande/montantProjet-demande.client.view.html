@@ -10,7 +10,7 @@
                     <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                 </label>
                 <div class="col-sm-4">
-                    <input type="text" name="montantApport" class="form-control" ng-model="demande.apport.montant" required>
+                    <input type="number" aria-valuemin="0" name="montantApport" class="form-control" ng-model="demande.apport.montant" required>
                     <div ng-show="myForm.$submitted && myForm.montantApport.$error.required" class="form-text-error">Veuillez entrer le montant de votre apport du projet.</div>
                 </div>
 
@@ -26,7 +26,7 @@
                     <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                 </label>
                 <div class="col-sm-4">
-                    <input type="text" name="montantFinal" class="form-control" ng-model="demande.apport.montantFinale" placeholder="" required>
+                    <input type="number" aria-valuemin="0" name="montantFinal" class="form-control" ng-model="demande.apport.montantFinale" placeholder="" required>
                     <div ng-show="myForm.$submitted && myForm.montantFinal.$error.required" class="form-text-error">Veuillez entrer le montant final de votre projet.</div>
 
                 </div>
@@ -43,7 +43,7 @@
                     <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                 </label>
                 <div class="col-sm-4">
-                    <input type="text" id="dureeSouhaite" name="dureeSouhaite" class="form-control" ng-model="demande.apport.dureeSouhaite" placeholder="" required>
+                    <input type="number" aria-valuemin="0" id="dureeSouhaite" name="dureeSouhaite" class="form-control" ng-model="demande.apport.dureeSouhaite" placeholder="" required>
 
                 </div>
 
@@ -59,7 +59,7 @@
                     <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                 </label>
                 <div class="col-sm-4">
-                    <input type="text" id="montantMensuelSouhaiter" name="montantMensuelSouhaiter" class="form-control" ng-model="demande.apport.montantMaxSouhaite" placeholder="" required>
+                    <input type="number" id="montantMensuelSouhaiter" name="montantMensuelSouhaiter" class="form-control" ng-model="demande.apport.montantMaxSouhaite" placeholder="" required>
 
                 </div>
 

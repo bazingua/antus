@@ -12,8 +12,6 @@
         <div class="row">
             <div class="form-group">
                 <label class="control-label col-sm-4">RESIDENCE PRINCIPALE:
-                      <a href="#" data-toggle="tooltip" title="Indiquez ici la valeur estimée et le capital restant dû de votre résidence actuelle." class="pull-right">
-                          <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                     </label>
                 <div class="col-sm-4">
                     <input type="text" name="Valprincipale" class="form-control" id="Valprincipale" ng-model="demande.patrimoine.bienPrincipal">
@@ -25,8 +23,6 @@
 
             <div class="form-group">
                 <label class="control-label col-sm-4">RESIDENCE(S) SECONDAIRE(S):
-                      <a href="#" data-toggle="tooltip" title="Indiquez ici la valeur estimée et le capital restant dû de votre résidence SECONDAIRE." class="pull-right">
-                          <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                     </label>
                 <div class="col-sm-4">
                     <input type="text" name="ValSecondaire" class="form-control" id="ValSecondaire" ng-model="demande.patrimoine.bienSecondaire">
@@ -38,8 +34,6 @@
 
             <div class="form-group">
                 <label class="control-label col-sm-4">INVESTISSEMENT(S) LOCATIF(S):
-                      <a href="#" data-toggle="tooltip" title="Indiquez ici la valeur estimée et le capital restant dû de votre résidence SECONDAIRE." class="pull-right">
-                          <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                     </label>
                 <div class="col-sm-4">
                     <input type="text" name="ValLocatif" class="form-control" id="ValLocatif" bienLocatif ng-model="demande.patrimoine.bienLocatif">
@@ -51,8 +45,6 @@
 
             <div class="form-group">
                 <label class="control-label col-sm-4">AUTRE PATRIMOINE IMMOBILIER:
-                      <a href="#" data-toggle="tooltip" title="Indiquez ici la valeur estimée et le capital restant dû de votre résidence SECONDAIRE." class="pull-right">
-                          <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                     </label>
                 <div class="col-sm-4">
                     <input type="text" name="ValAutre" class="form-control" id="ValAutre" ng-model="demande.patrimoine.bienAutre">
@@ -98,7 +90,7 @@
             </div>
             <div class="col-md-8"></div>
             <div class="col-md-2  nopadding text-right">
-                <button type="submit" class="btn  border-none" style="height: 50px;width: 101%" ng-click="false ? error = false : $nextStep();"> 
+                <button type="submit" class="btn  border-none" style="height: 50px;width: 101%" ng-click="false ? error = false : $nextStep();">
                 SUIVANT
                 <span class="glyphicon glyphicon-chevron-right"></span>
               </button>

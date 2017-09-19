@@ -5,16 +5,18 @@
         <div class="">
             <div class="form-group">
                 <label class="control-label col-sm-4" style="text-align: right">Civilité :
-                <a href="#" data-toggle="tooltip" title="Civilité" class="pull-right">
-                  <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
               </label>
                 <div class="col-sm-4">
                     <select name="civilite" class="form-control" ng-model="demande.client.civilite" placeholder="Civilité" required autofocus>
-                  <option label="Civilité"></option>
+                  <option label="Mselle">Mselle</option>
                   <option  value="monsieur">Monsieur</option>
                   <option  value="madame">Madame</option>
                 </select>
                 </div>
+              <label class="control-label col-sm-4">
+                <a href="#" data-toggle="tooltip" title="Votre civilité" class="pull-left">
+                  <span class="glyphicon glyphicon-asterisk" style="color:red" aria-hidden="true"></span></a>
+              </label>
             </div>
         </div>
         <br>
@@ -28,6 +30,10 @@
                     <input type="text" name="nom" class="form-control" ng-model="demande.client.nom" placeholder="Nom" required>
                     <div ng-show="myForm.$submitted && myForm.nom.$error.required" class="form-text-error">Veuillez entrer le  votre nom</div>
                 </div>
+              <label class="control-label col-sm-4">
+                <a href="#" data-toggle="tooltip" title=" Votre nom est obligatoire" class="pull-left">
+                  <span class="glyphicon glyphicon-asterisk" style="color:red" aria-hidden="true"></span></a>
+              </label>
             </div>
         </div>
         <br>
@@ -41,6 +47,10 @@
                     <input type="text" name="prenom" class="form-control" ng-model="demande.client.prenom" placeholder="prénom" required>
                     <div ng-show="myForm.$submitted && myForm.prenom.$error.required" class="form-text-error">Veuillez entrer le votre prenom</div>
                 </div>
+              <label class="control-label col-sm-4">
+                <a href="#" data-toggle="tooltip" title="Votre Prenom est obligatoire" class="pull-left">
+                  <span class="glyphicon glyphicon-asterisk" style="color:red" aria-hidden="true"></span></a>
+              </label>
             </div>
         </div>
         <br>
@@ -65,12 +75,16 @@
                   <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
               </label>
                 <div class="col-sm-4">
-                    <select name="situationFamiliale" class="form-control" ng-model="demande.client.situationfamiliale" placeholder="Situation familiale" required autofocus>
-                  <option label="Situation familiale"></option>
+                    <select name="situationFamiliale" class="form-control" ng-model="demande.client.situationfamiliale"  required autofocus>
                   <option  value="marie">Marié</option>
                   <option  value="celibataire">Célibataire</option>
+                      <option value="veuve">Veuf(ve)</option>
                 </select>
                 </div>
+              <label class="control-label col-sm-4">
+                <a href="#" data-toggle="tooltip" title="" class="pull-left">
+                  <span class="glyphicon glyphicon-asterisk" style="color:red" aria-hidden="true"></span></a>
+              </label>
             </div>
         </div>
         <br>
@@ -85,6 +99,10 @@
                 <div ng-show="myForm.$submitted && myForm.AdresseActuelle.$error.required" class="form-text-error">Veuillez entrer votre adresse actuelle</div>
                 </textarea>
                 </div>
+              <label class="control-label col-sm-4">
+                <a href="#" data-toggle="tooltip" title="Represente votre adresse actuel exacte" class="pull-left">
+                  <span class="glyphicon glyphicon-asterisk" style="color:red" aria-hidden="true"></span></a>
+              </label>
             </div>
         </div>
         <br>
@@ -95,10 +113,14 @@
                   <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
               </label>
                 <div class="col-sm-4">
-                    <input type="text" id="NumeroTelephone" name="NumeroTelephone" class="form-control" ng-model="demande.client.adresse.telephonePortable" required>
+                    <input type="tel" id="NumeroTelephone" name="NumeroTelephone" class="form-control" ng-model="demande.client.adresse.telephonePortable" required>
                     <div ng-show="myForm.$submitted && myForm.NumeroTelephone.$error.required" class="form-text-error">Veuillez entrer votre numero de telephone</div>
 
                 </div>
+              <label class="control-label col-sm-4">
+                <a href="#" data-toggle="tooltip" title="Votre numero de telephone est obligatoire" class="pull-left">
+                  <span class="glyphicon glyphicon-asterisk" style="color:red" aria-hidden="true"></span></a>
+              </label>
             </div>
         </div>
         <br>

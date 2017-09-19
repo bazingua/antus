@@ -11,6 +11,10 @@
                     <input type="email" name="mail" class="form-control" id="acquisition" required ng-model="user.adresse.email">
                     <div ng-show="myForm.$submitted && (myForm.mail.$error.required || myForm.mail.$error.email)" class="form-text-error">Veuillez renseigner un mail valide.</div>
                 </div>
+              <label class="control-label col-sm-4">
+                <a href="#" data-toggle="tooltip" title=" Votre adresse electronique est obligatoire" class="pull-left">
+                  <span class="glyphicon glyphicon-asterisk" style="color:red" aria-hidden="true"></span></a>
+              </label>
             </div>
 
             <div class="form-group">
@@ -33,7 +37,7 @@
             </div>
             <div class="col-md-8"></div>
             <div class="col-md-2  nopadding text-right">
-                <button type="submit" class="btn  border-none" style="height: 50px;width: 101%" ng-click="myForm.mail.$error.email || myForm.mail.$error.required ? error = false : $nextStep();"> 
+                <button type="submit" class="btn  border-none" style="height: 50px;width: 101%" ng-click="myForm.mail.$error.email || myForm.mail.$error.required ? error = false : $nextStep();">
               SUIVANT
               <span class="glyphicon glyphicon-chevron-right"></span>
             </button>
