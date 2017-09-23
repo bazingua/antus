@@ -6,11 +6,9 @@
 
             <div class="form-group">
                 <label class="control-label col-sm-4" style="text-align: right ">Montant de l’apport que vous faites :
-                  <a href="#" data-toggle="tooltip" title="Montant de l’apport que vous faites" class="pull-right">
-                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                 </label>
                 <div class="col-sm-4">
-                    <input type="text" name="montantApport" class="form-control" ng-model="demande.apport.montant" required>
+                    <input type="number" aria-valuemin="0" name="montantApport" class="form-control" ng-model="demande.apport.montant" required>
                     <div ng-show="myForm.$submitted && myForm.montantApport.$error.required" class="form-text-error">Veuillez entrer le montant de votre apport du projet.</div>
                 </div>
 
@@ -26,7 +24,7 @@
                     <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                 </label>
                 <div class="col-sm-4">
-                    <input type="text" name="montantFinal" class="form-control" ng-model="demande.apport.montantFinale" placeholder="" required>
+                    <input type="number" aria-valuemin="0" name="montantFinal" class="form-control" ng-model="demande.apport.montantFinale" placeholder="" required>
                     <div ng-show="myForm.$submitted && myForm.montantFinal.$error.required" class="form-text-error">Veuillez entrer le montant final de votre projet.</div>
 
                 </div>
@@ -43,7 +41,7 @@
                     <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                 </label>
                 <div class="col-sm-4">
-                    <input type="text" id="dureeSouhaite" name="dureeSouhaite" class="form-control" ng-model="demande.apport.dureeSouhaite" placeholder="" required>
+                    <input type="number" aria-valuemin="0" id="dureeSouhaite" name="dureeSouhaite" class="form-control" ng-model="demande.apport.dureeSouhaite" placeholder="" required>
 
                 </div>
 
@@ -55,11 +53,9 @@
 
             <div class="form-group">
                 <label class="control-label col-sm-4" style="text-align: right ">Montant maximum mensualite souhaite :
-                  <a href="#" data-toggle="tooltip" title="Montant maximum mensualite souhaite" class="pull-right">
-                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                 </label>
                 <div class="col-sm-4">
-                    <input type="text" id="montantMensuelSouhaiter" name="montantMensuelSouhaiter" class="form-control" ng-model="demande.apport.montantMaxSouhaite" placeholder="" required>
+                    <input type="number" id="montantMensuelSouhaiter" name="montantMensuelSouhaiter" class="form-control" ng-model="demande.apport.montantMaxSouhaite" placeholder="" required>
 
                 </div>
 
@@ -78,7 +74,7 @@
         </div>
         <div class="col-md-8"></div>
         <div class="col-md-2  nopadding text-right">
-            <button type="submit" class="btn  border-none" style="height: 50px;width: 101%" ng-click="myForm.montantFinal.$error.required  && myForm.montantApport.$error.required ? error = false : $nextStep();">
+            <button type="submit" class="btn  border-none" style="height: 50px;width: 101%" ng-click="myForm.montantFinal.$error.required  || myForm.montantApport.$error.required ? error = false : $nextStep();">
             SUIVANT
             <span class="glyphicon glyphicon-chevron-right"></span>
           </button>

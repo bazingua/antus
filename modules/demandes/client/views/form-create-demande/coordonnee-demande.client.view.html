@@ -5,42 +5,48 @@
         <div class="">
             <div class="form-group">
                 <label class="control-label col-sm-4" style="text-align: right">Civilité :
-                <a href="#" data-toggle="tooltip" title="Civilité" class="pull-right">
-                  <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
               </label>
                 <div class="col-sm-4">
                     <select name="civilite" class="form-control" ng-model="demande.client.civilite" placeholder="Civilité" required autofocus>
-                  <option label="Civilité"></option>
+                  <option label="Mselle">Mselle</option>
                   <option  value="monsieur">Monsieur</option>
                   <option  value="madame">Madame</option>
                 </select>
                 </div>
+              <label class="control-label col-sm-4">
+                <a href="#" data-toggle="tooltip" title="Votre civilité" class="pull-left">
+                  <span class="glyphicon glyphicon-asterisk" style="color:red" aria-hidden="true"></span></a>
+              </label>
             </div>
         </div>
         <br>
         <div class="">
             <div class="form-group">
                 <label class="control-label col-sm-4" style="text-align: right">Nom :
-                <a href="#" data-toggle="tooltip" title="Nom" class="pull-right">
-                  <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
               </label>
                 <div class="col-sm-4">
                     <input type="text" name="nom" class="form-control" ng-model="demande.client.nom" placeholder="Nom" required>
                     <div ng-show="myForm.$submitted && myForm.nom.$error.required" class="form-text-error">Veuillez entrer le  votre nom</div>
                 </div>
+              <label class="control-label col-sm-4">
+                <a href="#" data-toggle="tooltip" title=" Votre nom est obligatoire" class="pull-left">
+                  <span class="glyphicon glyphicon-asterisk" style="color:red" aria-hidden="true"></span></a>
+              </label>
             </div>
         </div>
         <br>
         <div class="">
             <div class="form-group">
                 <label class="control-label col-sm-4" style="text-align: right">Prénom :
-                <a href="#" data-toggle="tooltip" title="Nom" class="pull-right">
-                  <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
               </label>
                 <div class="col-sm-4">
                     <input type="text" name="prenom" class="form-control" ng-model="demande.client.prenom" placeholder="prénom" required>
                     <div ng-show="myForm.$submitted && myForm.prenom.$error.required" class="form-text-error">Veuillez entrer le votre prenom</div>
                 </div>
+              <label class="control-label col-sm-4">
+                <a href="#" data-toggle="tooltip" title="Votre Prenom est obligatoire" class="pull-left">
+                  <span class="glyphicon glyphicon-asterisk" style="color:red" aria-hidden="true"></span></a>
+              </label>
             </div>
         </div>
         <br>
@@ -48,8 +54,6 @@
         <div class="">
             <div class="form-group">
                 <label class="control-label col-sm-4" style="text-align: right">Date de Naissance :
-                <a href="#" data-toggle="tooltip" title="Date de Naissance" class="pull-right">
-                  <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
               </label>
                 <div class="col-sm-4">
                     <input type="date" name="dateNaissance" class="form-control" ng-model="demande.client.dateNassance" required>
@@ -61,44 +65,50 @@
         <div class="">
             <div class="form-group">
                 <label class="control-label col-sm-4" style="text-align: right">Situation familiale :
-                <a href="#" data-toggle="tooltip" title="Date de Naissance" class="pull-right">
-                  <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
               </label>
                 <div class="col-sm-4">
-                    <select name="situationFamiliale" class="form-control" ng-model="demande.client.situationfamiliale" placeholder="Situation familiale" required autofocus>
-                  <option label="Situation familiale"></option>
+                    <select name="situationFamiliale" class="form-control" ng-model="demande.client.situationfamiliale"  required autofocus>
                   <option  value="marie">Marié</option>
                   <option  value="celibataire">Célibataire</option>
+                      <option value="veuve">Veuf(ve)</option>
                 </select>
                 </div>
+              <label class="control-label col-sm-4">
+                <a href="#" data-toggle="tooltip" title="" class="pull-left">
+                  <span class="glyphicon glyphicon-asterisk" style="color:red" aria-hidden="true"></span></a>
+              </label>
             </div>
         </div>
         <br>
         <div class="">
             <div class="form-group">
                 <label class="control-label col-sm-4" style="text-align: right">Adresse Actuelle :
-                <a href="#" data-toggle="tooltip" title="Date de Naissance" class="pull-right">
-                  <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
               </label>
                 <div class="col-sm-4">
                     <textarea rows="2" name="AdresseActuelle" class="form-control" ng-model="demande.client.adresse.adresse" required autofocus>
                 <div ng-show="myForm.$submitted && myForm.AdresseActuelle.$error.required" class="form-text-error">Veuillez entrer votre adresse actuelle</div>
                 </textarea>
                 </div>
+              <label class="control-label col-sm-4">
+                <a href="#" data-toggle="tooltip" title="Represente votre adresse actuel exacte" class="pull-left">
+                  <span class="glyphicon glyphicon-asterisk" style="color:red" aria-hidden="true"></span></a>
+              </label>
             </div>
         </div>
         <br>
         <div class="">
             <div class="form-group">
                 <label class="control-label col-sm-4" style="text-align: right">Numero telephone :
-                <a href="#" data-toggle="tooltip" title="Numero telephone" class="pull-right">
-                  <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
               </label>
                 <div class="col-sm-4">
-                    <input type="text" id="NumeroTelephone" name="NumeroTelephone" class="form-control" ng-model="demande.client.adresse.telephonePortable" required>
+                    <input type="tel" id="NumeroTelephone" name="NumeroTelephone" class="form-control" ng-model="demande.client.adresse.telephonePortable" required>
                     <div ng-show="myForm.$submitted && myForm.NumeroTelephone.$error.required" class="form-text-error">Veuillez entrer votre numero de telephone</div>
 
                 </div>
+              <label class="control-label col-sm-4">
+                <a href="#" data-toggle="tooltip" title="Votre numero de telephone est obligatoire" class="pull-left">
+                  <span class="glyphicon glyphicon-asterisk" style="color:red" aria-hidden="true"></span></a>
+              </label>
             </div>
         </div>
         <br>
@@ -116,7 +126,7 @@
             <div class="col-md-8"></div>
             <div class="col-md-2  nopadding text-right">
 
-                <button class="btn  border-none" style="height: 50px;width: 101%" type="submit" ng-click="myForm.adresseActuelle.$error.required  && myForm.dateNaissance.$error.required && myForm.prenom.$error.required && myForm.NumeroTelephone.$error.required && myForm.nom.$error.required ? error = false : saveDemande()">
+                <button class="btn  border-none" style="height: 50px;width: 101%" type="submit" ng-click="myForm.adresseActuelle.$error.required  || myForm.dateNaissance.$error.required || myForm.prenom.$error.required || myForm.NumeroTelephone.$error.required || myForm.nom.$error.required ? error = false : saveDemande()">
                 Terminer
                 <span class="glyphicon glyphicon-chevron-right"></span>
               </button>

@@ -2,7 +2,7 @@
 
     <div class="panel-body">
 
-        <form name="myForm" class="form-horizontal" ng-submit="foo()" novalidate>
+        <form name="myForm" class="form-horizontal" novalidate>
 
             <fieldset>
 
@@ -11,17 +11,18 @@
 
                     <div class="form-group">
                         <label class="control-label col-sm-4" style="text-align: right ">Contrat de Travail :
-                  <a href="#" data-toggle="tooltip" title="Contrat de Travail" class="pull-right">
-                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                 </label>
                         <div class="col-sm-4">
                             <select name="contratTravail" class="form-control" ng-model="demande.patrimoine.profession.typeContrat" required autofocus>
-                    <option  value="CDD">CDD</option>
-                    <option  value="CDI">CDI</option>
-                    <option  value="INTERIM">INTERIM</option>
-                  </select>
-
+                              <option  value="CDD">CDD</option>
+                              <option  value="CDI">CDI</option>
+                              <option  value="INTERIM">INTERIM</option>
+                            </select>
                         </div>
+                      <label class="control-label col-sm-4">
+                        <a href="#" data-toggle="tooltip" title="La nature de votre contrat est obligatoire" class="pull-left">
+                          <span class="glyphicon glyphicon-asterisk" style="color:red" aria-hidden="true"></span></a>
+                      </label>
 
                     </div>
                 </div>
@@ -31,13 +32,15 @@
 
                     <div class="form-group">
                         <label class="control-label col-sm-4" style="text-align: right ">Durée de Travail :
-                  <a href="#" data-toggle="tooltip" title="Durée de Travail" class="pull-right">
-                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
-                </label>
+                      </label>
                         <div class="col-sm-4">
                             <input type="text" name="dureeTravail" class="form-control" ng-model="demande.patrimoine.profession.dureeContrat" ng-disabled="demande.patrimoine.profession.typeContrat === 'CDI'" required>
                             <div ng-show="myForm.$submitted && myForm.dureeTravail.$error.required" class="form-text-error">Veuillez entrer la duree de votre contrat.</div>
                         </div>
+                      <label class="control-label col-sm-1">
+                        <a href="#" data-toggle="tooltip" title="La durée de votre contrat est obligatoire" class="pull-left">
+                          <span class="glyphicon glyphicon-asterisk" style="color:red" aria-hidden="true"></span></a>
+                      </label>
 
                     </div>
                 </div>
@@ -56,7 +59,7 @@
                 </div>
                 <div class="col-md-8"></div>
                 <div class="col-md-2  nopadding text-right">
-                    <button type="submit" class="btn  border-none" style="height: 50px;width: 101%" ng-click="demande.patrimoine.profession.typeContrat === 'CDD' && !demande.patrimoine.profession.dureeContrat ? error = false : $nextStep();">
+                    <button type="submit" class="btn  border-none" style="height: 50px;width: 101%" ng-click="demande.patrimoine.profession.typeContrat === 'CDD' || !demande.patrimoine.profession.dureeContrat ? error = false : $nextStep();">
                 SUIVANT
                 <span class="glyphicon glyphicon-chevron-right"></span>
                 </button>
