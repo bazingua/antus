@@ -9,7 +9,7 @@
               "id" : "2",
               "libelle":"Acheter un bien",
               "description":"VOTRE PROJET IMMOBILIER",
-              "icone":"add shopping cart",
+              "icone":"credit_card",
               "fils":[
                       {
                           "id" : "6",
@@ -5943,7 +5943,7 @@
           "id" : "5",
           "libelle":"Autres",
           "description":"VOTRE PROJET IMMOBILIER",
-          "icone":"settings ethernet",
+          "icone":"settings",
           "fils":[]
           }
       ]
