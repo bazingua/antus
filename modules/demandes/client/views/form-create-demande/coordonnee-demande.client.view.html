@@ -1,7 +1,11 @@
-<section class="row">
+<section>
 
     <form name="myForm" class="form-horizontal" novalidate>
-
+      <div class="row" style="min-height: 400px">
+        <div class="" style="margin-top: 5px;">
+          <div style="width: 70%; margin-left: auto; margin-right: auto; margin-bottom: 30px" class="well text-center">
+            <strong>VOS COORDONNÉES</strong>
+          </div>
         <div class="">
             <div class="form-group">
                 <label class="control-label col-sm-4" style="text-align: right">Civilité :
@@ -112,26 +116,27 @@
             </div>
         </div>
         <br>
-
-
-        <div class="row page-header" style="background-color: rebeccapurple; padding:0px ; margin: 0px;height: 50px">
-            <div class="col-md-2 nopadding">
-                <button ng-disabled="$isFirst()" class="btn border-none" style="height: 50px;width: 101%;" ng-click="$previousStep()">
-              <span class="glyphicon glyphicon-chevron-left"></span>
-              PRECEDENT
-            </button>
-
-
-            </div>
-            <div class="col-md-8"></div>
-            <div class="col-md-2  nopadding text-right">
-
-                <button class="btn  border-none" style="height: 50px;width: 101%" type="submit" ng-click="myForm.adresseActuelle.$error.required  || myForm.dateNaissance.$error.required || myForm.prenom.$error.required || myForm.NumeroTelephone.$error.required || myForm.nom.$error.required ? error = false : saveDemande()">
-                Terminer
-                <span class="glyphicon glyphicon-chevron-right"></span>
-              </button>
-
-            </div>
         </div>
+      </div>
+
+
+      <div class="row page-header" style="background-color: #f8f8f8; padding:0px ; margin: 10px;height: 50px;">
+        <div class="col-md-5 nopadding text-right">
+          <button ng-disabled="$isFirst()" class="btn btn-primary" style="height: 50px; width: 130px" ng-click="$previousStep()">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            PRECEDENT
+          </button>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-5  nopadding text-left">
+          <button class="btn btn-primary" style="height: 50px; width: 130px" type="submit" ng-click="myForm.adresseActuelle.$error.required  || myForm.dateNaissance.$error.required || myForm.prenom.$error.required || myForm.NumeroTelephone.$error.required || myForm.nom.$error.required ? error = false : saveDemande()">
+            Terminer
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </button>
+
+        </div>
+
+      </div>
+
     </form>
 </section>

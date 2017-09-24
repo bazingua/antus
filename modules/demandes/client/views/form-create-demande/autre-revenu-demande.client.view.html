@@ -1,6 +1,10 @@
 <section>
     <form name="myForm" class="form-horizontal" novalidate>
-        <div class="row">
+      <div class="row" style="min-height: 400px">
+        <div class="" style="margin-top: 50px;">
+          <div style="width: 70%; margin-left: auto; margin-right: auto; margin-bottom: 30px" class="well text-center">
+            <strong>QUELS SONT VOS AUTRES REVENUS ?</strong>
+          </div>
 
             <div class="form-group">
                 <label class="control-label col-sm-4">REVENUS LOCATIFS EXISTANT PAR MOIS:
@@ -36,33 +40,35 @@
                 <div class="col-sm-4">
                     <input type="number" name="cessionSalaire" class="form-control" id="cessionSalaire" ng-model="demande.patrimoine.revenu.cessionSalaire">
                 </div>
-            </div>
+
           <label class="control-label col-sm-4">
             <a href="#" data-toggle="tooltip" title="La cession sur salaire est un acte volontaire. Afin de rembourser un crédit,
              l'emprunteur peut demander à son employeur de prélever la mensualité sur son salaire et de la verser directement au créancier.
              Il s'agit là d'une cession sur salaire. L'employeur ne connaît à aucun moment l'objet du crédit réalisé." class="pull-left">
               <span class="glyphicon glyphicon-info-sign"  style="color:skyblue" aria-hidden="true"></span></a>
           </label>
-
-        </div>
-
-        <div class="row page-header" style="background-color: rebeccapurple; padding:0px ; margin: 0px;height: 50px">
-            <div class="col-md-2 nopadding">
-                <button ng-disabled="$isFirst()" class="btn border-none" style="height: 50px;width: 101%;" ng-click="$previousStep()">
-              <span class="glyphicon glyphicon-chevron-left"></span>
-              PRECEDENT
-            </button>
-
-            </div>
-            <div class="col-md-8"></div>
-            <div class="col-md-2  nopadding text-right">
-
-                <button type="submit" class="btn  border-none" style="height: 50px;width: 101%" ng-click="myForm.revenuLocatif.$error.required ? error = false : $nextStep();">
-                    SUIVANT
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                  </button>
             </div>
         </div>
+      </div>
+
+      <div class="row page-header" style="background-color: #f8f8f8; padding:0px ; margin: 10px;height: 50px;">
+        <div class="col-md-5 nopadding text-right">
+          <button ng-disabled="$isFirst()" class="btn btn-primary" style="height: 50px; width: 130px" ng-click="$previousStep()">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            PRECEDENT
+          </button>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-5  nopadding text-left">
+          <button type="submit" class="btn btn-primary" style="height: 50px; width: 130px" ng-click="myForm.revenuLocatif.$error.required ? error = false : $nextStep();">
+            SUIVANT
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </button>
+        </div>
+
+      </div>
+
+
 
     </form>
 </section>

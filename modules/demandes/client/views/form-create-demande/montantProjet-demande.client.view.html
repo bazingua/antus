@@ -1,7 +1,13 @@
-<form name="myForm" class="form-horizontal" novalidate>
+<section>
 
-    <div>
+  <div class="panel-body">
 
+  <form name="myForm" class="form-horizontal" novalidate>
+    <div class="row" style="min-height: 400px">
+      <div class="" style="margin-top: 10px;">
+        <div style="width: 70%; margin-left: auto; margin-right: auto; margin-bottom: 30px" class="well text-center">
+          <strong>LE MONTANT DE VOTRE PRÊT</strong>
+        </div>
         <div class="row">
 
             <div class="form-group">
@@ -62,24 +68,28 @@
             </div>
         </div>
         <br>
+      </div>
     </div>
 
-    <div class="row page-header" style="background-color: rebeccapurple; padding:0px ; margin: 0px;height: 50px">
-        <div class="col-md-2 nopadding">
-            <button ng-disabled="$isFirst()" class="btn border-none" style="height: 50px;width: 101%;" ng-click="$previousStep()">
-        <span class="glyphicon glyphicon-chevron-left"></span>
-        PRECEDENT
-      </button>
 
-        </div>
-        <div class="col-md-8"></div>
-        <div class="col-md-2  nopadding text-right">
-            <button type="submit" class="btn  border-none" style="height: 50px;width: 101%" ng-click="myForm.montantFinal.$error.required  || myForm.montantApport.$error.required ? error = false : $nextStep();">
-            SUIVANT
-            <span class="glyphicon glyphicon-chevron-right"></span>
-          </button>
+    <div class="row page-header" style="background-color: #f8f8f8; padding:0px ; margin: 10px;height: 50px;">
+      <div class="col-md-5 nopadding text-right">
+        <button ng-disabled="$isFirst()" class="btn btn-primary" style="height: 50px; width: 130px" ng-click="$previousStep()">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+          PRECEDENT
+        </button>
+      </div>
+      <div class="col-md-2"></div>
+      <div class="col-md-5  nopadding text-left">
+        <button type="submit" class="btn btn-primary" style="height: 50px; width: 130px" ng-click="myForm.montantFinal.$error.required  || myForm.montantApport.$error.required ? error = false : $nextStep();">
+          SUIVANT
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </button>
+      </div>
 
-        </div>
     </div>
+
 
 </form>
+  </div>
+</section>

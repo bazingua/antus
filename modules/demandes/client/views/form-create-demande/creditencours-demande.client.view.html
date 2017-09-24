@@ -1,8 +1,12 @@
-<section class="row">
+<section>
 
     <div class="panel-body">
         <form name="myForm" class="form-horizontal" novalidate>
-
+          <div class="row" style="min-height: 400px">
+            <div class="">
+              <div style="width: 70%; margin-left: auto; margin-right: auto; margin-bottom: 30px" class="well text-center">
+                <strong>Quels sont Vos Crédits Encours ?</strong>
+              </div>
             <fieldset style="">
 
                 <div class="row">
@@ -10,8 +14,8 @@
                     <div class="form-group">
                         <label class="control-label col-sm-4" style="text-align: right ">Residence principale :
                 </label>
-                        <div class="col-sm-4">
-                            <input type="number" name="ResidencePrincipalMensualite" class="form-control" ng-model="demande.patrimoine.credit.principal.mensualite" required>
+                        <div class="col-sm-2">
+                            <input type="number" name="ResidencePrincipalMensualite" placeholder="mensualite" class="form-control" ng-model="demande.patrimoine.credit.principal.mensualite" required>
                             <div ng-show="myForm.$submitted && myForm.ResidencePrincipalMensualite.$error.required" class="form-text-error">Veuillez entrer le credit de votre residence principale.</div>
                         </div>
                         <div class="col-sm-2">
@@ -30,7 +34,7 @@
 
                         <div class="col-sm-2">
                             <div class="input-group">
-                                <input type="number" name="ResidencePrincipalRestant" class="form-control" ng-model="demande.patrimoine.credit.principal.restant" required>
+                                <input type="number" name="ResidencePrincipalRestant" placeholder="restant" class="form-control" ng-model="demande.patrimoine.credit.principal.restant" required>
                                 <div ng-show="myForm.$submitted && myForm.ResidencePrincipalRestant.$error.required" class="form-text-error">Veuillez entrer la duree.</div>
                                 <span class="input-group-addon">mois</span>
                             </div>
@@ -47,8 +51,8 @@
                     <div class="form-group">
                         <label class="control-label col-sm-4" style="text-align: right ">Residence Secondaire :
                 </label>
-                        <div class="col-sm-4">
-                            <input type="text" id="ResidenceSecondaireMensualite" name="ResidenceSecondaireMensualite" class="form-control" ng-model="demande.patrimoine.credit.secondaire.mensualite" placeholder="mensualite" required>
+                        <div class="col-sm-2">
+                            <input type="text" id="ResidenceSecondaireMensualite" placeholder="mensualite" name="ResidenceSecondaireMensualite" class="form-control" ng-model="demande.patrimoine.credit.secondaire.mensualite" placeholder="mensualite" required>
                         </div>
                         <div class="col-sm-2">
                             <div class="input-group">
@@ -78,7 +82,7 @@
                     <div class="form-group">
                         <label class="control-label col-sm-4" style="text-align: right ">Investissement Locatif :
               </label>
-                        <div class="col-sm-4">
+                        <div class="col-sm-2">
                             <input type="number" name="InvestissementLocatifMensualite" class="form-control" ng-model="demande.patrimoine.credit.locatif.mensualite" placeholder="mensualite" required>
                             <div ng-show="myForm.$submitted && myForm.ResidencePrincipalRestant.$error.required" class="form-text-error">Veuillez renseigner la duree.</div>
                         </div>
@@ -98,7 +102,7 @@
 
                         <div class="col-sm-2">
                             <div class="input-group">
-                                <input type="number" name="InvestissementLocatifRestant" class="form-control" ng-model="demande.patrimoine.credit.locatif.restant" required>
+                                <input type="number"  placeholder="restant" name="InvestissementLocatifRestant" class="form-control" ng-model="demande.patrimoine.credit.locatif.restant" required>
                                 <div ng-show="myForm.$submitted && myForm.InvestissementLocatifRestant.$error.required" class="form-text-error">Veuillez entrer le credit de votre autres residence.</div>
                                 <span class="input-group-addon">mois</span>
                             </div>
@@ -114,8 +118,8 @@
                     <div class="form-group">
                         <label class="control-label col-sm-4" style="text-align: right ">Autres patrimoines immobilier :
                   </label>
-                        <div class="col-sm-4">
-                            <input type="number" name="AutresMensualite" class="form-control" ng-model="demande.patrimoine.credit.autre.mensualite" required>
+                        <div class="col-sm-2">
+                            <input type="number" name="AutresMensualite" class="form-control" ng-model="demande.patrimoine.credit.autre.mensualite" placeholder="mensualite" required>
                             <div ng-show="myForm.$submitted && myForm.AutresMensualite.$error.required" class="form-text-error">Veuillez renseigner ce champ.</div>
                         </div>
                         <div class="col-sm-2">
@@ -134,12 +138,12 @@
 
                         <div class="col-sm-2">
                             <div class="input-group">
-                                <input type="number" name="AutresRestant" class="form-control" ng-model="demande.patrimoine.credit.autre.restant" required>
+                                <input type="number" name="AutresRestant" placeholder="restant" class="form-control" ng-model="demande.patrimoine.credit.autre.restant" required>
                                 <div ng-show="myForm.$submitted && myForm.AutresRestant.$error.required" class="form-text-error">Veuillez renseigner ce champ.</div>
                                 <span class="input-group-addon">mois</span>
                             </div>
                         </div>
-                      <label class="control-label col-sm-4">
+                      <label class="control-label col-sm-2">
                         <a href="#" data-toggle="tooltip" title="" class="pull-left">
                           <span class="glyphicon glyphicon-asterisk" style="color:red" aria-hidden="true"></span></a>
                       </label>
@@ -147,26 +151,27 @@
                 </div>
 
             </fieldset>
+            </div>
+          </div>
 
-
-            <div class="row page-header" style="background-color: rebeccapurple; padding:0px ; margin: 0px;height: 50px">
-                <div class="col-md-2 nopadding">
-
-                    <button ng-disabled="$isFirst()" class="btn border-none" style="height: 50px;width: 101%;" ng-click="$previousStep()">
-              <span class="glyphicon glyphicon-chevron-left"></span>
-              PRECEDENT
+          <div class="row page-header" style="background-color: #f8f8f8; padding:0px ; margin: 10px;height: 50px;">
+            <div class="col-md-5 nopadding text-right">
+              <button ng-disabled="$isFirst()" class="btn btn-primary" style="height: 50px; width: 130px"  ng-click="$previousStep()">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                PRECEDENT
               </button>
-
-                </div>
-                <div class="col-md-8"></div>
-                <div class="col-md-2  nopadding text-right">
-                    <button type="submit" class="btn  border-none" style="height: 50px;width: 101%" ng-click="myForm.ResidencePrincipalMensualite.$error.required || myForm.ResidencePrincipalRestant.$error.required ? error = false : $nextStep();">
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-5  nopadding text-left">
+              <button type="submit" class="btn btn-primary" style="height: 50px; width: 130px" ng-click="myForm.ResidencePrincipalMensualite.$error.required || myForm.ResidencePrincipalRestant.$error.required ? error = false : $nextStep();">
                 SUIVANT
                 <span class="glyphicon glyphicon-chevron-right"></span>
-                </button>
-
-                </div>
+              </button>
             </div>
+
+          </div>
+
+
         </form>
     </div>
 </section>
