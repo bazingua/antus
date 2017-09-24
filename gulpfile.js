@@ -82,6 +82,7 @@ gulp.task('watch', function () {
   gulp.watch(defaultAssets.client.css, ['csslint']).on('change', plugins.refresh.changed);
   gulp.watch(defaultAssets.client.sass, ['sass', 'csslint']).on('change', plugins.refresh.changed);
   gulp.watch(defaultAssets.client.less, ['less', 'csslint']).on('change', plugins.refresh.changed);
+  //gulp.watch(defaultAssets.client.views,).on('change', plugins.refresh.changed);
 
   if (process.env.NODE_ENV === 'production') {
     gulp.watch(defaultAssets.server.gulpConfig, ['templatecache', 'eslint']);

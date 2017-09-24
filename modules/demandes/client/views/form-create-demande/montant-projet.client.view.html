@@ -2,22 +2,22 @@
     <form name="montantProjetForm" class="form-horizontal" novalidate>
         <div class="row" style="min-height: 400px">
           <div class="" style="margin-top: auto; margin-bottom: auto">
-            <div style="width: 70%; margin-left: auto; margin-right: auto; margin-bottom: 30px" class="well text-center">
-              <strong>Définissons le montant de votre projet</strong>
+            <div style="width: 70%; margin-left: auto; margin-right: auto; margin-bottom: 30px" class=" text-center">
+              <span  style="color: #555"><i class="material-icons">info</i></span>
+              <span style="color: #777; position: relative;top: -8px;font-style: italic;font-size: 13px;"> Définissons le montant de votre projet</span>
             </div>
            <div class="form-group" style="">
                 <label class="control-label col-sm-4">MONTANT ESTIMÉ DE VOTRE ACQUISITION :
 
                     </label>
                 <div class="col-sm-4">
-                  <input type="number" min="0"  name="montantProjet" class="form-control"  ng-model="demande.projet.montantProjet" required />
-
-                    <span ng-show="montantProjetForm.$submitted && montantProjetForm.montantProjet.$error.required" class="form-text-error">Veuillez entrer le montant de votre projet.</span>
+                  <input type="number" min="0"  name="montantProjet" class="form-control"  ng-model="demande.projet.montantProjet" ng-change="calcuulTauxNotaire()" required />
+                   <span ng-show="montantProjetForm.$submitted && montantProjetForm.montantProjet.$error.required" class="form-text-error">Veuillez entrer le montant de votre projet.</span>
 
                 </div>
                 <label class="control-label col-sm-4">
                   <a href="#" data-toggle="tooltip" title="Indiquez le montant le montant que vous vouler emprunter" class="pull-left">
-                  <span class="glyphicon glyphicon-asterisk" style="color:red" aria-hidden="true"></span></a>
+                  <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span></a>
                 </label>
             </div>
 
@@ -31,23 +31,21 @@
               <label class="control-label col-sm-4">
                 <a href="#" data-toggle="tooltip" title="Indiquez le montant du ou des devis des entreprise(s)
                 pour faire les travaux. Si vous ne connaissez pas le montant exact, une estimation est suffisante." class="pull-left">
-                  <span class="glyphicon glyphicon-info-sign"  style="color:skyblue" aria-hidden="true"></span></a>
+                  <span class="glyphicon glyphicon-info-sign"  style="color:#663399" aria-hidden="true"></span></a>
               </label>
             </div>
 
             <div class="form-group">
-                <label class="control-label col-sm-4">FRAIS DE NOTAIRE :
-
-                    </label>
+                <label class="control-label col-sm-4">FRAIS DE NOTAIRE :</label>
 
                 <div class="col-sm-4">
-                    <input type="number" min="0"  name="notaire" class="form-control"  ng-model="demande.projet.fraisNotaire" required>
+                    <input type="number" min="0"  name="notaire" class="form-control"  ng-model="demande.projet.fraisNotaire" required readonly>
                     <span ng-show="montantProjetForm.$submitted && montantProjetForm.notaire.$error.required" class="form-text-error"> Veuillez entrer le frais de notaire de votre projet.</span>
                 </div>
               <label class="control-label col-sm-4">
                 <a href="#" data-toggle="tooltip" title="Les frais de notaire correspondent aux sommes versées par le client au notaire pour tout acte notarié.
                  Ils se décomposent en droits et taxes, en débours et en émoluments ou honoraires." class="pull-left">
-                  <span class="glyphicon glyphicon-asterisk" style="color:red" aria-hidden="true"></span></a>
+                  <span class="glyphicon glyphicon-asterisk" style="color:#663399;" aria-hidden="true"></span></a>
               </label>
             </div>
 
@@ -57,13 +55,13 @@
 
       <div class="row page-header" style="background-color: #f8f8f8; padding:0px ; margin: 10px;height: 50px;">
         <div class="col-md-5 nopadding text-right">
-          <button ng-disabled="node.next === 'form'" class="btn btn-primary" style="height: 50px; width: 130px" ng-click="  vm.viewTreePanel = true;vm.viewFormPanel = false; ">
+          <button ng-disabled="node.next === 'form'" class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px" ng-click="  vm.viewTreePanel = true;vm.viewFormPanel = false; ">
             <span class="glyphicon glyphicon-chevron-left "></span>  PRECEDENT
           </button>
         </div>
         <div class="col-md-2"></div>
         <div class="col-md-5  nopadding text-left">
-          <button type="submit" class="btn btn-primary" style="height: 50px; width: 130px" ng-click="montantProjetForm.notaire.$error.required || montantProjetForm.montantProjet.$error.required ? error = false : $nextStep();">
+          <button type="submit" class="btn " style="background-color:#663399;color:white;height: 50px; width: 130px" ng-click="montantProjetForm.notaire.$error.required || montantProjetForm.montantProjet.$error.required ? error = false : $nextStep();">
             SUIVANT
             <span class="glyphicon glyphicon-chevron-right"></span>
           </button>

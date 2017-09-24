@@ -75,7 +75,7 @@
             vm.viewTreePanel = false;
             vm.viewFormPanel = true;
         };
-        $scope.calcuulTauxNotaire = function(type) {
+        $scope.calcuulTauxNotaire = function() {
           $scope.demande.projet.fraisNotaire = ($scope.demande.projet.montantProjet *7) /100;
         };
 
