@@ -1,8 +1,7 @@
 angular.module('offres.model').factory('OffresModel', ['BanqueModel',
   /**
    * @description offres model
-   * @returns {OffresModel}
-   */
+   * @returns {OffresModel}   */
   function (BanqueModel) {
     'use strict';
     /**

@@ -2,11 +2,13 @@
 
     <div class="panel-body">
         <form name="myForm" class="form-horizontal" novalidate>
-          <div class="row" style="min-height: 400px">
+          <div class="row" style="min-height: 400px;padding: 25px">
             <div class="">
-              <div style="width: 70%; margin-left: auto; margin-right: auto; margin-bottom: 30px" class="well text-center">
-                <strong>Quels sont Vos Crédits Encours ?</strong>
+              <div style="width: 100%; margin-left: auto; margin-right: auto; margin-bottom: 30px" class=" text-center">
+                <span  style="color: #555"><i class="material-icons">info</i></span>
+                <span style="color: #777; position: relative;top: -8px;font-style: italic;font-size: 13px;"> Quels sont Vos Crédits Encours ?</span>
               </div>
+
             <fieldset style="">
 
                 <div class="row">
@@ -41,7 +43,7 @@
                         </div>
                       <label class="control-label col-sm-2">
                         <a href="#" data-toggle="tooltip" title=" Votre credit principal est obligatoire" class="pull-left">
-                          <span class="glyphicon glyphicon-asterisk" style="color:red" aria-hidden="true"></span></a>
+                          <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span></a>
                       </label>
                     </div>
                 </div>
@@ -109,7 +111,7 @@
                         </div>
                       <label class="control-label col-sm-2">
                         <a href="#" data-toggle="tooltip" title=" Votre investissement locatif" class="pull-left">
-                          <span class="glyphicon glyphicon-asterisk" style="color:red" aria-hidden="true"></span></a>
+                          <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span></a>
                       </label>
                     </div>
                 </div>
@@ -145,7 +147,7 @@
                         </div>
                       <label class="control-label col-sm-2">
                         <a href="#" data-toggle="tooltip" title="" class="pull-left">
-                          <span class="glyphicon glyphicon-asterisk" style="color:red" aria-hidden="true"></span></a>
+                          <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span></a>
                       </label>
                     </div>
                 </div>
@@ -154,21 +156,22 @@
             </div>
           </div>
 
-          <div class="row page-header" style="background-color: #f8f8f8; padding:0px ; margin: 10px;height: 50px;">
-            <div class="col-md-5 nopadding text-right">
-              <button ng-disabled="$isFirst()" class="btn btn-primary" style="height: 50px; width: 130px"  ng-click="$previousStep()">
+          <div class="row page-header" style="background-color: #f8f8f8; padding:0px ; margin: 10px; min-height: 50px;">
+            <div class="col-md-4"></div>
+            <div class="col-md-2 nopadding text-center">
+              <button ng-disabled="$isFirst()" class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px;margin-bottom: 2px" ng-click="$previousStep()">
                 <span class="glyphicon glyphicon-chevron-left"></span>
                 PRECEDENT
               </button>
             </div>
-            <div class="col-md-2"></div>
-            <div class="col-md-5  nopadding text-left">
-              <button type="submit" class="btn btn-primary" style="height: 50px; width: 130px" ng-click="myForm.ResidencePrincipalMensualite.$error.required || myForm.ResidencePrincipalRestant.$error.required ? error = false : $nextStep();">
+
+            <div class="col-md-2  nopadding text-center">
+              <button type="submit" class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px;margin-bottom: 2px" ng-click="myForm.ResidencePrincipalMensualite.$error.required || myForm.ResidencePrincipalRestant.$error.required ? error = false : $nextStep();">
                 SUIVANT
                 <span class="glyphicon glyphicon-chevron-right"></span>
               </button>
             </div>
-
+            <div class="col-md-4"></div>
           </div>
 
 
