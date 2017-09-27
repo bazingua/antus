@@ -1,19 +1,12 @@
-<div style="background-color: #7a43b6; color: #fff;" class="">
+<div style="background-color: #7a43b6; color: #fff; height: auto">
     <h3 class="color-white padding">{{node.libelle}}</h3>
 </div>
 
-<!--
-    <div  ng-repeat="type in node.fils"  class="btn-group  " role="group">
-    <button ng-click="choiceType(type)" style="cursor: pointer" type="button" class="btn btn-default">
-      {{type.libelle}}
-    </button>
-</div>
--->
 <br/>
 
-<div class="panel-body" style="text-align: center; height: 410px">
+<div class="panel-body" style="text-align: center; min-height: 410px">
   <div class="panel panel-body well" style="padding-bottom:15px;">
-    <strong>Quels taux de crédit immobilier pour votre profil et votre projet ? Comparez plusieurs offres personnalisées parmi 110 partenaires bancaires. Gratuitement, sans engagement</strong>, vous pourrez optimiser votre projet immobilier. En 2015, ANTUS a ainsi accompagné <strong style="color:#f18e01">+ de 72 000 nouveaux propriétaires !</strong>
+    <strong>Quels taux de crédit immobilier pour votre profil et votre projet ? Comparez plusieurs offres personnalisées parmi 110 partenaires bancaires. Gratuitement, sans engagement</strong>, vous pourrez optimiser votre projet immobilier. En 2016, ANTUS a ainsi accompagné <strong style="color:#663399">+ de 100 nouveaux propriétaires !</strong>
   </div>
   <div class="btn-group" role="group" ng-repeat="type in node.fils"  class="" style="text-align: center; margin: 5px" aria-label="Basic example">
     <span ng-click="choiceType(type)"  style="font-weight: bold" class="text-uppercase">
@@ -31,18 +24,19 @@
   </div>
 </div>
 
-<div class="row page-header" style="background-color: #f8f8f8; padding:0px ; margin: 10px;height: 50px;">
-    <div class="col-md-5 nopadding text-right">
-        <button ng-disabled="!node.prev.id" class="btn btn-primary" style="height: 50px; width: 130px" ng-click=" navigation(node.prev) ">
+<div class="row page-header" style="background-color: #f8f8f8; padding:0px ; margin: 10px; min-height: 50px;">
+  <div class="col-md-4"></div>
+    <div class="col-md-2 text-center">
+        <button ng-disabled="!node.prev.id" class="btn " style="background-color:#663399;color:white;height: 50px; width: 130px;margin-bottom: 20px" ng-click=" navigation(node.prev) ">
           <span class="glyphicon glyphicon-chevron-left "></span>  PRECEDENT
         </button>
     </div>
-    <div class="col-md-2"></div>
-    <div class="col-md-5  nopadding text-left">
-        <button  type="submit " class="btn  btn-primary"  data-toggle="button" aria-pressed="false" style="height: 50px; width: 130px" ng-disabled="!node.next.id && node.next !== 'form' " ng-click=" navigation(node.next, true); ">
+
+    <div class="col-md-2 text-center">
+        <button  type="submit " class="btn " style="background-color:#663399;color:white;height: 50px; width: 130px"  data-toggle="button" aria-pressed="false"  ng-disabled="!node.next.id && node.next !== 'form' " ng-click=" navigation(node.next, true); ">
           SUIVANT <span class="glyphicon glyphicon-chevron-right "></span>
         </button>
     </div>
-
+  <div class="col-md-4"></div>
 
 </div>

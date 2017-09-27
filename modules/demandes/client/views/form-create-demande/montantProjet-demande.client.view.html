@@ -3,11 +3,13 @@
   <div class="panel-body">
 
   <form name="myForm" class="form-horizontal" novalidate>
-    <div class="row" style="min-height: 400px">
+    <div class="row" style="min-height: 400px;padding: 25px">
       <div class="" style="margin-top: 10px;">
-        <div style="width: 70%; margin-left: auto; margin-right: auto; margin-bottom: 30px" class="well text-center">
-          <strong>LE MONTANT DE VOTRE PRÊT</strong>
+        <div style="width: 100%; margin-left: auto; margin-right: auto; margin-bottom: 30px" class=" text-center">
+          <span  style="color: #555"><i class="material-icons">info</i></span>
+          <span style="color: #777; position: relative;top: -8px;font-style: italic;font-size: 13px;"> LE MONTANT DE VOTRE PRÊT</span>
         </div>
+
         <div class="row">
 
             <div class="form-group">
@@ -72,21 +74,22 @@
     </div>
 
 
-    <div class="row page-header" style="background-color: #f8f8f8; padding:0px ; margin: 10px;height: 50px;">
-      <div class="col-md-5 nopadding text-right">
-        <button ng-disabled="$isFirst()" class="btn btn-primary" style="height: 50px; width: 130px" ng-click="$previousStep()">
+    <div class="row page-header" style="background-color: #f8f8f8; padding:0px ; margin: 10px; min-height: 50px;">
+      <div class="col-md-4"></div>
+      <div class="col-md-2 nopadding text-center">
+        <button ng-disabled="$isFirst()" class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px;margin-bottom: 2px" ng-click="$previousStep()">
           <span class="glyphicon glyphicon-chevron-left"></span>
           PRECEDENT
         </button>
       </div>
-      <div class="col-md-2"></div>
-      <div class="col-md-5  nopadding text-left">
-        <button type="submit" class="btn btn-primary" style="height: 50px; width: 130px" ng-click="myForm.montantFinal.$error.required  || myForm.montantApport.$error.required ? error = false : $nextStep();">
+
+      <div class="col-md-2 nopadding text-center">
+        <button type="submit" class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px;margin-bottom: 2px" ng-click="myForm.montantFinal.$error.required  || myForm.montantApport.$error.required ? error = false : $nextStep();">
           SUIVANT
           <span class="glyphicon glyphicon-chevron-right"></span>
         </button>
       </div>
-
+      <div class="col-md-4"></div>
     </div>
 
 
