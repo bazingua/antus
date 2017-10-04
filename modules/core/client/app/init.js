@@ -16,7 +16,7 @@
     $locationProvider.html5Mode({
       enabled: true,
       requireBase: false
-    }).hashPrefix('!');
+    });
 
     $httpProvider.interceptors.push('authInterceptor');
 
