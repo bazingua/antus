@@ -1,18 +1,19 @@
-angular.module('offres.model').factory('OffresModel', ['BanqueModel',
+angular.module('offres.model').factory('OffresModel', ['BanqueModel','DemandesModel',
   /**
    * @description offres model
    * @returns {OffresModel}   */
-  function (BanqueModel) {
+  function (BanqueModel,DemandesModel) {
     'use strict';
     /**
      *Descript: model's contructor
      * @param data
      * @constructor
-     */
+     */ 
     function OffresModel(data) {
       data = data || {};
       this.id = data.id || 0;
       this.banque = new BanqueModel(data.banque);
+      this.demande = new DemandesModel(data.demande);
       this.montantPret = data.montantPret || 0;
       this.dureePret = data.dureePret || 0;
       this.tauxInteret = data.tauxInteret || 0;
