@@ -14,24 +14,39 @@ var DemandeSchema = new Schema({
     type: Date,
     default: Date.now
   },
-  title: {
-    type: String,
-    default: '',
-    trim: true
-  },
-  content: {
-    type: String,
-    default: '',
-    trim: true
-  },
   id: {
+    type: String
+  },
+  projet: {
+    type: Object
+  },
+  patrimoine: {
+    type: Object
+  },
+  financement: {
+    type: Object
+  },
+  client: {
+    type: Object
+  },
+  apport: {
+    type: Object
+  },
+  updated: {
+    type: Date,
+    default: Date.now
+  },
+  active: {
+    type: Boolean,
+    default: true
+  },
+  etat: {
     type: Number,
     default: 0
   },
-  client: {
+  user: {
     type: Schema.ObjectId,
-    ref: 'User',
-    required: 'User is required'
+    ref: 'User'
   }
 });
 
