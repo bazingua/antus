@@ -5,9 +5,17 @@
  */
 var path = require('path'),
   mongoose = require('mongoose'),
+  _ = require('lodash'),
   Demande = mongoose.model('Demande'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller'));
-
+  //etat offre
+  var OFFRE_STATE_DEPOSE = 1;
+  var OFFRE_STATE_TRANFERE = 5;
+  //etat demande
+  var DEMANDE_STATE_DEPOSE = 1;
+  var DEMANDE_STATE_VALIDE = 5;
+  var DEMANDE_STATE_REJETE = 0;
+  var DEMANDE_STATE_ACCEPTE = 10;
 /**
  * Create an demande
  */
@@ -54,6 +62,59 @@ exports.update = function (req, res) {
   demande.etat = req.demande.etat;
 
   demande.save(function (err) {
+    if (err) {
+      return res.status(422).send({
+        message: errorHandler.getErrorMessage(err)
+      });
+    } else {
+      res.json(demande);
+    }
+  });
+};
+
+/**
+ * deposerOffre an demande
+ */
+exports.deposerOffre = function (req, res) {
+  var demande = req.demande;
+  demande.updated = new Date();
+  req.body.id = demande.offres.length + 1; 
+  req.body.etat = OFFRE_STATE_DEPOSE;
+  req.body.banque = req.user;
+  req.body.created = new Date();
+  demande.offres.push(req.body);
+  demande.etat = DEMANDE_STATE_ACCEPTE;
+  demande.save(function (err) {
+    if (err) {
+      return res.status(422).send({
+        message: errorHandler.getErrorMessage(err)
+      });
+    } else {
+      res.json(demande);
+    }
+  });
+};
+
+/**
+ * deposerOffre an demande
+ */
+exports.transfererOffre = function (req, res) {
+  var demande = req.demande;
+  demande.updated = new Date();
+  var index = _.findIndex(demande.offres, { 'id': parseInt(req.params.offreId, 10), 'etat': OFFRE_STATE_DEPOSE });
+  console.log(req.params,index);
+  if(!demande.offres[index])
+    return res.status(422).send({
+      code: '500.3',
+      message: "Cette offre n'est pas valide",
+      details: "L'offre avec cet id n'est pas dans la liste des offre de la demande"
+    });
+      
+  var offre = demande.offres[index];
+  offre.etat = OFFRE_STATE_TRANFERE;
+  demande.offres[index] = offre;
+  demande.save(function (err, data) {
+    console.log('+++data', data);
     if (err) {
       return res.status(422).send({
         message: errorHandler.getErrorMessage(err)

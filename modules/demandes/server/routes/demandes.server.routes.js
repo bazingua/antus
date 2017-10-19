@@ -22,6 +22,15 @@ module.exports = function (app) {
   app.route('/api/logicdelete/:demandeId/:state').all(demandesPolicy.isAllowed)
   .put(demandes.logiqueDelete);
 
+
+  // Deposer  demande routes
+  app.route('/api/demandes/:demandeId/offre/deposer').all(demandesPolicy.isAllowed)
+  .put(demandes.deposerOffre);
+
+  // Deposer  demande routes
+  app.route('/api/demandes/:demandeId/offre/:offreId/transferer').all(demandesPolicy.isAllowed)
+  .put(demandes.transfererOffre);
+
   // Finish by binding the demande middleware
   app.param('demandeId', demandes.demandeByID);
   app.param('state', demandes.state);
