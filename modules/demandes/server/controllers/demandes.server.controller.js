@@ -101,20 +101,19 @@ exports.deposerOffre = function (req, res) {
 exports.transfererOffre = function (req, res) {
   var demande = req.demande;
   demande.updated = new Date();
-  var index = _.findIndex(demande.offres, { 'id': parseInt(req.params.offreId, 10), 'etat': OFFRE_STATE_DEPOSE });
-  console.log(req.params,index);
-  if(!demande.offres[index])
+  var offres = demande.offres.slice();
+  var index = _.findIndex(offres, { 'id': parseInt(req.params.offreId, 10), 'etat': OFFRE_STATE_DEPOSE });
+  if(!offres[index])
     return res.status(422).send({
       code: '500.3',
       message: "Cette offre n'est pas valide",
       details: "L'offre avec cet id n'est pas dans la liste des offre de la demande"
     });
       
-  var offre = demande.offres[index];
-  offre.etat = OFFRE_STATE_TRANFERE;
-  demande.offres[index] = offre;
+  offres[index].etat = OFFRE_STATE_TRANFERE;
+  demande.offres = offres;
+  demande.markModified('offres');
   demande.save(function (err, data) {
-    console.log('+++data', data);
     if (err) {
       return res.status(422).send({
         message: errorHandler.getErrorMessage(err)
