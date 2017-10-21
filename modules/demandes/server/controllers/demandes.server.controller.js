@@ -95,6 +95,27 @@ exports.deposerOffre = function (req, res) {
   });
 };
 
+
+
+/**
+ * valider demande 
+ */
+exports.validerDemande = function (req, res) {
+  var demande = req.demande;
+  demande.updated = new Date();
+  demande.etat = DEMANDE_STATE_VALIDE;
+  demande.save(function (err) {
+    if (err) {
+      return res.status(422).send({
+        message: errorHandler.getErrorMessage(err)
+      });
+    } else {
+      res.json(demande);
+    }
+  });
+};
+
+
 /**
  * deposerOffre an demande
  */

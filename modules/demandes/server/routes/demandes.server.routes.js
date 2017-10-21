@@ -22,6 +22,9 @@ module.exports = function (app) {
   app.route('/api/logicdelete/:demandeId/:state').all(demandesPolicy.isAllowed)
   .put(demandes.logiqueDelete);
 
+  // Valider demande routes
+  app.route('/api/demandes/:demandeId/valider').all(demandesPolicy.isAllowed)
+  .put(demandes.validerDemande);
 
   // Deposer  demande routes
   app.route('/api/demandes/:demandeId/offre/deposer').all(demandesPolicy.isAllowed)

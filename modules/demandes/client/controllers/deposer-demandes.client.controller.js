@@ -137,13 +137,38 @@
             }
         };
 
+        /**
+         * Exemple de comment appeller les methodes de la service 
+         */
+
+         /*
         // find demande
-        DemandesService.find("59e176d7073ce8652b2018a8")
+        DemandesService.find()
         .then(function (response) {
           console.log('++++++', response);
         })
         .catch(function (error) {
           console.log('-----', error);
+        });
+
+        //how get an demande by ID
+        DemandesService.get("59e69e8e8525db22d9f39c0a")
+        .then(function (response) {
+          console.log('la reponse (la demande avec cette id)', response);
+        })
+        .catch(function (error) {
+          console.log('----- En cas d erreur' , error);
+        });
+        */
+
+
+        //how get an demande by ID
+        DemandesService.validerDemande("59e69e8e8525db22d9f39c0a")
+        .then(function (response) {
+          console.log('la reponse (apres validation de la demande retourne la demande modifié )', response);
+        })
+        .catch(function (error) {
+          console.log('----- En cas d erreur' , error);
         });
     }
 }());
