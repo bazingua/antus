@@ -1,14 +1,14 @@
-angular.module('offres.model').factory('OffresModel', ['BanqueModel','DemandesModel',
+angular.module('offres.model').factory('OffresModel', ['BanqueModel', 'DemandesModel',
   /**
    * @description offres model
    * @returns {OffresModel}   */
-  function (BanqueModel,DemandesModel) {
+  function (BanqueModel, DemandesModel) {
     'use strict';
     /**
      *Descript: model's contructor
      * @param data
      * @constructor
-     */ 
+     */
     function OffresModel(data) {
       data = data || {};
       this.id = data.id || 0;

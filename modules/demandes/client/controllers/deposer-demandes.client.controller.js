@@ -136,5 +136,14 @@
                 $scope.demande.financement.banqueContacter = $filter('filter')($scope.demande.financement.banqueContacter, '!' + banque.libelle);
             }
         };
+
+        // find demande
+        DemandesService.find("59e176d7073ce8652b2018a8")
+        .then(function (response) {
+          console.log('++++++', response);
+        })
+        .catch(function (error) {
+          console.log('-----', error);
+        });
     }
 }());

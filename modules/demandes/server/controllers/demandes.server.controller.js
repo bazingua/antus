@@ -8,10 +8,10 @@ var path = require('path'),
   _ = require('lodash'),
   Demande = mongoose.model('Demande'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller'));
-  //etat offre
+  // etat offre
   var OFFRE_STATE_DEPOSE = 1;
   var OFFRE_STATE_TRANFERE = 5;
-  //etat demande
+  // etat demande
   var DEMANDE_STATE_DEPOSE = 1;
   var DEMANDE_STATE_VALIDE = 5;
   var DEMANDE_STATE_REJETE = 0;
@@ -78,7 +78,7 @@ exports.update = function (req, res) {
 exports.deposerOffre = function (req, res) {
   var demande = req.demande;
   demande.updated = new Date();
-  req.body.id = demande.offres.length + 1; 
+  req.body.id = demande.offres.length + 1;
   req.body.etat = OFFRE_STATE_DEPOSE;
   req.body.banque = req.user;
   req.body.created = new Date();
@@ -103,7 +103,7 @@ exports.transfererOffre = function (req, res) {
   demande.updated = new Date();
   var offres = demande.offres.slice();
   var index = _.findIndex(offres, { 'id': parseInt(req.params.offreId, 10), 'etat': OFFRE_STATE_DEPOSE });
-  if(!offres[index])
+  if (!offres[index])
     return res.status(422).send({
       code: '500.3',
       message: "Cette offre n'est pas valide",
@@ -167,8 +167,10 @@ exports.delete = function (req, res) {
  */
 exports.list = function (req, res) {
   req.query.active = true;
-  if(req.query.user)
-    req.query.user = { '_id': req.query.user};
+  if (req.query.user && req.query.user !== '*')
+    req.query.user = { '_id': req.query.user };
+  else
+    delete req.query.user;
   Demande.find(req.query).sort('-created').populate('user', 'displayName').exec(function (err, demandes) {
     if (err) {
       return res.status(422).send({

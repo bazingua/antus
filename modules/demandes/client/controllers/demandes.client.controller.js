@@ -5,9 +5,9 @@
     .module('demandes')
     .controller('DemandesController', DemandesController);
 
-  DemandesController.$inject = ['$scope', 'demandeResolve', 'Authentication'];
+  DemandesController.$inject = ['$scope', 'demandeResolve', 'Authentication', 'DemandesService'];
 
-  function DemandesController($scope, demande, Authentication) {
+  function DemandesController($scope, demande, Authentication, DemandesService) {
     var vm = this;
 
     vm.demande = demande;
