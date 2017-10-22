@@ -5,9 +5,9 @@
         .module('demandes')
         .controller('DeposerDemandesController', DeposerDemandesController);
 
-    DeposerDemandesController.$inject = ['$scope', 'DemandesService', 'typeDemande', 'banques', 'DemandesModel', '$filter'];
+    DeposerDemandesController.$inject = ['$scope', 'DemandesService', 'typeDemande', 'banques', 'DemandesModel', '$filter', 'Authentication'];
 
-    function DeposerDemandesController($scope, DemandesService, typeDemande, banques, DemandesModel, $filter) {
+    function DeposerDemandesController($scope, DemandesService, typeDemande, banques, DemandesModel, $filter, Authentication) {
         // typeDemande = arbre
         var vm = this;
 
@@ -150,6 +150,7 @@
         .catch(function (error) {
           console.log('-----', error);
         });
+        */
 
         //how get an demande by ID
         DemandesService.get("59e69e8e8525db22d9f39c0a")
@@ -159,9 +160,8 @@
         .catch(function (error) {
           console.log('----- En cas d erreur' , error);
         });
-        */
 
-
+        /*
         //how get an demande by ID
         DemandesService.validerDemande("59e69e8e8525db22d9f39c0a")
         .then(function (response) {
@@ -170,5 +170,9 @@
         .catch(function (error) {
           console.log('----- En cas d erreur' , error);
         });
+        */
+
+        console.log(Authentication.user);
+
     }
 }());

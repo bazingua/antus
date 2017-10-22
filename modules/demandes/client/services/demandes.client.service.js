@@ -12,7 +12,7 @@
       demandeId: '@_id'
     }, {
 
-      getById: { method: 'GET', isArray: false },
+      getById: { method: 'GET',  params: { demandeId: '@demandeId' }, isArray: false },
       findDemande: { method: 'GET', url: '/api/demandes?user=:user', isArray: true },
       remove: { method: 'PUT', url: '/api/logicdelete/:demandeId/:state', params: { demandeId: '@demandeId', state: '@state' } },
       deposerOfr: { method: 'PUT', url: '/api/demandes/:demandeId/offre/deposer', params: { demandeId: '@demandeId' } },
@@ -27,8 +27,8 @@
         Cette fonction permet transferer une offre deja deposé ,
        *  @param demandeId: l'id de la demande
        */
-      get: function (demandeId) {
-        return this.getById({ demandeId: demandeId }).$promise;
+      get: function (id) {
+        return this.getById({ demandeId: new String(id) }).$promise;
       },
       save: function (demande) {
         if (demande.id) {
