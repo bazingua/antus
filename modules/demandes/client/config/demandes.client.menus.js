@@ -23,5 +23,13 @@
       roles: ['*']
      // roles: ['admin']
     });
+
+    // Add the dropdown list item
+    menuService.addSubMenuItem('topbar', 'demandes', {
+      title: 'Demandes',
+      state: 'demandes.view',
+      roles: ['*']
+     // roles: ['admin']
+    });
   }
 }());

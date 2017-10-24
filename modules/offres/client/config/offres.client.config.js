@@ -22,6 +22,12 @@
       state: 'offres.list'
     });
 
+    // Add the dropdown list item
+    menuService.addSubMenuItem('topbar', 'offres', {
+      title: 'Test',
+      state: 'offres.Test'
+    });
+
     // Add the dropdown create item
     menuService.addSubMenuItem('topbar', 'offres', {
       title: 'Create Offre',
