@@ -39,7 +39,7 @@ describe('Demande CRUD tests', function () {
 
     // Create a new user
     user = new User({
-      firstName: 'Full',
+      prenom: 'Full',
       lastName: 'Name',
       displayName: 'Full Name',
       email: 'test@test.com',
@@ -224,7 +224,7 @@ describe('Demande CRUD tests', function () {
 
     // Create orphan user
     var _orphan = new User({
-      firstName: 'Full',
+      prenom: 'Full',
       lastName: 'Name',
       displayName: 'Full Name',
       email: 'orphan@test.com',
@@ -333,7 +333,7 @@ describe('Demande CRUD tests', function () {
 
     // Create user that will create the Demande
     var _demandeOwner = new User({
-      firstName: 'Full',
+      prenom: 'Full',
       lastName: 'Name',
       displayName: 'Full Name',
       email: 'temp@test.com',

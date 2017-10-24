@@ -53,10 +53,9 @@
        * remove
        * Cette fonction permet de supprimer logiquement une demande,
        *  @param demandeId: l'id de la demande
-       * @param state: permet de dire si on supprime où si on reactive, prend true en cas de suppression
        */
-      remove: function (demandeId, state) {
-        return this.remove({ demandeId: demandeId, state: state }).$promise;
+      remove: function (demandeId) {
+        return this.remove({ demandeId: demandeId, state: false }).$promise;
       },
       /**
        *validerDemande
