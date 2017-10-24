@@ -13,12 +13,12 @@ exports.renderIndex = function (req, res) {
     safeUserObject = {
       displayName: validator.escape(req.user.displayName),
       provider: validator.escape(req.user.provider),
-      username: validator.escape(req.user.username),
+      prenom: validator.escape(req.user.prenom),
       created: req.user.created.toString(),
       roles: req.user.roles,
       profileImageURL: req.user.profileImageURL,
       email: validator.escape(req.user.email),
-      lastName: validator.escape(req.user.lastName),
+      nom: validator.escape(req.user.nom),
       prenom: validator.escape(req.user.prenom),
       additionalProvidersData: req.user.additionalProvidersData
     };
