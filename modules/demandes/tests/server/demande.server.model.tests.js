@@ -22,7 +22,7 @@ describe('Demande Model Unit Tests:', function () {
   beforeEach(function (done) {
     user = new User({
       prenom: 'Full',
-      lastName: 'Name',
+      nom: 'Name',
       displayName: 'Full Name',
       email: 'test@test.com',
       username: 'username',

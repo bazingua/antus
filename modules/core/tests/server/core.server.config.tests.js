@@ -38,7 +38,7 @@ describe('Configuration Tests:', function () {
           provider: 'local',
           email: 'user_config_test_@localhost.com',
           prenom: 'User',
-          lastName: 'Local',
+          nom: 'Local',
           displayName: 'User Local',
           roles: ['user']
         };
@@ -48,7 +48,7 @@ describe('Configuration Tests:', function () {
           provider: 'local',
           email: 'admin_config_test_@localhost.com',
           prenom: 'Admin',
-          lastName: 'Local',
+          nom: 'Local',
           displayName: 'Admin Local',
           roles: ['user', 'admin']
         };

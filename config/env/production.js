@@ -99,7 +99,7 @@ module.exports = {
         provider: 'local',
         email: process.env.MONGO_SEED_USER_EMAIL || 'user@localhost.com',
         prenom: 'User',
-        lastName: 'Local',
+        nom: 'Local',
         displayName: 'User Local',
         roles: ['user']
       },
@@ -108,7 +108,7 @@ module.exports = {
         provider: 'local',
         email: process.env.MONGO_SEED_ADMIN_EMAIL || 'admin@localhost.com',
         prenom: 'Admin',
-        lastName: 'Local',
+        nom: 'Local',
         displayName: 'Admin Local',
         roles: ['user', 'admin']
       }

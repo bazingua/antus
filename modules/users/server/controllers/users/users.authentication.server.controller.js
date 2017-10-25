@@ -23,10 +23,11 @@ exports.signup = function (req, res) {
   delete req.body.roles;
 
   // Init user and add missing fields
+  console.log(req.body);
   var user = new User(req.body);
   user.provider = 'local';
   user.displayName = user.prenom + ' ' + user.nom;
-
+  console.log(user);
   // Then save the user
   user.save(function (err) {
     if (err) {

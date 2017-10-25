@@ -3,7 +3,7 @@
 describe('Users E2E Tests:', function () {
   var user1 = {
     firstName: 'test',
-    lastName: 'user',
+    nom: 'user',
     email: 'test.user@meanjs.com',
     username: 'testUser',
     password: 'P@$$w0rd!!'
@@ -11,7 +11,7 @@ describe('Users E2E Tests:', function () {
 
   var user2 = {
     firstName: 'test',
-    lastName: 'user2',
+    nom: 'user2',
     email: 'test.user2@meanjs.com',
     username: 'testUser2',
     password: 'P@$$w0rd!!'
@@ -28,7 +28,7 @@ describe('Users E2E Tests:', function () {
     it('Should report missing first name', function () {
       browser.get('http://localhost:3001/authentication/signup');
       // Enter Last Name
-      element(by.model('vm.credentials.lastName')).sendKeys(user1.lastName);
+      element(by.model('vm.credentials.nom')).sendKeys(user1.nom);
       // Enter Email
       element(by.model('vm.credentials.email')).sendKeys(user1.email);
       // Enter Username
@@ -62,7 +62,7 @@ describe('Users E2E Tests:', function () {
       // Enter First Name
       element(by.model('vm.credentials.firstName')).sendKeys(user1.firstName);
       // Enter Last Name
-      element(by.model('vm.credentials.lastName')).sendKeys(user1.lastName);
+      element(by.model('vm.credentials.nom')).sendKeys(user1.nom);
       // Enter Username
       element(by.model('vm.credentials.username')).sendKeys(user1.username);
       // Enter Password
@@ -78,7 +78,7 @@ describe('Users E2E Tests:', function () {
       // Enter First Name
       element(by.model('vm.credentials.firstName')).sendKeys(user1.firstName);
       // Enter Last Name
-      element(by.model('vm.credentials.lastName')).sendKeys(user1.lastName);
+      element(by.model('vm.credentials.nom')).sendKeys(user1.nom);
       // Enter Email
       element(by.model('vm.credentials.email')).sendKeys('123');
       // Enter Username
@@ -100,7 +100,7 @@ describe('Users E2E Tests:', function () {
       // Enter First Name
       element(by.model('vm.credentials.firstName')).sendKeys(user1.firstName);
       // Enter Last Name
-      element(by.model('vm.credentials.lastName')).sendKeys(user1.lastName);
+      element(by.model('vm.credentials.nom')).sendKeys(user1.nom);
       // Enter Email
       element(by.model('vm.credentials.email')).sendKeys('123@123@123');
       // Enter Username
@@ -118,7 +118,7 @@ describe('Users E2E Tests:', function () {
       // Enter First Name
       element(by.model('vm.credentials.firstName')).sendKeys(user1.firstName);
       // Enter Last Name
-      element(by.model('vm.credentials.lastName')).sendKeys(user1.lastName);
+      element(by.model('vm.credentials.nom')).sendKeys(user1.nom);
       // Enter Email
       element(by.model('vm.credentials.email')).sendKeys(user1.email);
       // Enter Username
@@ -136,7 +136,7 @@ describe('Users E2E Tests:', function () {
       // Enter First Name
       element(by.model('vm.credentials.firstName')).sendKeys(user1.firstName);
       // Enter Last Name
-      element(by.model('vm.credentials.lastName')).sendKeys(user1.lastName);
+      element(by.model('vm.credentials.nom')).sendKeys(user1.nom);
       // Enter Email
       element(by.model('vm.credentials.email')).sendKeys(user1.email);
       // Enter Username
@@ -154,7 +154,7 @@ describe('Users E2E Tests:', function () {
       // Enter First Name
       element(by.model('vm.credentials.firstName')).sendKeys(user1.firstName);
       // Enter Last Name
-      element(by.model('vm.credentials.lastName')).sendKeys(user1.lastName);
+      element(by.model('vm.credentials.nom')).sendKeys(user1.nom);
       // Enter Email
       element(by.model('vm.credentials.email')).sendKeys(user1.email);
       // Enter Username
@@ -172,7 +172,7 @@ describe('Users E2E Tests:', function () {
       // Enter First Name
       element(by.model('vm.credentials.firstName')).sendKeys(user1.firstName);
       // Enter Last Name
-      element(by.model('vm.credentials.lastName')).sendKeys(user1.lastName);
+      element(by.model('vm.credentials.nom')).sendKeys(user1.nom);
       // Enter Email
       element(by.model('vm.credentials.email')).sendKeys(user1.email);
       // Enter Username
@@ -190,7 +190,7 @@ describe('Users E2E Tests:', function () {
       // Enter First Name
       element(by.model('vm.credentials.firstName')).sendKeys(user1.firstName);
       // Enter Last Name
-      element(by.model('vm.credentials.lastName')).sendKeys(user1.lastName);
+      element(by.model('vm.credentials.nom')).sendKeys(user1.nom);
       // Enter Email
       element(by.model('vm.credentials.email')).sendKeys(user1.email);
       // Enter Username
@@ -208,7 +208,7 @@ describe('Users E2E Tests:', function () {
       // Enter First Name
       element(by.model('vm.credentials.firstName')).sendKeys(user2.firstName);
       // Enter Last Name
-      element(by.model('vm.credentials.lastName')).sendKeys(user2.lastName);
+      element(by.model('vm.credentials.nom')).sendKeys(user2.nom);
       // Enter Email
       element(by.model('vm.credentials.email')).sendKeys('someemail@meanjs.com');
       // Enter Username
@@ -228,7 +228,7 @@ describe('Users E2E Tests:', function () {
       // Enter First Name
       element(by.model('vm.credentials.firstName')).sendKeys(user1.firstName);
       // Enter Last Name
-      element(by.model('vm.credentials.lastName')).sendKeys(user1.lastName);
+      element(by.model('vm.credentials.nom')).sendKeys(user1.nom);
       // Enter Email
       element(by.model('vm.credentials.email')).sendKeys(user1.email);
       // Enter Password
@@ -244,7 +244,7 @@ describe('Users E2E Tests:', function () {
       // Enter First Name
       element(by.model('vm.credentials.firstName')).sendKeys(user1.firstName);
       // Enter Last Name
-      element(by.model('vm.credentials.lastName')).sendKeys(user1.lastName);
+      element(by.model('vm.credentials.nom')).sendKeys(user1.nom);
       // Enter Email
       element(by.model('vm.credentials.email')).sendKeys(user1.email);
       // Enter Username
@@ -262,7 +262,7 @@ describe('Users E2E Tests:', function () {
       // Enter First Name
       element(by.model('vm.credentials.firstName')).sendKeys(user1.firstName);
       // Enter Last Name
-      element(by.model('vm.credentials.lastName')).sendKeys(user1.lastName);
+      element(by.model('vm.credentials.nom')).sendKeys(user1.nom);
       // Enter Email
       element(by.model('vm.credentials.email')).sendKeys(user1.email);
       // Enter Username
@@ -280,7 +280,7 @@ describe('Users E2E Tests:', function () {
       // Enter First Name
       element(by.model('vm.credentials.firstName')).sendKeys(user1.firstName);
       // Enter Last Name
-      element(by.model('vm.credentials.lastName')).sendKeys(user1.lastName);
+      element(by.model('vm.credentials.nom')).sendKeys(user1.nom);
       // Enter Email
       element(by.model('vm.credentials.email')).sendKeys(user1.email);
       // Enter Username
@@ -298,7 +298,7 @@ describe('Users E2E Tests:', function () {
       // Enter First Name
       element(by.model('vm.credentials.firstName')).sendKeys(user1.firstName);
       // Enter Last Name
-      element(by.model('vm.credentials.lastName')).sendKeys(user1.lastName);
+      element(by.model('vm.credentials.nom')).sendKeys(user1.nom);
       // Enter Email
       element(by.model('vm.credentials.email')).sendKeys(user1.email);
       // Enter Username
@@ -316,7 +316,7 @@ describe('Users E2E Tests:', function () {
       // Enter First Name
       element(by.model('vm.credentials.firstName')).sendKeys(user1.firstName);
       // Enter Last Name
-      element(by.model('vm.credentials.lastName')).sendKeys(user1.lastName);
+      element(by.model('vm.credentials.nom')).sendKeys(user1.nom);
       // Enter Email
       element(by.model('vm.credentials.email')).sendKeys(user1.email);
       // Enter Username
@@ -334,7 +334,7 @@ describe('Users E2E Tests:', function () {
       // Enter First Name
       element(by.model('vm.credentials.firstName')).sendKeys(user1.firstName);
       // Enter Last Name
-      element(by.model('vm.credentials.lastName')).sendKeys(user1.lastName);
+      element(by.model('vm.credentials.nom')).sendKeys(user1.nom);
       // Enter Email
       element(by.model('vm.credentials.email')).sendKeys(user1.email);
       // Enter Username
@@ -351,8 +351,8 @@ describe('Users E2E Tests:', function () {
       browser.get('http://localhost:3001/authentication/signup');
       // Enter FirstName
       element(by.model('vm.credentials.firstName')).sendKeys(user1.firstName);
-      // Enter LastName
-      element(by.model('vm.credentials.lastName')).sendKeys(user1.lastName);
+      // Enter nom
+      element(by.model('vm.credentials.nom')).sendKeys(user1.nom);
       // Enter Email
       element(by.model('vm.credentials.email')).sendKeys(user1.email);
       // Enter UserName
@@ -372,7 +372,7 @@ describe('Users E2E Tests:', function () {
       // Enter First Name
       element(by.model('vm.credentials.firstName')).sendKeys(user2.firstName);
       // Enter Last Name
-      element(by.model('vm.credentials.lastName')).sendKeys(user2.lastName);
+      element(by.model('vm.credentials.nom')).sendKeys(user2.nom);
       // Enter Email
       element(by.model('vm.credentials.email')).sendKeys(user1.email);
       // Enter Username
@@ -391,7 +391,7 @@ describe('Users E2E Tests:', function () {
       // Enter First Name
       element(by.model('vm.credentials.firstName')).sendKeys(user2.firstName);
       // Enter Last Name
-      element(by.model('vm.credentials.lastName')).sendKeys(user2.lastName);
+      element(by.model('vm.credentials.nom')).sendKeys(user2.nom);
       // Enter Email
       element(by.model('vm.credentials.email')).sendKeys(user2.email);
       // Enter Username
