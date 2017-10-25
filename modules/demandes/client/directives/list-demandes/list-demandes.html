@@ -1,0 +1,28 @@
+
+      <div class="panel panel-default" ng-repeat="demande in demandes">
+          <div class="panel-heading">
+            {{demande.type}}
+          </div>
+          <div class="panel-body">
+            <div class="col-xs-offset-1 col-xs-11 col-md-offset-1 col-md-11">
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <span class="" style="color:black">{{demande._id}} {{demande.created}}</span>
+                    Numero Demande
+  
+                    <a ui-sref="demandes.view({demandeId : demande._id })" >Detail Demande</a>
+                  </li>
+                  <li class="list-group-item">
+                    <span class="badge">{{demande.date}}</span>
+                    Date
+                  </li>
+                  <li class="list-group-item">
+                    <span class="badge">{{demande.montant}}</span>
+                    Montant
+                  </li>
+                </ul>
+            </div>
+  
+  
+          </div>
+          </div>

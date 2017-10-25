@@ -5,9 +5,9 @@
         .module('demandes')
         .controller('DeposerDemandesController', DeposerDemandesController);
 
-    DeposerDemandesController.$inject = ['$scope', 'DemandesService', 'typeDemande', 'banques', 'DemandesModel', '$filter'];
+    DeposerDemandesController.$inject = ['$scope', 'DemandesService', 'typeDemande', 'banques', 'DemandesModel', '$filter', 'Authentication'];
 
-    function DeposerDemandesController($scope, DemandesService, typeDemande, banques, DemandesModel, $filter) {
+    function DeposerDemandesController($scope, DemandesService, typeDemande, banques, DemandesModel, $filter, Authentication) {
         // typeDemande = arbre
         var vm = this;
 
@@ -62,6 +62,14 @@
             {
                 templateUrl: 'modules/demandes/client/views/form-create-demande/coordonnee-demande.client.view.html',
                 title: 'Coordonnee Demande'
+            },
+            {
+                templateUrl: 'modules/demandes/client/views/form-create-demande/create-pw.client.view.html',
+                title: 'Creation Mot de Passe'
+            },
+            {
+                templateUrl: 'modules/demandes/client/views/form-create-demande/detail-demande.client.view.html',
+                title: 'Votre demande'
             }
         ];
         $scope.banques = banques;
@@ -136,5 +144,43 @@
                 $scope.demande.financement.banqueContacter = $filter('filter')($scope.demande.financement.banqueContacter, '!' + banque.libelle);
             }
         };
+
+        /**
+         * Exemple de comment appeller les methodes du service 
+         */
+
+         /*
+        // find demande
+        DemandesService.find()
+        .then(function (response) {
+          console.log('++++++', response);
+        })
+        .catch(function (error) {
+          console.log('-----', error);
+        });
+        */
+
+        //how get an demande by ID
+       /* DemandesService.get("59e69e8e8525db22d9f39c0a")
+        .then(function (response) {
+          console.log('la reponse (la demande avec cette id)', response);
+        })
+        .catch(function (error) {
+          console.log('----- En cas d erreur' , error);
+        });*/
+
+        /*
+        //how get an demande by ID
+        DemandesService.validerDemande("59e69e8e8525db22d9f39c0a")
+        .then(function (response) {
+          console.log('la reponse (apres validation de la demande retourne la demande modifié )', response);
+        })
+        .catch(function (error) {
+          console.log('----- En cas d erreur' , error);
+        });
+        */
+
+        console.log(Authentication.user);
+
     }
 }());

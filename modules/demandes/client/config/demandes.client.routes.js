@@ -45,7 +45,7 @@
         controller: 'DemandesController',
         controllerAs: 'vm',
         resolve: {
-          demandeResolve: getDemande
+          demande: getDemande
         },
         data: {
           pageTitle: 'Demande {{ demandeResolve.title }}'
@@ -56,9 +56,7 @@
   getDemande.$inject = ['$stateParams', 'DemandesService'];
 
   function getDemande($stateParams, DemandesService) {
-    return DemandesService.get({
-      demandeId: $stateParams.demandeId
-    }).$promise;
+    return DemandesService.get($stateParams.demandeId);
   }
 
 

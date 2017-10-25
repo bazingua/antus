@@ -18,6 +18,7 @@ angular.module('demandes.model').factory('DemandesModel', ['ProjetModel', 'Patri
       this.financement = new FinancementModel(data.financement);
       this.client = new UserModel(data.client);
       this.apport = new ApportModel(data.apport);
+      this.offres = data.offres || [];
     }
 
     return DemandesModel;

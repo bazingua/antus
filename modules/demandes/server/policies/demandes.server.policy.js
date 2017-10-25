@@ -30,14 +30,22 @@ exports.invokeRolesPolicies = function () {
       resources: '/api/demandes/:demandeId',
       permissions: '*'
     }]
-  }, {
+  },
+  {
+    roles: ['user', 'admin'],
+    allows: [{
+      resources: '/api/logicdelete/:demandeId/:state',
+      permissions: '*'
+    }]
+  },
+  {
     roles: ['guest'],
     allows: [{
       resources: '/api/demandes',
-      permissions: ['get']
+      permissions: []
     }, {
       resources: '/api/demandes/:demandeId',
-      permissions: ['get']
+      permissions: []
     }]
   }]);
 };

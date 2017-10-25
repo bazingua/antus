@@ -51,13 +51,13 @@ var validateUsername = function(username) {
  * User Schema
  */
 var UserSchema = new Schema({
-  firstName: {
+  prenom: {
     type: String,
     trim: true,
     default: '',
     validate: [validateLocalStrategyProperty, 'Please fill in your first name']
   },
-  lastName: {
+  nom: {
     type: String,
     trim: true,
     default: '',
@@ -90,6 +90,29 @@ var UserSchema = new Schema({
     type: String,
     default: ''
   },
+  civilite: {
+    type: String,
+    default: ''
+  },
+  situationfamiliale: {
+    type: String,
+    default: ''
+  },
+  dateNassance: {
+    type: Date,
+  },
+  nationalite: {
+    type: String,
+    default: ''
+  },
+  sexe: {
+    type: String,
+    default: ''
+  },
+  active: {
+    type: Boolean,
+    default: ''
+  },
   salt: {
     type: String
   },
@@ -106,7 +129,7 @@ var UserSchema = new Schema({
   roles: {
     type: [{
       type: String,
-      enum: ['user', 'admin']
+      enum: ['user', 'admin', 'bank']
     }],
     default: ['user'],
     required: 'Please provide at least one role'

@@ -38,7 +38,7 @@ describe('Demande Admin CRUD tests', function () {
 
     // Create a new user
     user = new User({
-      firstName: 'Full',
+      prenom: 'Full',
       lastName: 'Name',
       displayName: 'Full Name',
       email: 'test@test.com',
