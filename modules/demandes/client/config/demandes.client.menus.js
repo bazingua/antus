@@ -21,7 +21,6 @@
       title: 'List Demandes',
       state: 'demandes.list',
       roles: ['*']
-     // roles: ['admin']
     });
 
     // Add the dropdown list item

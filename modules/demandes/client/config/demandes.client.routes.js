@@ -16,7 +16,7 @@
       })
       .state('demandes.list', {
         url: '',
-        templateUrl: '/modules/demandes/client/views/view-demande.client.view.html',
+        templateUrl: '/modules/demandes/client/views/list-demandes.client.view.html',
         controller: 'DemandesListController',
         controllerAs: 'vm',
         data: {
