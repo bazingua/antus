@@ -1,57 +1,91 @@
 <section>
 
-    <form name="myForm" class="form-horizontal" novalidate>
-      <div class="row" style="min-height: 400px;padding: 35px">
-        <div class="" style="margin-top: 50px;">
-          <div style="width: 100%; margin-left: auto; margin-right: auto; margin-bottom: 30px" class=" text-center">
-            <span  style="color: #555"><i class="material-icons">info</i></span>
-            <span style="color: #777; position: relative;top: -8px;font-style: italic;font-size: 13px;"> POUR ACCÉDER À VOTRE ESPACE CLIENT</span>
+  <form name="myForm" class="form-horizontal" novalidate>
+    <div class="row" style="min-height: 400px;padding: 35px">
+      <div class="" style="margin-top: 50px;">
+        <div style="width: 100%; margin-left: auto; margin-right: auto; margin-bottom: 30px" class=" text-center">
+          <span style="color: #555">
+            <i class="material-icons">info</i>
+          </span>
+          <span style="color: #777; position: relative;top: -8px;font-style: italic;font-size: 13px;"> POUR ACCÉDER À VOTRE ESPACE CLIENT</span>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-4">ADRESSE E-MAIL EMPREUNTEUR:
+          </label>
+          <div class="col-sm-4 input-group">
+            <input type="email" name="mail" class="form-control" id="acquisition" required ng-model="demande.client.adresse.email">
+            <span class="input-group-addon" style="background-color: white; border: 0">
+              <a href="#" data-toggle="tooltip" title=" Votre adresse electronique est obligatoire" class="pull-left">
+                <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span>
+              </a>
+            </span>
           </div>
+          <div ng-show="myForm.$submitted && (myForm.mail.$error.required || myForm.mail.$error.email)" class="form-text-error">Veuillez renseigner un mail valide.</div>
 
-          <div class="form-group" >
-                <label class="control-label col-sm-4">ADRESSE E-MAIL EMPREUNTEUR:
-                    </label>
-                <div class="col-sm-4 input-group">
-                    <input type="email" name="mail" class="form-control" id="acquisition" required ng-model="demande.client.adresse.email">
-                    <span class="input-group-addon" style="background-color: white; border: 0">
-                    <a href="#" data-toggle="tooltip" title=" Votre adresse electronique est obligatoire" class="pull-left">
-                  <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span></a>
-                  </span>
-                </div>
-            <div ng-show="myForm.$submitted && (myForm.mail.$error.required || myForm.mail.$error.email)" class="form-text-error">Veuillez renseigner un mail valide.</div>
+          <label class="control-label col-sm-4"> </label>
+        </div>
 
-            <label class="control-label col-sm-4"> </label>
-            </div>
+        <div class="form-group">
+          <label for="password" class=" control-label col-sm-4">VOTRE MOT DE PASSE </label>
+          <div class="col-sm-4 input-group">
+          <input type="password" class="form-control" name="password" id="password" ng-model="user.adresse.pw" required>
 
-            <div class="form-group">
-            <br/>
-                <label class="control-label col-sm-8">Je souhaite recevoir par voie électronique les offres et bons plans:
-                      </label>
-                <div class="col-sm-2">
-                    <input type="checkbox" name="travaux" class="checkbox" id="travaux" placeholder="">
-                </div>
-            </div>
+          <span class="input-group-addon" style="background-color: white; border: 0">
+            <a href="#" data-toggle="tooltip" title=" Votre mot de paase est obligatoire" class="pull-left">
+              <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span>
+            </a>
+          </span>
+          <div ng-show="myForm.$submitted && (myForm.password.$error.required || myForm.password.$error.password)" class="form-text-error">Veuillez renseigner un mail valide.</div>
 
         </div>
-</div>
-      <div class="row page-header" style="background-color: #f8f8f8; padding:0px ; margin: 10px; min-height: 50px;">
-        <div class="col-md-4"></div>
-        <div class="col-md-2 nopadding text-center">
-        <button ng-disabled="$isFirst()" class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px;margin-bottom: 2px"  ng-click="$previousStep()">
+      </div>
+      <div class="form-group">
+        <label for="email" class=" control-label col-sm-4">CONFIRMEZ VOTRE MOT DE PASSE</label>
+        <div class="col-sm-4 input-group">
+          <input type="password" class="form-control" name="confirm_password" id="confirm_password" placeholder="confirmez votre nouveau mot de passe">
+          <span class="input-group-addon" style="background-color: white; border: 0">
+            <a href="#" data-toggle="tooltip" title=" La confirmation du mot de paase est obligatoire" class="pull-left">
+              <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span>
+            </a>
+          </span>
+          <span id='message'></span>
+        </div>
+      </div>
+
+    </div>
+
+    </div>
+    </div>
+    <div class="row page-header" style="background-color: #f8f8f8; padding:0px ; margin: 10px; min-height: 50px;">
+      <div class="col-md-4"></div>
+      <div class="col-md-2 nopadding text-center">
+        <button ng-disabled="$isFirst()" class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px;margin-bottom: 2px"
+          ng-click="$previousStep()">
           <span class="glyphicon glyphicon-chevron-left"></span>
           PRECEDENT
         </button>
       </div>
       <div class="col-md-2  nopadding text-center">
-        <button type="submit" class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px;margin: 2px"  ng-click="myForm.mail.$error.email || myForm.mail.$error.required ? error = false : $nextStep();">
+        <button type="submit" class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px;margin: 2px" ng-click="myForm.mail.$error.email || myForm.mail.$error.required ? error = false : $nextStep();">
           SUIVANT
           <span class="glyphicon glyphicon-chevron-right"></span>
         </button>
       </div>
-        <div class="col-md-4"></div>
+      <div class="col-md-4"></div>
     </div>
 
 
-    </form>
+  </form>
 
 </section>
+
+
+<script>
+  $('#password, #confirm_password').on('keyup', function () {
+    if ($('#password').val() == $('#confirm_password').val()) {
+      $('#message').html('Mot de passe valide').css('color', 'green');
+    } else
+      $('#message').html('Les deux Mot de passe saisi ne correspondent pas').css('color', 'red');
+  });
+</script>

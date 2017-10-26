@@ -23,10 +23,7 @@
                 templateUrl: 'modules/demandes/client/views/form-create-demande/montant-projet.client.view.html',
                 title: 'Définir le montant et caractère de votre projet'
             },
-            {
-                templateUrl: 'modules/demandes/client/views/form-create-demande/email-demande.client.view.html',
-                title: 'Renseignez votre adresse email'
-            },
+            
             {
                 templateUrl: 'modules/demandes/client/views/form-create-demande/patrimoine-demande.client.view.html',
                 title: 'Définition du Patrimoine Immoblier'
@@ -58,6 +55,10 @@
             {
                 templateUrl: 'modules/demandes/client/views/form-create-demande/bankConsulte-demande.client.view.html',
                 title: 'Avez vous déja consulté des banques'
+            },
+            {
+                templateUrl: 'modules/demandes/client/views/form-create-demande/email-demande.client.view.html',
+                title: 'Renseignez votre adresse email'
             },
             {
                 templateUrl: 'modules/demandes/client/views/form-create-demande/coordonnee-demande.client.view.html',
