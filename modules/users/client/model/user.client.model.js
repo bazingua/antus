@@ -17,11 +17,11 @@ angular.module('users.model').factory('UserModel', ['AdresseModel',
       this.nom = data.nom;
       this.civilite = data.civilite;
       this.situationfamiliale = data.situationfamiliale;
-      this.dateNassance = data.dateNassance || new Date();
+      this.dateNassance = data.dateNassance;
       this.nationalite = data.nationalite;
       this.adresse = new AdresseModel(data.adresse);
       this.sexe = data.sexe;
-      this.active = data.active || false;
+      this.active = data.active || true;
     }
 
     return UserModel;
