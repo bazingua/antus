@@ -14,7 +14,7 @@
           <label class="control-label col-sm-4">ADRESSE E-MAIL EMPREUNTEUR:
           </label>
           <div class="col-sm-4 input-group">
-            <input type="email" name="mail" class="form-control" id="acquisition" required ng-model="demande.client.adresse.email">
+            <input type="email" name="mail" class="form-control" id="acquisition" required ng-model="demande.client.email">
             <span class="input-group-addon" style="background-color: white; border: 0">
               <a href="#" data-toggle="tooltip" title=" Votre adresse electronique est obligatoire" class="pull-left">
                 <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span>
@@ -29,7 +29,7 @@
         <div class="form-group">
           <label for="password" class=" control-label col-sm-4">VOTRE MOT DE PASSE </label>
           <div class="col-sm-4 input-group">
-          <input type="password" class="form-control" name="password" id="password" ng-model="user.adresse.pw" required>
+          <input type="password" class="form-control" name="password" id="password" ng-model="demande.client.password" required>
 
           <span class="input-group-addon" style="background-color: white; border: 0">
             <a href="#" data-toggle="tooltip" title=" Votre mot de paase est obligatoire" class="pull-left">
@@ -43,7 +43,7 @@
       <div class="form-group">
         <label for="email" class=" control-label col-sm-4">CONFIRMEZ VOTRE MOT DE PASSE</label>
         <div class="col-sm-4 input-group">
-          <input type="password" class="form-control" name="confirm_password" id="confirm_password" placeholder="confirmez votre nouveau mot de passe">
+          <input type="password" class="form-control" name="confirm_password" id="confirm_password" placeholder="confirmez votre nouveau mot de passe" ng-model="demande.client.confirmPwd">
           <span class="input-group-addon" style="background-color: white; border: 0">
             <a href="#" data-toggle="tooltip" title=" La confirmation du mot de paase est obligatoire" class="pull-left">
               <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span>

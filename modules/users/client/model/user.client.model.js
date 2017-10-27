@@ -19,6 +19,9 @@ angular.module('users.model').factory('UserModel', ['AdresseModel',
       this.situationfamiliale = data.situationfamiliale;
       this.dateNassance = data.dateNassance;
       this.nationalite = data.nationalite;
+      this.email = data.email;
+      this.password = data.password;
+      this.confirmPwd = data.password;
       this.adresse = new AdresseModel(data.adresse);
       this.sexe = data.sexe;
       this.active = data.active || true;

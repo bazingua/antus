@@ -5,9 +5,9 @@
         .module('demandes')
         .controller('DeposerDemandesController', DeposerDemandesController);
 
-    DeposerDemandesController.$inject = ['$scope', 'DemandesService', 'typeDemande', 'banques', 'DemandesModel', '$filter', 'Authentication'];
+    DeposerDemandesController.$inject = ['$scope', 'DemandesService', 'typeDemande', 'banques', 'DemandesModel', '$filter', 'Authentication', 'UsersService'];
 
-    function DeposerDemandesController($scope, DemandesService, typeDemande, banques, DemandesModel, $filter, Authentication) {
+    function DeposerDemandesController($scope, DemandesService, typeDemande, banques, DemandesModel, $filter, Authentication, UsersService) {
         // typeDemande = arbre
         var vm = this;
 
@@ -93,10 +93,20 @@
         $scope.saveDemande = function() {
             var demandeToSave = angular.copy($scope.demande);
             console.log('save now', $scope.demande);
-            /*DemandesService.save(demandeToSave)
-                .then(onSaveSuccess)
-                .catch(onSaveError);
-                */
+            UsersService.userSignup($scope.demande.client)
+                .then(function (response) {
+                  console.log(response);
+                  demandeToSave.clien = response;
+                  DemandesService.save(demandeToSave)
+                  .then(function (data) {
+                    console.log(response);
+                  })
+                  .catch(function (error) {
+                    console.log(response);
+                  });
+                }).catch(function (error) {
+                  console.log(error);
+                });
         };
 
         /**

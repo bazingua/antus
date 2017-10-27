@@ -18,7 +18,8 @@
       deposerOfr: { method: 'PUT', url: '/api/demandes/:demandeId/offre/deposer', params: { demandeId: '@demandeId' } },
       validerDmd: { method: 'PUT', url: '/api/demandes/:demandeId/valider', params: { demandeId: '@demandeId' } },
       transfererOfr: { method: 'PUT', url: '/api/demandes/:demandeId/offre/:offreId/transferer', params: { demandeId: '@demandeId', offreId: '@offreId' } },
-      update: { method: 'PUT'}
+      update: { method: 'PUT'},
+      saveDemande: { method: 'POST', url: '/api/demandes'}
     });
 
     angular.extend(Demande, {
@@ -36,7 +37,7 @@
             demandeId: demande.id
           }, demande).$promise;
         } else {
-          return this.$save(demande).$promise;
+          return this.saveDemande(demande).$promise;
         }
       },
       /**

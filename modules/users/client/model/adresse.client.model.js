@@ -17,7 +17,6 @@ angular.module('users.model').factory('AdresseModel', [
       this.ville = data.vile;
       this.adresse = data.adresse;
       this.email = data.email;
-      this.pw = data.pw;
       this.telephoneBureau = data.telephoneBureau;
       this.telephoneFixe = data.telephoneFixe;
       this.telephonePortable = data.telephonePortable;

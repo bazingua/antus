@@ -10,6 +10,7 @@ module.exports = function (app) {
   var users = require('../controllers/users.server.controller');
 
   var setUsername = function (req, res, next) {
+    console.log('req.body.email>>>>', req.body.email);
     req.body.username = req.body.email;
     next();
   }
