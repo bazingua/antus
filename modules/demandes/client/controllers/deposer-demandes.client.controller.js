@@ -5,9 +5,9 @@
         .module('demandes')
         .controller('DeposerDemandesController', DeposerDemandesController);
 
-    DeposerDemandesController.$inject = ['$scope', 'DemandesService', 'typeDemande', 'banques', 'DemandesModel', '$filter', 'Authentication', 'UsersService'];
+    DeposerDemandesController.$inject = ['$scope', '$state', 'DemandesService', 'typeDemande', 'banques', 'DemandesModel', '$filter', 'Authentication', 'UsersService'];
 
-    function DeposerDemandesController($scope, DemandesService, typeDemande, banques, DemandesModel, $filter, Authentication, UsersService) {
+    function DeposerDemandesController($scope, $state, DemandesService, typeDemande, banques, DemandesModel, $filter, Authentication, UsersService) {
         // typeDemande = arbre
         var vm = this;
 
@@ -90,6 +90,11 @@
 
 
 
+        $state.go('demandes.homeclient', {demandeId: "59f288ab34c3d71ba6567aa6"});
+        /**
+         * saveDemande
+         * la methode qui permet de sauvegarder une demande
+         */
         $scope.saveDemande = function() {
             var demandeToSave = angular.copy($scope.demande);
             console.log('save now', $scope.demande);
@@ -100,9 +105,10 @@
                   DemandesService.save(demandeToSave)
                   .then(function (data) {
                     console.log(response);
+                    $state.go('demandes.homeclient', {demandeId: response._id});
                   })
-                  .catch(function (error) {
-                    console.log(response);
+                  .catch(function (err) {
+                    console.log(err);
                   });
                 }).catch(function (error) {
                   console.log(error);
@@ -155,42 +161,6 @@
                 $scope.demande.financement.banqueContacter = $filter('filter')($scope.demande.financement.banqueContacter, '!' + banque.libelle);
             }
         };
-
-        /**
-         * Exemple de comment appeller les methodes du service 
-         */
-
-         /*
-        // find demande
-        DemandesService.find()
-        .then(function (response) {
-          console.log('++++++', response);
-        })
-        .catch(function (error) {
-          console.log('-----', error);
-        });
-        */
-
-        //how get an demande by ID
-       /* DemandesService.get("59e69e8e8525db22d9f39c0a")
-        .then(function (response) {
-          console.log('la reponse (la demande avec cette id)', response);
-        })
-        .catch(function (error) {
-          console.log('----- En cas d erreur' , error);
-        });*/
-
-        /*
-        //how get an demande by ID
-        DemandesService.validerDemande("59e69e8e8525db22d9f39c0a")
-        .then(function (response) {
-          console.log('la reponse (apres validation de la demande retourne la demande modifié )', response);
-        })
-        .catch(function (error) {
-          console.log('----- En cas d erreur' , error);
-        });
-        */
-
         console.log(Authentication.user);
 
     }
