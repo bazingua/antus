@@ -50,13 +50,28 @@
         data: {
           pageTitle: 'Demande {{ demandeResolve.title }}'
         }
+      })
+      .state('demandes.homeclient', {
+        url: '/home/:demandeId',
+        templateUrl: '/modules/demandes/client/views/home.client.view.html',
+        controller: 'ClientHomeController',
+        controllerAs: 'vm',
+        resolve: {
+          demande: getDemande
+        },
+        data: {
+          pageTitle: 'Home'
+        }
       });
   }
 
   getDemande.$inject = ['$stateParams', 'DemandesService'];
 
   function getDemande($stateParams, DemandesService) {
-    return DemandesService.get($stateParams.demandeId);
+    if ($stateParams.demandeId === 'any')
+      return {}
+    else
+      return DemandesService.get($stateParams.demandeId);
   }
 
 
