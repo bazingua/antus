@@ -4,9 +4,9 @@
     angular.module('demandes.directives')
         .directive('detailsDemande', detailsDemande);
 
-    detailsDemande.$inject = [];
+    detailsDemande.$inject = ['DemandesService'];
 
-    function detailsDemande() {
+    function detailsDemande(DemandesService) {
         var directive = {
             restrict: 'EA',
             transclude: false,
@@ -24,7 +24,25 @@
          * @return {Object} scope
          */
         function link(scope) {
-            console.log('****', scope.demande);
+          console.log('****', scope.demande);
+          scope.error = {};
+          scope.validerDemande = function () {
+            console.log('heeeere');  
+            DemandesService.validerDemande(scope.demande.id)
+            .then(successCallback)
+            .catch(errorCallback);
+          }
+          function successCallback(res) {
+            console.log('res', res);
+            $state.go('demandes.view', {
+              demandeId: demande.id
+            });
+          }
+    
+          function errorCallback(error) {
+            console.log('error', error);
+            scope.error = error.data;
+          }
         }
     }
 }());

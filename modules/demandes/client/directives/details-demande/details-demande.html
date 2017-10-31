@@ -219,7 +219,7 @@
   </div>
   <div ng-switch="demande.etat">
   <div ng-switch-when="1">
-  	<button  ng-click="validerDemande({demande.id})"  type="button" class="btn btn-success">Valider</button>
+  	<button  ng-click="validerDemande()"  type="button" class="btn btn-success">Valider</button>
   </div>
   <div ng-switch-when="5">
   	<a ui-sref="offres.deposer({demandeId:  demande.id})" type="button" class="btn btn-success">Dépoer Offre</a>
