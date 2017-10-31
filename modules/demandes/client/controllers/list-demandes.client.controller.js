@@ -12,5 +12,6 @@
     var vm = this;
 
     vm.demandes = DemandesService.query();
+    console.log(vm.demandes);
   }
 }());

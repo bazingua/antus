@@ -12,30 +12,30 @@
        	<div class="panel-body">
      <h3 style="border-bottom: 1px solid #ddd; padding: 1px">CLIENT </h3>
      <div class="row">
-      <label class="col-sm-6">Prénom : {{demande.clent.prenom}}</label>
-      <label class="col-sm-6">Nom : {{demande.clent.nom}}</label>
+      <label class="col-sm-6">Prénom : {{demande.client.prenom}}</label>
+      <label class="col-sm-6">Nom : {{demande.client.nom}}</label>
      </div>
      
      <div class="row">
-      <label class="col-sm-6">Civilité : {{demande.clent.civilite}}</label>
-      <label class="col-sm-6">Situation Familliale : {{demande.clent.situationfamiliale}}</label>
+      <label class="col-sm-6">Civilité : {{demande.client.civilite}}</label>
+      <label class="col-sm-6">Situation Familliale : {{demande.client.situationfamiliale}}</label>
      </div>
      
      <div class="row">
-      <label class="col-sm-6">Date de Naissance : {{demande.clent.dateNassance}}</label>
-      <label class="col-sm-6">Nationalité : {{demande.clent.nationalite}}</label>
+      <label class="col-sm-6">Date de Naissance : {{demande.client.dateNassance}}</label>
+      <label class="col-sm-6">Nationalité : {{demande.client.nationalite}}</label>
      </div>
      <div class="row">
-      <label class="col-sm-6">Pays : {{demande.clent.adresse.pays}}</label>
-      <label class="col-sm-6">Ville : {{vm.demande.clent.adresse.ville}}</label>
+      <label class="col-sm-6">Pays : {{demande.client.adresse.pays}}</label>
+      <label class="col-sm-6">Ville : {{vm.demande.client.adresse.ville}}</label>
      </div>
 
      <div class="row">
-      <label class="col-sm-6">Adresse : {{demande.clent.adresse.adresse}}</label>
-      <label class="col-sm-6">Email : {{demande.clent.adresse.email}}</label>
+      <label class="col-sm-6">Adresse : {{demande.client.adresse.adresse}}</label>
+      <label class="col-sm-6">Email : {{demande.client.email}}</label>
      </div>
      <div class="row">
-      <label class="col-sm-6">Téléphone : {{demande.clent.adresse.telephonePortable}}</label>
+      <label class="col-sm-6">Téléphone : {{demande.client.adresse.telephonePortable}}</label>
      </div>
        </div> 
    </div>
@@ -217,16 +217,15 @@
      
      </div>
   </div>
-
   <div ng-switch="demande.etat">
   <div ng-switch-when="1">
-  	<button  ng-click="DemandesService.validerDemande({demande._id})"  type="button" class="btn btn-success">Valider</button>
+  	<button  ng-click="validerDemande({demande.id})"  type="button" class="btn btn-success">Valider</button>
   </div>
   <div ng-switch-when="5">
-  	<a ui-sref="? error = false : save()" type="button" class="btn btn-success">Dépoer Offre</a>
+  	<a ui-sref="offres.deposer({demandeId:  demande.id})" type="button" class="btn btn-success">Dépoer Offre</a>
   </div>
   <div ng-switch-default>
-  	<button ng-click="? error = false : saveDemande()" type="button" class="btn btn-success">Soumettre</button>
+  	<button ng-click="" type="button" class="btn btn-success">Soumettre</button>
   </div>
 </div>
 

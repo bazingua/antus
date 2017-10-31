@@ -9,7 +9,9 @@
 
   function DemandesController($scope,DemandesModel, demande, Authentication, DemandesService) {
     var vm = this;
+    console.log('Before', demande);
     vm.demande = new DemandesModel(demande);
+    console.log('After', vm.demande);
     vm.authentication = Authentication;
   }
 }());

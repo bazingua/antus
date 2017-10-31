@@ -24,7 +24,7 @@
          * @return {Object} scope
          */
         function link(scope) {
-            console.log(scope.demandes);
+            console.log('++++', scope.demandes);
         }
     }
 }());

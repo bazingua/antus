@@ -23,13 +23,14 @@
           pageTitle: 'Offres List'
         }
       })
-      .state('offres.Test', {
-        url: '',
-        templateUrl: 'modules/offres/client/views/banque.offre.client.view.html',
-        controller: 'OffresListController',
+      //Deposer une Offre
+      .state('offres.deposer', {
+        url: 'offre/:demandeId',
+        templateUrl: 'modules/offres/client/views/form-offre.client.view.html',
+        controller: 'OffresDeposerController',
         controllerAs: 'vm',
         data: {
-          pageTitle: 'Pour mes tests'
+          pageTitle: 'Deposer une offre'
         }
       })
       .state('offres.create', {
