@@ -1,4 +1,4 @@
-<section class="row">
+<section>
   
       <div class="panel panel-default">
   <div style="background-color: #7a43b6; color: #fff; height: auto">
@@ -8,10 +8,11 @@
           <div class="panel-body" style="padding: 0; min-height: 400px">
    <form name="myForm" class="form-horizontal" novalidate style="font-size: 12px; font-weight: normal";>
         <div class="" style="min-height: 400px; padding: 40 px" >
+          
           <div class="panel panel-body" style="margin-top: 50px;">
             <div style="width: 100%; margin-left: auto; margin-right: auto; margin-bottom: 30px" class=" text-center">
               <span  style="color: #555"><i class="material-icons">info</i></span>
-              <span style="color: #777; position: relative;top: -8px;font-style: italic;font-size: 13px;"> POUR ACCÉDER À VOTRE ESPACE CLIENT</span>
+              <span style="color: #777; position: relative;top: -8px;font-style: italic;font-size: 13px;">Déposer une offre</span>
             </div>
   
       <div class="row">
@@ -25,8 +26,9 @@
       </span>
       </div>
   
-      <label class="col-md-4">
-        <span ng-show="montantProjetForm.$submitted && montantProjetForm.dureePret.$error.required" class="form-text-error">Veuillez entrer le montant de votre pret.</span>
+      <label class="col-md-4" style="text-align:right; ">
+        <span ng-show="montantProjetForm.$submitted && montantProjetForm.dureePret.$error.required" class="form-text-error">Veuillez entrer le montant de votre pret.
+        </span>
       </label> 
       </div>
   
@@ -49,7 +51,7 @@
       </div>
   
   
-       <div class="row">
+      <div class="row">
       <label class="col-md-4" style="text-align: right; padding-top: 10px">TAUX D’INTERÊT ANNUEL HORS ASSURANCE :</label> 
   
       <div class="col-md-4 input-group">
@@ -145,7 +147,7 @@
       </div>
   
           </div>
-  </div>
+ 
   <div class="row page-header" style="background-color: #f8f8f8; padding:0px ; margin: 0; min-height: 30px;">
     <div class="col-md-12">              
       <a ui-sref="demandes.view({demandeId: vm.offre.demandeId})" class="btn btn-default" style=" height: 30px; width: 130px;margin-bottom: 2px">
@@ -158,8 +160,8 @@
   
   
       </form>
-  
+   </div>
           </div>
-      </div>
+   
   </section>
   
