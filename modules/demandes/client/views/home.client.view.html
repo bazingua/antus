@@ -1,0 +1,8 @@
+<section>
+  <div ng-if="vm.demande._id && vm.feedBackMessage" class="bg-success text-center" style="padding: 5px;width: 100%;margin: auto;font-size: 18px;">
+    La demande a été ajouté avec succès
+  </div>
+  <div ng-if="vm.demande">
+    <details-demande demande = "vm.demande"></details-demande>
+  </div>
+</section>
