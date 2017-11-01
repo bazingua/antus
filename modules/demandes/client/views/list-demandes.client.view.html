@@ -1,9 +1,9 @@
 <section class="row">
   <div class="col-xs-offset-2 col-xs-10 col-md-offset-1 col-md-11">
-    <div ng-if="vm.demandes.lengh > 0">
+    <div ng-if="vm.demandes.length > 0">
       <list-demandes demandes="vm.demandes"></list-demandes>    
     </div>
-    <div ng-if="vm.demandes.lengh < 1">
+    <div ng-if="vm.demandes.length < 1">
       <div>
         <p>Aucune demande n'a été trouvée</p>
       </div>
