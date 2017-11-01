@@ -104,8 +104,7 @@
                   demandeToSave.clien = response;
                   DemandesService.save(demandeToSave)
                   .then(function (data) {
-                    console.log(response);
-                    $state.go('demandes.homeclient', {demandeId: response._id});
+                    $state.go('demandes.homeclient', {demandeId: data._id});
                   })
                   .catch(function (err) {
                     console.log(err);
