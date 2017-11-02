@@ -22,6 +22,8 @@ var path = require('path'),
 exports.create = function (req, res) {
   var demande = new Demande(req.body);
   demande.user = req.user;
+  delete demande.client.password;
+  delete demande.client.confirmPwd;
   demande.save(function (err) {
     if (err) {
       return res.status(422).send({
@@ -197,7 +199,6 @@ exports.list = function (req, res) {
     req.query.etat = parseInt(req.query.etat, 10);
   else
     delete req.query.etat;
-  
   
   console.log(req.query);
   Demande.find(req.query).sort('-created').populate('user', 'displayName').exec(function (err, demandes) {
