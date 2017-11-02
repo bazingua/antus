@@ -97,6 +97,7 @@
          */
         $scope.saveDemande = function() {
             var demandeToSave = angular.copy($scope.demande);
+            demandeToSave.projet.type = $scope.choicedNode;
             console.log('save now', $scope.demande);
             UsersService.userSignup($scope.demande.client)
                 .then(function (response) {
