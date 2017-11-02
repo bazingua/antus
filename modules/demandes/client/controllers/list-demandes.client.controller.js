@@ -8,10 +8,11 @@
   DemandesListController.$inject = ['$scope', 'DemandesService', 'typeDemande'];
 
   function DemandesListController($scope, DemandesService, typeDemande) {
-    // typeDemande = arbre
     var vm = this;
-
-    vm.demandes = DemandesService.query();
-    console.log(vm.demandes);
+    DemandesService.find({etat: 5}).then(function (data) {
+      vm.demandes = data;
+    }).catch(function (error) {
+      // Error catched
+    });
   }
 }());
