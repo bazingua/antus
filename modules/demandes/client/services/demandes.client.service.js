@@ -13,7 +13,7 @@
     }, {
 
       getById: { method: 'GET',  params: { demandeId: '@demandeId' }, isArray: false },
-      findDemande: { method: 'GET', url: '/api/demandes?user=:user', isArray: true },
+      findDemande: { method: 'GET', url: '/api/demandes?user=:user&etat=:etat', isArray: true },
       remove: { method: 'PUT', url: '/api/logicdelete/:demandeId/:state', params: { demandeId: '@demandeId', state: '@state' } },
       deposerOfr: { method: 'PUT', url: '/api/demandes/:demandeId/offre/deposer', params: { demandeId: '@demandeId' } },
       validerDmd: { method: 'PUT', url: '/api/demandes/:demandeId/valider', params: { demandeId: '@demandeId' } },
@@ -46,9 +46,10 @@
        *  @param user: l'id d'un utulisateur,
        * si ce parametre(user) est renseigné la fonction retourne les demandes créées par cet utilisateur
        */
-      find: function (userId) {
-        userId = !userId ? '*' : userId;
-        return this.findDemande({ user: new String(userId) }).$promise;
+      find: function (query) {
+        var query = query || {};
+        query.user = !query.user ? '*' : query.user;
+        return this.findDemande(query).$promise;
       },
       /**
        * remove
