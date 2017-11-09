@@ -160,7 +160,7 @@
           scope.vm.resetUserPassword(true);
           $httpBackend.flush();
 
-          expect(Notification.error).toHaveBeenCalledWith({ message: errorMessage, title: '<i class="glyphicon glyphicon-remove"></i> Password reset failed!', delay: 4000 });
+          expect(Notification.error).toHaveBeenCalledWith({ message: errorMessage, title: '<i class="glyphicon glyphicon-remove"></i> Réinitialisation du mot de passe!', delay: 4000 });
         });
 
         describe('POST success', function() {

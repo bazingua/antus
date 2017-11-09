@@ -12,7 +12,15 @@ var path = require('path'),
   async = require('async'),
   crypto = require('crypto');
 
-var smtpTransport = nodemailer.createTransport(config.mailer.options);
+  
+var smtpConfig = {
+  service: 'gmail',
+  auth: {
+      user: config.mailer.options.auth.user,
+      pass: config.mailer.options.auth.pass
+  }
+};
+var smtpTransport = nodemailer.createTransport(smtpConfig);
 
 /**
  * Forgot for reset password (forgot POST)
@@ -75,7 +83,7 @@ exports.forgot = function (req, res, next) {
       var mailOptions = {
         to: user.email,
         from: config.mailer.from,
-        subject: 'Password Reset',
+        subject: 'Réinitialiser du mot de passe',
         html: emailHTML
       };
       smtpTransport.sendMail(mailOptions, function (err) {
@@ -162,12 +170,12 @@ exports.reset = function (req, res, next) {
             });
           } else {
             return res.status(422).send({
-              message: 'Passwords do not match'
+              message: 'Les mots de passe ne correspondent pas.'
             });
           }
         } else {
           return res.status(400).send({
-            message: 'Password reset token is invalid or has expired.'
+            message: 'Le jeton de réinitialisation de votre mot de passe est invalide ou a expiré.'
           });
         }
       });
@@ -185,7 +193,7 @@ exports.reset = function (req, res, next) {
       var mailOptions = {
         to: user.email,
         from: config.mailer.from,
-        subject: 'Your password has been changed',
+        subject: 'Votre mot de passe a été changé',
         html: emailHTML
       };
 
@@ -226,7 +234,7 @@ exports.changePassword = function (req, res, next) {
                       res.status(400).send(err);
                     } else {
                       res.send({
-                        message: 'Password changed successfully'
+                        message: 'Le mot de passe a été changé avec succès'
                       });
                     }
                   });
@@ -234,7 +242,7 @@ exports.changePassword = function (req, res, next) {
               });
             } else {
               res.status(422).send({
-                message: 'Passwords do not match'
+                message: 'Les mots de passe ne correspondent pas'
               });
             }
           } else {
