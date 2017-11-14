@@ -21,6 +21,7 @@ angular.module('demandes.model').factory('DemandesModel', ['ProjetModel', 'Patri
       this.offres = data.offres || [];
       this.created = data.created,
       this.etat = data.etat || 1,
+      this.numeroDemande = data.numeroDemande || 1,
       this.active = data.active,
       this.updated = data.updated,
       this.isCurrentUserOwner = data.isCurrentUserOwner

@@ -1363,3 +1363,7 @@ fieldset[disabled] .btn-theme {
 	height: 150px;
 	width: 220px;
 }
+.content-wrapper {
+    max-width: 940px;
+    margin: 0 auto;
+}

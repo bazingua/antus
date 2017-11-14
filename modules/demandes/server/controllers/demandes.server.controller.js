@@ -7,6 +7,7 @@ var path = require('path'),
   mongoose = require('mongoose'),
   _ = require('lodash'),
   Demande = mongoose.model('Demande'),
+  ParamDemande = mongoose.model('ParamDemande'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller'));
   // etat offre
   var OFFRE_STATE_DEPOSE = 1;
@@ -22,6 +23,8 @@ var path = require('path'),
 exports.create = function (req, res) {
   var demande = new Demande(req.body);
   demande.user = req.user;
+  delete demande.client.password;
+  delete demande.client.confirmPwd;
   demande.save(function (err) {
     if (err) {
       return res.status(422).send({
@@ -198,7 +201,6 @@ exports.list = function (req, res) {
   else
     delete req.query.etat;
   
-  
   console.log(req.query);
   Demande.find(req.query).sort('-created').populate('user', 'displayName').exec(function (err, demandes) {
     if (err) {
@@ -232,6 +234,37 @@ exports.demandeByID = function (req, res, next, id) {
     }
     req.demande = demande;
     next();
+  });
+};
+
+/**
+ * SET Numero Demande middleware
+ */
+exports.setNumeroDemande = function (req, res, next) {
+  ParamDemande.find().populate().exec(function (err, paramDemande) {
+    if (err || !paramDemande) {
+      return next();
+    }
+    if (paramDemande.length < 1 || !paramDemande[0]) {
+      var numdemande = new Date().getFullYear() + '' + 1; 
+      numdemande = parseInt(numdemande,10);
+      var paramDemande = new ParamDemande({counter: 1, numeroDemande: numdemande});
+    } else {
+      var paramDemande = new ParamDemande(paramDemande[0]);
+      paramDemande.counter ++;
+      var numdemande = new Date().getFullYear() + '' + paramDemande.counter;
+      numdemande = parseInt(numdemande,10);
+      paramDemande.numeroDemande = numdemande;
+    }
+    paramDemande.save(function (err) {
+      if (err) {
+        return res.status(422).send({
+          message: errorHandler.getErrorMessage(err)
+        });
+      }
+      req.body.numeroDemande = paramDemande.numeroDemande;
+      return next();
+    });
   });
 };
 

@@ -10,7 +10,7 @@ module.exports = function (app) {
   // Demandes collection routes
   app.route('/api/demandes').all(demandesPolicy.isAllowed)
     .get(demandes.list)
-    .post(demandes.create);
+    .post(demandes.setNumeroDemande, demandes.create);
 
   // Single demande routes
   app.route('/api/demandes/:demandeId').all(demandesPolicy.isAllowed)

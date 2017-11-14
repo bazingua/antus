@@ -9,7 +9,8 @@
 
   function DemandesListController($scope, DemandesService, typeDemande) {
     var vm = this;
-    DemandesService.find({etat: 5}).then(function (data) {
+    //  DemandesService.find({etat: 5}).then(function (data) {
+      DemandesService.find().then(function (data) {
       vm.demandes = data;
     }).catch(function (error) {
       // Error catched

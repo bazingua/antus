@@ -44,6 +44,10 @@ var DemandeSchema = new Schema({
     type: Number,
     default: 1
   },
+  numeroDemande: {
+    type: Number,
+    default: 0
+  },
   offres: {
     type: [Schema.Types.Mixed],
     default: []
