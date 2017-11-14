@@ -1,33 +1,33 @@
+<section>
 
-   <section>
-  
-      <div class="panel panel-default">
-  <div style="background-color: #7a43b6; color: #fff; height: 30px">
+  <div class="panel panel-default">
+    <div style="background-color: #7a43b6; color: #fff; height: 30px">
       <h3 class="color-white padding">ESPACE CLIENT</h3>
+    </div>
+
+    <div class="panel-body" style="padding: 20px; min-height: 400px">
+      <div demandes="vm.demandes">
+      <div class="panel panel-default" style="width: 90%" ng-repeat="demande in demandes">
+        <div class="panel-heading"> N° Demande : {{demande._id}} </div>
+        <ul class="list-group">
+          <li class="list-group-item">Montant Projet : {{demande.projet.montantProjet}}</li>
+          <li class="list-group-item">Montant traveau : {{demande.projet.montantTravau}}</li>
+          <li class="list-group-item">Nombre emprunteur : {{demande.projet.nombreEmpreteur}}</li>
+          <li class="list-group-item">Date : {{demande.created}}
+            <p style="text-align: right; ">
+              <a ui-sref="demandes.view({demandeId : demande._id })">
+                <button type="button" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-eye-open"> </span> Voir détail</button>
+              </a>
+            </p>
+
+          </li>
+        </ul>
+
+      </div>
+
+    </div>
   </div>
-  
-          <div class="panel-body" style="padding: 20px; min-height: 400px">
+  </div>
 
-            <div class = "panel panel-default" style="width: 90%" ng-repeat="demande in demandes">
-   <div class ="panel-heading"> N° Demande : {{demande._id}} </div>
-   <ul class = "list-group">
-      <li class = "list-group-item">Montant Projet : {{demande.projet.montantProjet}}</li>
-      <li class = "list-group-item">Montant traveau : {{demande.projet.montantTravau}}</li>
-      <li class = "list-group-item">Nombre emprunteur : {{demande.projet.nombreEmpreteur}}</li>
-      <li class = "list-group-item">Date : {{demande.created}}
-                    <p style="text-align: right; ">
-                      <a ui-sref="demandes.view({demandeId : demande._id })" >
-                        <button type="button" class="btn btn-default btn-sm"> <span class="glyphicon glyphicon-eye-open"> </span> Voir détail</button>
-                      </a>
-                    </p>
-                   
-                  </li>
-   </ul>
-
-</div>
-        
-   </div>
-          </div>
-   
-  </section>
-  
+</section>

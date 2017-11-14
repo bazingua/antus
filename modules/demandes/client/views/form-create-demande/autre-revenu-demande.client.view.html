@@ -12,10 +12,16 @@
                 <label class="control-label col-sm-4">REVENUS LOCATIFS EXISTANT PAR MOIS:
                     </label>
                 <div class="col-sm-4 input-group">
+                  
+                    <div ng-if="vm.demande.patrimoine.revenu.locatif != 0 ">
                     <input type="number" ng-model="demande.patrimoine.revenu.locatif" name="revenuLocatif" class="form-control" required>
+                    </div>
+                    <div ng-if="vm.demande.patrimoine.revenu.locatif == 0 ">
+                        <input type="number" ng-model="demande.patrimoine.revenu.locatif" name="revenuLocatif" class="form-control">
+                    </div>
                   <span class="input-group-addon" style="background-color: white; border: 0">
                     <a href="#" data-toggle="tooltip" title="constituent des revenus fonciers et sont soumis à l'impôt sur le revenu. Pour déterminer le résultat
-                foncier - bénéficiaire ou déficitaire - des règles précises sont à respecter" class="pull-left">
+                          foncier - bénéficiaire ou déficitaire - des règles précises sont à respecter" class="pull-left">
                   <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span></a>
                   </span>
                 </div>
