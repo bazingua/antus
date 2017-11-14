@@ -11,26 +11,35 @@
           <span style="color: #555">
             <i class="material-icons">info</i>
           </span>
-          <span style="color: #777; position: relative;top: -8px;font-style: italic;font-size: 13px;">Liste Des Demandes De Crédits Immobiliers</span>
+          <span style="color: #777; position: relative;top: -8px;font-style: italic;font-size: 13px;">Mes demandes Crédit Immobilier</span>
         </div>
-            <div class = "panel panel" style="width: 80%; background-color: #7a43b6; color: #fff; margin: auto; margin-bottom: 40px" ng-repeat="demande in demandes">
-   <div class ="panel-heading"> N° Demande : {{demande._id}}
- <a ui-sref="demandes.view({demandeId : demande._id })"  style="float: right; color: #fff">
-                       <span class="glyphicon glyphicon-eye-open"> </span> Détail
-                      </a>
-            
-    </div>
-   <ul class = "list-group">
-      <li class = "list-group-item" style="font-size: 13px;">Montant Projet : {{demande.projet.montantProjet}} XOF</li>
-      <li class = "list-group-item" style="font-size: 13px;">Montant traveau : {{demande.projet.montantTravau}} XOF</li>
-      <li class = "list-group-item" style="font-size: 13px;">Nombre emprunteur : {{demande.projet.nombreEmpreteur}} XOF</li>
-      <li class = "list-group-item" style="font-size: 13px;">Date : {{demande.created}}
-                  </li>
-   </ul>
 
-</div>
+        <div class="" ng-repeat="demande in demandes">
+           <a ui-sref="demandes.view({demandeId : demande._id })" style="">
+       <table class="table table-striped table-bordered table-hover" style="width: 70%; margin-right: auto; margin-left: auto;">
+       
+         <tr>
+             <td style=" width: 50px; text-align: center">{{demande.created}}</td>
+             <td>
+              
+              <span style="color: #7a43b6; font-style: normal;font-size: 16px; font-weight: bold; ">Crédit immobilier</span><br> 
+              PROJET  N° {{demande._id}}              
+                
+            </td>
+             <td style="text-align: center;width: 200px; border-left: 2px solid #7a43b6; ">
+               <strong>
+                  Montant projet<br>
+             {{demande.projet.montantProjet}} XOF
+               </strong>
+             
+           </td>
+         </tr>
          
-   </div>
+         </table>
+           </a>
+         </div>
+
+            
           </div>
    
   </section>
