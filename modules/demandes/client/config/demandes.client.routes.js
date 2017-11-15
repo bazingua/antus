@@ -69,7 +69,7 @@
 
   function getDemande($stateParams, DemandesService) {
     // gere le cas de home client avec une demande qi vient d'etre créée
-    if ($stateParams.demandeId === 'any')
+    if ($stateParams.demandeId === 'any' || $stateParams.demandeId === 'home')
       return {}
     else
       return DemandesService.get($stateParams.demandeId);

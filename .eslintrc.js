@@ -67,7 +67,7 @@ module.exports = {
     Modernizr: true,
     Promise: true,
     __TESTING__: true,
-    _: false,
+    _: true,
     ApplicationConfiguration: true
   }
 };
