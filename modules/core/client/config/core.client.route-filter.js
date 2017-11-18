@@ -11,6 +11,12 @@
     $rootScope.$on('$stateChangeStart', stateChangeStart);
     $rootScope.$on('$stateChangeSuccess', stateChangeSuccess);
 
+    function checkAdminRules() {
+      $rootScope.isAdmin = false;
+      if (_.indexOf(Authentication.user.roles, 'admin') > -1) {
+        $rootScope.isAdmin = true;
+      }
+    }
     function stateChangeStart(event, toState, toParams, fromState, fromParams) {
       // Check authentication before changing state
       if (toState.data && toState.data.roles && toState.data.roles.length > 0) {
@@ -34,6 +40,9 @@
             });
           }
         }
+
+        // check if is a admin
+        checkAdminRules();
       }
     }
 

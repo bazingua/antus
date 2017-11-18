@@ -12,6 +12,7 @@
     vm.buildPager = buildPager;
     vm.figureOutItemsToDisplay = figureOutItemsToDisplay;
     vm.pageChanged = pageChanged;
+    console.log('++++++++++++++++++++');
 
     AdminService.query(function (data) {
       vm.users = data;

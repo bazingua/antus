@@ -6,7 +6,6 @@
   angular
     .module('users.services')
     .factory('Authentication', Authentication);
-
   Authentication.$inject = ['$window'];
 
   function Authentication($window) {
