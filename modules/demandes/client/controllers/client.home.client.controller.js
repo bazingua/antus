@@ -9,7 +9,7 @@
 
   function ClientHomeController($scope, DemandesModel, $timeout, demande, Authentication, DemandesService) {
     var vm = this;
-    vm.authentication = Authentication;
+    vm.authentication = Authentication;    
     vm.demande = angular.copy(demande);
     vm.feedBackMessage = true;
     $timeout(function() {

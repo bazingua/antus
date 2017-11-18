@@ -5,7 +5,9 @@
     .module('core')
     .controller('HomeController', HomeController);
 
-  function HomeController() {
+    HomeController.$inject = ['$state'];
+    
+  function HomeController($state) {
     var vm = this;
   }
 }());

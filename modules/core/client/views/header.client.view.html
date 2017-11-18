@@ -15,7 +15,7 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
+<!-- menu item 
       <ul class="nav navbar-nav" ng-if="vm.menu.shouldRender(vm.authentication.user);">
         <li ng-repeat="item in vm.menu.items | orderBy: 'position'" ng-if="item.shouldRender(vm.authentication.user);" ng-switch="item.type" ng-class="{ dropdown: item.type === 'dropdown' }" ui-sref-active="active" class="{{item.class}}" uib-dropdown="item.type === 'dropdown'">
           <a ng-switch-when="dropdown" class="dropdown-toggle" uib-dropdown-toggle role="button">{{::item.title}}&nbsp;<span class="caret"></span></a>
@@ -27,7 +27,7 @@
           <a ng-switch-default ui-sref="{{item.state}}" ng-bind="item.title"></a>
         </li>
       </ul>
-
+    -->
       <ul class="nav navbar-nav navbar-right">
         <ul class="nav navbar-nav navbar-right" ng-hide="vm.authentication.user">
           <li ui-sref-active="active">
@@ -38,6 +38,10 @@
             <a ui-sref="authentication.signin"> <samp class="glyphicon glyphicon-lock"></samp> Accès Client</a>
           </li>
         </ul>
+        <ul class="nav navbar-nav navbar-right" ng-show="vm.authentication.user">
+          <li class="icon-pointer header-button-width"><a ng-click="signoutCurrentUser()" target="_self">Déconnexion</a></li>
+        </ul>
+
       </ul>
     </div>
     <!-- /.navbar-collapse -->
