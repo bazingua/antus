@@ -70,6 +70,18 @@
         data: {
           pageTitle: 'Offre {{ offreResolve.name }}'
         }
+      })
+      .state('offres.banque', {
+        url: '/banque',
+        templateUrl: 'modules/offres/client/views/banque.offre.client.view.html',
+        controller: 'OffresController',
+        controllerAs: 'vm',
+        resolve: {
+          offreResolve: getOffre
+        },
+        data: {
+          pageTitle: 'Offre {{ offreResolve.name }}'
+        }
       });
   }
 
