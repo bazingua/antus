@@ -14,6 +14,7 @@
         url: '/demandes',
         template: '<ui-view/>'
       })
+      /*
       .state('demandes.list', {
         url: '',
         templateUrl: '/modules/demandes/client/views/list-demandes.client.view.html',
@@ -25,7 +26,7 @@
         resolve: {
           typeDemande: getType
         }
-      })
+      })*/
       .state('demandes.create', {
         url: '/deposer',
         templateUrl: '/modules/demandes/client/views/deposer-demandes.client.view.html',
@@ -50,18 +51,6 @@
         data: {
           pageTitle: 'Demande {{ demandeResolve.title }}'
         }
-      })
-      .state('demandes.homeclient', {
-        url: '/home/:demandeId',
-        templateUrl: '/modules/demandes/client/views/home.client.view.html',
-        controller: 'ClientHomeController',
-        controllerAs: 'vm',
-        resolve: {
-          demande: getDemande
-        },
-        data: {
-          pageTitle: 'Home'
-        }
       });
   }
 
@@ -69,7 +58,7 @@
 
   function getDemande($stateParams, DemandesService) {
     // gere le cas de home client avec une demande qi vient d'etre créée
-    if ($stateParams.demandeId === 'any' || $stateParams.demandeId === 'home')
+    if ($stateParams.demandeId === 'home')
       return {}
     else
       return DemandesService.get($stateParams.demandeId);
@@ -77,13 +66,11 @@
 
 
   getType.$inject = ['TypeService'];
-
   function getType(TypeService) {
     return TypeService.get().$promise;
   }
 
   getBanques.$inject = ['BanqueDemandeService'];
-
   function getBanques(BanqueDemandeService) {
     return BanqueDemandeService.getData().$promise;
   }

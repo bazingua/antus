@@ -123,6 +123,40 @@
         data: {
           pageTitle: 'Password reset form'
         }
+      })
+      .state('userHome', {
+        abstract: true,
+        url: '/user-home',
+        template: '<ui-view/>'
+      })
+      .state('userHome.client', {
+        url: '/client',
+        templateUrl: '/modules/demandes/client/views/home.client.view.html',
+        controller: 'ClientHomeController',
+        controllerAs: 'vm',
+        resolve: {
+          demandes: getOwnerDemandes
+        },
+        data: {
+          pageTitle: 'Home Client'
+        }
+      })
+      .state('userHome.banque', {
+        url: '/banque',
+        templateUrl: '/modules/demandes/client/views/home-bank.client.view.html',
+        controller: 'BanqueHomeController',
+        controllerAs: 'vm',
+        resolve: {
+          demandes: getOwnerDemandes
+        },
+        data: {
+          pageTitle: 'Home Banque'
+        }
       });
+
+    getOwnerDemandes.$inject = ['$stateParams', 'DemandesService', 'Authentication'];
+    function getOwnerDemandes($stateParams, DemandesService, Authentication) {
+        return DemandesService.find({user: Authentication.user._id});
+    }
   }
 }());

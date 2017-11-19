@@ -255,3 +255,28 @@ exports.removeOAuthProvider = function (req, res, next) {
     }
   });
 };
+
+
+
+/**
+ * Create user
+ */
+exports.createUser = function (req, res) {
+  // Init user and add missing fields
+  var user = new User(req.body);
+  user.provider = 'local';
+  user.displayName = user.prenom + ' ' + user.nom;
+  // Then save the user
+  user.save(function (err) {
+    if (err) {
+      return res.status(422).send({
+        message: errorHandler.getErrorMessage(err)
+      });
+    } else {
+      // Remove sensitive data before login
+      user.password = undefined;
+      user.salt = undefined;
+      res.json(user);
+    }
+  });
+};

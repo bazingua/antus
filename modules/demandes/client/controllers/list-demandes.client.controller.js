@@ -5,15 +5,11 @@
     .module('demandes')
     .controller('DemandesListController', DemandesListController);
 
-  DemandesListController.$inject = ['$scope', 'DemandesService', 'typeDemande'];
+  DemandesListController.$inject = ['$rootScope', '$scope', 'DemandesService', 'demandes'];
 
-  function DemandesListController($scope, DemandesService, typeDemande) {
+  function DemandesListController($rootScope, $scope, DemandesService, demandes) {
     var vm = this;
-    //  DemandesService.find({etat: 5}).then(function (data) {
-      DemandesService.find().then(function (data) {
-      vm.demandes = data;
-    }).catch(function (error) {
-      // Error catched
-    });
+    vm.demandes = demandes;
+    console.log('deamndes', vm.demandes);
   }
 }());
