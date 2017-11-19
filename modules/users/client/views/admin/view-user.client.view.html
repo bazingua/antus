@@ -1,29 +1,24 @@
 <section>
-  <div class="page-header">
-    <div class="row">
-      <div class="col-md-4">
-        <a class="btn btn-primary" ng-click="vm.remove()" ng-if="!vm.isContextUserSelf()">
-          <i class="glyphicon glyphicon-trash"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
   <div class="row">
     <div class="col-md-4">
-      <user-badge user="vm.user"></user-badge>
-      <div class="row" style="border: solid 1px red;margin: 10px;margin-top: -10px">
+      <user-badge ng-if="vm.authentication.user" user="vm.user"></user-badge>
+      <div class="row" style="margin: 10px;margin-top: -10px">
           <ul class="list-unstyled">
-              <li style="background-color: green;"><a style="width: 100%" ui-sref="admin.user-edit({userId: vm.user._id})"> Supprimer le compte </a></li>
-              <li>Modifier le profil </li>
+              <li class="menu-user-item" ><a style="width: 100%" ui-sref="admin.user.demandesoumises()"> Demandes soumises</a></li>
+              <li class="menu-user-item" ><a style="width: 100%" ui-sref="admin.user.clients()"> Clients</a></li>
+              <li class="menu-user-item" ><a style="width: 100%" ui-sref="admin.user.banques()"> Banques</a></li>
+              <li class="menu-user-item" ><a style="width: 100%" ui-sref="admin.user.addBanque()"> Ajouter une banque</a></li>
+              <li class="menu-user-item" ><a style="width: 100%" ui-sref="admin.user.addAdmin()"> Ajouter un administrateur</a></li>
+              <li class="menu-user-item" ng-if="!vm.isContextUserSelf()"><a style="width: 100%" ui-sref="admin.user.remove()"> Supprimer le compte </a></li>
+              <li class="menu-user-item " ng-if="!vm.isContextUserSelf()"><a style="width: 100%" ui-sref="admin.user.edit()"> Modifier le profil </a></li>
             </ul>
       </div>
       
     </div>
-    <div class="col-md-6">
-      <div class="row">
+    <div class="col-md-8">
+      <div class="row" style="padding-top: 10px;">
+        <div  ui-view="admin_home_right_side"></div> 
       </div>
-      Action user
     </div>
   </div>
 </section>

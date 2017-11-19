@@ -1,0 +1,20 @@
+<section style="margin-top: -40px;">
+  <div class="page-header" >
+    <div  class="row" style="background-color: #7a43b6; color: #fff; height: 50px">        
+      <div  class="col-md-8"><h3 class="color-white padding">Liste des utilisateurs</h3></div>  
+        <div  class="col-md-4" style="padding-top: 7px;"><input class="form-control col-md-4" type="text" ng-model="search" placeholder="Rechercher un utilisateur" ng-change="figureOutItemsToDisplay()" /></div>
+    </div>
+  </div>
+  <div class="list-group row">
+    <a ng-repeat="user in pagedItems" ui-sref="admin.user({userId: user._id})" class="list-group-item">
+      <h4 class="list-group-item-heading" ng-bind="user.username"></h4>
+      <p class="list-group-item-text pull-right small" ng-bind="user.roles"></p>
+      <p class="list-group-item-text" ng-bind="user.email"></p>
+    </a>
+  </div>
+  <div class="clearfix"></div>
+  <div class="row">
+    <uib-pagination boundary-links="true" max-size="8" items-per-page="itemsPerPage" total-items="filterLength" ng-model="currentPage" ng-change="pageChanged()"></uib-pagination>
+  </div>
+<div class="clerfix"></div>
+</section>

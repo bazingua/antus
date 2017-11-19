@@ -90,7 +90,6 @@
 
 
 
-        // $state.go('demandes.homeclient', {demandeId: "59f288ab34c3d71ba6567aa6"});
         /**
          * saveDemande
          * la methode qui permet de sauvegarder une demande
@@ -105,7 +104,7 @@
                   demandeToSave.clien = response;
                   DemandesService.save(demandeToSave)
                   .then(function (data) {
-                    $state.go('demandes.homeclient', {demandeId: data._id});
+                    $state.go('userHome.client', {demandeId: data._id});
                   })
                   .catch(function (err) {
                     console.log(err);

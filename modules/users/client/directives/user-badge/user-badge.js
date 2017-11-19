@@ -24,7 +24,7 @@
          * @return {Object} scope
          */
         function link(scope) {
-          user.created = UserRoleService.formaterDate(new Date(user.created).toISOString());
+          scope.user.created = UserRoleService.formaterDate(new Date(scope.user.created).toISOString());
         }
     }
 }());

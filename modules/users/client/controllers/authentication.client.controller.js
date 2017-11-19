@@ -83,9 +83,11 @@
       Notification.info({ message: 'Bienvenue ' + response.prenom });
       // And redirect to the previous or home page
       if (_.indexOf(response.roles, 'user') > -1) {
-        $state.go('demandes.homeclient', {demandeId: 'any'});
+        $state.go('userHome.client');
       } else if (_.indexOf(response.roles, 'admin') > -1) {
         $state.go('admin.user', {userId: response._id});
+      } else if (_.indexOf(response.roles, 'banque') > -1) {
+        $state.go('userHome.banque');
       } else {
         $state.go($state.previous.state.name || 'home', $state.previous.params);
       }

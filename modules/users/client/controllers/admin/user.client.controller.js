@@ -5,15 +5,15 @@
     .module('users.admin')
     .controller('UserController', UserController);
 
-  UserController.$inject = ['$scope', '$state', '$window', 'Authentication', 'userResolve', 'Notification'];
+  UserController.$inject = ['$rootScope','$scope', '$state', '$window', 'Authentication', 'userResolve', 'Notification', 'demandes', 'UsersService'];
 
-  function UserController($scope, $state, $window, Authentication, user, Notification) {
+  function UserController($rootScope, $scope, $state, $window, Authentication, user, Notification, demandes, UsersService) {
     var vm = this;
-
     vm.authentication = Authentication;
     vm.user = user;
     vm.remove = remove;
     vm.update = update;
+    vm.demandes = demandes;
     vm.isContextUserSelf = isContextUserSelf;
 
     function remove(user) {
@@ -53,6 +53,29 @@
 
     function isContextUserSelf() {
       return vm.user.username === vm.authentication.user.username;
+    }
+
+    vm.createuser = function (isValid) {
+      if (!isValid) {
+        $scope.$broadcast('show-errors-check-validity', 'vm.userForm');
+        return false;
+      }
+      vm.credentials.nom = vm.credentials.prenom;
+      vm.credentials.roles = [];
+      vm.credentials.roles.push('banque');
+      UsersService.createUser(vm.credentials)
+        .then(onCreateBankSuccess)
+        .catch(onCreateBankError);
+    }
+
+    function onCreateBankSuccess(response) {
+      vm.authentication.user = response;
+      Notification.success({ message: '<i class="glyphicon glyphicon-ok"></i> Le compte est crée avec succes!' });
+      $state.go('admin.user.banques');
+    }
+
+    function onCreateBankError(response) {
+      Notification.error({ message: response.data.message, title: '<i class="glyphicon glyphicon-remove"></i> Une erreur est survenue lors de la creation du compte!', delay: 6000 });
     }
   }
 }());

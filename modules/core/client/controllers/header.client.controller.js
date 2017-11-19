@@ -5,9 +5,9 @@
     .module('core')
     .controller('HeaderController', HeaderController);
 
-  HeaderController.$inject = ['$scope', '$rootScope', '$state', 'Authentication', 'menuService', 'UserRoleService', 'SignOutService'];
+  HeaderController.$inject = ['$scope', '$timeout', '$rootScope', '$state', 'Authentication', 'menuService', 'UserRoleService', 'SignOutService'];
 
-  function HeaderController($scope, $rootScope,$state, Authentication, menuService, UserRoleService, SignOutService) {
+  function HeaderController($scope, $timeout, $rootScope,$state, Authentication, menuService, UserRoleService, SignOutService) {
     var vm = this;
     vm.accountMenu = menuService.getMenu('account').items[0];
     vm.authentication = Authentication;
@@ -25,8 +25,9 @@
     $scope.signoutCurrentUser = function () {
       SignOutService.get().$promise.then(function() {
         $state.go('home');
+        $timeout(function() {
         location.reload();
-        //Notification.success({ message: '<i class="glyphicon glyphicon-remove"></i> ' +), delay: 6000 });
+        }, 500);
       }, function () {
         Notification.error({ message: '<i class="glyphicon glyphicon-remove"></i> ' + 'Une erreur est survenue', delay: 6000 });
       });

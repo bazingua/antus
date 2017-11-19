@@ -39,7 +39,11 @@
       signin: {
         method: 'POST',
         url: '/api/auth/signin'
-      }
+      },
+      createAnUser: {
+        method: 'POST',
+        url: '/api/users'
+      },
     });
 
     angular.extend(Users, {
@@ -64,6 +68,9 @@
       },
       userSignin: function (credentials) {
         return this.signin(credentials).$promise;
+      },
+      createUser: function (credentials) {
+        return this.createAnUser(credentials).$promise;
       }
     });
 
