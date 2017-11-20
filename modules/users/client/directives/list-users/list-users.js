@@ -4,9 +4,9 @@
     angular.module('users')
         .directive('listUsers', listUsers);
 
-    listUsers.$inject = ['$filter', 'AdminService'];
+    listUsers.$inject = ['$filter', 'AdminService', '$stateParams'];
 
-    function listUsers($filter, AdminService) {
+    function listUsers($filter, AdminService, $stateParams) {
         var directive = {
             restrict: 'EA',
             transclude: false,
@@ -23,14 +23,19 @@
          * @return {Object} scope
          */
         function link(scope) {
-            //console.log('++++', scope.users);
+
+          if ($stateParams.role === 'user')
+            scope.role = 'utilisateurs';
+          if ($stateParams.role === 'banque')
+            scope.role = 'banques';
+          
             scope.buildPager = buildPager;
             scope.figureOutItemsToDisplay = figureOutItemsToDisplay;
             scope.pageChanged = pageChanged;
-            console.log('++++++++++++++++++++');
-        
             AdminService.query(function (data) {
               scope.users = data;
+              if ($stateParams.role)
+                scope.users = $filter('filterUserByRole')(data, $stateParams.role);
               scope.buildPager();
             });
         
