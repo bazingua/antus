@@ -15,7 +15,16 @@
       url: '/users',
       template: '<ui-view/>'
     })
-      .state('admin.users', {
+    .state('signup', {
+      url: '/admin/signup',
+      templateUrl: '/modules/users/client/views/authentication/signup.client.view.html',
+      controller: 'AdminAuthenticationController',
+      controllerAs: 'vm',
+      data: {
+        pageTitle: 'Signup'
+      }
+    })
+    .state('admin.users', {
         url: '/list',
         templateUrl: '/modules/users/client/views/admin/list-users.client.view.html',
         controller: 'UserListController',
