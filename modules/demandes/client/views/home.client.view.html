@@ -1,30 +1,44 @@
-
-      <div class="container" style="color: #7a43b6;">
-         <div class="col-md-6">  </div>
-         <div class="col-md-6">
-            <div style="width: 100%; margin-left: auto; margin-right: auto; margin-bottom: 30px" class=" text-center">
-                <span style="color:#7a43b6">
+          <div class="panel panel-default">
+          <div class="panel-body">
+          <div class="col-md-6">
+               <span style="color:#7a43b6">
                     <img class="img-circle img-thumbnail" style="height: 50px;width: 50px" ng-src="/modules/core/client/img/download.png" alt="Image">
                 </span>
                 <span style="color:#7a43b6; position: relative;font-size: 28px;font-weight: bold;top: 6px ">  Espace Client </span>
-              </div>
-           
-         
-        </div>
+              
+  <img class="full-width img-responsive img-thumbnail" style="height: 160px;margin-top: 10px" ng-src="/modules/core/client/img/01.jpg" alt="Image">
+  
+            
+      </div>  
+        <div class="col-md-6">
+            <user-badge ng-if="vm.authentication.user" user="vm.authentication.user"></user-badge> </div>
       </div>
-    
 
- <div class="panel panel-default">
   <div style="background-color: #7a43b6; color: #fff;">
     <div class="btn-group btn-group-lg">
    
-  <button ui-sref="demandes.list" type="button" class="btn btn-group-lg" style="background-color: #7a43b6; ">Mes Demandes</button>
+  <button ui-sref="userHome.client" type="button" class="btn btn-group-lg" style="background-color: #7a43b6; ">Mes Demandes</button>
 
   <button  ui-sref="offres.list" type="button" class="btn btn-group-lg" style="background-color: #7a43b6;">Mes Offres</button></div>
   </div>
   
           <div class="panel-body" style="padding: 20px; min-height: 400px">
-           <details-demande demande = "vm.demande"></details-demande>
+              <section class="row">
+                
+                    <div ng-if="vm.demandes.length > 0">
+                      <list-demandes demandes="vm.demandes"></list-demandes>    
+                    </div>
+                    <div ng-if="vm.demandes.length < 1" class="service " data-height="height">
+                      <div>
+                        <p>Aucune demande n'a été trouvée</p>
+                      </div>
+                    </div>
+                
+                    <p class="promo-block-text" style="text-align: center">
+                        <a ui-sref="demandes.create" style="background-color: #663399;color: #FFFFFF" class="btn-theme btn-theme-md btn-default-bg text-uppercase">Déposez une nouvelle demande</a></p>
+                    
+                </section>
+                
           </div>
           
            </div>

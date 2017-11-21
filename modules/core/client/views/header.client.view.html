@@ -1,5 +1,5 @@
 <!-- Navigation -->
-<nav class="header navbar-fixed-top " role="navigation">
+<nav class="header navbar-fixed-top " role="navigation" style="border-bottom: 1px  solid #ddd">
   <div class="navbar">
 
 <div class="container " ng-controller="HeaderController as vm">
@@ -39,7 +39,9 @@
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right" ng-show="vm.authentication.user">
-          <li class="icon-pointer header-button-width"><a ng-click="signoutCurrentUser()" target="_self">Déconnexion</a></li>
+            <li class="icon-pointer header-button-width"><a ui-sref="userHome.client" target="_self"> <samp class="glyphicon glyphicon-home"> </samp> Espace Client</a></li>
+         
+          <li class="icon-pointer header-button-width"><a ng-click="signoutCurrentUser()" target="_self"><samp class="glyphicon glyphicon-off"> </samp> Déconnexion</a></li>
         </ul>
 
       </ul>
