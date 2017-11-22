@@ -39,7 +39,11 @@
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right" ng-show="vm.authentication.user">
-            <li class="icon-pointer header-button-width"><a ui-sref="userHome.client" target="_self"> <samp class="glyphicon glyphicon-home"> </samp> Espace Client</a></li>
+        
+                <li ng-if="vm.authentication.user.roles =='banque'" class="icon-pointer header-button-width"><a ui-sref="userHome.banque" target="_self"> <samp class="glyphicon glyphicon-home"> </samp> Espace Banque</a></li>       
+            
+         
+                  <li ng-if="vm.authentication.user.roles =='user'" class="icon-pointer header-button-width"><a ui-sref="userHome.client" target="_self"> <samp class="glyphicon glyphicon-home"> </samp> Espace Client</a></li>       
          
           <li class="icon-pointer header-button-width"><a ng-click="signoutCurrentUser()" target="_self"><samp class="glyphicon glyphicon-off"> </samp> Déconnexion</a></li>
         </ul>

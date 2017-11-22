@@ -1,32 +1,40 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+    <div class="col-md-6">
+         <span style="color:#7a43b6">
+              <img class="img-circle img-thumbnail" style="height: 50px;width: 50px" ng-src="/modules/core/client/img/download.png" alt="Image">
+          </span>
+          <span style="color:#7a43b6; position: relative;font-size: 28px;font-weight: bold;top: 6px ">  Espace Banque </span>
+        
+<img class="full-width img-responsive img-thumbnail" style="height: 160px;margin-top: 10px" ng-src="/modules/core/client/img/01.jpg" alt="Image">
 
-      <div class="container" style="color: #7a43b6; ">
-         <div class="col-md-6">  </div>
-         <div class="col-md-6"><h2 style="text-align: right;color: #7431c0; ">Espace Banque</h2></div>
-      </div>
-    
-
- <div class="panel panel-default">
-  <div style="background-color: #7431c0; color: #fff;">
-    <div class="btn-group btn-group-lg">
-  <button type="button" class="btn btn-group-lg" style="background-color: #7431c0; ">Mes Demandes</button>
-  <button type="button" class="btn btn-group-lg" style="background-color: #7431c0;">Mes Offres</button>
-
+      
+</div>  
+  <div class="col-md-6">
+      <user-badge ng-if="vm.authentication.user" user="vm.authentication.user"></user-badge> </div>
 </div>
-  </div>
-  
-          <div class="panel-body" style="padding: 20px; min-height: 400px">
-<section class="row">
-  <div class="col-xs-offset-2 col-xs-10 col-md-offset-1 col-md-11">
-    <div ng-if="vm.demandes.length > 0">
-      <list-demandes demandes="vm.demandes"></list-demandes>    
-    </div>
-    <div ng-if="vm.demandes.length < 1">
-      <div>
-        <p>Aucune demande n'a été trouvée</p>
-      </div>
-    </div>
 
-  </div>
-</section>
+<div style="background-color: #7a43b6; color: #fff;">
+<div class="btn-group btn-group-lg">
 
-          </div>
+<button ui-sref="userHome.banque" type="button" class="btn btn-group-lg" style="background-color: #7a43b6; ">Demandes</button></div>
+</div>
+
+    <div class="panel-body" style="padding: 20px; min-height: 400px">
+        <section class="row">
+          
+              <div ng-if="vm.demandes.length > 0">
+                <list-demandes demandes="vm.demandes"></list-demandes>    
+              </div>
+              <div ng-if="vm.demandes.length < 1" class="service " data-height="height">
+                <div>
+                  <p>Aucune demande n'a été trouvée</p>
+                </div>
+              </div>
+          
+             
+          </section>
+          
+    </div>
+    
+     </div>

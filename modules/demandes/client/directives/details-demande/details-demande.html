@@ -245,17 +245,16 @@
 </div>
   </div>
       
-    
   </div>
-  <div ng-switch="demande.etat">
-  <div ng-switch-when="1">
-  	<button  ng-click="validerDemande()"  type="button" class="btn btn-primary">Valider</button>
+  <div ng-switch="demande.etat"  style="text-align:center ">
+  <div  ng-if="vm.authentication.user.roles =='admin'" ng-switch-when="1">
+  	<button  ng-click="validerDemande()"  type="button" style="background-color: #663399;color: #FFFFFF" class="btn-theme btn-theme-md btn-default-bg text-uppercase">Valider</button>
   </div>
-  <div ng-switch-when="5">
-  	<a ui-sref="offres.deposer({demandeId:  demande.id})" type="button" class="btn btn-primary">Dépoer Offre</a>
+  <div  ng-if="vm.authentication.user.roles =='banque'" ng-switch-when="5">
+  	<a ui-sref="offres.deposer({demandeId:  demande.id})" type="button" style="background-color: #663399;color: #FFFFFF" class="btn-theme btn-theme-md btn-default-bg text-uppercase">Dépoer Offre</a>
   </div>
-  <div ng-switch-default>
-  	<button ng-click="" type="button" class="btn btn-primary">Soumettre</button>
+  <div  ng-if="vm.authentication.user.roles =='user'" ng-switch-default>
+  	<button ng-click="" type="button" style="background-color: #663399;color: #FFFFFF" class="btn-theme btn-theme-md btn-default-bg text-uppercase">Soumettre</button>
   </div>
 </div>
 
