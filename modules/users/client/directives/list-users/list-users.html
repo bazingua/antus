@@ -6,8 +6,12 @@
     </div>
   </div>
   <div class="list-group row">
-    <a ng-repeat="user in pagedItems" ui-sref="admin.user({userId: user._id})" class="list-group-item">
+    <a ng-repeat="user in pagedItems" class="list-group-item">
       <h4 class="list-group-item-heading" ng-bind="user.username"></h4>
+      <p ng-if="role === 'admin'" class="list-group-item-text pull-right small" style="padding-left: 10px" >
+        <span ng-hide="user.active" ng-click="changeUserState(user)" style="cursor: pointer" >Désactivé</span>
+        <span ng-hide="!user.active" ng-click="changeUserState(user)" style="cursor: pointer">Activé</span>
+      </p>
       <p class="list-group-item-text pull-right small" ng-bind="user.roles"></p>
       <p class="list-group-item-text" ng-bind="user.email"></p>
     </a>

@@ -24,6 +24,7 @@
          */
         function link(scope) {
 
+          scope.role = $stateParams.role;
           if ($stateParams.role === 'user')
             scope.role = 'utilisateurs';
           if ($stateParams.role === 'banque')
@@ -32,13 +33,18 @@
             scope.buildPager = buildPager;
             scope.figureOutItemsToDisplay = figureOutItemsToDisplay;
             scope.pageChanged = pageChanged;
-            AdminService.query(function (data) {
-              scope.users = data;
-              if ($stateParams.role)
-                scope.users = $filter('filterUserByRole')(data, $stateParams.role);
-              scope.buildPager();
-            });
-        
+
+            function loadUsers() {
+              AdminService.query(function (data) {
+                scope.users = data;
+                if ($stateParams.role)
+                  scope.users = $filter('filterUserByRole')(data, $stateParams.role);
+                scope.buildPager();
+              });
+          
+            }
+            loadUsers();
+
             function buildPager() {
               scope.pagedItems = [];
               scope.itemsPerPage = 15;
@@ -59,6 +65,13 @@
             function pageChanged() {
               scope.figureOutItemsToDisplay();
             }
+
+            scope.changeUserState = function (user) {
+              user.active = !user.active;
+              AdminService.update(user, function (data) {
+                loadUsers();
+              });
+            } 
         }
     }
 }());

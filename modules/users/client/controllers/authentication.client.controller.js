@@ -85,7 +85,7 @@
       if (_.indexOf(response.roles, 'user') > -1) {
         $state.go('userHome.client');
       } else if (_.indexOf(response.roles, 'admin') > -1) {
-        $state.go('admin.user', {userId: response._id});
+        $state.go('homeadmin');
       } else if (_.indexOf(response.roles, 'banque') > -1) {
         $state.go('userHome.banque');
       } else {

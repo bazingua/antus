@@ -5,9 +5,9 @@
     .module('users')
     .controller('AdminAuthenticationController', AdminAuthenticationController);
 
-  AdminAuthenticationController.$inject = ['$scope', '$state', 'UsersService', '$location', '$window', 'Authentication', 'PasswordValidator', 'Notification'];
+  AdminAuthenticationController.$inject = ['$scope', '$state', '$timeout', 'SignOutService', 'UsersService', '$location', '$window', 'Authentication', 'PasswordValidator', 'Notification'];
 
-  function AdminAuthenticationController($scope, $state, UsersService, $location, $window, Authentication, PasswordValidator, Notification) {
+  function AdminAuthenticationController($scope, $state, $timeout, SignOutService, UsersService, $location, $window, Authentication, PasswordValidator, Notification) {
     var vm = this;
 
     vm.authentication = Authentication;
@@ -66,12 +66,25 @@
 
     // Authentication Callbacks
 
+    var signoutCurrentUser = function () {
+      SignOutService.get().$promise.then(function() {
+        $state.go('home');
+        $timeout(function() {
+        location.reload();
+        }, 500);
+      }, function () {
+        Notification.error({ message: '<i class="glyphicon glyphicon-remove"></i> ' + 'Une erreur est survenue', delay: 6000 });
+      });
+    };
+
     function onUserSignupSuccess(response) {
       // If successful we assign the response to the global user model
       vm.authentication.user = response;
-      Notification.success({ message: '<i class="glyphicon glyphicon-ok"></i> Signup successful!' });
+      Notification.success({title: response.title,  message: '<i class="glyphicon glyphicon-ok"></i> ' + response.message }, 15000);
       // And redirect to the previous or home page
-      $state.go('homeadmin');
+      //document.getElementById("deconexion").click();
+      signoutCurrentUser();
+      // $state.go('home');
     }
 
     function onUserSignupError(response) {
