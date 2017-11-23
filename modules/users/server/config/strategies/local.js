@@ -11,7 +11,8 @@ module.exports = function () {
   // Use local strategy
   passport.use(new LocalStrategy({
     usernameField: 'usernameOrEmail',
-    passwordField: 'password'
+    passwordField: 'password',
+    active: 'active'
   },
   function (usernameOrEmail, password, done) {
     User.findOne({
@@ -24,7 +25,7 @@ module.exports = function () {
       if (err) {
         return done(err);
       }
-      if (!user || !user.authenticate(password)) {
+      if (!user || !user.active || !user.authenticate(password)) {
         return done(null, false, {
           message: 'Invalid username or password (' + (new Date()).toLocaleTimeString() + ')'
         });

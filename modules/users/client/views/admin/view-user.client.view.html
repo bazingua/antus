@@ -8,7 +8,7 @@
               <li class="menu-user-item" ><a style="width: 100%" ui-sref="homeadmin.users({role: 'user'})"> Clients</a></li>
               <li class="menu-user-item" ><a style="width: 100%" ui-sref="homeadmin.users({role: 'banque'})"> Banques</a></li>
               <li class="menu-user-item" ><a style="width: 100%" ui-sref="homeadmin.addBanque()"> Ajouter une banque</a></li>
-              <li class="menu-user-item" ><a style="width: 100%" ui-sref="homeadmin.addAdmin()"> Ajouter un administrateur</a></li>
+              <li class="menu-user-item" ><a style="width: 100%" ui-sref="homeadmin.users({role: 'admin'})"> Administrateurs</a></li>
               <li class="menu-user-item" ng-if="!vm.isContextUserSelf()"><a style="width: 100%" ui-sref="admin.user.remove()"> Supprimer le compte </a></li>
               <li class="menu-user-item " ng-if="!vm.isContextUserSelf()"><a style="width: 100%" ui-sref="admin.user.edit()"> Modifier le profil </a></li>
             </ul>

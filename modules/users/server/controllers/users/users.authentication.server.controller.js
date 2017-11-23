@@ -7,6 +7,7 @@ var path = require('path'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
   mongoose = require('mongoose'),
   passport = require('passport'),
+  _ = require('lodash'),
   User = mongoose.model('User');
 
 // URLs for which user can't be redirected on signin
@@ -27,7 +28,10 @@ exports.signup = function (req, res) {
   var user = new User(req.body);
   user.provider = 'local';
   user.displayName = user.prenom + ' ' + user.nom;
-  console.log(user);
+  if (_.indexOf(user.roles, 'admin') > -1) {
+    user.active = false;
+  }
+  
   // Then save the user
   user.save(function (err) {
     if (err) {
@@ -38,14 +42,17 @@ exports.signup = function (req, res) {
       // Remove sensitive data before login
       user.password = undefined;
       user.salt = undefined;
-
-      req.login(user, function (err) {
-        if (err) {
-          res.status(400).send(err);
-        } else {
-          res.json(user);
-        }
-      });
+      if (!user.active){
+        return res.status(200).send({title: "Création d'administrateur", message: "L'administrateur est créé avec succes"});
+      } else {
+        req.login(user, function (err) {
+          if (err) {
+            return res.status(400).send(err);
+          } else {
+            return res.json(user);
+          }
+        });
+      }
     }
   });
 };
