@@ -13,7 +13,16 @@
     vm.authentication = Authentication;
     vm.isCollapsed = false;
     vm.menu = menuService.getMenu('topbar');
-
+    if (vm.authentication.user) {
+      if (_.indexOf( vm.authentication.user.roles, 'user') > -1) {
+        vm.espaceUser = 'Espace Client';
+      } else if (_.indexOf( vm.authentication.user.roles, 'banque') > -1) {
+        vm.espaceUser = 'Espace Banque';
+      } else {
+        vm.espaceUser = 'Espace Administrateur';
+      }
+    }
+    
     $scope.$on('$stateChangeSuccess', stateChangeSuccess);
 
     function stateChangeSuccess() {
@@ -32,6 +41,16 @@
         Notification.error({ message: '<i class="glyphicon glyphicon-remove"></i> ' + 'Une erreur est survenue', delay: 6000 });
       });
     };
-    
+    $scope.goToSpace = function () {
+      if (vm.authentication.user) {
+        if (_.indexOf( vm.authentication.user.roles, 'user') > -1) {
+          $state.go('userHome.client');
+        } else if (_.indexOf( vm.authentication.user.roles, 'banque') > -1) {
+          $state.go('userHome.banque');
+        } else {
+          $state.go('homeadmin');
+        }
+      }
+    }
   }
 }());
