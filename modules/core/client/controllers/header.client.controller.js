@@ -15,11 +15,11 @@
     vm.menu = menuService.getMenu('topbar');
     if (vm.authentication.user) {
       if (_.indexOf( vm.authentication.user.roles, 'user') > -1) {
-        vm.espaceUser = 'Espace Client';
+        $rootScope.espaceUser = 'Espace Client';
       } else if (_.indexOf( vm.authentication.user.roles, 'banque') > -1) {
-        vm.espaceUser = 'Espace Banque';
+        $rootScope.espaceUser = 'Espace Banque';
       } else {
-        vm.espaceUser = 'Espace Administrateur';
+        $rootScope.espaceUser = 'Espace Administrateur';
       }
     }
     
