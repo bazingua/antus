@@ -156,7 +156,7 @@
 
     getOwnerDemandes.$inject = ['$stateParams', 'DemandesService', 'Authentication'];
     function getOwnerDemandes($stateParams, DemandesService, Authentication) {
-        return DemandesService.find({user: Authentication.user._id});
+        return DemandesService.find({etat: 5});
     }
   }
 }());
