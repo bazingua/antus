@@ -13,7 +13,8 @@
         <div class="form-group">
           <label class="control-label col-sm-4">ADRESSE E-MAIL EMPREUNTEUR:
           </label>
-          <div class="col-sm-4 input-group">
+          <div class="col-sm-4">
+              <div class="input-group" >
             <input type="email" name="mail" class="form-control" id="acquisition" required ng-model="demande.client.email">
             <span class="input-group-addon" style="background-color: white; border: 0">
               <a href="#" data-toggle="tooltip" title=" Votre adresse electronique est obligatoire" class="pull-left">
@@ -21,14 +22,16 @@
               </a>
             </span>
           </div>
-          <div ng-show="myForm.$submitted && (myForm.mail.$error.required || myForm.mail.$error.email)" class="form-text-error">Veuillez renseigner un mail valide.</div>
-
+            <div ng-show="myForm.$submitted && (myForm.mail.$error.required || myForm.mail.$error.email)" class="form-text-error">Veuillez renseigner un mail valide.</div>            
+          </div>
+          
           <label class="control-label col-sm-4"> </label>
         </div>
 
         <div class="form-group">
           <label for="password" class=" control-label col-sm-4">VOTRE MOT DE PASSE </label>
-          <div class="col-sm-4 input-group">
+          <div class="col-sm-4">
+          <div class="input-group"> 
           <input type="password" class="form-control" name="password" id="password" ng-model="demande.client.password" required>
 
           <span class="input-group-addon" style="background-color: white; border: 0">
@@ -36,19 +39,22 @@
               <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span>
             </a>
           </span>
-          <div ng-show="myForm.$submitted && (myForm.password.$error.required || myForm.password.$error.password)" class="form-text-error">Veuillez renseigner un mail valide.</div>
+        </div>
+          <div ng-show="myForm.$submitted && (myForm.password.$error.required || myForm.password.$error.password)" class="form-text-error">Entrer un mot de passe.</div>
 
         </div>
       </div>
       <div class="form-group">
         <label for="email" class=" control-label col-sm-4">CONFIRMEZ VOTRE MOT DE PASSE</label>
-        <div class="col-sm-4 input-group">
+        <div class="col-sm-4">
+            <div class="input-group">
           <input type="password" class="form-control" name="confirm_password" id="confirm_password" placeholder="confirmez votre nouveau mot de passe" ng-model="demande.client.confirmPwd">
           <span class="input-group-addon" style="background-color: white; border: 0">
             <a href="#" data-toggle="tooltip" title=" La confirmation du mot de paase est obligatoire" class="pull-left">
               <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span>
             </a>
           </span>
+        </div>
           <span id='message'></span>
         </div>
       </div>

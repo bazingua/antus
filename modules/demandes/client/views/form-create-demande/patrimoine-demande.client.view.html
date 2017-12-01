@@ -3,107 +3,165 @@
     <form name="myForm" class="form-horizontal">
 
         <div class="panel-body" style="min-height: 400px">
-          <div class="panel-default" style="border: 0">
-          <div class="panel-body">
-            <div style="width: 100%; margin-left: auto; margin-right: auto; margin-bottom: 10px" class=" text-center">
-              <span  style="color: #555"><i class="material-icons">info</i></span>
-              <span style="color: #777; position: relative;top: -8px;font-style: italic;font-size: 13px;">Définition de Votre Patrimoine Immoblier</span>
-            </div>
+            <div class="panel-default" style="border: 0">
+                <div class="panel-body">
+                    <div style="width: 100%; margin-left: auto; margin-right: auto; margin-bottom: 10px" class=" text-center">
+                        <span style="color: #555">
+                            <i class="material-icons">info</i>
+                        </span>
+                        <span style="color: #777; position: relative;top: -8px;font-style: italic;font-size: 13px;">Définition de Votre Patrimoine Immoblier</span>
+                    </div>
 
-            <br/>
+                    <br/>
 
-            <div class="form-group">
-                <label class="control-label col-sm-4">RESIDENCE PRINCIPALE:
-                    </label>
-                <div class="col-sm-4">
-                    <input type="text" name="Valprincipale" placeholder=" VALEUR DU BIEN" class="form-control" id="Valprincipale" ng-model="demande.patrimoine.bienPrincipal">
-                </div>
-                <div class="col-sm-4">
-                    <input type="text" name="Duprincipale" placeholder="CAPITAL RESTANT DÛ" class="form-control" id="Duprincipale" ng-model="demande.patrimoine.duPrincipal">
-                </div>
-                <div ng-if="demande.patrimoine.bienPrincipal < demande.patrimoine.duPrincipal"> 
-                        productsForm.$invalid = true;
-                        <div class="col-sm-4"></div>
-                        <div class="col-sm-4 " style="color:red">
-                            VALEUR DU BIEN ne peut pas etre inferieur au CAPITAL RESTANT DÛ
+                    <div class="form-group">
+                        <label class="control-label col-sm-4">RESIDENCE PRINCIPALE:
+                        </label>
+                        <div class="col-sm-4" style="margin-bottom: 5px">
+                            <div class="input-group">
+                                <input type="text" name="Valprincipale" placeholder=" VALEUR DU BIEN" class="form-control" id="Valprincipale" ng-model="demande.patrimoine.bienPrincipal">
+                                <span class="input-group-addon">
+                                    <a class="pull-left">
+                                        <span>F CFA</span>
+                                    </a>
+                                </span>
+                            </div>
                         </div>
+                        <div class="col-sm-4" style="margin-bottom: 5px">
+                            <div class="input-group">
+                                <input type="text" name="Duprincipale" placeholder="CAPITAL RESTANT DÛ" class="form-control" id="Duprincipale" ng-model="demande.patrimoine.duPrincipal">
+                                <span class="input-group-addon">
+                                    <a class="pull-left">
+                                        <span>F CFA</span>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                        <div ng-if="demande.patrimoine.bienPrincipal < demande.patrimoine.duPrincipal">
+                        
+                            <div class="col-sm-4"></div>
+                            <div class="col-sm-4 " style="color:red">
+                                VALEUR DU BIEN ne peut pas etre inferieur au CAPITAL RESTANT DÛ
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4">RESIDENCE(S) SECONDAIRE(S):
+                        </label>
+                        <div class="col-sm-4" style="margin-bottom: 5px">
+                            <div class="input-group">
+                                <input type="text" name="ValSecondaire" placeholder=" VALEUR DU BIEN" class="form-control" id="ValSecondaire" ng-model="demande.patrimoine.bienSecondaire">
+                                <span class="input-group-addon">
+                                    <a class="pull-left">
+                                        <span>F CFA</span>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-sm-4" style="margin-bottom: 5px">
+                            <div class="input-group">
+                                <input type="text" name="DuSecondaire" placeholder="CAPITAL RESTANT DÛ" class="form-control" id="DuSecondaire" ng-model="demande.patrimoine.duSecondaire">
+                                <span class="input-group-addon">
+                                    <a class="pull-left">
+                                        <span>F CFA</span>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                        <div ng-if="demande.patrimoine.bienSecondaire < demande.patrimoine.duSecondaire">
+                            <div class="col-sm-4"></div>
+                            <div class="col-sm-4 " style="color:red">
+                                VALEUR DU BIEN ne peut pas etre inferieur au CAPITAL RESTANT DÛ
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4">INVESTISSEMENT(S) LOCATIF(S):
+                        </label>
+                        <div class="col-sm-4" style="margin-bottom: 5px">
+                            <div class="input-group">
+                                <input type="text" name="ValLocatif" placeholder=" VALEUR DU BIEN" class="form-control" id="ValLocatif" bienLocatif ng-model="demande.patrimoine.bienLocatif">
+                                <span class="input-group-addon">
+                                    <a class="pull-left">
+                                        <span>F CFA</span>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-sm-4" style="margin-bottom: 5px">
+                            <div class="input-group">
+                                <input type="text" name="DuLocatif" placeholder="CAPITAL RESTANT DÛ" class="form-control" id="DuLocatif" ng-model="demande.patrimoine.duLocatif">
+                                <span class="input-group-addon">
+                                    <a class="pull-left">
+                                        <span>F CFA</span>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                        <div ng-if="demande.patrimoine.bienLocatif < demande.patrimoine.duLocatif">
+                            <div class="col-sm-4"></div>
+                            <div class="col-sm-4 " style="color:red">
+                                VALEUR DU BIEN ne peut pas etre inferieur au CAPITAL RESTANT DÛ
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <br/>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4">AUTRE PATRIMOINE IMMOBILIER:
+                        </label>
+                        <div class="col-sm-4" style="margin-bottom: 5px">
+                            <div class="input-group">
+                                <input type="text" name="ValAutre" placeholder=" VALEUR DU BIEN" class="form-control" id="ValAutre" ng-model="demande.patrimoine.bienAutre">
+                                <span class="input-group-addon">
+                                    <a class="pull-left">
+                                        <span>F CFA</span>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-sm-4" style="margin-bottom: 5px">
+                            <div class="input-group">
+                                <input type="text" name="DuAutre" placeholder="CAPITAL RESTANT DÛ" class="form-control" id="DuAutre" ng-model="demande.patrimoine.duAutre">
+                                <span class="input-group-addon">
+                                    <a class="pull-left">
+                                        <span>F CFA</span>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                        <div ng-if="demande.patrimoine.bienAutre < demande.patrimoine.duAutre">
+                            <div class="col-sm-4"></div>
+                            <div class="col-sm-4 " style="color:red">
+                                VALEUR DU BIEN ne peut pas etre inferieur au CAPITAL RESTANT DÛ
+                            </div>
+                        </div>
+                    </div>
+
+                    <br/>
                 </div>
             </div>
-            <br/>
-            <div class="form-group">
-                <label class="control-label col-sm-4">RESIDENCE(S) SECONDAIRE(S):
-                    </label>
-                <div class="col-sm-4">
-                    <input type="text" name="ValSecondaire" placeholder=" VALEUR DU BIEN" class="form-control" id="ValSecondaire" ng-model="demande.patrimoine.bienSecondaire">
+            <div class="row page-header" style="background-color: #f8f8f8; padding:0px ; margin: 10px; min-height: 50px;">
+                <div class="col-md-4"></div>
+                <div class="col-md-2 nopadding text-center">
+                    <button ng-disabled="$isFirst()" class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px;margin: 2px"
+                        ng-click="$previousStep()">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        PRECEDENT
+                    </button>
                 </div>
-                <div class="col-sm-4">
-                    <input type="text" name="DuSecondaire" placeholder="CAPITAL RESTANT DÛ" class="form-control" id="DuSecondaire" ng-model="demande.patrimoine.duSecondaire">
+                <div class="col-md-2  nopadding text-center">
+                    <button type="submit" class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px;margin: 2px" ng-click="false ? error = false : $nextStep();">
+                        SUIVANT
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </button>
                 </div>
-                <div ng-if="demande.patrimoine.bienSecondaire < demande.patrimoine.duSecondaire"> 
-                        <div class="col-sm-4"></div>
-                        <div class="col-sm-4 " style="color:red">
-                            VALEUR DU BIEN ne peut pas etre inferieur au CAPITAL RESTANT DÛ
-                        </div>
-                </div>
-            </div>
-            <br/>
-            <div class="form-group">
-                <label class="control-label col-sm-4">INVESTISSEMENT(S) LOCATIF(S):
-                    </label>
-                <div class="col-sm-4">
-                    <input type="text" name="ValLocatif" placeholder=" VALEUR DU BIEN" class="form-control" id="ValLocatif" bienLocatif ng-model="demande.patrimoine.bienLocatif">
-                </div>
-                <div class="col-sm-4">
-                    <input type="text" name="DuLocatif" placeholder="CAPITAL RESTANT DÛ" class="form-control" id="DuLocatif" ng-model="demande.patrimoine.duLocatif">
-                </div>
-                <div ng-if="demande.patrimoine.bienLocatif < demande.patrimoine.duLocatif"> 
-                        <div class="col-sm-4"></div>
-                        <div class="col-sm-4 " style="color:red">
-                            VALEUR DU BIEN ne peut pas etre inferieur au CAPITAL RESTANT DÛ
-                        </div>
-                </div>
-            
-                
-        </div>
-            <br/>
-            <div class="form-group">
-                <label class="control-label col-sm-4">AUTRE PATRIMOINE IMMOBILIER:
-                    </label>
-                <div class="col-sm-4">
-                    <input type="text" name="ValAutre" placeholder=" VALEUR DU BIEN" class="form-control" id="ValAutre" ng-model="demande.patrimoine.bienAutre">
-                </div>
-                <div class="col-sm-4">
-                    <input type="text" name="DuAutre" placeholder="CAPITAL RESTANT DÛ" class="form-control" id="DuAutre" ng-model="demande.patrimoine.duAutre">
-                </div>
-                <div ng-if="demande.patrimoine.bienAutre < demande.patrimoine.duAutre"> 
-                        <div class="col-sm-4"></div>
-                        <div class="col-sm-4 " style="color:red">
-                            VALEUR DU BIEN ne peut pas etre inferieur au CAPITAL RESTANT DÛ
-                        </div>
-                </div>
-            </div>
+                <div class="col-md-4"></div>
 
-            <br/>
-        </div>
-        </div>
-          <div class="row page-header" style="background-color: #f8f8f8; padding:0px ; margin: 10px; min-height: 50px;">
-            <div class="col-md-4"></div>
-            <div class="col-md-2 nopadding text-center">
-            <button ng-disabled="$isFirst()" class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px;margin: 2px"  ng-click="$previousStep()">
-              <span class="glyphicon glyphicon-chevron-left"></span>
-              PRECEDENT
-            </button>
-          </div>
-          <div class="col-md-2  nopadding text-center">
-            <button type="submit" class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px;margin: 2px"
-             ng-click="false ? error = false : $nextStep();">
-              SUIVANT
-              <span class="glyphicon glyphicon-chevron-right"></span>
-            </button>
-          </div>
-            <div class="col-md-4"></div>
-
-        </div>
+            </div>
 
 
 

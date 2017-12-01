@@ -7,58 +7,69 @@
             <span style="color: #777; position: relative;top: -8px;font-style: italic;font-size: 13px;">QUELS SONT VOS AUTRES REVENUS ?</span>
           </div>
 
-
-            <div class="form-group">
-                <label class="control-label col-sm-4">REVENUS LOCATIFS EXISTANT PAR MOIS:
-                    </label>
-                <div class="col-sm-4 input-group">
-                  
+          <div class="row" style="margin-bottom: 5px">
+              <div class="col-sm-3"></div>
+              <div class="col-sm-6">
+                  <label>REVENUS LOCATIFS EXISTANT PAR MOIS :</label>
+                <div class="input-group">
                     <div ng-if="vm.demande.patrimoine.revenu.locatif != 0 ">
-                    <input type="number" ng-model="demande.patrimoine.revenu.locatif" name="revenuLocatif" class="form-control" required>
+                        <input type="number" ng-model="demande.patrimoine.revenu.locatif" name="revenuLocatif" class="form-control" required>
+                        </div>
+                        <div ng-if="vm.demande.patrimoine.revenu.locatif == 0 ">
+                            <input type="number" ng-model="demande.patrimoine.revenu.locatif" name="revenuLocatif" class="form-control">
+                        </div>
+                  <span class="input-group-addon"><a class="pull-left"><span>F CFA</span></a>
+                  </span>
+                  <span class="input-group-addon" style="background-color: white; border: 0">
+                      <a href="#" data-toggle="tooltip" title="constituent des revenus fonciers et sont soumis à l'impôt sur le revenu. Pour déterminer le résultat
+                      foncier - bénéficiaire ou déficitaire - des règles précises sont à respecter" class="pull-left">
+                    <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span>
+                  </a>
+                    </span>
+                </div>
+                <div ng-show="myForm.$submitted && myForm.revenuLocatif.$error.required" class="form-text-error">Veuillez entrer le revenu locatif</div>
+              </div>
+              <div class="col-sm-3"></div>
+            </div>
+
+            <div class="row" style="margin-bottom: 5px">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                    <label>PENSION ALIMENTAIRES :</label>
+                  <div class="input-group">
+                      <input type="number" name="passionAli" class="form-control" id="passionAli" ng-model="demande.patrimoine.revenu.pensionAlimentaire">
+                    <span class="input-group-addon"><a class="pull-left"><span>F CFA</span></a>
+                    </span>
+                    <span class="input-group-addon" style="background-color: white; border: 0">
+                        <a href="#" data-toggle="tooltip" title="Constitu la pension alimentaire traduit l’exécution d’une obligation alimentaire ou de secours." class="pull-left">
+                      <span class="glyphicon glyphicon-info-sign" style="color:#663399" aria-hidden="true"></span>
+                    </a>
+                      </span>
+                  </div>
+                </div>
+                <div class="col-sm-3"></div>
+              </div>
+
+              <div class="row" style="margin-bottom: 5px">
+                  <div class="col-sm-3"></div>
+                  <div class="col-sm-6">
+                      <label>CESSION DE SALAIRES :</label>
+                    <div class="input-group">
+                        <input type="number" name="cessionSalaire" class="form-control" id="cessionSalaire" ng-model="demande.patrimoine.revenu.cessionSalaire">
+                      <span class="input-group-addon"><a class="pull-left"><span>F CFA</span></a>
+                      </span>
+                      <span class="input-group-addon" style="background-color: white; border: 0">
+                          <a href="#" data-toggle="tooltip" title="La cession sur salaire est un acte volontaire. Afin de rembourser un crédit,
+                          l'emprunteur peut demander à son employeur de prélever la mensualité sur son salaire et de la verser directement au créancier.
+                          Il s'agit là d'une cession sur salaire. L'employeur ne connaît à aucun moment l'objet du crédit réalisé." class="pull-left">
+                        <span class="glyphicon glyphicon-info-sign" style="color:#663399" aria-hidden="true"></span>
+                      </a>
+                        </span>
                     </div>
-                    <div ng-if="vm.demande.patrimoine.revenu.locatif == 0 ">
-                        <input type="number" ng-model="demande.patrimoine.revenu.locatif" name="revenuLocatif" class="form-control">
-                    </div>
-                  <span class="input-group-addon" style="background-color: white; border: 0">
-                    <a href="#" data-toggle="tooltip" title="constituent des revenus fonciers et sont soumis à l'impôt sur le revenu. Pour déterminer le résultat
-                          foncier - bénéficiaire ou déficitaire - des règles précises sont à respecter" class="pull-left">
-                  <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span></a>
-                  </span>
+                  </div>
+                  <div class="col-sm-3"></div>
                 </div>
-              <div ng-show="myForm.$submitted && myForm.revenuLocatif.$error.required" class="form-text-error">Veuillez entrer le revenu locatif</div>
-              <label class="control-label col-sm-4"></label>
-            </div>
-
-            <div class="form-group">
-                <label class="control-label col-sm-4">PENSION ALIMENTAIRES:
-                    </label>
-                <div class="col-sm-4 input-group">
-                    <input type="number" name="passionAli" class="form-control" id="passionAli" ng-model="demande.patrimoine.revenu.pensionAlimentaire">
-                  <span class="input-group-addon" style="background-color: white; border: 0">
-                     <a href="#" data-toggle="tooltip" title="Constitu la pension alimentaire traduit l’exécution d’une obligation alimentaire ou de secours." class="pull-left">
-                  <span class="glyphicon glyphicon-info-sign"  style="color:#663399" aria-hidden="true"></span>
-                </a>
-                  </span>
-                </div>
-              <label class="control-label col-sm-4">  </label>
-            </div>
-
-
-            <div class="form-group">
-                <label class="control-label col-sm-4">CESSION DE SALAIRES:
-                    </label>
-                <div class="col-sm-4 input-group">
-                    <input type="number" name="cessionSalaire" class="form-control" id="cessionSalaire" ng-model="demande.patrimoine.revenu.cessionSalaire">
-                  <span class="input-group-addon" style="background-color: white; border: 0">
-                     <a href="#" data-toggle="tooltip" title="La cession sur salaire est un acte volontaire. Afin de rembourser un crédit,
-             l'emprunteur peut demander à son employeur de prélever la mensualité sur son salaire et de la verser directement au créancier.
-             Il s'agit là d'une cession sur salaire. L'employeur ne connaît à aucun moment l'objet du crédit réalisé." class="pull-left">
-              <span class="glyphicon glyphicon-info-sign"  style="color:#663399" aria-hidden="true"></span></a>
-                  </span>
-                </div>
-
-          <label class="control-label col-sm-4"></label>
-            </div>
+        
         </div>
       </div>
 

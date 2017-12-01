@@ -10,66 +10,94 @@
           <span style="color: #777; position: relative;top: -8px;font-style: italic;font-size: 13px;"> LE MONTANT DE VOTRE PRÊT</span>
         </div>
 
-        <div class="row">
-
-            <div class="form-group">
-                <label class="control-label col-sm-4" style="text-align: right ">Montant de l’apport que vous faites :
-                </label>
-                <div class="col-sm-4">
-                    <input type="number" aria-valuemin="0" name="montantApport" class="form-control" ng-model="demande.apport.montant" required>
-                    <div ng-show="myForm.$submitted && myForm.montantApport.$error.required" class="form-text-error">Veuillez entrer le montant de votre apport du projet.</div>
+        <div class="row" style="margin-top: 15px">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                  <label>Montant de l’apport que vous faites :</label>
+                  <div class="input-group" >
+                        <input type="number" aria-valuemin="0" name="montantApport" class="form-control" ng-model="demande.apport.montant" required>
+                    <span class="input-group-addon">
+                      <a class="pull-left">
+                        <span>F CFA</span>
+                      </a>
+                    </span>
+                    <span class="input-group-addon" style="background-color: white; border: 0">
+                      <a href="#" data-toggle="tooltip" title="" class="pull-left">
+                        <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span>
+                      </a>
+                    </span>
+                  </div>
+                  <div ng-show="myForm.$submitted && myForm.montantApport.$error.required" class="form-text-error">Veuillez entrer le montant de votre apport du projet.</div>
                 </div>
+                <div class="col-sm-3"></div>
+              </div>
+      
+              <div class="row" style="margin-top: 15px">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-6">
+                      <label>Montant finale souhaitée :</label>
+                      <div class="input-group" >
+                            <input type="number" aria-valuemin="0" name="montantFinal" class="form-control" ng-model="demande.apport.montantFinale" placeholder="" required>
+                        <span class="input-group-addon">
+                          <a class="pull-left">
+                            <span>F CFA</span>
+                          </a>
+                        </span>
+                        <span class="input-group-addon" style="background-color: white; border: 0">
+                          <a href="#" data-toggle="tooltip" title="Montant finale souhaitée" class="pull-right">
+                            <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span>
+                          </a>
+                        </span>
+                      </div>
+                      <div ng-show="myForm.$submitted && myForm.montantFinal.$error.required" class="form-text-error">Veuillez entrer le montant final de votre projet.</div>
+                    </div>
+                    <div class="col-sm-3"></div>
+                  </div>
+       
 
-            </div>
-        </div>
-        <br>
+                  <div class="row" style="margin-top: 15px">
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-6">
+                          <label>Duree souhaite :</label>
+                          <div class="input-group" >
+                                <input type="number" aria-valuemin="0" id="dureeSouhaite" name="dureeSouhaite" class="form-control" ng-model="demande.apport.dureeSouhaite" placeholder="" required>
+                            <span class="input-group-addon">
+                              <a class="pull-left">
+                                <span>mois</span>
+                              </a>
+                            </span>
+                            <span class="input-group-addon" style="background-color: white; border: 0">
+                              <a href="#" data-toggle="tooltip" title="Montant finale souhaitée" class="pull-right">
+                                <span class="" style="color:#663399" aria-hidden="true"> </span>&nbsp;&nbsp;&nbsp;
+                              </a>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="col-sm-3"></div>
+                      </div>
 
-        <div class="row">
+                      <div class="row" style="margin-top: 15px">
+                            <div class="col-sm-3"></div>
+                            <div class="col-sm-6">
+                              <label>Montant maximum mensualite souhaite :</label>
+                              <div class="input-group" >
+                                    <input type="number" id="montantMensuelSouhaiter" name="montantMensuelSouhaiter" class="form-control" ng-model="demande.apport.montantMaxSouhaite" placeholder="" required>
+                                <span class="input-group-addon">
+                                  <a class="pull-left">
+                                    <span>F CFA</span>
+                                  </a>
+                                </span>
+                                <span class="input-group-addon" style="background-color: white; border: 0">
+                                  <a href="#" data-toggle="tooltip" title="Montant finale souhaitée" class="pull-right">
+                                    <span class="" style="color:#663399" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;
+                                  </a>
+                                </span>
+                              </div>
+                            </div>
+                            <div class="col-sm-3"></div>
+                          </div>
 
-            <div class="form-group">
-                <label class="control-label col-sm-4" style="text-align: right ">Montant finale souhaitée :
-                  <a href="#" data-toggle="tooltip" title="Montant finale souhaitée" class="pull-right">
-                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
-                </label>
-                <div class="col-sm-4">
-                    <input type="number" aria-valuemin="0" name="montantFinal" class="form-control" ng-model="demande.apport.montantFinale" placeholder="" required>
-                    <div ng-show="myForm.$submitted && myForm.montantFinal.$error.required" class="form-text-error">Veuillez entrer le montant final de votre projet.</div>
-
-                </div>
-
-            </div>
-        </div>
-        <br>
-
-        <div class="row">
-
-            <div class="form-group">
-                <label class="control-label col-sm-4" style="text-align: right ">Duree souhaite :
-                  <a href="#" data-toggle="tooltip" title="Montant finale souhaitée" class="pull-right">
-                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
-                </label>
-                <div class="col-sm-4">
-                    <input type="number" aria-valuemin="0" id="dureeSouhaite" name="dureeSouhaite" class="form-control" ng-model="demande.apport.dureeSouhaite" placeholder="" required>
-
-                </div>
-
-            </div>
-        </div>
-        <br>
-
-        <div class="row">
-
-            <div class="form-group">
-                <label class="control-label col-sm-4" style="text-align: right ">Montant maximum mensualite souhaite :
-                </label>
-                <div class="col-sm-4">
-                    <input type="number" id="montantMensuelSouhaiter" name="montantMensuelSouhaiter" class="form-control" ng-model="demande.apport.montantMaxSouhaite" placeholder="" required>
-
-                </div>
-
-            </div>
-        </div>
-        <br>
+        
       </div>
     </div>
 
