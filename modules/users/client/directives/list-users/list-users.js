@@ -4,9 +4,9 @@
     angular.module('users')
         .directive('listUsers', listUsers);
 
-    listUsers.$inject = ['$filter', 'AdminService', '$stateParams'];
+    listUsers.$inject = ['$filter', 'AdminService', '$stateParams', '$uibModal'];
 
-    function listUsers($filter, AdminService, $stateParams) {
+    function listUsers($filter, AdminService, $stateParams, $uibModal) {
         var directive = {
             restrict: 'EA',
             transclude: false,
@@ -72,6 +72,20 @@
                 loadUsers();
               });
             } 
+            scope.viewUser = function (userId) {
+              $uibModal.open({
+                templateUrl: '/modules/users/client/views/view-user.client.view.html',
+                controller: 'UserController',
+                size: 'lg',
+                resolve: {
+                  userResolve: function () {
+                    return AdminService.get({
+                      userId: userId
+                    }).$promise;
+                  }
+                }
+              });
+            }
         }
     }
 }());

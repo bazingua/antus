@@ -36,7 +36,7 @@
       .state('homeadmin', {
         url: '/home-admin',
         templateUrl: '/modules/users/client/views/admin/view-user.client.view.html',
-        controller: 'UserController',
+        controller: 'AdminController',
         controllerAs: 'vm',
         resolve: {
           userResolve: getUser,
@@ -76,7 +76,7 @@
         url: '/:userId',
         templateUrl: '/modules/users/client/views/admin/view-user.client.view.html',
        
-        controller: 'UserController',
+        controller: 'AdminController',
         controllerAs: 'vm',
         resolve: {
           userResolve: getUser,
@@ -89,7 +89,7 @@
       .state('admin.user-edit', {
         url: '/:userId/edit',
         templateUrl: '/modules/users/client/views/admin/edit-user.client.view.html',
-        controller: 'UserController',
+        controller: 'AdminController',
         controllerAs: 'vm',
         resolve: {
           userResolve: getUser
@@ -102,12 +102,7 @@
     getUser.$inject = ['$stateParams', 'AdminService', 'Authentication'];
     function getUser($stateParams, AdminService, Authentication) {
       return Authentication.user;
-      /*
-      return AdminService.get({
-        userId: Authentication.user._id
-      }).$promise;*/
     }
-      
     getDemandes.$inject = ['DemandesService', 'Authentication'];
     function getDemandes(DemandesService, Authentication) {
     //  DemandesService.find({etat: 5}).then(function (data) {
