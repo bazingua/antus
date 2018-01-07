@@ -5,9 +5,8 @@
         .module('demandes')
         .controller('DeposerDemandesController', DeposerDemandesController);
 
-    DeposerDemandesController.$inject = ['$scope', '$state', 'DemandesService', 'typeDemande', 'banques', 'DemandesModel', '$filter', 'Authentication', 'UsersService'];
-
-    function DeposerDemandesController($scope, $state, DemandesService, typeDemande, banques, DemandesModel, $filter, Authentication, UsersService) {
+    DeposerDemandesController.$inject = ['$scope', '$state', 'DemandesService', 'typeDemande', 'banques', 'DemandesModel', '$filter', 'Authentication', 'UsersService', 'Notification'];
+    function DeposerDemandesController($scope, $state, DemandesService, typeDemande, banques, DemandesModel, $filter, Authentication, UsersService, Notification) {
         // typeDemande = arbre
         var vm = this;
 
@@ -20,53 +19,12 @@
         // $scope.node = $scope.typeDemande;
         vm.steps = [
             {
-                templateUrl: 'modules/demandes/client/views/form-create-demande/montant-projet.client.view.html',
-                title: 'Définir le montant et caractère de votre projet'
-            },
-            
-            {
-                templateUrl: 'modules/demandes/client/views/form-create-demande/patrimoine-demande.client.view.html',
-                title: 'Définition du Patrimoine Immoblier'
-            },
-            {
-                templateUrl: 'modules/demandes/client/views/form-create-demande/revenu-demande.client.veiw.html',
-                title: 'Definition des Revenus'
-            },
-            {
-                templateUrl: 'modules/demandes/client/views/form-create-demande/autre-revenu-demande.client.view.html',
-                title: 'Autres  Revenus '
-            },
-            {
-                templateUrl: 'modules/demandes/client/views/form-create-demande/creditencours-demande.client.view.html',
-                title: 'Quels sont Vos Crédits Encours'
-            },
-            {
-                templateUrl: 'modules/demandes/client/views/form-create-demande/situationProfessionel-demande.client.view.html',
-                title: 'Situation Professionnelle'
-            },
-            {
-                templateUrl: 'modules/demandes/client/views/form-create-demande/montantProjet-demande.client.view.html',
-                title: 'Montant de votre  Pret'
-            },
-            {
-                templateUrl: 'modules/demandes/client/views/form-create-demande/bank-demande.client.view.html',
-                title: 'Banque Principal'
-            },
-            {
-                templateUrl: 'modules/demandes/client/views/form-create-demande/bankConsulte-demande.client.view.html',
-                title: 'Avez vous déja consulté des banques'
-            },
-            {
                 templateUrl: 'modules/demandes/client/views/form-create-demande/email-demande.client.view.html',
                 title: 'Renseignez votre adresse email'
             },
             {
                 templateUrl: 'modules/demandes/client/views/form-create-demande/coordonnee-demande.client.view.html',
                 title: 'Coordonnee Demande'
-            },
-            {
-                templateUrl: 'modules/demandes/client/views/form-create-demande/create-pw.client.view.html',
-                title: 'Creation Mot de Passe'
             },
             {
                 templateUrl: 'modules/demandes/client/views/form-create-demande/detail-demande.client.view.html',
@@ -97,20 +55,18 @@
         $scope.saveDemande = function() {
             var demandeToSave = angular.copy($scope.demande);
             demandeToSave.projet.type = $scope.choicedNode;
-            console.log('save now', $scope.demande);
             UsersService.userSignup($scope.demande.client)
                 .then(function (response) {
-                  console.log(response);
-                  demandeToSave.clien = response;
+                  demandeToSave.client = response;
                   DemandesService.save(demandeToSave)
                   .then(function (data) {
                     $state.go('userHome.client', {demandeId: data._id});
                   })
                   .catch(function (err) {
-                    console.log(err);
+                    Notification.error({ message: 'Le sauvegarde de la demande a échoué ', title: 'Une erreur est survenue'});
                   });
                 }).catch(function (error) {
-                  console.log(error);
+                  Notification.error({ message: error.data.message, title: 'Une erreur est survenue'});
                 });
         };
 

@@ -1,7 +1,7 @@
 <div class="panel-body service" data-height="height style="min-height: 400px">
 
     <div class="panel panel-default" style="min-width: 900px; margin: auto; margin-bottom: 30px; border: 0; font-size: 12px ">
-      <div style="width: 100%; margin-left: auto; margin-right: auto; margin-bottom: 30px" class=" text-center">
+      <div ng-if="!recap" style="width: 100%; margin-left: auto; margin-right: auto; margin-bottom: 30px" class=" text-center">
         <span style="color: #555">
           <i class="material-icons">info</i>
         </span>
@@ -246,7 +246,7 @@
   </div>
       
   </div>
-  <div ng-switch="demande.etat"  style="text-align:center ">
+  <div ng-if="!recap" ng-switch="demande.etat"  style="text-align:center ">
   <div ng-switch-when="1">
   	<button  ng-click="validerDemande()"  type="button" style="background-color: #663399;color: #FFFFFF" class="btn-theme btn-theme-md btn-default-bg text-uppercase">Valider</button>
   </div>
