@@ -3,11 +3,11 @@
 
   angular
     .module('users.admin')
-    .controller('UserController', UserController);
+    .controller('AdminController', AdminController);
 
-  UserController.$inject = ['$rootScope','$scope', '$state', '$window', 'Authentication', 'userResolve', 'Notification', 'demandes', 'UsersService'];
+  AdminController.$inject = ['$rootScope','$scope', '$state', '$window', 'Authentication', 'userResolve', 'Notification', 'demandes', 'UsersService'];
 
-  function UserController($rootScope, $scope, $state, $window, Authentication, user, Notification, demandes, UsersService) {
+  function AdminController($rootScope, $scope, $state, $window, Authentication, user, Notification, demandes, UsersService) {
     var vm = this;
     vm.authentication = Authentication;
     vm.user = user;

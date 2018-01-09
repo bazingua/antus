@@ -5,9 +5,9 @@
     .module('users')
     .controller('AdminAuthenticationController', AdminAuthenticationController);
 
-  AdminAuthenticationController.$inject = ['$scope', '$state', '$timeout', 'SignOutService', 'UsersService', '$location', '$window', 'Authentication', 'PasswordValidator', 'Notification'];
+  AdminAuthenticationController.$inject = ['$scope', '$rootScope', '$state', '$timeout', 'SignOutService', 'UsersService', '$location', '$window', 'Authentication', 'PasswordValidator', 'Notification'];
 
-  function AdminAuthenticationController($scope, $state, $timeout, SignOutService, UsersService, $location, $window, Authentication, PasswordValidator, Notification) {
+  function AdminAuthenticationController($scope, $rootScope, $state, $timeout, SignOutService, UsersService, $location, $window, Authentication, PasswordValidator, Notification) {
     var vm = this;
 
     vm.authentication = Authentication;
@@ -98,10 +98,13 @@
       console.log(response.roles);
       // And redirect to the previous or home page
       if (_.indexOf(response.roles, 'user') > -1) {
+        $rootScope.espaceUser = 'Espace Client';
         $state.go('userHome.client');
       } else if (_.indexOf(response.roles, 'admin') > -1) {
+        $rootScope.espaceUser = 'Espace Administrateur';
         $state.go('homeadmin');
       } else if (_.indexOf(response.roles, 'banque') > -1) {
+        $rootScope.espaceUser = 'Espace Banque';
         $state.go('userHome.banque');
       } else {
         $state.go($state.previous.state.name || 'home', $state.previous.params);

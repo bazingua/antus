@@ -12,7 +12,8 @@
             transclude: false,
             templateUrl: 'modules/demandes/client/directives/details-demande/details-demande.html',
             scope: {
-              demande: '='
+              demande: '=',
+              recap: '=?'
             },
             link: link
         };
@@ -24,7 +25,7 @@
          * @return {Object} scope
          */
         function link(scope) {
-          console.log('****', scope.demande);
+          console.log('****', scope.recap);
           scope.error = {};
           scope.validerDemande = function () {
             console.log('heeeere');  
