@@ -141,6 +141,18 @@
           pageTitle: 'Home Client'
         }
       })
+      .state('userHome.homeDeamande', {
+        url: '/clientDemande',
+        templateUrl: '/modules/demandes/client/views/homeDeamande.client.view.html',
+        controller: 'ClientHomeController',
+        controllerAs: 'vm',
+        resolve: {
+          demandes: getOwnerDemandes
+        },
+        data: {
+          pageTitle: 'Home Client'
+        }
+      })
       .state('userHome.banque', {
         url: '/banque',
         templateUrl: '/modules/demandes/client/views/home-bank.client.view.html',
@@ -152,8 +164,19 @@
         data: {
           pageTitle: 'Home Banque'
         }
+      })
+      .state('userHome.homeDeamandebank', {
+        url: '/DemandeBanque',
+        templateUrl: '/modules/demandes/client/views/homeDemandebank.client.view.html',
+        controller: 'BanqueHomeController',
+        controllerAs: 'vm',
+        resolve: {
+          demandes: getOwnerDemandes
+        },
+        data: {
+          pageTitle: 'Home Banque'
+        }
       });
-
     getOwnerDemandes.$inject = ['$stateParams', 'DemandesService', 'Authentication'];
     function getOwnerDemandes($stateParams, DemandesService, Authentication) {
         return DemandesService.find({etat: 5});

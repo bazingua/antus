@@ -16,26 +16,16 @@
 
   <div style="background-color: #7a43b6; color: #fff;">
     <div class="btn-group btn-group-lg">
+   
   <button ui-sref="userHome.client" type="button" class="btn btn-group-lg" style="background-color: #7a43b6; ">Mes Demandes</button>
- </div>
-</div>
+
+  <button  ui-sref="offres.view" type="button" class="btn btn-group-lg" style="background-color: #7a43b6;">Mes Offres</button></div>
+  </div>
+  
           <div class="panel-body" style="padding: 20px; min-height: 400px">
               <section class="row">
-                
-                    <div ui-sref="userHome.homeDeamande" ng-if="vm.demandes.length > 0">
-                      <list-demandes demandes="vm.demandes"></list-demandes>    
-                    </div>
-                    <div ng-if="vm.demandes.length < 1" class="service " data-height="height">
-                      <div>
-                        <p>Aucune demande n'a été trouvée</p>
-                      </div>
-                    </div>
-                   
-                    <div ng-if="vm.authentication.user.role ='user'">
-                    <p class="promo-block-text" style="text-align: center">
-                        <a ui-sref="demandes.create" style="background-color: #663399;color: #FFFFFF" class="btn-theme btn-theme-md btn-default-bg text-uppercase">Déposez une nouvelle demande</a>
-                      </p>
-                    </div>
+                <details-demande demande = "vm.demande"></details-demande>
+                    
                 </section>
                 
           </div>

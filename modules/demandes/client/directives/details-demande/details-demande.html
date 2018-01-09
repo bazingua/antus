@@ -248,14 +248,16 @@
   </div>
   <div ng-switch="demande.etat"  style="text-align:center ">
   <div ng-switch-when="1">
+      <div ng-if="vm.authentication.user.role ='admin'">
   	<button  ng-click="validerDemande()"  type="button" style="background-color: #663399;color: #FFFFFF" class="btn-theme btn-theme-md btn-default-bg text-uppercase">Valider</button>
   </div>
+</div>
   <div ng-switch-when="5">
+      <div ng-if="vm.authentication.user.role ='banque'">
   	<a ui-sref="offres.deposer({demandeId:  demande.id})" type="button" style="background-color: #663399;color: #FFFFFF" class="btn-theme btn-theme-md btn-default-bg text-uppercase">Dépoer Offre</a>
   </div>
-  <div ng-switch-default>
-  	<button ng-click="" type="button" style="background-color: #663399;color: #FFFFFF" class="btn-theme btn-theme-md btn-default-bg text-uppercase">Soumettre</button>
   </div>
+  
 </div>
 
     </div>
