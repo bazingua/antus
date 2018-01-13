@@ -23,9 +23,9 @@
     <div class="panel-body" style="padding: 20px; min-height: 400px">
         <section class="row">
           
-              <div ng-if="vm.demandes.length > 0">
-                <list-demandes demandes="vm.demandes"></list-demandes>    
-              </div>
+               <div ui-sref="userHome.homeDeamandebank" ng-if="vm.demandes.length > 0">
+                      <list-demandes demandes="vm.demandes"></list-demandes>    
+                    </div>
               <div ng-if="vm.demandes.length < 1" class="service " data-height="height">
                 <div>
                   <p>Aucune demande n'a été trouvée</p>

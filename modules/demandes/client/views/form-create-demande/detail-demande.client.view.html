@@ -1,0 +1,32 @@
+<div class="panel panel-default">
+        
+        <div class="panel-body" style="padding: 20px; min-height: 400px">
+            <section class="row">
+                    <details-demande recap="true" demande = "demande"></details-demande>
+              </section>
+              
+        </div>
+
+        <div class="row page-header" style="background-color: #f8f8f8; padding:0px ; margin: 10px; min-height: 50px;">
+          <div class="col-md-4"></div>
+          <div class="col-md-2 nopadding text-center">
+            <button ng-disabled="$isFirst()" class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px;margin-bottom: 2px" ng-click="$previousStep()">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+              PRECEDENT
+            </button>
+          </div>
+          <div class="col-md-2  nopadding text-center">
+            <button class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px;margin-bottom: 2px" type="submit" ng-click="saveDemande()">
+              Terminer
+              <span class="glyphicon glyphicon-chevron-right"></span>
+            </button>
+  
+          </div>
+          <div class="col-md-4"></div>
+        </div>
+        
+         </div>
+
+
+
+ 

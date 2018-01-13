@@ -23,7 +23,6 @@
           pageTitle: 'Offres List'
         }
       })
-      //Deposer une Offre
       .state('offres.deposer', {
         url: 'offre/:demandeId',
         templateUrl: 'modules/offres/client/views/form-offre.client.view.html',
@@ -42,7 +41,7 @@
           offreResolve: newOffre
         },
         data: {
-          roles: ['user', 'admin'],
+        //  roles: ['bank'],
           pageTitle: 'Offres Create'
         }
       })
@@ -55,7 +54,7 @@
           offreResolve: getOffre
         },
         data: {
-          roles: ['user', 'admin'],
+          roles: ['bank'],
           pageTitle: 'Edit Offre {{ offreResolve.name }}'
         }
       })

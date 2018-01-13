@@ -5,9 +5,8 @@
         .module('demandes')
         .controller('DeposerDemandesController', DeposerDemandesController);
 
-    DeposerDemandesController.$inject = ['$scope', '$state', 'DemandesService', 'typeDemande', 'banques', 'DemandesModel', '$filter', 'Authentication', 'UsersService'];
-
-    function DeposerDemandesController($scope, $state, DemandesService, typeDemande, banques, DemandesModel, $filter, Authentication, UsersService) {
+    DeposerDemandesController.$inject = ['$scope', '$state', 'DemandesService', 'typeDemande', 'banques', 'DemandesModel', '$filter', 'Authentication', 'UsersService', 'Notification'];
+    function DeposerDemandesController($scope, $state, DemandesService, typeDemande, banques, DemandesModel, $filter, Authentication, UsersService, Notification) {
         // typeDemande = arbre
         var vm = this;
 
@@ -65,10 +64,6 @@
                 title: 'Coordonnee Demande'
             },
             {
-                templateUrl: 'modules/demandes/client/views/form-create-demande/create-pw.client.view.html',
-                title: 'Creation Mot de Passe'
-            },
-            {
                 templateUrl: 'modules/demandes/client/views/form-create-demande/detail-demande.client.view.html',
                 title: 'Votre demande'
             }
@@ -97,20 +92,18 @@
         $scope.saveDemande = function() {
             var demandeToSave = angular.copy($scope.demande);
             demandeToSave.projet.type = $scope.choicedNode;
-            console.log('save now', $scope.demande);
             UsersService.userSignup($scope.demande.client)
                 .then(function (response) {
-                  console.log(response);
-                  demandeToSave.clien = response;
+                  demandeToSave.client = response;
                   DemandesService.save(demandeToSave)
                   .then(function (data) {
                     $state.go('userHome.client', {demandeId: data._id});
                   })
                   .catch(function (err) {
-                    console.log(err);
+                    Notification.error({ message: 'Le sauvegarde de la demande a échoué ', title: 'Une erreur est survenue'});
                   });
                 }).catch(function (error) {
-                  console.log(error);
+                  Notification.error({ message: error.data.message, title: 'Une erreur est survenue'});
                 });
         };
 

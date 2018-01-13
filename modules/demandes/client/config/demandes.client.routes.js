@@ -14,7 +14,7 @@
         url: '/demandes',
         template: '<ui-view/>'
       })
-      /*
+      
       .state('demandes.list', {
         url: '',
         templateUrl: '/modules/demandes/client/views/list-demandes.client.view.html',
@@ -26,7 +26,7 @@
         resolve: {
           typeDemande: getType
         }
-      })*/
+      })
       .state('demandes.create', {
         url: '/deposer',
         templateUrl: '/modules/demandes/client/views/deposer-demandes.client.view.html',

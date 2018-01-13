@@ -150,7 +150,7 @@
 
 
       <div class="row page-header" style="background-color: #f8f8f8; padding:0px ; margin: 10px; min-height: 50px;">
-        <div class="col-md-4"></div>
+        <div class="col-md-3"></div>
         <div class="col-md-2 nopadding text-center">
           <button ng-disabled="$isFirst()" class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px;margin-bottom: 2px" ng-click="$previousStep()">
             <span class="glyphicon glyphicon-chevron-left"></span>
@@ -158,8 +158,8 @@
           </button>
         </div>
         <div class="col-md-2  nopadding text-center">
-          <button class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px;margin-bottom: 2px" type="submit" ng-click="myForm.adresseActuelle.$error.required  || myForm.dateNaissance.$error.required || myForm.prenom.$error.required || myForm.NumeroTelephone.$error.required || myForm.nom.$error.required ? error = false : saveDemande()">
-            Terminer
+          <button class="btn" style="background-color:#555;color:white; height: 50px; margin-bottom: 2px" type="submit" ng-click="myForm.adresseActuelle.$error.required  || myForm.dateNaissance.$error.required || myForm.prenom.$error.required || myForm.NumeroTelephone.$error.required || myForm.nom.$error.required ? error = false : $nextStep();">
+            VOIR LA DEMANDE AVANT DE VALIDER
             <span class="glyphicon glyphicon-chevron-right"></span>
           </button>
 
