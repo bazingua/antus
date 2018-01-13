@@ -9,6 +9,7 @@
 
   function DemandesController($scope,DemandesModel, demande, Authentication, DemandesService) {
     var vm = this;
+    console.log('°°°°°°°°°°°°°°°', demande);
     vm.demande = new DemandesModel(demande);
     vm.authentication = Authentication;
   }

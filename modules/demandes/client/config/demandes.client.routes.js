@@ -57,6 +57,7 @@
   getDemande.$inject = ['$stateParams', 'DemandesService'];
 
   function getDemande($stateParams, DemandesService) {
+    console.log('XXXXXXXXX', $stateParams.demandeId);
     // gere le cas de home client avec une demande qi vient d'etre créée
     if ($stateParams.demandeId === 'home')
       return {}

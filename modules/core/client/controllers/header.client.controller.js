@@ -43,14 +43,14 @@
     };
     $scope.goToSpace = function () {
       if (vm.authentication.user) {
-        if (_.indexOf( vm.authentication.user.roles, 'user') > -1) {
+        if (_.indexOf(vm.authentication.user.roles, 'user') > -1) {
           $state.go('userHome.client');
-        } else if (_.indexOf( vm.authentication.user.roles, 'banque') > -1) {
+        } else if (_.indexOf(vm.authentication.user.roles, 'banque') > -1) {
           $state.go('userHome.banque');
         } else {
           $state.go('homeadmin');
         }
       }
-    }
+    };
   }
 }());

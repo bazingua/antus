@@ -2,11 +2,11 @@
     'use strict';
 
     angular.module('demandes.directives')
-        .directive('listDemandes', listDemandes);
+        .directive('listOffres', listOffres);
 
-    listDemandes.$inject = [];
+    listOffres.$inject = [];
 
-    function listDemandes() {
+    function listOffres() {
         var directive = {
             restrict: 'EA',
             transclude: false,

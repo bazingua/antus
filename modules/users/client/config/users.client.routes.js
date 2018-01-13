@@ -141,18 +141,6 @@
           pageTitle: 'Home Client'
         }
       })
-      .state('userHome.homeDeamande', {
-        url: '/clientDemande',
-        templateUrl: '/modules/demandes/client/views/homeDeamande.client.view.html',
-        controller: 'ClientHomeController',
-        controllerAs: 'vm',
-        resolve: {
-          demandes: getOwnerDemandes
-        },
-        data: {
-          pageTitle: 'Home Client'
-        }
-      })
       .state('userHome.banque', {
         url: '/banque',
         templateUrl: '/modules/demandes/client/views/home-bank.client.view.html',
@@ -179,7 +167,8 @@
       });
     getOwnerDemandes.$inject = ['$stateParams', 'DemandesService', 'Authentication'];
     function getOwnerDemandes($stateParams, DemandesService, Authentication) {
-        return DemandesService.find({etat: 5});
+      console.log(Authentication.user);
+      return DemandesService.find({ user: Authentication.user.email });
     }
   }
 }());

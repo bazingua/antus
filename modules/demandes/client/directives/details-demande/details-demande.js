@@ -4,9 +4,9 @@
     angular.module('demandes.directives')
         .directive('detailsDemande', detailsDemande);
 
-    detailsDemande.$inject = ['DemandesService'];
+    detailsDemande.$inject = ['DemandesService', 'Utils'];
 
-    function detailsDemande(DemandesService) {
+    function detailsDemande(DemandesService, Utils) {
         var directive = {
             restrict: 'EA',
             transclude: false,
@@ -25,10 +25,10 @@
          * @return {Object} scope
          */
         function link(scope) {
+          scope.utilsService = Utils;
           console.log('****', scope.recap);
           scope.error = {};
           scope.validerDemande = function () {
-            console.log('heeeere');  
             DemandesService.validerDemande(scope.demande.id)
             .then(successCallback)
             .catch(errorCallback);
