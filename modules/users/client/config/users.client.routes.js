@@ -147,7 +147,7 @@
         controller: 'BanqueHomeController',
         controllerAs: 'vm',
         resolve: {
-          demandes: getOwnerDemandes
+          demandes: getDemandesValider
         },
         data: {
           pageTitle: 'Home Banque'
@@ -169,6 +169,11 @@
     function getOwnerDemandes($stateParams, DemandesService, Authentication) {
       console.log(Authentication.user);
       return DemandesService.find({ user: Authentication.user.email });
+    };
+    getDemandesValider.$inject = ['$stateParams', 'DemandesService', 'Authentication'];
+    function getDemandesValider($stateParams, DemandesService, Authentication) {
+      console.log(Authentication.user);
+      return DemandesService.find({etat:5});
     }
   }
 }());

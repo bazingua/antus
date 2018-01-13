@@ -1,167 +1,181 @@
-<section>
-  
-      <div class="panel panel-default">
-  <div style="background-color: #7a43b6; color: #fff; height: auto">
-      <h3 class="color-white padding">ESPACE CLIENT</h3>
-  </div>
-  
-          <div class="panel-body" style="padding: 0; min-height: 400px">
-   <form name="myForm" class="form-horizontal" novalidate style="font-size: 12px; font-weight: normal";>
-        <div class="" style="min-height: 400px; padding: 40 px" >
-          
-          <div class="panel panel-body" style="margin-top: 50px;">
-            <div style="width: 100%; margin-left: auto; margin-right: auto; margin-bottom: 30px" class=" text-center">
-              <span  style="color: #555"><i class="material-icons">info</i></span>
-              <span style="color: #777; position: relative;top: -8px;font-style: italic;font-size: 13px;">Déposer une offre</span>
-            </div>
-  
-      <div class="row">
-      <label class="col-md-4" style="text-align: right; padding-top: 10px">MONTANT DU PRÊT :</label> 
-  
-      <div class="col-md-4 input-group">
-      <input input type="number" min="0"  name="montantPret" class="form-control"  ng-model="vm.offre.montantPret" required ">
-      <span class="input-group-addon" style="background-color: white; border: 0 ">
-        <a href="#" data-toggle="tooltip" title="Indiquez le montant  que vous vouler preter au client" class="pull-left">
-              <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span></a>
-      </span>
-      </div>
-  
-      <label class="col-md-4" style="text-align:right; ">
-        <span ng-show="montantProjetForm.$submitted && montantProjetForm.dureePret.$error.required" class="form-text-error">Veuillez entrer le montant de votre pret.
+<div class="panel panel-default">
+  <div class="panel-body">
+  <div class="col-md-6">
+       <span style="color:#7a43b6">
+            <img class="img-circle img-thumbnail" style="height: 50px;width: 50px" ng-src="/modules/core/client/img/download.png" alt="Image">
         </span>
-      </label> 
-      </div>
-  
-  
-      <div class="row">
-      <label class="col-md-4" style="text-align: right; padding-top: 10px">DUREE DU PRÊT :</label> 
-  
-      <div class="col-md-4 input-group">
-      <input type="number" min="0"  name="dureePret" class="form-control"  ng-model="vm.offre.dureePret" required ">
-      <span class="input-group-addon" style="background-color: white; border: 0 ">
-        <a href="#" data-toggle="tooltip" title="Indiquez la duree  du preter au client" class="pull-left" class="pull-left">
-              <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span></a>
-      </span>
-      </div>
-  
-      <label class="col-md-4">
-        <span ng-show="montantProjetForm.$submitted && montantProjetForm.dureePret.$error.required" class="form-text-error">Veuillez entrer le montant du pret.</span>
-  
-      </label> 
-      </div>
-  
-  
-      <div class="row">
-      <label class="col-md-4" style="text-align: right; padding-top: 10px">TAUX D’INTERÊT ANNUEL HORS ASSURANCE :</label> 
-  
-      <div class="col-md-4 input-group">
-      <input type="number" min="0"  name="tauxInteret" class="form-control"  ng-model="vm.offre.tauxInteret" required ">
-      <span class="input-group-addon" style="background-color: white; border: 0 ">
-        <a href="#" data-toggle="tooltip" title="Indiquez le taux d'interet annuel hors assurance du preter au client" class="pull-left">
-              <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span>
-            </a>
-      </span>
-      </div>
-  
-      <label class="col-md-4">
-        <span ng-show="montantProjetForm.$submitted && montantProjetForm.dureePret.$error.required" class="form-text-error">Veuillez entrer le taux d'interet.</span>
-      </label> 
-      </div>
-  
-  
-       <div class="row">
-      <label class="col-md-4" style="text-align: right; padding-top: 10px">ECHEANCE MENSUELLES :</label> 
-  
-      <div class="col-md-4 input-group">
-      <input type="number" min="0"  name="echeance" class="form-control"  ng-model="vm.offre.echeance" required />
-      <span class="input-group-addon" style="background-color: white; border: 0 ">
-        <a href="#" data-toggle="tooltip" title="Indiquez l'echeance mensuelles a preter au client" class="pull-left">
-              <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span>
-            </a>
-      </span>
-      </div>
-  
-      <label class="col-md-4">
-       <span ng-show="montantProjetForm.$submitted && montantProjetForm.echeance.$error.required" class="form-text-error">Veuillez indiquez l'echeance mensuelles aa preter au client</span>
-  
-      </label> 
-      </div>
-  
-  
-       <div class="row">
-      <label class="col-md-4" style="text-align: right; padding-top: 10px">FRAIS DE DOSSIER :</label> 
-  
-      <div class="col-md-4 input-group">
-      <input type="number" min="0"  name="fraisDossier" class="form-control"  ng-model="vm.offre.fraisDossier" required  />
-      <span class="input-group-addon" style="background-color: white; border: 0 ">
-        <a href="#" data-toggle="tooltip" title="Indiquez les frais de  dossier du preter au client" class="pull-left">
-              <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span>
-            </a>
-      </span>
-      </div>
-  
-      <label class="col-md-4">
-      <span ng-show="montantProjetForm.$submitted && montantProjetForm.fraisDossier.$error.required" class="form-text-error">Veuillez entrer le montant des frais de dossier du pret.</span>
-      </label> 
-      </div>
-  
-       <div class="row">
-      <label class="col-md-4" style="text-align: right; padding-top: 10px">ASSURANCE :</label> 
-  
-      <div class="col-md-4 input-group">
-      <input type="number" min="0"  name="assuranceOffre" class="form-control"  ng-model="vm.offre.assurance" required/>
-      <span class="input-group-addon" style="background-color: white; border: 0 ">
-        <a href="#" data-toggle="tooltip" title="Indiquez l'assurance' du preter au client" class="pull-left">
-              <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span>
-            </a>
-      </span>
-      </div>
-  
-      <label class="col-md-4">
-      <span ng-show="montantProjetForm.$submitted && montantProjetForm.fraisDossier.$error.required" class="form-text-error">Veuillez indiquez l'assurance a preter au client.</span>
-      </label> 
-      </div>
-  
-  
-      <div class="row">
-      <label class="col-md-4" style="text-align: right; padding-top: 10px">FRAIS DE NOTAIRE :</label> 
-  
-      <div class="col-md-4 input-group">
-      <input type="number" min="0"  name="fraisNotaire" class="form-control"  ng-model="vm.offre.fraisNotaire" required/>
-      <span class="input-group-addon" style="background-color: white; border: 0 ">
-        <a href="#" data-toggle="tooltip" title="Indiquez les frais de notaire du preter au client" class="pull-left">
-              <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span>
-            </a>
-      </span>
-      </div>
-  
-      <label class="col-md-4">
-      <span ng-show="montantProjetForm.$submitted && montantProjetForm.fraisNotaire.$error.required" class="form-text-error">Veuillez entrer le montant du frais de notaire de dossier du pret.</span>
-  
-      </label> 
-      </div>
-  
-  
-  
-  
-      </div>
-  
+        <span style="color:#7a43b6; position: relative;font-size: 28px;font-weight: bold;top: 6px ">  Espace Banque </span>
+      
+<img class="full-width img-responsive img-thumbnail" style="height: 160px;margin-top: 10px" ng-src="/modules/core/client/img/01.jpg" alt="Image">
+
+    
+</div>  
+<div class="col-md-6">
+    <user-badge ng-if="vm.authentication.user" user="vm.authentication.user"></user-badge> </div>
+</div>
+
+<div style="background-color: #7a43b6; color: #fff;">
+<div class="btn-group btn-group-lg">
+
+<button ui-sref="userHome.banque" type="button" class="btn btn-group-lg" style="background-color: #7a43b6; ">Demandes</button></div>
+</div>
+
+  <div class="panel-body" style="padding: 20px; min-height: 400px">
+    <form name="myForm" class="form-horizontal" novalidate style="font-size: 12px; font-weight: normal";>
+      <div class="" style="min-height: 400px; padding: 40 px" >
+        
+        <div class="panel panel-body" style="margin-top: 50px;">
+          <div style="width: 100%; margin-left: auto; margin-right: auto; margin-bottom: 30px" class=" text-center">
+            <span  style="color: #555"><i class="material-icons">info</i></span>
+            <span style="color: #777; position: relative;top: -8px;font-style: italic;font-size: 13px;">Déposer une offre</span>
           </div>
- 
-  <div class="row page-header" style="background-color: #f8f8f8; padding:0px ; margin: 0; min-height: 30px;">
-    <div class="col-md-12">              
-      <a ui-sref="demandes.view({demandeId: vm.offre.demandeId})" class="btn btn-default" style=" height: 30px; width: 130px;margin-bottom: 2px">
-        Annuler </a>
-      <button type="submit" class="btn " style="background-color:#663399;color:white; height: 30px; width: 130px;margin-bottom: 2px" ng-click="vm.deposerOffre();">
-        VALIDER  <span class="glyphicon glyphicon-chevron-right"></span>
-      </button>       
-    </div>          
+
+    <div class="row">
+    <label class="col-md-4" style="text-align: right; padding-top: 10px">MONTANT DU PRÊT :</label> 
+
+    <div class="col-md-4 input-group">
+    <input input type="number" min="0"  name="montantPret" class="form-control"  ng-model="vm.offre.montantPret" required ">
+    <span class="input-group-addon" style="background-color: white; border: 0 ">
+      <a href="#" data-toggle="tooltip" title="Indiquez le montant  que vous vouler preter au client" class="pull-left">
+            <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span></a>
+    </span>
+    </div>
+
+    <label class="col-md-4" style="text-align:right; ">
+      <span ng-show="montantProjetForm.$submitted && montantProjetForm.dureePret.$error.required" class="form-text-error">Veuillez entrer le montant de votre pret.
+      </span>
+    </label> 
+    </div>
+
+
+    <div class="row">
+    <label class="col-md-4" style="text-align: right; padding-top: 10px">DUREE DU PRÊT :</label> 
+
+    <div class="col-md-4 input-group">
+    <input type="number" min="0"  name="dureePret" class="form-control"  ng-model="vm.offre.dureePret" required ">
+    <span class="input-group-addon" style="background-color: white; border: 0 ">
+      <a href="#" data-toggle="tooltip" title="Indiquez la duree  du preter au client" class="pull-left" class="pull-left">
+            <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span></a>
+    </span>
+    </div>
+
+    <label class="col-md-4">
+      <span ng-show="montantProjetForm.$submitted && montantProjetForm.dureePret.$error.required" class="form-text-error">Veuillez entrer le montant du pret.</span>
+
+    </label> 
+    </div>
+
+
+    <div class="row">
+    <label class="col-md-4" style="text-align: right; padding-top: 10px">TAUX D’INTERÊT ANNUEL HORS ASSURANCE :</label> 
+
+    <div class="col-md-4 input-group">
+    <input type="number" min="0"  name="tauxInteret" class="form-control"  ng-model="vm.offre.tauxInteret" required ">
+    <span class="input-group-addon" style="background-color: white; border: 0 ">
+      <a href="#" data-toggle="tooltip" title="Indiquez le taux d'interet annuel hors assurance du preter au client" class="pull-left">
+            <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span>
+          </a>
+    </span>
+    </div>
+
+    <label class="col-md-4">
+      <span ng-show="montantProjetForm.$submitted && montantProjetForm.dureePret.$error.required" class="form-text-error">Veuillez entrer le taux d'interet.</span>
+    </label> 
+    </div>
+
+
+     <div class="row">
+    <label class="col-md-4" style="text-align: right; padding-top: 10px">ECHEANCE MENSUELLES :</label> 
+
+    <div class="col-md-4 input-group">
+    <input type="number" min="0"  name="echeance" class="form-control"  ng-model="vm.offre.echeance" required />
+    <span class="input-group-addon" style="background-color: white; border: 0 ">
+      <a href="#" data-toggle="tooltip" title="Indiquez l'echeance mensuelles a preter au client" class="pull-left">
+            <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span>
+          </a>
+    </span>
+    </div>
+
+    <label class="col-md-4">
+     <span ng-show="montantProjetForm.$submitted && montantProjetForm.echeance.$error.required" class="form-text-error">Veuillez indiquez l'echeance mensuelles aa preter au client</span>
+
+    </label> 
+    </div>
+
+
+     <div class="row">
+    <label class="col-md-4" style="text-align: right; padding-top: 10px">FRAIS DE DOSSIER :</label> 
+
+    <div class="col-md-4 input-group">
+    <input type="number" min="0"  name="fraisDossier" class="form-control"  ng-model="vm.offre.fraisDossier" required  />
+    <span class="input-group-addon" style="background-color: white; border: 0 ">
+      <a href="#" data-toggle="tooltip" title="Indiquez les frais de  dossier du preter au client" class="pull-left">
+            <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span>
+          </a>
+    </span>
+    </div>
+
+    <label class="col-md-4">
+    <span ng-show="montantProjetForm.$submitted && montantProjetForm.fraisDossier.$error.required" class="form-text-error">Veuillez entrer le montant des frais de dossier du pret.</span>
+    </label> 
+    </div>
+
+     <div class="row">
+    <label class="col-md-4" style="text-align: right; padding-top: 10px">ASSURANCE :</label> 
+
+    <div class="col-md-4 input-group">
+    <input type="number" min="0"  name="assuranceOffre" class="form-control"  ng-model="vm.offre.assurance" required/>
+    <span class="input-group-addon" style="background-color: white; border: 0 ">
+      <a href="#" data-toggle="tooltip" title="Indiquez l'assurance' du preter au client" class="pull-left">
+            <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span>
+          </a>
+    </span>
+    </div>
+
+    <label class="col-md-4">
+    <span ng-show="montantProjetForm.$submitted && montantProjetForm.fraisDossier.$error.required" class="form-text-error">Veuillez indiquez l'assurance a preter au client.</span>
+    </label> 
+    </div>
+
+
+    <div class="row">
+    <label class="col-md-4" style="text-align: right; padding-top: 10px">FRAIS DE NOTAIRE :</label> 
+
+    <div class="col-md-4 input-group">
+    <input type="number" min="0"  name="fraisNotaire" class="form-control"  ng-model="vm.offre.fraisNotaire" required/>
+    <span class="input-group-addon" style="background-color: white; border: 0 ">
+      <a href="#" data-toggle="tooltip" title="Indiquez les frais de notaire du preter au client" class="pull-left">
+            <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span>
+          </a>
+    </span>
+    </div>
+
+    <label class="col-md-4">
+    <span ng-show="montantProjetForm.$submitted && montantProjetForm.fraisNotaire.$error.required" class="form-text-error">Veuillez entrer le montant du frais de notaire de dossier du pret.</span>
+
+    </label> 
+    </div>
+    </div>
+        </div>
+<div class="row page-header" style="background-color: #f8f8f8; padding:0px ; margin: 0; min-height: 30px;">
+  <div class="col-md-4"></div>
+  <div class="col-md-2 nopadding text-center">
+    <a ui-sref="demandes.view({demandeId: vm.offre.demandeId})" class="btn btn-default" style=" height: 30px; width: 130px;margin-bottom: 2px">
+      Annuler
+    </a>
+  </div>
+  <div class="col-md-2  nopadding text-center">
+    <button type="submit" class="btn " style="background-color:#663399;color:white; height: 30px; width: 130px;margin-bottom: 2px" ng-click="vm.deposerOffre();">
+      VALIDER  <span class="glyphicon glyphicon-chevron-right"></span>
+    </button> 
+
+  </div>
+  <div class="col-md-4"></div>
+</div>
+
+
+    </form>
+        
   </div>
   
-  
-      </form>
    </div>
-          </div>
-   
-  </section>
-  
