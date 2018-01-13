@@ -34,12 +34,12 @@
 
                 <br>
 
-
+              <div ng-if="demande.patrimoine.profession.typeContrat === 'CDD' || demande.patrimoine.profession.typeContrat === 'INTERIM'">
                     <div class="form-group">
-                        <label class="control-label col-sm-4" style="text-align: right ">Durée de Travail :
+                        <label class="control-label col-sm-4" style="text-align: right ">Durée du Contrat :
                       </label>
                         <div class="col-sm-4">
-                            <input type="text" name="dureeTravail" class="form-control" ng-model="demande.patrimoine.profession.dureeContrat" ng-disabled="demande.patrimoine.profession.typeContrat === 'CDI'" required>
+                            <input type="text" name="dureeTravail" class="form-control" ng-model="demande.patrimoine.profession.dureeContrat" required>
                             <div ng-show="myForm.$submitted && myForm.dureeTravail.$error.required" class="form-text-error">Veuillez entrer la duree de votre contrat.</div>
                         </div>
                       <label class="control-label col-sm-1">
@@ -48,6 +48,25 @@
                       </label>
 
                     </div>
+                </div>
+
+
+                <div ng-if="demande.patrimoine.profession.typeContrat === 'CDI'">
+                  <div class="form-group">
+                      <label class="control-label col-sm-4" style="text-align: right ">Date de Début du Contrat :
+                    </label>
+                      <div class="col-sm-4">
+                          <input type="date" name="dureeTravail" class="form-control" ng-model="demande.patrimoine.profession.dateDeDebutContrat" required>
+                          <div ng-show="myForm.$submitted && myForm.dureeTravail.$error.required" class="form-text-error">Veuillez entrer la duree de votre contrat.</div>
+                      </div>
+                    <label class="control-label col-sm-1">
+                      <a href="#" data-toggle="tooltip" title="La durée de votre contrat est obligatoire" class="pull-left">
+                        <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span></a>
+                    </label>
+
+                  </div>
+              </div>
+
 
                 <br>
 
@@ -66,7 +85,7 @@
             </div>
 
             <div class="col-md-2  nopadding text-center">
-              <button type="submit" class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px;margin-bottom: 2px" ng-click="demande.patrimoine.profession.typeContrat === 'CDD' || !demande.patrimoine.profession.dureeContrat ? error = false : $nextStep();">
+              <button type="submit" class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px;margin-bottom: 2px" ng-click="demande.patrimoine.profession.typeContrat.$error.required ? error = false : $nextStep();">
                 SUIVANT
                 <span class="glyphicon glyphicon-chevron-right"></span>
               </button>
