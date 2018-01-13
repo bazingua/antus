@@ -21,13 +21,21 @@ exports.invokeRolesPolicies = function () {
       resources: '/api/demandes/:demandeId',
       permissions: '*'
     }]
-  }, {
+  },
+  {
     roles: ['user', 'banque'],
     allows: [{
       resources: '/api/demandes',
       permissions: '*'
     }, {
       resources: '/api/demandes/:demandeId',
+      permissions: '*'
+    }]
+  },
+  {
+    roles: ['admin'],
+    allows: [{
+      resources: '/api/demandes/:demandeId/valider',
       permissions: '*'
     }]
   },
