@@ -33,6 +33,13 @@ exports.invokeRolesPolicies = function () {
     }]
   },
   {
+    roles: ['banque'],
+    allows: [{
+      resources: '/api/demandes/:demandeId/offre/deposer',
+      permissions: '*'
+    }]
+  },
+  {
     roles: ['admin'],
     allows: [{
       resources: '/api/demandes/:demandeId/valider',
