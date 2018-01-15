@@ -1,37 +1,72 @@
 <div class="panel panel-default">
-            <div class="panel-body">
-            <div class="col-md-6">
-                 <span style="color:#7a43b6">
-                      <img class="img-circle img-thumbnail" style="height: 50px;width: 50px" ng-src="/modules/core/client/img/download.png" alt="Image">
-                  </span>
-                  <span ng-click="goToSpace()" style="color:#7a43b6; position: relative;font-size: 28px;font-weight: bold;top: 6px ">  {{espaceUser}} </span>
-                
-    <img class="full-width img-responsive img-thumbnail" style="height: 160px;margin-top: 10px" ng-src="/modules/core/client/img/01.jpg" alt="Image">
-    
-              
-        </div>  
-          <div class="col-md-6">
-              <user-badge ng-if="vm.authentication.user" user="vm.authentication.user"></user-badge> </div>
-        </div>
-  
-    <div style="background-color: #7a43b6; color: #fff;">
-            <div ng-if="utilsService.isUser()">
-                    <div class="btn-group btn-group-lg">
-     
-                            <button ui-sref="userHome.client" type="button" class="btn btn-group-lg" style="background-color: #7a43b6; ">Mes Demandes</button>
-                          
-                            <button  ui-sref="offres.view" type="button" class="btn btn-group-lg" style="background-color: #7a43b6;">Mes Offres</button>
-                        </div>
-           </div>
-     
+    <div class="panel-body">
+<div ng-if="!vm.utilsServ.isAdmin()">
+    <div class="col-md-6">
+         <span style="color:#7a43b6">
+              <img class="img-circle img-thumbnail" style="height: 50px;width: 50px" ng-src="/modules/core/client/img/download.png" alt="Image">
+          </span>
+          <span ng-click="goToSpace()" style="color:#7a43b6; position: relative;font-size: 28px;font-weight: bold;top: 6px ">  {{espaceUser}} </span>
+        
+<img class="full-width img-responsive img-thumbnail" style="height: 160px;margin-top: 10px" ng-src="/modules/core/client/img/01.jpg" alt="Image">
+
+      
+</div>  
+  <div class="col-md-6">
+      <user-badge ng-if="vm.authentication.user" user="vm.authentication.user"></user-badge> </div>
+</div>
+</div>
+<div style="background-color: #7a43b6; color: #fff;">
+    <div ng-if="vm.utilsServ.isClient()">
+            <div class="btn-group btn-group-lg">
+
+                    <button ui-sref="userHome.client" type="button" class="btn btn-group-lg" style="background-color: #7a43b6; ">Demandes</button>
+                  
+                    <button  ng-click="vm.stateOffre = !vm.stateOffre" type="button" class="btn btn-group-lg" style="background-color: #7a43b6;">Offres</button>
+                </div>
+
+   </div>
+
+</div>
+
+    <div class="panel-body" style="padding: 20px; min-height: 400px">
+        <section class="row" ng-show="!vm.stateOffre">
+          <details-demande demande = "vm.demande"></details-demande> 
+        </section>
+        <div ng-if="vm.utilsServ.isClient()">
+        <section>
+
+                <h3 style="text-align: center;border-bottom: 0px solid #7a43b6;color: #7a43b6 ">Liste Offres de la Damande N° {{vm.demande.numeroDemande}} </h3>
+                <div class="panel-body" style="padding: 20px; min-height: 400px">
+              <div ng-repeat="offre in vm.demande.offres">
+                 <a  ng-click="showViewOffre(offre);">
+             <table class="table table-striped table-bordered table-hover" style="width: 70%; margin-right: auto; margin-left: auto;">
+             
+               <tr>
+                  <td style=" width: 40px; text-align: center">{{offre.created}}</td>
+                  
+                   <td>
+                    
+                    <span style="color: #7a43b6; font-style: normal;font-size: 16px; font-weight: bold; "> Offre Crédit immobilier N° :  {{offre.id}}</span><br> 
+                    Par la Banque : {{offre.banque.displayName}}          
+                      
+                  </td>
+                   <td style="text-align: center;width: 200px; border-left: 2px solid #7a43b6; ">
+                     <strong>
+                        TAUX INTERET<br>
+                   {{offre.tauxInteret}}
+                     </strong>
+                   
+                 </td>
+               </tr>
+               
+               </table>
+                 </a>
+               </div>
+      
+                  
+         
+        </section>
+      </div>
     </div>
     
-            <div class="panel-body" style="padding: 20px; min-height: 400px">
-                <section class="row">
-                  <details-demande demande = "vm.demande"></details-demande>
-                      
-                  </section>
-                  
-            </div>
-            
-             </div>
+     </div>

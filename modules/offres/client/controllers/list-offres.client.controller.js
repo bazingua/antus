@@ -10,6 +10,6 @@
   function OffresListController(OffresService) {
     var vm = this;
 
-    vm.offres = OffresService.query();
+    vm.offres = [];
   }
 }());
