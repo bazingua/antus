@@ -38,13 +38,13 @@
           </li>
           <li class="divider-vertical"></li>
           <li ui-sref-active="active">
-            <a ui-sref="authentication.signin"> <samp class="glyphicon glyphicon-lock"></samp> Accès Client</a>
+            <a ui-sref="authentication.signin" style="cursor: pointer"> <samp class="glyphicon glyphicon-lock"></samp> Accès Client</a>
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right" ng-show="vm.authentication.user">
               <li class="icon-pointer header-button-width"><a ng-click="goToSpace()" target="_self" style="cursor: pointer"> <samp class="glyphicon glyphicon-home"> </samp> {{espaceUser}}</a></li>       
       
-          <li class="icon-pointer header-button-width"><a ng-click="signoutCurrentUser()" target="_self"><samp class="glyphicon glyphicon-off"> </samp> Déconnexion</a></li>
+          <li class="icon-pointer header-button-width"><a ng-click="signoutCurrentUser()" target="_self" style="cursor: pointer"><samp class="glyphicon glyphicon-off"> </samp> Déconnexion</a></li>
         </ul>
 
       </ul>

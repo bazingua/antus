@@ -10,14 +10,24 @@
              <td style=" width: 50px; text-align: center">{{demande.created}}</td>
              <td>
               
-              <span style="color: #7a43b6; font-style: normal;font-size: 16px; font-weight: bold; ">Crédit immobilier</span><br> 
-              PROJET  N° {{demande.numeroDemande}}              
-                
+             
+              
+              <div class="col-sm-8">
+                  <span style="color: #7a43b6; font-style: normal;font-size: 16px; font-weight: bold; ">  Crédit immobilier</span><br> PROJET  N° {{demande.numeroDemande}}
+              </div>             
+                <div class="col-sm-4" style="text-align: center">
+                  <div ng-if="demande.offres.length  > 0">
+                      
+                          OFFRE <span class="badge badge-light" style="background-color: red; color: white">{{demande.offres.length}}</span>
+                      
+                 </div>
+                </div>
             </td>
              <td style="text-align: center;width: 200px; border-left: 2px solid #7a43b6; ">
                <strong>
                   Montant projet<br>
              {{demande.projet.montantProjet}} XOF
+             
                </strong>
              
            </td>

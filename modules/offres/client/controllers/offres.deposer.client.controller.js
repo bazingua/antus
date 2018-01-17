@@ -6,9 +6,9 @@
     .module('offres')
     .controller('OffresDeposerController', OffresDeposerController);
 
-  OffresDeposerController.$inject = ['$scope', '$state', '$stateParams', '$window', 'Authentication', 'OffresModel', 'DemandesService'];
+  OffresDeposerController.$inject = ['$scope', '$state', '$stateParams', '$window', 'Authentication', 'OffresModel', 'DemandesService','Notification'];
 
-  function OffresDeposerController ($scope, $state, $stateParams, $window, Authentication, OffresModel, DemandesService) {
+  function OffresDeposerController ($scope, $state, $stateParams, $window, Authentication, OffresModel, DemandesService, Notification) {
     var vm = this;
     vm.authentication = Authentication;
     vm.offre = new OffresModel();
@@ -32,6 +32,7 @@
         $state.go('demandes.view', {
           demandeId: vm.offre.demandeId
         });
+        Notification.success({ message: '<i class="glyphicon glyphicon-ok"></i> Offre enregisté avec success' });
       }
 
       function errorCallback(error) {

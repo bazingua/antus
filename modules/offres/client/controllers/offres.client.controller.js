@@ -8,11 +8,12 @@
 
   OffresController.$inject = ['$scope', '$state', '$window', 'Authentication', 'offreResolve'];
 
-  function OffresController ($scope, $state, $window, Authentication, offre) {
+  function OffresController ($scope, $state, $window, Authentication, offreResolve) {
     var vm = this;
 
     vm.authentication = Authentication;
-    vm.offre = offre;
+    $scope.offre = offreResolve;
+    console.log('++++', $scope.offre);
     vm.error = null;
     vm.form = {};
     vm.remove = remove;
@@ -20,14 +21,15 @@
 
     // Remove existing Offre
     function remove() {
-      if ($window.confirm('Are you sure you want to delete?')) {
+      /* if ($window.confirm('Are you sure you want to delete?')) {
         vm.offre.$remove($state.go('offres.list'));
       }
+      */
     }
 
     // Save Offre
     function save(isValid) {
-      if (!isValid) {
+      /* if (!isValid) {
         $scope.$broadcast('show-errors-check-validity', 'vm.form.offreForm');
         return false;
       }
@@ -48,6 +50,7 @@
       function errorCallback(res) {
         vm.error = res.data.message;
       }
+      */
     }
   }
 }());

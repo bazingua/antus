@@ -1,31 +1,30 @@
 <section>
-    <section>
-        <h3 style="text-align: center;border-bottom: 0px solid #7a43b6;color: #7a43b6 ">Détail Offres  N° {{offre.id}} </h3>
-        <table class="table table-striped table-bordered table-hover" style="width: 100%; margin-right: auto; margin-left: auto;padding: 15px">
-                 
-            <tr>
-               <td>
-                 Banque : {{vm.offre.banque.displayName}}  <br>
-                 Montant Prêt : {{vm.offre.montantPret}}  <br>
-                 Durée du Prêt : {{vm.offre.dureePret}}  <br>  
-                 Taux d'Interêt : {{vm.offre.tauxInteret}}  <br>  
-                 Echéance : {{vm.offre.echeance}}  <br>  
-                 Frais Dossier : {{vm.offre.fraisDossier}}  <br> 
-                 Assurance Offre : {{vm.offre.assuranceOffre}}  <br> 
-                 Frais Notaire : {{vm.offre.fraisNotaire}}  <br>
-                 Assurance : {{vm.offre.assurance}}  <br> 
-                 Date Dépot : {{vm.offre.created}}  <br>  
-               </td>
-                <td style="text-align: center;width: 200px; border-left: 2px solid #7a43b6; ">
-                  <strong>
-                     TAUX INTERET<br>
-                {{vm.offre.tauxInteret}}
-                  </strong>
-                
-              </td>
-            </tr>
-            
-            </table>
-    </section>
-    
+  <section>
+      <h3 style="text-align: center;border-bottom: 0px solid #7a43b6;color: #7a43b6 ">Détail Offre  N° {{offre.id}} </h3>
+      <table class="table table-striped table-bordered table-hover" style="width: 100%; margin-right: auto; margin-left: auto;padding: 15px">
+          <tr>
+             <td style="padding: 35px">
+               Banque :    {{offre.banque.displayName}}  <br>
+               Montant Prêt :        {{offre.montantPret}} XOF <br>
+               Durée du Prêt :    {{offre.dureePret}}  <br>  
+               Taux d'Interêt : {{offre.tauxInteret}} % <br>  
+               Echéance : {{offre.echeance}}  XOF<br>  
+               Frais Dossier : {{offre.fraisDossier}} XOF <br> 
+               Assurance Offre : {{offre.assuranceOffre}} XOF <br> 
+               Frais Notaire : {{offre.fraisNotaire}} XOF <br>
+               Assurance : {{offre.assurance}}  XOF<br> 
+               Date Dépot : {{offre.created}}  <br>  
+             </td>
+              <td style="text-align: center;width: 200px; border-left: 2px solid #7a43b6; ">
+                <strong>
+                   TAUX INTERET<br>
+              {{offre.tauxInteret}} %
+                </strong>
+              
+            </td>
+          </tr>
+          
+          </table>
+  </section>
+  
 </section>
