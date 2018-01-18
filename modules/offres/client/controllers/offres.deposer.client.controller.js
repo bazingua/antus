@@ -29,9 +29,7 @@
 
       function successCallback(res) {
         console.log('res', res);
-        $state.go('demandes.view', {
-          demandeId: vm.offre.demandeId
-        });
+        $state.go('userHome.banque');
         Notification.success({ message: '<i class="glyphicon glyphicon-ok"></i> Offre enregisté avec success' });
       }
 

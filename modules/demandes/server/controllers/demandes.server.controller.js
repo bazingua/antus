@@ -86,7 +86,7 @@ exports.deposerOffre = function (req, res) {
   req.body.banque = req.user;
   req.body.created = new Date();
   demande.offres.push(req.body);
-  demande.etat = DEMANDE_STATE_ACCEPTE;
+ // demande.etat = DEMANDE_STATE_ACCEPTE;
   demande.save(function (err) {
     if (err) {
       return res.status(422).send({
