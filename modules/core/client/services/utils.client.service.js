@@ -11,7 +11,8 @@
     var service = {
       isBank: isBank,
       isAdmin: isAdmin,
-      isClient: isClient
+      isClient: isClient,
+      isBankCanAddOffer: isBankCanAddOffer
     };
 
     return service;
@@ -26,6 +27,13 @@
 
     function isClient() {
       return (_.indexOf(Authentication.user.roles, 'user') > -1);
+    }
+    function isBankCanAddOffer(demande) {
+      if (!demande.offres.length)
+        return true;
+      else {
+        _.filter(demande.offres, function(item) { return item.banque.email === Authentication.user.email; });
+      }
     }
   }
 }());
