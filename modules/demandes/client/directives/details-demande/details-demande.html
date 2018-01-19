@@ -253,7 +253,7 @@
   </div>
 </div>
   <div ng-switch-when="5">
-      <div ng-if="utilsService.isBank()">
+      <div ng-if="utilsService.isBank() &&  utilsService.isBankCanAddOffer(demande)">
   	<a ui-sref="offres.deposer({demandeId:  demande.id})" type="button" style="background-color: #663399;color: #FFFFFF" class="btn-theme btn-theme-md btn-default-bg text-uppercase">Dépoer Offre</a>
   </div>
   </div>
