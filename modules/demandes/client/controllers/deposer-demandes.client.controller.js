@@ -60,10 +60,6 @@
                 title: 'Renseignez votre adresse email'
             },
             {
-                templateUrl: 'modules/demandes/client/views/form-create-demande/email-demande.client.view.html',
-                title: 'Renseignez votre adresse email'
-            },
-            {
                 templateUrl: 'modules/demandes/client/views/form-create-demande/coordonnee-demande.client.view.html',
                 title: 'Coordonnee Demande'
             },
