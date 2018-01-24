@@ -18,7 +18,6 @@
             </div>
         </div>
       </div>
-
       <div class="row page-header" style="background-color: #f8f8f8; padding:0px ; margin: 10px; min-height: 50px;">
         <div class="col-md-4"></div>
         <div class="col-md-2 nopadding text-center">
@@ -28,7 +27,7 @@
           </button>
         </div>
         <div class="col-md-2  nopadding text-center">
-          <button type="submit" class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px;margin-bottom: 2px" ng-click="false? error = false : $nextStep();">
+          <button type="submit" class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px;margin-bottom: 2px" ng-click="false? error = false : (user ? $setActiveIndex($getActiveIndex() + 3) : $nextStep())">
             SUIVANT
             <span class="glyphicon glyphicon-chevron-right"></span>
           </button>

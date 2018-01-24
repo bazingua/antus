@@ -44,9 +44,16 @@
         method: 'POST',
         url: '/api/users'
       },
+      me: { method: 'GET', url: '/api/users/me' }
     });
 
     angular.extend(Users, {
+      /**
+        Cette fonction permet de retourner le user connecter ,
+       */
+      getMe: function () {
+        return this.me().$promise;
+      },
       changePassword: function (passwordDetails) {
         return this.updatePassword(passwordDetails).$promise;
       },

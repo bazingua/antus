@@ -14,7 +14,7 @@
     return service;
 
     /**
-     * verifie si le user est un admin ou pas 
+     * verifie si le user est un admin ou pas
      */
     function checkAdminRules() {
       var isAdmin = false;
@@ -22,10 +22,10 @@
         isAdmin = true;
       }
       return isAdmin;
-    };
+    }
        /**
      * formaterDate
-     * @description retrourne une date au format dd/MM/YYYY 
+     * @description retrourne une date au format dd/MM/YYYY
      * @param (String) Date au format dd/MM/YYYY
      * @return {Object} Object
      */
@@ -36,6 +36,6 @@
       var pattern = /(\d{2})\/(\d{2})\/(\d{4})/;
       var dt = new Date(date.replace(pattern, '$3-$2-$1'));
       return dt;
-    };
+    }
   }
 }());
