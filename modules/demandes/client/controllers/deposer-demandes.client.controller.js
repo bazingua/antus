@@ -113,6 +113,7 @@
             .then(function (data) {
               $state.go('userHome.client', { reload: true });
               Notification.success({ message: '<i class="glyphicon glyphicon-ok"></i> Demande enregistrée avec succes' });
+              $scope.apply();
             })
             .catch(function (err) {
               Notification.error({ message: 'Le sauvegarde de la demande a échoué ', title: 'Une erreur est survenue' });
