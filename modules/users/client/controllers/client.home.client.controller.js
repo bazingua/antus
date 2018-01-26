@@ -5,13 +5,14 @@
     .module('users')
     .controller('ClientHomeController', ClientHomeController);
 
-    ClientHomeController.$inject = ['$scope', 'DemandesModel', '$timeout', 'demandes', 'Authentication', 'DemandesService'];
+    ClientHomeController.$inject = ['$scope', '$state', '$stateParams', 'DemandesModel', '$timeout', 'demandes', 'Authentication', 'DemandesService'];
 
-    function ClientHomeController($scope, DemandesModel, $timeout, demandes, Authentication, DemandesService) {
+    function ClientHomeController($scope, $state, $stateParams, DemandesModel, $timeout, demandes, Authentication, DemandesService) {
       var vm = this;
-      vm.authentication = Authentication;
+      if (!Authentication && !demandes.length)
+        $state.go('authentication.signin', { reload: true });
+      vm.authentication = Authentication.user ? Authentication : { user: demandes.length ? demandes[0].client : {} };
       vm.demandes = angular.copy(demandes);
-      console.log(vm.demandes);
       vm.feedBackMessage = true;
       $timeout(function() {
         vm.feedBackMessage = false;

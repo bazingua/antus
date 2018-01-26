@@ -20,38 +20,6 @@
     // $scope.node = $scope.typeDemande;
     vm.steps = [
       {
-        templateUrl: 'modules/demandes/client/views/form-create-demande/montant-projet.client.view.html',
-        title: 'Définir le montant et caractère de votre projet'
-      },
-      {
-        templateUrl: 'modules/demandes/client/views/form-create-demande/patrimoine-demande.client.view.html',
-        title: 'Définition du Patrimoine Immoblier'
-      },
-      {
-        templateUrl: 'modules/demandes/client/views/form-create-demande/revenu-demande.client.veiw.html',
-        title: 'Definition des Revenus'
-      },
-      {
-        templateUrl: 'modules/demandes/client/views/form-create-demande/autre-revenu-demande.client.view.html',
-        title: 'Autres  Revenus '
-      },
-      {
-        templateUrl: 'modules/demandes/client/views/form-create-demande/creditencours-demande.client.view.html',
-        title: 'Quels sont Vos Crédits Encours'
-      },
-      {
-        templateUrl: 'modules/demandes/client/views/form-create-demande/situationProfessionel-demande.client.view.html',
-        title: 'Situation Professionnelle'
-      },
-      {
-        templateUrl: 'modules/demandes/client/views/form-create-demande/montantProjet-demande.client.view.html',
-        title: 'Montant de votre  Pret'
-      },
-      {
-        templateUrl: 'modules/demandes/client/views/form-create-demande/bank-demande.client.view.html',
-        title: 'Banque Principal'
-      },
-      {
         templateUrl: 'modules/demandes/client/views/form-create-demande/bankConsulte-demande.client.view.html',
         title: 'Avez vous déja consulté des banques'
       },
@@ -111,9 +79,8 @@
           demandeToSave.client = response;
           DemandesService.save(demandeToSave)
             .then(function (data) {
-              $state.go('userHome.client', { reload: true });
               Notification.success({ message: '<i class="glyphicon glyphicon-ok"></i> Demande enregistrée avec succes' });
-              // $scope.$apply();
+              $state.go('userHome.client', { created: response.email });
             })
             .catch(function (err) {
               Notification.error({ message: 'Le sauvegarde de la demande a échoué ', title: 'Une erreur est survenue' });

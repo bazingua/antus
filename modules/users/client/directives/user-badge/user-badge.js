@@ -1,30 +1,31 @@
 (function() {
-    'use strict';
+  'use strict';
 
-    angular.module('users')
+  angular.module('users')
         .directive('userBadge', userBadge);
 
-    userBadge.$inject = ['UserRoleService'];
+  userBadge.$inject = ['UserRoleService'];
 
-    function userBadge(UserRoleService) {
-        var directive = {
-            restrict: 'EA',
-            transclude: false,
-            templateUrl: 'modules/users/client/directives/user-badge/user-badge.html',
-            scope: {
-              user: '='
-            },
-            link: link
-        };
+  function userBadge(UserRoleService) {
+    var directive = {
+      restrict: 'EA',
+      transclude: false,
+      templateUrl: 'modules/users/client/directives/user-badge/user-badge.html',
+      scope: {
+        user: '='
+      },
+      link: link
+    };
 
-        return directive;
-        /**
-         * link function
-         * @param  {Object} scope
-         * @return {Object} scope
-         */
-        function link(scope) {
-          scope.user.created = UserRoleService.formaterDate(new Date(scope.user.created).toISOString());
-        }
+    return directive;
+    /**
+     * link function
+     * @param  {Object} scope
+     * @return {Object} scope
+     */
+    function link(scope) {
+      if (scope.user.created)
+        scope.user.created = UserRoleService.formaterDate(new Date(scope.user.created).toISOString());
     }
+  }
 }());
