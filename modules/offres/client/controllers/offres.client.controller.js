@@ -6,13 +6,14 @@
     .module('offres')
     .controller('OffresController', OffresController);
 
-  OffresController.$inject = ['$scope', '$state', '$window', 'Authentication', 'offreResolve'];
+  OffresController.$inject = ['$scope', '$state', '$window', 'Authentication', 'offreResolve','Utils'];
 
-  function OffresController ($scope, $state, $window, Authentication, offreResolve) {
+  function OffresController ($scope, $state, $window, Authentication, offreResolve,Utils) {
     var vm = this;
 
     vm.authentication = Authentication;
     $scope.offre = offreResolve;
+    vm.utilsServ = Utils;
     console.log('++++', $scope.offre);
     vm.error = null;
     vm.form = {};

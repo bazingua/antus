@@ -6,9 +6,9 @@
     .module('offres')
     .controller('OffresDeposerController', OffresDeposerController);
 
-  OffresDeposerController.$inject = ['$scope', '$state', '$stateParams', '$window', 'Authentication', 'OffresModel', 'DemandesService','Notification'];
+  OffresDeposerController.$inject = ['$scope', '$state', '$stateParams', '$window', 'Authentication', 'OffresModel', 'DemandesService','Notification','Utils'];
 
-  function OffresDeposerController ($scope, $state, $stateParams, $window, Authentication, OffresModel, DemandesService, Notification) {
+  function OffresDeposerController ($scope, $state, $stateParams, $window, Authentication, OffresModel, DemandesService, Notification,Utils) {
     var vm = this;
     vm.authentication = Authentication;
     vm.offre = new OffresModel();

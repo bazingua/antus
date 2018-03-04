@@ -4,7 +4,10 @@
       <table class="table table-striped table-bordered table-hover" style="width: 100%; margin-right: auto; margin-left: auto;padding: 15px">
           <tr>
              <td style="padding: 35px">
-                <div class="col-md-6"> Banque :</div><div class="col-md-6">{{offre.banque.displayName}}</div>
+                <div ng-if="!vm.utilsServ.isClient()">
+                    <div class="col-md-6"> Banque :</div><div class="col-md-6">{{offre.banque.displayName}}</div>
+                  </div>
+               
                 <div class="col-md-6"> Montant Prêt : </div><div class="col-md-6"> {{offre.montantPret}} XOF</div>
                 <div class="col-md-6"> Durée du Prêt :</div><div class="col-md-6"> {{offre.dureePret}} </div>
                 <div class="col-md-6">Taux d'Interêt :</div><div class="col-md-6"> {{offre.tauxInteret}}  % </div>
