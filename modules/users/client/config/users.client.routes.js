@@ -130,7 +130,7 @@
         template: '<ui-view/>'
       })
       .state('userHome.client', {
-        url: '/client',
+        url: '/client?created',
         templateUrl: '/modules/demandes/client/views/home.client.view.html',
         controller: 'ClientHomeController',
         controllerAs: 'vm',
@@ -167,13 +167,13 @@
       });
     getOwnerDemandes.$inject = ['$stateParams', 'DemandesService', 'Authentication'];
     function getOwnerDemandes($stateParams, DemandesService, Authentication) {
-      console.log(Authentication.user);
-      return DemandesService.find({ user: Authentication.user.email });
-    };
+      console.log(Authentication, $stateParams.created);
+      return DemandesService.find({ user: $stateParams.created || Authentication.user.email });
+    }
     getDemandesValider.$inject = ['$stateParams', 'DemandesService', 'Authentication'];
     function getDemandesValider($stateParams, DemandesService, Authentication) {
       console.log(Authentication.user);
-      return DemandesService.find({etat:5});
+      return DemandesService.find({ etat: 5 });
     }
   }
 }());

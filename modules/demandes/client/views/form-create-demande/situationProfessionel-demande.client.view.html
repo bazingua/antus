@@ -56,7 +56,7 @@
                       <label class="control-label col-sm-4" style="text-align: right ">Date de Début du Contrat :
                     </label>
                       <div class="col-sm-4">
-                          <input type="date" name="dureeTravail" class="form-control" ng-model="demande.patrimoine.profession.dateDeDebutContrat" required>
+                          <input type="text" kendo-date-picker k-format="'dd/MM/yyyy'" name="dureeTravail" class="form-control" ng-model="demande.patrimoine.profession.dateDeDebutContrat" required>
                           <div ng-show="myForm.$submitted && myForm.dureeTravail.$error.required" class="form-text-error">Veuillez entrer la duree de votre contrat.</div>
                       </div>
                     <label class="control-label col-sm-1">

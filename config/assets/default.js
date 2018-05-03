@@ -9,7 +9,10 @@ module.exports = {
         // bower:css
         'public/lib/bootstrap/dist/css/bootstrap.css',
         'public/lib/bootstrap/dist/css/bootstrap-theme.css',
-        'public/lib/angular-ui-notification/dist/angular-ui-notification.css'
+        'public/lib/angular-ui-notification/dist/angular-ui-notification.css',
+        'public/lib/kendo-ui/styles/kendo.common.min.css',
+        'public/lib/kendo-ui/styles/kendo.default.min.css',
+        'public/lib/kendo-ui/styles/kendo.default.mobile.min.css',
         // endbower
       ],
       js: [
@@ -27,6 +30,12 @@ module.exports = {
         'public/lib/owasp-password-strength-test/owasp-password-strength-test.js',
         'public/lib/angular-multi-step-form/dist/browser/angular-multi-step-form.min.js',
         'public/lib/lodash/lodash.js',
+        'public/lib/kendo-ui/js/kendo.ui.core.min.js',
+        'public/lib/kendo-ui/js/cultures/kendo.culture.fr-FR.min.js',
+        'public/lib/kendo-ui/js/cultures/kendo.culture.fr.js',
+        'public/lib/kendo-ui/js/kendo.userevents.js',
+        'public/lib/kendo-ui/js/kendo.calendar.js',
+
         // endbower
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']

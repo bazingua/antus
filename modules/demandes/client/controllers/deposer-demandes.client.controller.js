@@ -111,8 +111,8 @@
           demandeToSave.client = response;
           DemandesService.save(demandeToSave)
             .then(function (data) {
-              $state.go('userHome.client', { reload: true });
               Notification.success({ message: '<i class="glyphicon glyphicon-ok"></i> Demande enregistrée avec succes' });
+              $state.go('userHome.client', { created: response.email });
             })
             .catch(function (err) {
               Notification.error({ message: 'Le sauvegarde de la demande a échoué ', title: 'Une erreur est survenue' });
