@@ -14,6 +14,7 @@
     vm.offre = new OffresModel();
     vm.offre.demandeId = $stateParams.demandeId;
     vm.error = null;
+    vm.utilsServ = Utils;
 
     // Save Offre
     vm.deposerOffre = function (isValid) {
