@@ -54,6 +54,14 @@
               }
           }
       }) 
+      .state('homeadmin.demandesoumisesFinancementPro', {
+        url: "/demandes",
+        views: {
+              "admin_home_right_side": {
+                templateUrl: '/modules/users/client/views/admin/demandes-soumiseFinanPro.client.view.html'
+              }
+          }
+      }) 
       .state('homeadmin.users', {
         url: "/users/:role",
         views: {
