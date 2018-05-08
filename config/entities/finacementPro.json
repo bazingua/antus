@@ -1,0 +1,77 @@
+"FinancementPro": {
+	"Projet":
+	{
+		"Type":
+		[
+			'Achat de materiel','Travaux','Developpement d’activite'
+
+		],
+		"ExerciceComptable":['0', '1 an', '2 ans', '3 ans ou +'],
+		
+		"ResultstExpoitationPositif":[
+			'Non',
+			'Oui sur le dernier compte de resultat',
+			'Oui sur les 3 derniers comptes de resultats'
+		],
+		"FondProprePositif":['OUI','NON'],
+		"FondCommerce":[
+			'Montant total de votre projet : A',
+			'Montant total de votre apport : B',
+			'Montant de financement souhaité : A-B' ],
+		"DureeRemboursement":[
+		'1 an', '2 ans', '3 ans', '4 ans', '5 ans'
+		],
+		"AdresseProjet":[
+			'Lieu', 'code postal ou ville`'
+		],
+		"ChiffreAffaire":
+		[
+			'50 000 000 Fcfa',
+			'Entre 50 000 000 fcfa et 100 000 000 Fcfa',
+			'Entre 100 000 000 fcfa et 500 000 000 fcfa',
+			'+ 500 000 000 fcfa'
+		],
+		"BanqueContacter":
+		[
+			"OUI" :
+			{
+				"Avez vous obtenu un accord de financement ?" :
+				{
+					"Oui":['Liste Banque Contacter','Date Accord'],
+					"Non":['Liste Banque Contacter']
+				}
+			},
+			"NON":
+			{
+				
+			}
+		],
+		
+		"InfoSociete" : ['StatuJuridique','nom de la societe ou de l’enseigne commercial'],
+		"Coordonnees de l’emprunteur ":['Nom', 'Prenom', 'Date de naissance'],
+		"Coordonnees du Co-emprunteur": ['Nom', 'Prenom', 'Date de naissance'],
+		"InfoDirigeant":
+		[
+			'Civilite',
+			'Nom',
+			'Prenom',
+			'Formation',
+			'Telephone',
+			'Adresse mail'
+		]
+		"Offre": [{
+			'Date jj/mm/année',
+			'Nom de la banque',
+			'Adresse',
+			'Telephone',
+			'Montant du prêt',
+			'Duree du prêt',
+			'Taux d’interêt annuel hors assurance',
+			'Echeance mensuelles',
+			'Frais de dossier',
+			'Assurance à dèfinir',
+			'Frais de notaire à dèfinir'
+		}]
+	
+	}
+}
