@@ -24,6 +24,15 @@
         pageTitle: 'Signup'
       }
     })
+    .state('Test', {
+      url: '/test',
+      templateUrl: '/modules/users/client/views/authentication/Test.client.view.html',
+      controller: 'AdminAuthenticationController',
+      controllerAs: 'vm',
+      data: {
+        pageTitle: 'Test'
+      }
+    })
     .state('admin.users', {
         url: '/list',
         templateUrl: '/modules/users/client/views/admin/list-users.client.view.html',
