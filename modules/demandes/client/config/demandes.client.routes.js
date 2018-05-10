@@ -40,6 +40,18 @@
           banques: getBanques
         }
       })
+      .state('demandes.createDemandeProfessionnel', {
+        url: '/deposerDemandePro',
+        templateUrl: '/modules/demandes/client/views/deposerdemandesPro.client.view.html',
+        controller: 'DeposerDemandesProController',
+        controllerAs: 'vm',
+        data: {
+          pageTitle: 'Demande crédit professionnel'
+        },
+        resolve: {
+          typeDemande: getType
+        }
+      })
       .state('demandes.view', {
         url: '/:demandeId?:stateOffre',
         templateUrl: '/modules/demandes/client/views/view-demande.client.view.html',
