@@ -1,95 +1,110 @@
-<section>
-        <div style="background-color: #7a43b6; color: #fff; height: auto">
-                <h3 class="color-white padding">Quel votre projet de credit professionell ?</h3>
-            </div>
-            
-            <br/>
-            
-            <div class="panel-body" style="text-align: center; min-height: 410px">
-              <div class="panel panel-body well" style="padding-bottom:15px;">
-                <strong>Quels taux de crédit immobilier pour votre profil et votre projet ? Comparez plusieurs offres personnalisées parmi 110 partenaires bancaires. Gratuitement, sans engagement</strong>, vous pourrez optimiser votre financement proffessionel. En 2016, ANTUS a ainsi accompagné <strong style="color:#663399">+ de 100 nouveaux propriétaires !</strong>
-              </div>
-              <div class="btn-group" role="group"  class="" style="text-align: center; margin: 5px" aria-label="Basic example">
-            
-            <div class="row">
-            <div class="col-sm-12">
-                <div class="col-sm-4">
-                <span   style="font-weight: bold" class="text-uppercase">
-                <div class="panel panel-default" style="background-color: #7A43B6; text-align: center; width: 230px; height: 130px; padding: 2px;">
-                  <div class=" " style="text-align: center; height: 100%; padding: 5px">
-            
-                      <div class="panel-body" style="text-align: center; height: 100%; cursor: pointer;">
-                        <span class="material-icons" style="color: white; font-size: 44px">
-                                <i class="material-icons">
-                                        add_shopping_cart
-                                        </i></span> <br/>
-                       <span style="font-family:  Verdana, sans-serif; ">Achat de materiel</span>
-            
+<section class="row">
+        <div class="panel panel-default">
+            <div class="panel-body" style="padding: 0; min-height: 400px">
+            <form name="myForm" class="form-horizontal" novalidate>
+              <div class="row" style="min-height: 400px">
+                <div class="" style="margin-top: 50px;padding: 35px">
+                  <div style="width: 100%; margin-left: auto; margin-right: auto; margin-bottom: 30px" class=" text-center">
+                    <span  style="color: #555"><i class="material-icons">info</i></span>
+                    <span style="color: #777; position: relative;top: -8px;font-style: italic;font-size: 13px;">LOCALISATION DE VOTRE PROJET</span>
                   </div>
-                </div>
-              </div>
-            </span>
-            </div>
-            <div class="col-sm-4">
-            <span   style="font-weight: bold" class="text-uppercase">
-                <div class="panel panel-default" style="background-color: #7A43B6; text-align: center; width: 230px; height: 130px; padding: 2px;">
-                  <div class=" " style="text-align: center; height: 100%; padding: 5px">
-            
-                      <div class="panel-body" style="text-align: center; height: 100%; cursor: pointer;">
-                        <span class="material-icons" style="color: white; font-size: 44px">
-                                <i class="material-icons">
-                                        build
-                                        </i></span> <br/>
-                       <span style="font-family:  Verdana, sans-serif; ">Achat de materiel</span>
-            
-                  </div>
-                </div>
-              </div>
-            </span>
-            </div>
-            <div class="col-sm-4">
-            <span   style="font-weight: bold" class="text-uppercase">
-                    <div class="panel panel-default" style="background-color: #7A43B6; text-align: center; width: 230px; height: 130px; padding: 2px;">
-                      <div class=" " style="text-align: center; height: 100%; padding: 5px">
-                
-                          <div class="panel-body" style="text-align: center; height: 100%; cursor: pointer;">
-                            <span class="material-icons" style="color: white; font-size: 44px">
-                                    <i class="material-icons">
-                                            trending_up
-                                            </i></span> <br/>
-                           <span style="font-family:  Verdana, sans-serif; ">Developpement d’activite</span>
-                
+        
+                  <div class="row" style="margin-bottom: 5px">
+                      <div class="col-sm-3"></div>
+                      <div class="col-sm-6">
+                          <label>VILLE :</label>
+                        <div class="input-group">
+                            <input type="text" ng-model="" name="villeProjet" class="form-control" required>
+                               
+                          <span class="input-group-addon" style="background-color: white; border: 0">
+                              <a href="#" data-toggle="tooltip" title="" class="pull-left">
+                            <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span>
+                          </a>
+                            </span>
+                        </div>
+                        <div ng-show="myForm.$submitted && myForm.villeProjet.$error.required" class="form-text-error">Veuillez entrer la ville</div>
                       </div>
+                      <div class="col-sm-3"></div>
                     </div>
-                  </div>
-                </span>
+
+                    <div class="row" style="margin-bottom: 5px">
+                            <div class="col-sm-3"></div>
+                            <div class="col-sm-6">
+                                <label>CODE POSTAL :</label>
+                              <div class="input-group">
+                                  <input type="text" ng-model="" name="codePostalProjet" class="form-control" />
+                                     
+                                    <span class="input-group-addon" style="background-color: white; border: 0">
+                                    <a href="#" data-toggle="tooltip" title="" class="pull-left">
+                                  <span class="glyphicon glyphicon-info-sign" style="color:#663399" aria-hidden="true"></span>
+                                </a>
+                                  </span>
+                              </div>
+                            <div class="col-sm-3"></div>
+                          </div>
+                          </div>
+        
+                    <div class="row" style="margin-bottom: 5px">
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-6">
+                            <label>PAYS :</label>
+                          <div class="input-group">
+                              <input type="number" name="paysProjet" class="form-control" id="paysProjet" ng-model="">
+                            
+                            <span class="input-group-addon" style="background-color: white; border: 0">
+                                <a href="#" data-toggle="tooltip" title="" class="pull-left">
+                              <span class="glyphicon glyphicon-info-sign" style="color:#663399" aria-hidden="true"></span>
+                            </a>
+                              </span>
+                          </div>
+                        </div>
+                        <div class="col-sm-3"></div>
+                      </div>
+        
+                      <div class="row" style="margin-bottom: 5px">
+                          <div class="col-sm-3"></div>
+                          <div class="col-sm-6">
+                              <label>ADRESSE :</label>
+                            <div class="input-group">
+                                <textarea type="number" name="adresse" class="form-control" id="montantSouhaite" ng-model=""></textarea>
+                              
+                              </span>
+                              <span class="input-group-addon" style="background-color: white; border: 0">
+                                  <a href="#" data-toggle="tooltip" title="" class="pull-left">
+                                <span class="glyphicon glyphicon-info-sign" style="color:#663399" aria-hidden="true"></span>
+                              </a>
+                                </span>
+                            </div>
+                          </div>
+                          <div class="col-sm-3"></div>
+                        </div>
+                
                 </div>
-            
-            </div>
-            </div>
-            </div>
-            </div>
-            
-            
               </div>
-            </div>
-            
-            <div class="row page-header" style="background-color: #f8f8f8; padding:0px ; margin: 10px; min-height: 50px;">
-              <div class="col-md-4"></div>
-                <div class="col-md-2 text-center">
-                    <button ng-disabled="!node.prev.id" class="btn " style="background-color:#663399;color:white;height: 50px; width: 130px;margin-bottom: 20px" ng-click=" navigation(node.prev) ">
-                      <span class="glyphicon glyphicon-chevron-left "></span>  PRECEDENT
-                    </button>
+        
+              <div class="row page-header" style="background-color: #f8f8f8; padding:0px ; margin: 10px; min-height: 50px;">
+                <div class="col-md-4"></div>
+                <div class="col-md-2 nopadding text-center">
+                  <button ng-disabled="$isFirst()" class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px;margin-bottom: 2px" ng-click="$previousStep()">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    PRECEDENT
+                  </button>
                 </div>
-            
-                <div class="col-md-2 text-center">
-                    <button  type="submit " class="btn " style="background-color:#663399;color:white;height: 50px; width: 130px"  data-toggle="button" aria-pressed="false"  ng-disabled="!node.next.id && node.next !== 'form' " ng-click=" navigation(node.next, true); ">
-                      SUIVANT <span class="glyphicon glyphicon-chevron-right "></span>
-                    </button>
+        
+                <div class="col-md-2  nopadding text-center">
+                  <button type="submit" class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px;margin-bottom: 2px" ng-click="myForm.revenuLocatif.$error.required ? error = false : $nextStep();">
+                    SUIVANT
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                  </button>
                 </div>
-              <div class="col-md-4"></div>
-            
+                <div class="col-md-4"></div>
+        
+              </div>
+        
+        
+        
+            </form>
             </div>
-            
-    </section>
-    
+            </div>
+        </section>
+        
