@@ -1,0 +1,110 @@
+<section class="row">
+        <div class="panel panel-default">
+            <div class="panel-body" style="padding: 0; min-height: 400px">
+            <form name="myForm" class="form-horizontal" novalidate>
+              <div class="row" style="min-height: 400px">
+                <div class="" style="margin-top: 50px;padding: 35px">
+                  <div style="width: 100%; margin-left: auto; margin-right: auto; margin-bottom: 30px" class=" text-center">
+                    <span  style="color: #555"><i class="material-icons">info</i></span>
+                    <span style="color: #777; position: relative;top: -8px;font-style: italic;font-size: 13px;">LOCALISATION DE VOTRE PROJET</span>
+                  </div>
+        
+                  <div class="row" style="margin-bottom: 5px">
+                      <div class="col-sm-3"></div>
+                      <div class="col-sm-6">
+                          <label>VILLE :</label>
+                        <div class="input-group">
+                            <input type="text" ng-model="" name="villeProjet" class="form-control" required>
+                               
+                          <span class="input-group-addon" style="background-color: white; border: 0">
+                              <a href="#" data-toggle="tooltip" title="" class="pull-left">
+                            <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span>
+                          </a>
+                            </span>
+                        </div>
+                        <div ng-show="myForm.$submitted && myForm.villeProjet.$error.required" class="form-text-error">Veuillez entrer la ville</div>
+                      </div>
+                      <div class="col-sm-3"></div>
+                    </div>
+
+                    <div class="row" style="margin-bottom: 5px">
+                            <div class="col-sm-3"></div>
+                            <div class="col-sm-6">
+                                <label>CODE POSTAL :</label>
+                              <div class="input-group">
+                                  <input type="text" ng-model="" name="codePostalProjet" class="form-control" />
+                                     
+                                    <span class="input-group-addon" style="background-color: white; border: 0">
+                                    <a href="#" data-toggle="tooltip" title="" class="pull-left">
+                                  <span class="glyphicon glyphicon-info-sign" style="color:#663399" aria-hidden="true"></span>
+                                </a>
+                                  </span>
+                              </div>
+                            <div class="col-sm-3"></div>
+                          </div>
+                          </div>
+        
+                    <div class="row" style="margin-bottom: 5px">
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-6">
+                            <label>PAYS :</label>
+                          <div class="input-group">
+                              <input type="number" name="paysProjet" class="form-control" id="paysProjet" ng-model="">
+                            
+                            <span class="input-group-addon" style="background-color: white; border: 0">
+                                <a href="#" data-toggle="tooltip" title="" class="pull-left">
+                              <span class="glyphicon glyphicon-info-sign" style="color:#663399" aria-hidden="true"></span>
+                            </a>
+                              </span>
+                          </div>
+                        </div>
+                        <div class="col-sm-3"></div>
+                      </div>
+        
+                      <div class="row" style="margin-bottom: 5px">
+                          <div class="col-sm-3"></div>
+                          <div class="col-sm-6">
+                              <label>ADRESSE :</label>
+                            <div class="input-group">
+                                <textarea type="number" name="adresse" class="form-control" id="montantSouhaite" ng-model=""></textarea>
+                              
+                              </span>
+                              <span class="input-group-addon" style="background-color: white; border: 0">
+                                  <a href="#" data-toggle="tooltip" title="" class="pull-left">
+                                <span class="glyphicon glyphicon-info-sign" style="color:#663399" aria-hidden="true"></span>
+                              </a>
+                                </span>
+                            </div>
+                          </div>
+                          <div class="col-sm-3"></div>
+                        </div>
+                
+                </div>
+              </div>
+        
+              <div class="row page-header" style="background-color: #f8f8f8; padding:0px ; margin: 10px; min-height: 50px;">
+                <div class="col-md-4"></div>
+                <div class="col-md-2 nopadding text-center">
+                  <button ng-disabled="$isFirst()" class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px;margin-bottom: 2px" ng-click="$previousStep()">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    PRECEDENT
+                  </button>
+                </div>
+        
+                <div class="col-md-2  nopadding text-center">
+                  <button type="submit" class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px;margin-bottom: 2px" ng-click="myForm.revenuLocatif.$error.required ? error = false : $nextStep();">
+                    SUIVANT
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                  </button>
+                </div>
+                <div class="col-md-4"></div>
+        
+              </div>
+        
+        
+        
+            </form>
+            </div>
+            </div>
+        </section>
+        
