@@ -1,0 +1,157 @@
+<section class="row">
+
+        <div class="panel panel-default">
+    
+            <div class="panel-body" style="padding: 0; min-height: 400px">
+                <div style="background-color: #7a43b6; color: #fff; height: auto">
+                    <h3 class="color-white padding">Infos Entreprise</h3>
+                </div>
+                <section>
+                    <form name="montantProjetForm" class="form-horizontal" novalidate>
+                        <div class="row" style="min-height: 400px;padding: 25px">
+                            <div class="">
+                                <div class="" style="margin-top: auto; margin-bottom: auto">
+                                    <div style="width: 100%; margin-left: auto; margin-right: auto; margin-bottom: 50px" class=" text-center">
+                                        <span style="color: #555">
+                                            <i class="material-icons">info</i>
+                                        </span>
+                                        <span style="color: #777; position: relative;top: -8px;font-style: italic;font-size: 13px;"> quel est votre statut ou forme juridique et le nom de votre entreprise ?</span>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-bottom: 5px">
+                                    <div class="col-sm-3"></div>
+                                    <div class="col-sm-6">
+                                        <label class="text-uppercase">ENTRER LE NOM DE SOCIETE :</label>
+                                        <div class="input-group">
+                                            <input type="text" name="nomSociete" class="form-control" ng-model="demandepro.infoSociete.nom" style="width: 500px">
+    
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3"></div>
+                                </div>
+                                <div class="row" style="margin-bottom: 5px">
+                                    <div class="col-sm-3"></div>
+                                    <div class="col-sm-6">
+                                        <label class="text-uppercase">votre statut ou forme juridique :</label>
+                                        <div class="input-group">
+                                            <select name="StatuJuridique" class="form-control" ng-model="demandepro.infoSociete.StatuJuridique" style="width: 500px">
+                                                <option label=""></option>
+                                                <option value="EARL "> Entreprise agricole à responsabilité limitée</option>
+                                                <option value="EI "> Entreprise individuelle</option>
+                                                <option value="EIRL "> Entreprise individuelle à responsabilité limitée (01.01.2010)</option>
+                                                <option value="EURL "> Entreprise unipersonnelle à responsabilité limitée</option>
+                                                <option value="GAEC "> Groupement agricole d'exploitation en commun</option>
+                                                <option value="GEIE "> Groupement européen d'intérêt économique</option>
+                                                <option value="GIE "> Groupement d'intérêt économique</option>
+                                                <option value="SARL "> Société à responsabilité limitée</option>
+                                                <option value="SA "> Société anonyme</option>
+                                                <option value="SAS "> Société par actions simplifiée</option>
+                                                <option value="SASU "> Société par actions simplifiée unipersonnelle</option>
+                                                <option value="SC "> Société civile</option>
+                                                <option value="SCA "> Société en commandite par actions</option>
+                                                <option value="SCI "> Société civile immobilière</option>
+                                                <option value="SCIC "> Société coopérative d'intérêt collectif</option>
+                                                <option value="SCM "> Société civile de moyens</option>
+                                                <option value="SCOP "> Société coopérative ouvrière de production</option>
+                                                <option value="SCP "> Société civile professionnelle</option>
+                                                <option value="SCS "> Société en commandite simple</option>
+                                                <option value="SEL "> Société d'exercice libéral</option>
+                                                <option value="SELAFA "> Société d'exercice libéral à forme anonyme</option>
+                                                <option value="SELARL "> Société d'exercice libéral à responsabilité limitée</option>
+                                                <option value="SELAS "> Société d'exercice libéral par actions simplifiée</option>
+                                                <option value="SELCA "> Société d'exercice libéral en commandite par actions</option>
+                                                <option value="SEM "> Société d'économie mixte</option>
+                                                <option value="SEML "> Société d'économie mixte locale</option>
+                                                <option value="SEP "> Société en participation</option>
+                                                <option value="SICA "> Société d'intérêt collectif agricole</option>
+                                                <option value="SNC "> Société en nom collectif</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3"></div>
+                                </div>
+                                <div class="row" style="margin-bottom: 5px">
+                                    <div class="col-sm-3"></div>
+                                    <div class="col-sm-6">
+                                        <label class="text-uppercase">secteur d'activité :</label>
+                                        <div class="input-group">
+                                            <select name="StatuJuridique" class="form-control" ng-model="demandepro.infoSociete.secteurActivite" style="width: 500px">
+                                                <option label="-- Sélectionner --"></option>
+                                                <option value="A">AGRICULTURE, SYLVICULTURE ET PÊCHE</option>
+                                                <option value="B">INDUSTRIES EXTRACTIVES</option>
+                                                <option value="C">INDUSTRIE MANUFACTURIÈRE</option>
+                                                <option value="D">PROD. &amp; DISTRIBUTION ÉLECTRICITÉ, GAZ, VAPEUR &amp; AIR CONDITIONNÉ</option>
+                                                <option value="E">PROD. &amp; DISTRIB. EAU ASSAINISST, GESTION DÉCHETS &amp; DÉPOLLUTION</option>
+                                                    <option
+                                                        value="F">CONSTRUCTION</option>
+                                                        <option value="G">COMMERCE ; RÉPARATION D'AUTOMOBILES ET DE MOTOCYCLES</option>
+                                                        <option
+                                                            value="H">TRANSPORTS ET ENTREPOSAGE</option>
+                                                            <option value="I">HÉBERGEMENT ET RESTAURATION</option>
+                                                            <option value="J">INFORMATION ET COMMUNICATION</option>
+                                                            <option value="K">ACTIVITÉS FINANCIÈRES ET D'ASSURANCE</option>
+                                                            <option value="L">ACTIVITÉS IMMOBILIÈRES</option>
+                                                            <option value="M">ACTIVITÉS SPÉCIALISÉES, SCIENTIFIQUES ET TECHNIQUES</option>
+                                                            <option
+                                                                value="N">ACTIVITÉS DE SERVICES ADMINISTRATIFS ET DE SOUTIEN</option>
+                                                                <option
+                                                                    value="O">ADMINISTRATION PUBLIQUE</option>
+                                                                    <option value="P">ENSEIGNEMENT</option>
+                                                                    <option value="Q">SANTÉ HUMAINE ET ACTION SOCIALE</option>
+                                                                    <option value="R">ARTS, SPECTACLES ET ACTIVITÉS RÉCRÉATIVES</option>
+                                                                    <option
+                                                                        value="S">AUTRES ACTIVITÉS DE SERVICES</option>
+                                                                        <option value="T">ACTIV. MÉNAGES : EMPLOYEURS, PRODUC. BIENS &amp; SERV.
+                                                                            (USAGE PROPRE)</option>
+                                                                        <option value="U">ACTIVITÉS EXTRA-TERRITORIALES</option>
+                                            </select>
+    
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3"></div>
+                                </div>
+                                <div class="row" style="margin-bottom: 5px">
+                                    <div class="col-sm-3"></div>
+                                    <div class="col-sm-6">
+    
+                                        <div class="input-group">
+    
+                                            </span>
+                                            <span class="input-group-addon" style="background-color: white; border: 0">
+                                                <a href="#" data-toggle="tooltip" title="Entrer le nom de votre société" class="pull-left">
+                                                    <span class="" style="color:#663399" aria-hidden="true">&nbsp;</span>&nbsp;&nbsp;</a>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3"></div>
+                                </div>
+                            </div>
+                        </div>
+    
+            </div>
+    
+            <div class="row page-header" style="background-color: #f8f8f8; padding:0px ; margin: 10px; min-height: 50px;">
+                <div class="col-md-4"></div>
+                <div class="col-md-2 nopadding text-center">
+                    <button ng-disabled="node.next === 'form'" class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px;margin-bottom: 2px"
+                        ng-click="  vm.viewTreePanel = true;vm.viewFormPanel = false; ">
+                        <span class="glyphicon glyphicon-chevron-left "></span> PRECEDENT
+                    </button>
+                </div>
+    
+                <div class="col-md-2  nopadding text-center">
+                    <button type="submit" class="btn " style="background-color:#663399;color:white;height: 50px; width: 130px;margin: 2px" ng-click="montantProjetForm.notaire.$error.required || montantProjetForm.montantProjet.$error.required ? error = false : $nextStep();">
+                        SUIVANT
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </button>
+                </div>
+                <div class="col-md-4"></div>
+    
+    
+            </div>
+    
+            </form>
+            </section>
+        </div>
+        </div>
+    </section>
