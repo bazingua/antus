@@ -42,7 +42,7 @@
       })
       .state('demandes.createDemandeProfessionnel', {
         url: '/deposerDemandePro',
-        templateUrl: '/modules/demandes/client/views/deposerdemandesPro.client.view.html',
+        templateUrl: '/modules/demandes/client/views/demande-Financeent-Pro/demande-typeProjet.client.view.html',
         controller: 'DeposerDemandesProController',
         controllerAs: 'vm',
         data: {
