@@ -52,7 +52,15 @@ exports.invokeRolesPolicies = function () {
       resources: '/api/logicdelete/:demandeId/:state',
       permissions: '*'
     }]
-  }]);
+  },
+  {
+    roles: ['admin', 'user'],
+    allows: [{
+      resources: '/api/demandespro',
+      permissions: '*'
+    }]
+  }
+]);
 };
 
 /**

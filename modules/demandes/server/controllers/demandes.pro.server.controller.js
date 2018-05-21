@@ -6,7 +6,7 @@
 var path = require('path'),
   mongoose = require('mongoose'),
   _ = require('lodash'),
-  Demande = mongoose.model('Demande'),
+  DemandePro = mongoose.model('DemandePro'),
   ParamDemande = mongoose.model('ParamDemande'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller'));
   // etat offre
@@ -18,20 +18,19 @@ var DEMANDE_STATE_VALIDE = 5;
 var DEMANDE_STATE_REJETE = 0;
 var DEMANDE_STATE_ACCEPTE = 10;
 /**
- * Create an demande
+ * Créer une demande de financement Pro
  */
 exports.create = function (req, res) {
-  var demande = new Demande(req.body);
-  demande.user = req.user;
-  delete demande.client.password;
-  delete demande.client.confirmPwd;
-  demande.save(function (err) {
+  var demandeFinancementPro = new DemandePro(req.body);
+  demandeFinancementPro.user = req.user;
+  delete demandeFinancementPro.client; // TODO verifier que le clinet est remonté dans les données
+  demandeFinancementPro.save(function (err) {
     if (err) {
       return res.status(422).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      return res.json(demande);
+      return res.json(demandeFinancementPro);
     }
   });
 };
@@ -43,8 +42,8 @@ exports.read = function (req, res) {
   // convert mongoose document to JSON
   var demande = req.demande ? req.demande.toJSON() : {};
 
-  // Add a custom field to the Demande, for determining if the current User is the "owner".
-  // NOTE: This field is NOT persisted to the database, since it doesn't exist in the Demande model.
+  // Add a custom field to the DemandePro, for determining if the current User is the "owner".
+  // NOTE: This field is NOT persisted to the database, since it doesn't exist in the DemandePro model.
   demande.isCurrentUserOwner = !!(req.user && demande.user && demande.user._id.toString() === req.user._id.toString());
   demande.id = demande._id;
   return res.json(demande);
@@ -55,11 +54,20 @@ exports.read = function (req, res) {
  */
 exports.update = function (req, res) {
   var demande = req.demande;
+  // Données Metier
+  demande.exerciceComptable = req.body.exerciceComptable;
+  demande.resultstExploitationPositif = req.body.resultstExploitationPositif;
+  demande.fondProprePositif = req.body.fondProprePositif;
+  demande.dureeRemboursement = req.body.dureeRemboursement;
+  demande.fondCommerce = req.body.fondCommerce;
+  demande.adresse = req.body.adresse;
+  demande.chiffreAffaire = req.body.chiffreAffaire;
+  demande.infoSociete = req.body.infoSociete;
+  demande.coordonneesEmprunteur = req.body.coordonneesEmprunteur;
+  demande.infoDirigeant = req.body.infoDirigeant;
+  demande.coordonneesCoEmprunteur = req.body.coordonneesCoEmprunteur;
+
   demande.id = '' + req.demande._id;
-  demande.projet = req.body.projet;
-  demande.patrimoine = req.body.patrimoine;
-  demande.financement = req.body.financement;
-  demande.apport = req.body.apport;
   demande.updated = new Date();
   demande.__v = req.demande.__v + 1;
   demande.etat = req.demande.etat;
@@ -191,7 +199,7 @@ exports.delete = function (req, res) {
 exports.list = function (req, res) {
   req.query.active = true;
   if (req.query.user && req.query.user !== '*')
-    req.query['client.email'] = req.query.user;
+    req.query['user.email'] = req.query.user;
   delete req.query.user;
 
   if (parseInt(req.query.etat, 10))
@@ -199,7 +207,7 @@ exports.list = function (req, res) {
   else
     delete req.query.etat;
 
-  Demande.find(req.query).sort('-created').populate('user', 'displayName').exec(function (err, demandes) {
+  DemandePro.find(req.query).sort('-created').populate('user', 'displayName').exec(function (err, demandes) {
     if (err) {
       return res.status(422).send({
         message: errorHandler.getErrorMessage(err)
@@ -211,17 +219,17 @@ exports.list = function (req, res) {
 };
 
 /**
- * Demande middleware
+ * DemandePro middleware
  */
 exports.demandeByID = function (req, res, next, id) {
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return res.status(400).send({
-      message: 'Demande is invalid'
+      message: 'DemandePro is invalid'
     });
   }
 
-  Demande.findById(id).populate('user', 'displayName').exec(function (err, demande) {
+  DemandePro.findById(id).populate('user', 'displayName').exec(function (err, demande) {
     if (err) {
       return next(err);
     } else if (!demande) {
@@ -230,36 +238,36 @@ exports.demandeByID = function (req, res, next, id) {
       });
     }
     req.demande = demande;
-    next();
+    return next();
   });
 };
 
 /**
- * SET Numero Demande middleware
+ * SET Numero DemandePro middleware
  */
 exports.setNumeroDemande = function (req, res, next) {
-  ParamDemande.find().populate().exec(function (err, paramDemande) {
-    if (err || !paramDemande) {
+  ParamDemande.find().populate().exec(function (err, prmDemande) {
+    if (err || !prmDemande) {
       return next();
     }
-    if (paramDemande.length < 1 || !paramDemande[0]) {
+    if (prmDemande.length < 1 || !prmDemande[0]) {
       var numdemande = new Date().getFullYear() + '' + 1; 
       numdemande = parseInt(numdemande,10);
-      var paramDemande = new ParamDemande({counter: 1, numeroDemande: numdemande});
+      var prmDemande = new ParamDemande({counter: 1, numeroDemande: numdemande});
     } else {
-      var paramDemande = new ParamDemande(paramDemande[0]);
-      paramDemande.counter ++;
-      var numdemande = new Date().getFullYear() + '' + paramDemande.counter;
+      var prmDemande = new ParamDemande(prmDemande[0]);
+      prmDemande.counter ++;
+      var numdemande = new Date().getFullYear() + '' + prmDemande.counter;
       numdemande = parseInt(numdemande,10);
-      paramDemande.numeroDemande = numdemande;
+      prmDemande.numeroDemande = numdemande;
     }
-    paramDemande.save(function (err) {
+    prmDemande.save(function (err) {
       if (err) {
         return res.status(422).send({
           message: errorHandler.getErrorMessage(err)
         });
       }
-      req.body.numeroDemande = paramDemande.numeroDemande;
+      req.body.numeroDemande = prmDemande.numeroDemande;
       return next();
     });
   });
@@ -267,7 +275,6 @@ exports.setNumeroDemande = function (req, res, next) {
 
 
 /**
- * Demande middleware
+ * DemandePro middleware
  */
-exports.state = function (req, res, next, state) { req.active = state; next();};
-  
+exports.state = function (req, res, next, state) { req.active = state; return next();};

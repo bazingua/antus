@@ -4,7 +4,8 @@
  * Module dependencies
  */
 var demandesPolicy = require('../policies/demandes.server.policy'),
-  demandes = require('../controllers/demandes.server.controller');
+  demandes = require('../controllers/demandes.server.controller'),
+  demandesProCtrl = require('../controllers/demandes.pro.server.controller');
 
 module.exports = function (app) {
   // Demandes collection routes
@@ -33,6 +34,12 @@ module.exports = function (app) {
   // Deposer  demande routes
   app.route('/api/demandes/:demandeId/offre/:offreId/transferer').all(demandesPolicy.isAllowed)
   .put(demandes.transfererOffre);
+
+  // Demandes Pro collection routes
+  app.route('/api/demandespro').all(demandesPolicy.isAllowed)
+    .get(demandesProCtrl.list)
+    .post(demandesProCtrl.setNumeroDemande, demandesProCtrl.create);
+
 
   // Finish by binding the demande middleware
   app.param('demandeId', demandes.demandeByID);
