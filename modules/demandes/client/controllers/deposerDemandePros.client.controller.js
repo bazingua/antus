@@ -11,6 +11,15 @@
     vm.viewFormPanel = false;
     vm.typeDemande = typeDemande;
     $scope.typeDemande = vm.typeDemande;
-    console.log('vm.typeDemande', vm.typeDemande);
+
+    $scope.endNavigateTree = function(type) {
+      vm.viewTreePanel = false;
+      vm.viewFormPanel = true;
+    };
+    $scope.choicedNode;
+    $scope.endTreeSelect = function(type) {
+      $scope.choicedNode = type;
+      $scope.endNavigateTree(type);
+    };
   }
 }());

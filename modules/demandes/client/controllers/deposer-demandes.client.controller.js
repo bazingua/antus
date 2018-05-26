@@ -70,14 +70,14 @@
     ];
     $scope.banques = banques;
     $scope.choicedNode;
-    $scope.endTreeSelect = function(type) {
-      $scope.choicedNode = type;
-      vm.viewTreePanel = false;
-      vm.viewFormPanel = true;
-    };
+
     $scope.endNavigateTree = function(type) {
       vm.viewTreePanel = false;
       vm.viewFormPanel = true;
+    };
+    $scope.endTreeSelect = function(type) {
+      $scope.choicedNode = type;
+      $scope.endNavigateTree(type);
     };
     $scope.calcuulTauxNotaire = function() {
       $scope.demande.projet.fraisNotaire = ($scope.demande.projet.montantProjet * 7) / 100;

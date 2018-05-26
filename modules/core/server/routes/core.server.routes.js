@@ -14,7 +14,7 @@ module.exports = function (app) {
 
   app.route('/api/typedemande').get(function(req, res, next) {
     if (req.query.type && req.query.type === 'pro')
-      return res.json(require(path.resolve('./config/entities/arbrePro')));
+      return res.json(require(path.resolve('./config/entities/arbePro')));
     else
       return res.json(require(path.resolve('./config/entities/arbe')));
   });
