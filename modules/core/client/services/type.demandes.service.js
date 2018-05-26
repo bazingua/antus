@@ -6,7 +6,7 @@
 
   TypeService.$inject = ['$resource'];
   function TypeService($resource) {
-    return $resource('/api/typedemande');
+    return $resource('/api/typedemande?type=:type');
   }
 }());
 

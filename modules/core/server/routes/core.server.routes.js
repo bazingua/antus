@@ -13,7 +13,10 @@ module.exports = function (app) {
   app.use('/api/docs/swagger', require('express').static(require('path').resolve('./public')));
 
   app.route('/api/typedemande').get(function(req, res, next) {
-    res.json(require(path.resolve('./config/entities/arbe')));
+    if (req.query.type && req.query.type === 'pro')
+      return res.json(require(path.resolve('./config/entities/arbrePro')));
+    else
+      return res.json(require(path.resolve('./config/entities/arbe')));
   });
 
   // Return a 404 for all undefined api, module or lib routes
