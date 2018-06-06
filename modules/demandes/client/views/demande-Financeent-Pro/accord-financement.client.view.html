@@ -1,0 +1,48 @@
+<section class="row">
+  <div class="panel-body">
+                    <form name="myForm" class="form-horizontal" novalidate>
+                      <div class="row" style="min-height: 400px;padding: 50px">
+                        <div class="" style="margin-top: 5px;">
+                          <div style="width: 100%; margin-left: auto; margin-right: auto; margin-bottom: 30px" class=" text-center">
+                            <span  style="color: #555"><i class="material-icons">info</i></span>
+                            <span style="color: #777; position: relative;top: -8px;font-style: italic;font-size: 13px;"> Avez-vous déjà contacté des établissements financiers ?</span>
+                          </div>
+                          <div style="margin: auto;max-width: 500px">
+                          <div class="btn-group btn-group-toggle" data-toggle="" style="margin: auto">
+                                        
+                                          <label class="btn btn-secondary" style="background-color: #7A43B6; text-align: center; width: 230px; height: 130px; padding: 2px; margin: 10px;padding-top: 50px">
+                                                            <input type="radio" name="accordeFinancement" ng-model="demandepro.banqueContacter.banqueContacter"  id="option2" autocomplete="off" style="margin: auto;color: white;font-size: 14px"> OUI
+                                                          </label>
+
+                                                      <label class="btn btn-secondary" style="background-color: #7A43B6; text-align: center; width: 230px; height: 130px; padding: 2px; margin: 10px;;padding-top: 50px;color: white;font-size: 14px">
+                                                                <input type="radio" name="accordeFinancement" ng-model="demandepro.banqueContacter.banqueContacter"  id="option3" autocomplete="off"> NON
+                                                              </label>
+                                           
+                                        </div>
+                                    </div>
+                           
+                          </div>
+
+                        </div>
+                
+                      <div class="row page-header" style="background-color: #f8f8f8; padding:0px ; margin: 10px; min-height: 50px;">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-2 nopadding text-center">
+                          <button ng-disabled="$isFirst()" class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px;margin-bottom: 2px" ng-click="$previousStep()">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                            PRECEDENT
+                          </button>
+                        </div>
+                        <div class="col-md-2  nopadding text-center">
+                          <button class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px;margin-bottom: 2px" type="submit" ng-click="myForm.adresseActuelle.$error.required  || myForm.dateNaissance.$error.required || myForm.prenom.$error.required || myForm.NumeroTelephone.$error.required || myForm.nom.$error.required ? error = false : $nextStep();">
+                            SUIVANT
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                          </button>
+                
+                        </div>
+                        <div class="col-md-4"></div>
+                      </div>
+                
+                    </form>
+                  </div>
+                </section>

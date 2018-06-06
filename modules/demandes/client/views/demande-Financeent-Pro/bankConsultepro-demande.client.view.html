@@ -1,0 +1,41 @@
+<section>
+    <form class="form-horizontal">
+
+      <div class="row" style="min-height: 400px;padding: 25px">
+        <div class="" style="margin-top: 5px;">
+          <div style="width: 100%; margin-left: auto; margin-right: auto; margin-bottom: 30px" class=" text-center">
+            <span  style="color: #555"><i class="material-icons">info</i></span>
+            <span style="color: #777; position: relative;top: -8px;font-style: italic;font-size: 13px;"> BANQUES CONSULTES DE L'EMPRUNTEUR</span>
+          </div>
+
+            <div class="col-sm-3" ng-repeat="banque in banques">
+                <div class="col-sm-12 " ng-click="choiceBanqueConsulte(banque);">
+                    <div ng-class="{'banque-checked': banque.checked , 'banque-unchecked': !banque.checked }"> <i class="material-icons" style="font-size: 90px;color: #aaa">done</i> </div>
+                    <img ng-src="{{banque.logo}}" alt="Image" class="img-thumbnail imgBank img-radio" />
+                    <div class="btm-space-10 text-center">{{banque.libelle}}</div>
+                </div>
+
+            </div>
+        </div>
+      </div>
+      <div class="row page-header" style="background-color: #f8f8f8; padding:0px ; margin: 10px; min-height: 50px;">
+        <div class="col-md-4"></div>
+        <div class="col-md-2 nopadding text-center">
+          <button ng-disabled="$isFirst()" class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px;margin-bottom: 2px" ng-click="$previousStep()">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            PRECEDENT
+          </button>
+        </div>
+        <div class="col-md-2  nopadding text-center">
+          <button type="submit" class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px;margin-bottom: 2px" ng-click="false? error = false : (user ? $setActiveIndex($getActiveIndex() + 3) : $nextStep())">
+            SUIVANT
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </button>
+
+      </div>
+        <div class="col-md-4"></div>
+      </div>
+
+    </form>
+
+</section>
