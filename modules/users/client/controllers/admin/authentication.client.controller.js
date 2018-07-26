@@ -70,7 +70,7 @@
       SignOutService.get().$promise.then(function() {
         $state.go('home');
         $timeout(function() {
-        location.reload();
+          location.reload();
         }, 500);
       }, function () {
         Notification.error({ message: '<i class="glyphicon glyphicon-remove"></i> ' + 'Une erreur est survenue', delay: 6000 });
@@ -80,9 +80,9 @@
     function onUserSignupSuccess(response) {
       // If successful we assign the response to the global user model
       vm.authentication.user = response;
-      Notification.success({title: response.title,  message: '<i class="glyphicon glyphicon-ok"></i> ' + response.message }, 15000);
+      Notification.success({ title: response.title, message: '<i class="glyphicon glyphicon-ok"></i> ' + response.message }, 15000);
       // And redirect to the previous or home page
-      //document.getElementById("deconexion").click();
+      // document.getElementById("deconexion").click();
       signoutCurrentUser();
       // $state.go('home');
     }

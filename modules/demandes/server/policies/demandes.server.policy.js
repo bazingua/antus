@@ -23,7 +23,7 @@ exports.invokeRolesPolicies = function () {
     }]
   },
   {
-    roles: ['user', 'banque'],
+    roles: ['user', 'banque', 'pro'],
     allows: [{
       resources: '/api/demandes',
       permissions: '*'
@@ -47,14 +47,14 @@ exports.invokeRolesPolicies = function () {
     }]
   },
   {
-    roles: ['user', 'admin'],
+    roles: ['user', 'admin', 'pro'],
     allows: [{
       resources: '/api/logicdelete/:demandeId/:state',
       permissions: '*'
     }]
   },
   {
-    roles: ['admin', 'user'],
+    roles: ['admin', 'pro'],
     allows: [{
       resources: '/api/demandespro',
       permissions: '*'

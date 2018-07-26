@@ -60,17 +60,41 @@
       .state('authentication', {
         abstract: true,
         url: '/authentication',
-        templateUrl: '/modules/users/client/views/authentication/authentication.client.view.html',
-        controller: 'AuthenticationController',
-        controllerAs: 'vm'
+        templateUrl: '/modules/users/client/views/authentication/authentication.client.view.html'
       })
-      .state('authentication.signup', {
-        url: '/signup',
+      .state('authentication.signup_part', {
+        url: '/signup-particulier',
         templateUrl: '/modules/users/client/views/authentication/signup.client.view.html',
         controller: 'AuthenticationController',
         controllerAs: 'vm',
         data: {
           pageTitle: 'Signup'
+        },
+        resolve: {
+          userType: function () {
+            return 'Part.';
+          }
+        }
+      })
+      .state('authentication.signup_pro', {
+        url: '/signup-pro',
+        templateUrl: '/modules/users/client/views/authentication/signup.client.view.html',
+        controller: 'AuthenticationController',
+        controllerAs: 'vm',
+        data: {
+          pageTitle: 'Signup'
+        },
+        resolve: {
+          userType: function () {
+            return 'Pro.';
+          }
+        }
+      })
+      .state('authentication.signup', {
+        url: '/signup',
+        templateUrl: '/modules/users/client/views/authentication/signup.choose.client.view.html',
+        data: {
+          pageTitle: 'Signup choose'
         }
       })
       .state('authentication.signin', {

@@ -12,7 +12,7 @@ module.exports = function (app) {
   var setUsername = function (req, res, next) {
     req.body.username = req.body.email;
     next();
-  }
+  };
 
   // Setting up the users password api
   app.route('/api/auth/forgot').post(users.forgot);
@@ -20,7 +20,7 @@ module.exports = function (app) {
   app.route('/api/auth/reset/:token').post(users.reset);
 
   // Setting up the users authentication api
-  app.route('/api/auth/signup').post(setUsername ,users.signup);
+  app.route('/api/auth/signup').post(setUsername, users.signup);
   app.route('/api/auth/signin').post(users.signin);
   app.route('/api/auth/signout').get(users.signout);
 };
