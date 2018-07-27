@@ -81,7 +81,7 @@
      </div>
      <div class="row">
       <label class="col-sm-6">Autre Bien : {{demande.patrimoine.bienAutre}} XOF</label>
-      <label class="col-sm-6">Durée Locatif : {{demande.patrimoine.duAutre}}</label>
+      <label class="col-sm-6">Durée Autre Bien : {{demande.patrimoine.duAutre}}</label>
      </div><br>
 
       
@@ -235,10 +235,25 @@
        <br>
        
       <div class="row">
-      <label class="col-sm-6">Verement : {{demande.financement.versement}} XOF</label>
+      <label class="col-sm-6">Versement : {{demande.financement.versement}} XOF</label>
       <label class="col-sm-6">Banque Principale : {{demande.financement.banque}}</label>
      </div>
+     <table><thead>
+            <tr>
+                <th>
+                    pays
+                </th>
 
+            </tr>
+
+        </thead>
+        <tbody>
+            <tr >
+                <td ng-repaet="p in demande.financement.banqueContacter">{{p}}</td>
+            </tr>
+        </tbody>
+
+    </table>
      <br>
      
       <br>

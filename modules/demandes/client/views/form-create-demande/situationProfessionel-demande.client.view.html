@@ -7,7 +7,7 @@
             <div class="panel-body" style="margin-top: 50px;">
               <div style="width: 100%; margin-left: auto; margin-right: auto; margin-bottom: 30px" class=" text-center">
                 <span  style="color: #555"><i class="material-icons">info</i></span>
-                <span style="color: #777; position: relative;top: -8px;font-style: italic;font-size: 13px;"> PROFESSION DE L'EMPRUNTEUR ?</span>
+                <span style="color: #777; position: relative;top: -8px;font-style: italic;font-size: 13px;"> Quelle est votre situation professionnelle ? </span>
               </div>
 
             <fieldset>
@@ -23,6 +23,7 @@
                               <option  value="CDD">CDD</option>
                               <option  value="CDI">CDI</option>
                               <option  value="INTERIM">INTERIM</option>
+                              <option  value="AUTRE">AUTRE</option>
                             </select>
                         </div>
                       <label class="control-label col-sm-4">
@@ -37,6 +38,24 @@
               <div ng-if="demande.patrimoine.profession.typeContrat === 'CDD' || demande.patrimoine.profession.typeContrat === 'INTERIM'">
                     <div class="form-group">
                         <label class="control-label col-sm-4" style="text-align: right ">Durée du Contrat :
+                      </label>
+                        <div class="col-sm-4">
+                            <input type="text" name="dureeTravail" class="form-control" ng-model="demande.patrimoine.profession.dureeContrat" required>
+                            <div ng-show="myForm.$submitted && myForm.dureeTravail.$error.required" class="form-text-error">Veuillez entrer la duree de votre contrat.</div>
+                        </div>
+                      <label class="control-label col-sm-1">
+                        <a href="#" data-toggle="tooltip" title="La durée de votre contrat est obligatoire" class="pull-left">
+                          <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span></a>
+                      </label>
+
+                    </div>
+                </div>
+
+
+                
+              <div ng-if="demande.patrimoine.profession.typeContrat === 'AUTRE'">
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" style="text-align: right ">Préciser la nature du contrat :
                       </label>
                         <div class="col-sm-4">
                             <input type="text" name="dureeTravail" class="form-control" ng-model="demande.patrimoine.profession.dureeContrat" required>

@@ -1,13 +1,14 @@
 
 <div style="background-color: #7a43b6; color: #fff; height: auto">
-    <h3 class="color-white padding">{{node.libelle}}</h3>
+    <h3 class="color-white padding">{{node.description}}</h3>
 </div>
 
 <br/>
 
 <div class="panel-body" style="text-align: center; min-height: 410px">
+   <p><strong style="color: #663399; font-size: 38px; font-weight: bold;text-align: left; font-family: verdana">Votre projet immobilier</strong></p> 
   <div class="panel panel-body well" style="padding-bottom:15px;">
-    <strong>Quels taux de crédit immobilier pour votre profil et votre projet ? Comparez plusieurs offres personnalisées parmi 110 partenaires bancaires. Gratuitement, sans engagement</strong>, vous pourrez optimiser votre projet immobilier. En 2016, ANTUS a ainsi accompagné <strong style="color:#663399">+ de 100 nouveaux propriétaires !</strong>
+    <p style="font-size: 18px">Choisissez l'offre de crédit la mieux adaptée à votre projet et profil en comparant pluiseurs offres personalisés de nos partenaires bancaires. Avec <strong style="color: #663399;font-weight: bold">ANTUS</strong> vos rêves deviennent une réalité!</p>
   </div>
   <div class="btn-group" role="group" ng-repeat="type in node.fils"  class="" style="text-align: center; margin: 5px" aria-label="Basic example">
     <span ng-click="choiceType(type)"  style="font-weight: bold" class="text-uppercase">

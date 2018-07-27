@@ -25,31 +25,31 @@
       },
       {
         templateUrl: 'modules/demandes/client/views/form-create-demande/patrimoine-demande.client.view.html',
-        title: 'Définition du Patrimoine Immoblier'
+        title: 'Définition du patrimoine immoblier'
       },
       {
         templateUrl: 'modules/demandes/client/views/form-create-demande/revenu-demande.client.veiw.html',
-        title: 'Definition des Revenus'
+        title: 'Definition des revenus'
       },
       {
         templateUrl: 'modules/demandes/client/views/form-create-demande/autre-revenu-demande.client.view.html',
-        title: 'Autres  Revenus '
+        title: 'Autres revenus '
       },
       {
         templateUrl: 'modules/demandes/client/views/form-create-demande/creditencours-demande.client.view.html',
-        title: 'Quels sont Vos Crédits Encours'
+        title: 'Vos crédits encours'
       },
       {
         templateUrl: 'modules/demandes/client/views/form-create-demande/situationProfessionel-demande.client.view.html',
-        title: 'Situation Professionnelle'
+        title: 'Situation professionnelle'
       },
       {
         templateUrl: 'modules/demandes/client/views/form-create-demande/montantProjet-demande.client.view.html',
-        title: 'Montant de votre  Pret'
+        title: 'Montant de votre  prêt'
       },
       {
         templateUrl: 'modules/demandes/client/views/form-create-demande/bank-demande.client.view.html',
-        title: 'Banque Principal'
+        title: 'Banque principale'
       },
       {
         templateUrl: 'modules/demandes/client/views/form-create-demande/bankConsulte-demande.client.view.html',
@@ -57,15 +57,15 @@
       },
       {
         templateUrl: 'modules/demandes/client/views/form-create-demande/email-demande.client.view.html',
-        title: 'Renseignez votre adresse email'
+        title: 'Création de votre compte client'
       },
       {
         templateUrl: 'modules/demandes/client/views/form-create-demande/coordonnee-demande.client.view.html',
-        title: 'Coordonnee Demande'
+        title: 'Vos coordonnées'
       },
       {
         templateUrl: 'modules/demandes/client/views/form-create-demande/detail-demande.client.view.html',
-        title: 'Votre demande'
+        title: 'Récapitulatif de votre demande'
       }
     ];
     $scope.banques = banques;

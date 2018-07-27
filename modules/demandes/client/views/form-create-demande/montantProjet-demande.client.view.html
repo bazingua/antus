@@ -7,7 +7,7 @@
       <div class="" style="margin-top: 10px;">
         <div style="width: 100%; margin-left: auto; margin-right: auto; margin-bottom: 30px" class=" text-center">
           <span  style="color: #555"><i class="material-icons">info</i></span>
-          <span style="color: #777; position: relative;top: -8px;font-style: italic;font-size: 13px;"> LE MONTANT DE VOTRE PRÊT</span>
+          <span style="color: #777; position: relative;top: -8px;font-style: italic;font-size: 13px;"> Quel est le montant et les modalités du crédit que vous souhaitez ?            </span>
         </div>
 
         <div class="row" style="margin-top: 15px">
@@ -67,11 +67,13 @@
                               </a>
                             </span>
                             <span class="input-group-addon" style="background-color: white; border: 0">
-                              <a href="#" data-toggle="tooltip" title="Montant finale souhaitée" class="pull-right">
-                                <span class="" style="color:#663399" aria-hidden="true"> </span>&nbsp;&nbsp;&nbsp;
-                              </a>
-                            </span>
+                                <a href="#" data-toggle="tooltip" title="Preciser la durée souhaitée de votre projet" class="pull-right">
+                                  <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span>
+                                </a>
+                              </span>
                           </div>
+                          <div ng-show="myForm.$submitted && myForm.montantFinal.$error.required" class="form-text-error">Veuillez entrer la durée souhaitée de votre projet.</div>
+                   
                         </div>
                         <div class="col-sm-3"></div>
                       </div>
@@ -112,7 +114,7 @@
       </div>
 
       <div class="col-md-2 nopadding text-center">
-        <button type="submit" class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px;margin-bottom: 2px" ng-click="myForm.montantFinal.$error.required  || myForm.montantApport.$error.required ? error = false : $nextStep();">
+        <button type="submit" class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px;margin-bottom: 2px" ng-click="myForm.dureeSouhaite.$error.required  || myForm.montantFinal.$error.required  || myForm.montantApport.$error.required ? error = false : $nextStep();">
           SUIVANT
           <span class="glyphicon glyphicon-chevron-right"></span>
         </button>

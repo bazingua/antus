@@ -20,6 +20,7 @@ angular.module('users.model').factory('AdresseModel', [
       this.telephoneBureau = data.telephoneBureau;
       this.telephoneFixe = data.telephoneFixe;
       this.telephonePortable = data.telephonePortable;
+      this.codePostale= data.codePostale;
     }
 
     return AdresseModel;

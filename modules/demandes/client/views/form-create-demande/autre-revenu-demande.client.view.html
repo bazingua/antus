@@ -4,7 +4,7 @@
         <div class="" style="margin-top: 50px;padding: 35px">
           <div style="width: 100%; margin-left: auto; margin-right: auto; margin-bottom: 30px" class=" text-center">
             <span  style="color: #555"><i class="material-icons">info</i></span>
-            <span style="color: #777; position: relative;top: -8px;font-style: italic;font-size: 13px;">QUELS SONT VOS AUTRES REVENUS ?</span>
+            <span style="color: #777; position: relative;top: -8px;font-style: italic;font-size: 13px;">DISPOSEZ VOUS  D'AUTRES REVENUS ?</span>
           </div>
 
           <div class="row" style="margin-bottom: 5px">
@@ -13,7 +13,7 @@
                   <label>REVENUS LOCATIFS EXISTANT PAR MOIS :</label>
                 <div class="input-group">
                     <div ng-if="vm.demande.patrimoine.revenu.locatif != 0 ">
-                        <input type="number" ng-model="demande.patrimoine.revenu.locatif" name="revenuLocatif" class="form-control" required>
+                        <input type="number" ng-model="demande.patrimoine.revenu.locatif" name="revenuLocatif" class="form-control">
                         </div>
                         <div ng-if="vm.demande.patrimoine.revenu.locatif == 0 ">
                             <input type="number" ng-model="demande.patrimoine.revenu.locatif" name="revenuLocatif" class="form-control">
@@ -21,9 +21,8 @@
                   <span class="input-group-addon"><a class="pull-left"><span>F CFA</span></a>
                   </span>
                   <span class="input-group-addon" style="background-color: white; border: 0">
-                      <a href="#" data-toggle="tooltip" title="constituent des revenus fonciers et sont soumis à l'impôt sur le revenu. Pour déterminer le résultat
-                      foncier - bénéficiaire ou déficitaire - des règles précises sont à respecter" class="pull-left">
-                    <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span>
+                      <a href="#" data-toggle="tooltip" title="constituent des revenus fonciers et sont soumis à l'impôt sur le revenu. Pour déterminer le résultat foncier - bénéficiaire ou déficitaire - des règles précises sont à respecter" class="pull-left">
+                    <span class="glyphicon glyphicon-info-sign" style="color:#663399" aria-hidden="true"></span>
                   </a>
                     </span>
                 </div>
@@ -35,7 +34,7 @@
             <div class="row" style="margin-bottom: 5px">
                 <div class="col-sm-3"></div>
                 <div class="col-sm-6">
-                    <label>PENSION ALIMENTAIRES :</label>
+                    <label>PENSIONS ALIMENTAIRES :</label>
                   <div class="input-group">
                       <input type="number" name="passionAli" class="form-control" id="passionAli" ng-model="demande.patrimoine.revenu.pensionAlimentaire">
                     <span class="input-group-addon"><a class="pull-left"><span>F CFA</span></a>
@@ -53,7 +52,27 @@
               <div class="row" style="margin-bottom: 5px">
                   <div class="col-sm-3"></div>
                   <div class="col-sm-6">
-                      <label>CESSION DE SALAIRES :</label>
+                      <label>CESSIONS DE SALAIRES :</label>
+                    <div class="input-group">
+                        <input type="number" name="cessionSalaire" class="form-control" id="cessionSalaire" ng-model="demande.patrimoine.revenu.cessionSalaire">
+                      <span class="input-group-addon"><a class="pull-left"><span>F CFA</span></a>
+                      </span>
+                      <span class="input-group-addon" style="background-color: white; border: 0">
+                          <a href="#" data-toggle="tooltip" title="La cession sur salaire est un acte volontaire. Afin de rembourser un crédit,
+                          l'emprunteur peut demander à son employeur de prélever la mensualité sur son salaire et de la verser directement au créancier.
+                          Il s'agit là d'une cession sur salaire. L'employeur ne connaît à aucun moment l'objet du crédit réalisé." class="pull-left">
+                        <span class="glyphicon glyphicon-info-sign" style="color:#663399" aria-hidden="true"></span>
+                      </a>
+                        </span>
+                    </div>
+                  </div>
+                  <div class="col-sm-3"></div>
+                </div>
+
+                <div class="row" style="margin-bottom: 5px">
+                  <div class="col-sm-3"></div>
+                  <div class="col-sm-6">
+                      <label>AUTRE REVENU :</label>
                     <div class="input-group">
                         <input type="number" name="cessionSalaire" class="form-control" id="cessionSalaire" ng-model="demande.patrimoine.revenu.cessionSalaire">
                       <span class="input-group-addon"><a class="pull-left"><span>F CFA</span></a>
@@ -83,7 +102,7 @@
         </div>
 
         <div class="col-md-2  nopadding text-center">
-          <button type="submit" class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px;margin-bottom: 2px" ng-click="myForm.revenuLocatif.$error.required ? error = false : $nextStep();">
+          <button type="submit" class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px;margin-bottom: 2px" ng-click="$nextStep();">
             SUIVANT
             <span class="glyphicon glyphicon-chevron-right"></span>
           </button>

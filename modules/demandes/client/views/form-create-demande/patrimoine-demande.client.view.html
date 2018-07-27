@@ -9,7 +9,10 @@
                         <span style="color: #555">
                             <i class="material-icons">info</i>
                         </span>
-                        <span style="color: #777; position: relative;top: -8px;font-style: italic;font-size: 13px;">Définition de Votre Patrimoine Immoblier</span>
+                        <span style="color: #777; position: relative;top: -8px;font-style: italic;font-size: 13px;">
+                            Disposez-vous d’un patrimoine immobilier ? Si oui, merci de le préciser la valeur du bien ainsi que le capital restant dû. Sinon cliquer sur suivant.
+
+                        </span>
                     </div>
 
                     <br/>
@@ -19,7 +22,7 @@
                         </label>
                         <div class="col-sm-4" style="margin-bottom: 5px">
                             <div class="input-group">
-                                <input type="text" name="Valprincipale" placeholder=" VALEUR DU BIEN" class="form-control" id="Valprincipale" ng-model="demande.patrimoine.bienPrincipal">
+                                <input type="number" name="Valprincipale" placeholder=" VALEUR DU BIEN" class="form-control" id="Valprincipale" ng-model="demande.patrimoine.bienPrincipal">
                                 <span class="input-group-addon">
                                     <a class="pull-left">
                                         <span>F CFA</span>
@@ -29,7 +32,7 @@
                         </div>
                         <div class="col-sm-4" style="margin-bottom: 5px">
                             <div class="input-group">
-                                <input type="text" name="Duprincipale" placeholder="CAPITAL RESTANT DÛ" class="form-control" id="Duprincipale" ng-model="demande.patrimoine.duPrincipal">
+                                <input type="number datetime" name="Duprincipale" placeholder="CAPITAL RESTANT DÛ" class="form-control" id="Duprincipale" ng-model="demande.patrimoine.duPrincipal">
                                 <span class="input-group-addon">
                                     <a class="pull-left">
                                         <span>F CFA</span>
@@ -51,7 +54,7 @@
                         </label>
                         <div class="col-sm-4" style="margin-bottom: 5px">
                             <div class="input-group">
-                                <input type="text" name="ValSecondaire" placeholder=" VALEUR DU BIEN" class="form-control" id="ValSecondaire" ng-model="demande.patrimoine.bienSecondaire">
+                                <input type="number" name="ValSecondaire" placeholder=" VALEUR DU BIEN" class="form-control" id="ValSecondaire" ng-model="demande.patrimoine.bienSecondaire">
                                 <span class="input-group-addon">
                                     <a class="pull-left">
                                         <span>F CFA</span>
@@ -61,7 +64,7 @@
                         </div>
                         <div class="col-sm-4" style="margin-bottom: 5px">
                             <div class="input-group">
-                                <input type="text" name="DuSecondaire" placeholder="CAPITAL RESTANT DÛ" class="form-control" id="DuSecondaire" ng-model="demande.patrimoine.duSecondaire">
+                                <input type="number" name="DuSecondaire" placeholder="CAPITAL RESTANT DÛ" class="form-control" id="DuSecondaire" ng-model="demande.patrimoine.duSecondaire">
                                 <span class="input-group-addon">
                                     <a class="pull-left">
                                         <span>F CFA</span>
@@ -82,7 +85,7 @@
                         </label>
                         <div class="col-sm-4" style="margin-bottom: 5px">
                             <div class="input-group">
-                                <input type="text" name="ValLocatif" placeholder=" VALEUR DU BIEN" class="form-control" id="ValLocatif" bienLocatif ng-model="demande.patrimoine.bienLocatif">
+                                <input type="number" name="ValLocatif" placeholder=" VALEUR DU BIEN" class="form-control" id="ValLocatif" bienLocatif ng-model="demande.patrimoine.bienLocatif">
                                 <span class="input-group-addon">
                                     <a class="pull-left">
                                         <span>F CFA</span>
@@ -92,7 +95,7 @@
                         </div>
                         <div class="col-sm-4" style="margin-bottom: 5px">
                             <div class="input-group">
-                                <input type="text" name="DuLocatif" placeholder="CAPITAL RESTANT DÛ" class="form-control" id="DuLocatif" ng-model="demande.patrimoine.duLocatif">
+                                <input type="number" name="DuLocatif" placeholder="CAPITAL RESTANT DÛ" class="form-control" id="DuLocatif" ng-model="demande.patrimoine.duLocatif">
                                 <span class="input-group-addon">
                                     <a class="pull-left">
                                         <span>F CFA</span>
@@ -115,7 +118,7 @@
                         </label>
                         <div class="col-sm-4" style="margin-bottom: 5px">
                             <div class="input-group">
-                                <input type="text" name="ValAutre" placeholder=" VALEUR DU BIEN" class="form-control" id="ValAutre" ng-model="demande.patrimoine.bienAutre">
+                                <input type="number" name="ValAutre" placeholder=" VALEUR DU BIEN" class="form-control" id="ValAutre" ng-model="demande.patrimoine.bienAutre">
                                 <span class="input-group-addon">
                                     <a class="pull-left">
                                         <span>F CFA</span>
@@ -125,7 +128,7 @@
                         </div>
                         <div class="col-sm-4" style="margin-bottom: 5px">
                             <div class="input-group">
-                                <input type="text" name="DuAutre" placeholder="CAPITAL RESTANT DÛ" class="form-control" id="DuAutre" ng-model="demande.patrimoine.duAutre">
+                                <input type="number" name="DuAutre" placeholder="CAPITAL RESTANT DÛ" class="form-control" id="DuAutre" ng-model="demande.patrimoine.duAutre">
                                 <span class="input-group-addon">
                                     <a class="pull-left">
                                         <span>F CFA</span>

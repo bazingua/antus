@@ -34,7 +34,7 @@
         title: 'Avez vous déja consulté des banques'
       },
       {
-        templateUrl: 'modules/demandes/client/views/demande-Financeent-Pro/adresse-projet.view.client.html',
+        templateUrl: 'modules/demandes/client/views/demande-Financeent-Pro/demandePro-societe.client.view.html',
         title: 'Quel est le nom de votre entreprise ?'
       },
       {
