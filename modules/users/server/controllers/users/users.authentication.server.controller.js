@@ -42,8 +42,8 @@ exports.signup = function (req, res) {
       // Remove sensitive data before login
       user.password = undefined;
       user.salt = undefined;
-      if (!user.active){
-        return res.status(200).send({title: "Création d'administrateur", message: "L'administrateur est créé avec succes"});
+      if (!user.active) {
+        return res.status(200).send({ title: 'Création d\'administrateur', message: 'L\'administrateur est créé avec succes' });
       } else {
         req.login(user, function (err) {
           if (err) {

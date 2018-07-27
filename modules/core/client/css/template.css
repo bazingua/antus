@@ -261,6 +261,13 @@ fieldset[disabled] .btn-theme {
 	padding: 20px 30px;
 }
 
+.btn-theme-md-small {
+	font-size: 15px;
+	font-weight: 600;
+	padding: 15px 20px;
+}
+
+
 /*------------------------------------------------------------------
     [Progress Bar]
 ------------------------------------------------------------------*/

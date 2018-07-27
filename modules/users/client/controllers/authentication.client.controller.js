@@ -5,9 +5,9 @@
     .module('users')
     .controller('AuthenticationController', AuthenticationController);
 
-  AuthenticationController.$inject = ['$scope', '$rootScope', '$state', 'UsersService', '$location', '$window', 'Authentication', 'PasswordValidator', 'Notification'];
+  AuthenticationController.$inject = ['$scope', '$rootScope', '$state', 'UsersService', '$location', '$window', 'Authentication', 'PasswordValidator', 'Notification', 'userType'];
 
-  function AuthenticationController($scope, $rootScope, $state, UsersService, $location, $window, Authentication, PasswordValidator, Notification) {
+  function AuthenticationController($scope, $rootScope, $state, UsersService, $location, $window, Authentication, PasswordValidator, Notification, userType) {
     var vm = this;
 
     vm.authentication = Authentication;
@@ -34,7 +34,12 @@
 
         return false;
       }
-
+      vm.credentials.roles = [];
+      if (userType === 'Pro.') {
+        vm.credentials.roles.push('pro');
+      } else {
+        vm.credentials.roles.push('user');
+      }
       UsersService.userSignup(vm.credentials)
         .then(onUserSignupSuccess)
         .catch(onUserSignupError);
@@ -82,14 +87,14 @@
       vm.authentication.user = response;
       Notification.info({ message: 'Bienvenue ' + response.prenom });
       // And redirect to the previous or home page
-      if (_.indexOf(response.roles, 'user') > -1) {
+      if (_.indexOf(response.roles, 'user') > -1 || _.indexOf(response.roles, 'pro') > -1) {
         $rootScope.espaceUser = 'Espace Client';
         $state.go('userHome.client');
       } else if (_.indexOf(response.roles, 'admin') > -1) {
         $rootScope.espaceUser = 'Espace Administrateur';
         $state.go('homeadmin');
       } else if (_.indexOf(response.roles, 'banque') > -1) {
-        $rootScope.espaceUser = 'Espace Banque';        
+        $rootScope.espaceUser = 'Espace Banque';
         $state.go('userHome.banque');
       } else {
         $state.go($state.previous.state.name || 'home', $state.previous.params);
