@@ -47,6 +47,9 @@
       $scope.choicedNode = type;
       $scope.endNavigateTree(type);
     };
+    $scope.calculMontantPret = function() {
+      $scope.demandepro.montantSouhaite = $scope.demandepro.montantProjet - $scope.demandepro.montantApport;
+    };
 /**
      * @name  choiceBanquePrincipale
      * @description : cette methode permet de choisir la banque principale
