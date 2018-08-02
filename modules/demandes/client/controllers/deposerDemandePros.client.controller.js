@@ -77,8 +77,7 @@
      * la methode qui permet de sauvegarder une demande
      */
     $scope.saveDemande = function() {
-      console.log('xxxxxxxxxxxxxx', $scope.demandepro);
-      var demandeToSave = angular.copy($scope.demande);
+      var demandeToSave = angular.copy($scope.demandepro);
       demandeToSave.projet.type = $scope.choicedNode;
       if ($scope.user) {
         UsersService.getMe()
@@ -96,7 +95,9 @@
           Notification.error({ message: 'Impossible de retrouver vos informations... ', title: 'Une erreur est survenue' });
         });
       } else {
-        UsersService.userSignup($scope.demande.client)
+        $scope.demandeToSave.client.roles = [];
+        $scope.demandeToSave.client.roles.push('pro');
+        UsersService.userSignup($scope.demandeToSave.client)
         .then(function (response) {
           demandeToSave.client = response;
           DemandesService.savePro(demandeToSave)
