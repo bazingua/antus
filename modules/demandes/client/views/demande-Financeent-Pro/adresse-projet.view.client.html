@@ -15,7 +15,7 @@
             <div class="col-sm-6">
               <label>VILLE :</label>
               <div class="input-group">
-                <input type="text" ng-model="demandepro.adresse.ville" name="villeProjet" class="form-control" required>
+                <input type="text" ng-model="demandepro.client.adresse.ville" name="villeProjet" class="form-control" required>
 
                 <span class="input-group-addon" style="background-color: white; border: 0">
                   <a href="#" data-toggle="tooltip" title="" class="pull-left">
@@ -33,7 +33,7 @@
             <div class="col-sm-6">
               <label>CODE POSTAL :</label>
               <div class="input-group">
-                <input type="text" ng-model="demandepro.adresse.codePostale" name="codePostalProjet" class="form-control" />
+                <input type="text" ng-model="demandepro.client.adresse.codePostale" name="codePostalProjet" class="form-control" />
 
                 <span class="input-group-addon" style="background-color: white; border: 0">
                   <a href="#" data-toggle="tooltip" title="" class="pull-left">
@@ -50,7 +50,7 @@
             <div class="col-sm-6">
               <label>PAYS :</label>
               <div class="input-group">
-                <input type="text" name="paysProjet" class="form-control" id="paysProjet"  ng-model="demandepro.adresse.pays">
+                <input type="text" name="paysProjet" class="form-control" id="paysProjet"  ng-model="demandepro.client.adresse.pays">
 
                 <span class="input-group-addon" style="background-color: white; border: 0">
                   <a href="#" data-toggle="tooltip" title="" class="pull-left">
@@ -67,7 +67,7 @@
             <div class="col-sm-6">
               <label>ADRESSE : </label>
               <div class="input-group">
-                <textarea type="number" name="adresse" class="form-control" id="montantSouhaite" ng-model="demandepro.adresse.adresse"></textarea>
+                <textarea type="number" name="adresse" class="form-control" id="montantSouhaite" ng-model="demandepro.client.adresse.adresse"></textarea>
                 <span class="input-group-addon" style="background-color: white; border: 0">
                   <a href="#" data-toggle="tooltip" title="" class="pull-left">
                     <span class="glyphicon glyphicon-info-sign" style="color:#663399" aria-hidden="true"></span>
@@ -93,8 +93,8 @@
 
         <div class="col-md-2  nopadding text-center">
           <button type="submit" class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px;margin-bottom: 2px"
-            ng-click="myForm.revenuLocatif.$error.required ? error = false : $nextStep();">
-            SUIVANT
+            ng-click="myForm.revenuLocatif.$error.required ? error = false : saveDemande();">
+            TERMINER
             <span class="glyphicon glyphicon-chevron-right"></span>
           </button>
         </div>

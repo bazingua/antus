@@ -13,7 +13,8 @@
                       <div class="col-sm-6">
                           <label>MONTANT TOTAL DE VOTRE PROJET :</label>
                         <div class="input-group">
-                            <input type="number" ng-model="demandepro.montantProjet" name="montantProjet" class="form-control" required>
+                            <input type="number" ng-model="demandepro.montantProjet" name="montantProjet" 
+                            ng-change="calculMontantPret()" class="form-control" required>
                                
                           <span class="input-group-addon"><a class="pull-left"><span>F CFA</span></a>
                           </span>
@@ -33,7 +34,8 @@
                         <div class="col-sm-6">
                             <label>MONTANT TOTAL DE VOTRE APPORT :</label>
                           <div class="input-group">
-                              <input type="number" name="montantApport" class="form-control" id="montantApport" ng-model="demandepro.montantApport">
+                              <input type="number" name="montantApport" class="form-control" id="montantApport" 
+                              ng-model="demandepro.montantApport"  ng-change="calculMontantPret()" required>
                             <span class="input-group-addon"><a class="pull-left"><span>F CFA</span></a>
                             </span>
                             <span class="input-group-addon" style="background-color: white; border: 0">

@@ -12,14 +12,15 @@
       demandeId: '@_id'
     }, {
 
-      getById: { method: 'GET',  params: { demandeId: '@demandeId' }, isArray: false },
+      getById: { method: 'GET', params: { demandeId: '@demandeId' }, isArray: false },
       findDemande: { method: 'GET', url: '/api/demandes?user=:user&etat=:etat', isArray: true },
       remove: { method: 'PUT', url: '/api/logicdelete/:demandeId/:state', params: { demandeId: '@demandeId', state: '@state' } },
       deposerOfr: { method: 'PUT', url: '/api/demandes/:demandeId/offre/deposer', params: { demandeId: '@demandeId' } },
       validerDmd: { method: 'PUT', url: '/api/demandes/:demandeId/valider', params: { demandeId: '@demandeId' } },
       transfererOfr: { method: 'PUT', url: '/api/demandes/:demandeId/offre/:offreId/transferer', params: { demandeId: '@demandeId', offreId: '@offreId' } },
-      update: { method: 'PUT'},
-      saveDemande: { method: 'POST', url: '/api/demandes'}
+      update: { method: 'PUT' },
+      saveDemande: { method: 'POST', url: '/api/demandes' },
+      saveDemandePro: { method: 'POST', url: '/api/demandespro' }
     });
 
     angular.extend(Demande, {
@@ -38,6 +39,16 @@
           }, demande).$promise;
         } else {
           return this.saveDemande(demande).$promise;
+        }
+      },
+
+      savePro: function (demande) {
+        if (demande.id) {
+          return this.$update({
+            demandeId: demande.id
+          }, demande).$promise;
+        } else {
+          return this.saveDemandePro(demande).$promise;
         }
       },
       /**
