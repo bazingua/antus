@@ -18,10 +18,6 @@
         title: 'Définissons le montant du prêt'
       },
       {
-        templateUrl: 'modules/demandes/client/views/demande-Financeent-Pro/adresse-projet.view.client.html',
-        title: 'Localisation de votre projet'
-      },
-      {
         templateUrl: 'modules/demandes/client/views/demande-Financeent-Pro/accord-financement.client.view.html',
         title: 'Avez-vous déjà contacté des établissements financiers ?'
       },
