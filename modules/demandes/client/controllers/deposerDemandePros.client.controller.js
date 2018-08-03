@@ -36,6 +36,10 @@
       {
         templateUrl: 'modules/demandes/client/views/demande-Financeent-Pro/adresse-projet.view.client.html',
         title: 'Quel est le nom de votre entreprise ?'
+      },
+      {
+        templateUrl: 'modules/demandes/client/views/demande-Financeent-Pro/detail-demandepro.client.view.html',
+        title: 'Récapitulatif de votre demande'
       }
     ];
     $scope.endNavigateTree = function(type) {
