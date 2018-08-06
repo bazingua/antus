@@ -40,8 +40,16 @@
       {
         templateUrl: 'modules/demandes/client/views/demande-Financeent-Pro/detail-demandepro.client.view.html',
         title: 'Récapitulatif de votre demande'
+      },
+      {
+        templateUrl: 'modules/demandes/client/views/demande-Financeent-Pro/detail-demandepro.client.view.html',
+        title: 'Récapitulatif de votre demande de financement'
       }
     ];
+
+   $scope.banques = banques;
+    $scope.choicedNode;
+
     $scope.endNavigateTree = function(type) {
       vm.viewTreePanel = false;
       vm.viewFormPanel = true;
@@ -60,7 +68,7 @@
      * @param banque
      */
     $scope.choiceBanquePrincipale = function(banque) {
-      $scope.demande.banque = banque.libelle;
+      $scope.demandepro.financement.banque = banque.libelle;
     };
 
     /**
@@ -69,12 +77,12 @@
      * @param banque
      */
     $scope.choiceBanqueConsulte = function(banque) {
-      var banqueIn = $filter('filter')($scope.demande.banqueContacter, banque.libelle);
+      var banqueIn = $filter('filter')($scope.demandepro.financement.banqueContacter, banque.libelle);
       banque.checked = !banque.checked;
       if (banqueIn.length < 1)
-        $scope.demande.banqueContacter.push(banque.libelle);
+        $scope.demandepro.financement.banqueContacter.push(banque.libelle);
       else {
-        $scope.demande.banqueContacter = $filter('filter')($scope.demande.banqueContacter, '!' + banque.libelle);
+        $scope.demandepro.financement.banqueContacter = $filter('filter')($scope.demandepro.banqueContacter, '!' + banque.libelle);
       }
     };
 

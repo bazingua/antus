@@ -1,9 +1,9 @@
-angular.module('demandes.model').factory('DemandesFinancementProModel', ['AdresseModel', 'UserModel',
+angular.module('demandes.model').factory('DemandesFinancementProModel', ['AdresseModel', 'UserModel','FinancementModel',
   /**
    * @description Demandes Financement Pro model
    * @returns {DemandesFinancementProModel}
    */
-  function (AdresseModel, UserModel) {
+  function (AdresseModel, UserModel, FinancementModel) {
     'use strict';
     /**
      *Descript: model's contructor
@@ -34,6 +34,7 @@ angular.module('demandes.model').factory('DemandesFinancementProModel', ['Adress
       this.coordonneesEmprunteur = new UserModel(data.coordonneesEmprunteur);
       this.coordonneesCoEmprunteur = new UserModel(data.coordonneesCoEmprunteur);
       this.infoDirigeant = new UserModel(data.infoDirigeant);
+      this.financement = new FinancementModel(data.financement);
       this.offres = data.offres || [];
       this.created = data.created;
       this.etat = data.etat || 1;
