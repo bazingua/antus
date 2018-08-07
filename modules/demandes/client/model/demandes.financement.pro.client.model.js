@@ -22,6 +22,10 @@ angular.module('demandes.model').factory('DemandesFinancementProModel', ['Adress
       this.montantProjet = data.montantProjet || 0;
       this.montantApport = data.montantApport || 0;
       this.montantSouhaite = data.montantSouhaite || 0;
+      this.secteurActivite = data.secteurActivite || '';
+      this.creditEncours = data.creditEncours || '';
+      this.creditProfessionnel = data.creditProfessionnel || '';
+      this.descriptionProjet = data.descriptionProjet || '';
       this.offres = data.offres || [];
       this.client = new UserModel(data.client);
       this.chiffreAffaire = data.chiffreAffaire || '';
