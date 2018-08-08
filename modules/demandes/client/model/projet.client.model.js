@@ -17,6 +17,7 @@ angular.module('demandes.model').factory('ProjetModel', [
       this.montantTravaux = data.montantTravaux || '';
       this.fraisNotaire = data.fraisNotaire || '';
       this.nombreEmpreteur = data.nombreEmpreteur || '';
+      this.descriptionProjet = data.descriptionProjet || '';
     }
 
     return ProjetModel;

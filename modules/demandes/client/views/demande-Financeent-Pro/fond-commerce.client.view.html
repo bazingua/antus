@@ -1,92 +1,130 @@
 <section class="row">
-   <div class="panel-body">
-            <form name="myForm" class="form-horizontal" novalidate>
-                <div class="row" style="min-height: 400px;padding: 25px">
-                <div class="" style="margin-top: 10px;padding: 35px">
-                  <div style="width: 100%; margin-left: auto; margin-right: auto; margin-bottom: 30px" class=" text-center">
-                    <span  style="color: #555"><i class="material-icons">info</i></span>
-                    <span style="color: #777; position: relative;top: -8px;font-style: italic;font-size: 13px;">DEFINISSONS LE MONTANT DU PRET </span>
-                  </div>
-        
-                  <div class="row" style="margin-bottom: 5px">
-                      <div class="col-sm-3"></div>
-                      <div class="col-sm-6">
-                          <label>MONTANT TOTAL DE VOTRE PROJET :</label>
-                        <div class="input-group">
-                            <input type="number" ng-model="demandepro.montantProjet" name="montantProjet" 
-                            ng-change="calculMontantPret()" class="form-control" required>
-                               
-                          <span class="input-group-addon"><a class="pull-left"><span>F CFA</span></a>
-                          </span>
-                          <span class="input-group-addon" style="background-color: white; border: 0">
-                              <a href="#" data-toggle="tooltip" title="" class="pull-left">
-                            <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span>
-                          </a>
-                            </span>
-                        </div>
-                        <div ng-show="myForm.$submitted && myForm.montantProjet.$error.required" class="form-text-error">Veuillez entrer le montant de votre projet</div>
-                      </div>
-                      <div class="col-sm-3"></div>
-                    </div>
-        
-                    <div class="row" style="margin-bottom: 5px">
-                        <div class="col-sm-3"></div>
-                        <div class="col-sm-6">
-                            <label>MONTANT TOTAL DE VOTRE APPORT :</label>
-                          <div class="input-group">
-                              <input type="number" name="montantApport" class="form-control" id="montantApport" 
-                              ng-model="demandepro.montantApport"  ng-change="calculMontantPret()" required>
-                            <span class="input-group-addon"><a class="pull-left"><span>F CFA</span></a>
-                            </span>
-                            <span class="input-group-addon" style="background-color: white; border: 0">
-                                <a href="#" data-toggle="tooltip" title="" class="pull-left">
-                              <span class="glyphicon glyphicon-info-sign" style="color:#663399" aria-hidden="true"></span>
-                            </a>
-                              </span>
-                          </div>
-                        </div>
-                        <div class="col-sm-3"></div>
-                      </div>
-        
-                      <div class="row" style="margin-bottom: 5px">
-                          <div class="col-sm-3"></div>
-                          <div class="col-sm-6">
-                              <label>MONTANT DU PRÊT SOUHAITÉ :</label>
-                            <div class="input-group">
-                                <input type="number" name="montantSouhaite" class="form-control" id="montantSouhaite" ng-model="demandepro.montantSouhaite" readonly>
-                              <span class="input-group-addon"><a class="pull-left"><span>F CFA</span></a>
-                              </span>
-                              <span class="input-group-addon" style="background-color: white; border: 0">
-                                  <a href="#" data-toggle="tooltip" title="" class="pull-left">
-                                <span class="glyphicon glyphicon-info-sign" style="color:#663399" aria-hidden="true"></span>
-                              </a>
-                                </span>
-                            </div>
-                          </div>
-                          <div class="col-sm-3"></div>
-                        </div>
-                      </div>
-                    </div>
-              <div class="row page-header" style="background-color: #f8f8f8; padding:0px ; margin: 10px; min-height: 50px;">
-                <div class="col-md-4"></div>
-                <div class="col-md-2 nopadding text-center">
-                  <button ng-disabled="$isFirst()" class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px;margin-bottom: 2px" ng-click="$previousStep()">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                    PRECEDENT
-                  </button>
-                </div>
-        
-                <div class="col-md-2  nopadding text-center">
-                  <button type="submit" class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px;margin-bottom: 2px" ng-click="myForm.revenuLocatif.$error.required ? error = false : $nextStep();">
-                    SUIVANT
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                  </button>
-                </div>
-                <div class="col-md-4"></div>
-        
+  <div class="panel-body">
+    <form name="myForm" class="form-horizontal" novalidate>
+      <div class="row" style="min-height: 400px;padding: 25px">
+        <div class="" style="margin-top: 10px;padding: 35px">
+          <div style="width: 100%; margin-left: auto; margin-right: auto; margin-bottom: 30px" class=" text-center">
+            <span style="color: #555">
+              <i class="material-icons">info</i>
+            </span>
+            <span style="color: #777; position: relative;top: -8px;font-style: italic;font-size: 13px;">DEFINISSONS LE MONTANT DU PRET </span>
+          </div>
+
+          <div class="row" style="margin-bottom: 5px">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+              <label>MONTANT TOTAL DE VOTRE PROJET :</label>
+              <div class="input-group">
+                <input type="number" ng-model="demandepro.projet.montantProjet" name="montantProjet" ng-change="calculMontantPret()" class="form-control"
+                  required>
+
+                <span class="input-group-addon">
+                  <a class="pull-left">
+                    <span>F CFA</span>
+                  </a>
+                </span>
+                <span class="input-group-addon" style="background-color: white; border: 0">
+                  <a href="#" data-toggle="tooltip" title="" class="pull-left">
+                    <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span>
+                  </a>
+                </span>
               </div>
-        
-            </form>
+              <div ng-show="myForm.$submitted && myForm.montantProjet.$error.required" class="form-text-error">Veuillez entrer le montant de votre projet</div>
             </div>
-        </section>
-        
+            <div class="col-sm-3"></div>
+          </div>
+
+          <div class="row" style="margin-bottom: 5px">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+              <label>MONTANT TOTAL DE VOTRE APPORT :</label>
+              <div class="input-group">
+                <input type="number" name="apport" class="form-control" id="apport" ng-model="demandepro.apport.montant" ng-change="calculMontantPret()"
+                  required>
+                <span class="input-group-addon">
+                  <a class="pull-left">
+                    <span>F CFA</span>
+                  </a>
+                </span>
+                <span class="input-group-addon" style="background-color: white; border: 0">
+                  <a href="#" data-toggle="tooltip" title="" class="pull-left">
+                    <span class="glyphicon glyphicon-info-sign" style="color:#663399" aria-hidden="true"></span>
+                  </a>
+                </span>
+              </div>
+            </div>
+            <div class="col-sm-3"></div>
+          </div>
+
+          <div class="row" style="margin-bottom: 5px">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+              <label>MONTANT DU PRÊT SOUHAITÉ :</label>
+              <div class="input-group">
+                <input type="number" name="montantSouhaite" class="form-control" id="montantSouhaite" ng-model="demandepro.apport.montantMaxSouhaite"
+                  readonly>
+                <span class="input-group-addon">
+                  <a class="pull-left">
+                    <span>F CFA</span>
+                  </a>
+                </span>
+                <span class="input-group-addon" style="background-color: white; border: 0">
+                  <a href="#" data-toggle="tooltip" title="" class="pull-left">
+                    <span class="glyphicon glyphicon-info-sign" style="color:#663399" aria-hidden="true"></span>
+                  </a>
+                </span>
+              </div>
+            </div>
+            <div class="col-sm-3"></div>
+          </div>
+
+          <div class="row" style="margin-bottom: 5px">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <label>QUELLE EST LA DUREE REMBOURSEMENT SOUHAITE ? </label>
+                <div class="input-group">
+                    <select ng-model="demandepro.apport.dureeSouhaite" name="duree" class="form-control" required>
+                        <option value="1">1 ans</option>
+                        <option value="2">2 ans</option>
+                        <option value="3">3 ans</option>
+                        <option value="4">4 ans</option>
+                        <option value="5">5 ans</option>
+                    </select>
+                    <span class="input-group-addon" style="background-color: white; border: 0">
+                        <a href="#" data-toggle="tooltip" title="" class="pull-left">
+                            <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span>
+                        </a>
+                    </span>
+                </div>
+                <div ng-show="myForm.$submitted && myForm.montantProjet.$error.required" class="form-text-error">Veuillez selection est Etat</div>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+
+        </div>
+      </div>
+      <div class="row page-header" style="background-color: #f8f8f8; padding:0px ; margin: 10px; min-height: 50px;">
+        <div class="col-md-4"></div>
+        <div class="col-md-2 nopadding text-center">
+          <button ng-disabled="$isFirst()" class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px;margin-bottom: 2px"
+            ng-click="$previousStep()">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            PRECEDENT
+          </button>
+        </div>
+
+        <div class="col-md-2  nopadding text-center">
+          <button type="submit" class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px;margin-bottom: 2px"
+            ng-click="myForm.revenuLocatif.$error.required ? error = false : $nextStep();">
+            SUIVANT
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </button>
+        </div>
+        <div class="col-md-4"></div>
+
+      </div>
+
+    </form>
+  </div>
+</section>
