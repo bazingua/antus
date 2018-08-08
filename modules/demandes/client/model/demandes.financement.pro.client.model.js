@@ -1,9 +1,9 @@
-angular.module('demandes.model').factory('DemandesFinancementProModel', ['AdresseModel', 'UserModel','FinancementModel',
+angular.module('demandes.model').factory('DemandesFinancementProModel', ['AdresseModel', 'UserModel','FinancementModel','ProjetModel',
   /**
    * @description Demandes Financement Pro model
    * @returns {DemandesFinancementProModel}
    */
-  function (AdresseModel, UserModel, FinancementModel) {
+  function (AdresseModel, UserModel, FinancementModel,ProjetModel) {
     'use strict';
     /**
      *Descript: model's contructor
@@ -13,12 +13,11 @@ angular.module('demandes.model').factory('DemandesFinancementProModel', ['Adress
     function DemandesFinancementProModel(data) {
       data = data || {};
       this.id = data.id || data._id || 0;
-      this.type = data.type || '';
       this.exerciceComptable = data.exerciceComptable || '';
       this.resultstExploitationPositif = data.resultstExploitationPositif || '';
       this.fondProprePositif = data.fondProprePositif || '';
       this.fondCommerce = data.fondCommerce || '';
-      this.dureeRemboursement = data.dureeRemboursement || '';
+      this.dureeRemboursement = data.dureeRemboursement || 0;
       this.montantProjet = data.montantProjet || 0;
       this.montantApport = data.montantApport || 0;
       this.montantSouhaite = data.montantSouhaite || 0;
@@ -39,6 +38,7 @@ angular.module('demandes.model').factory('DemandesFinancementProModel', ['Adress
       this.coordonneesCoEmprunteur = new UserModel(data.coordonneesCoEmprunteur);
       this.infoDirigeant = new UserModel(data.infoDirigeant);
       this.financement = new FinancementModel(data.financement);
+      this.projet = new ProjetModel(data.projet);
       this.offres = data.offres || [];
       this.created = data.created;
       this.etat = data.etat || 1;

@@ -10,30 +10,13 @@
                         <span style="color: #777; position: relative;top: -8px;font-style: italic;font-size: 13px;">DESCRIPTION DU PROJET </span>
                     </div>
 
-                    <div class="row" style="margin-bottom: 5px">
-                        <div class="col-sm-3"></div>
-                        <div class="col-sm-6">
-                            <label>SECTEUR D’ACTIVITE :</label>
-                            <div class="input-group">
-                                <input type="number" ng-model="demandepro.secteurActivite" name="montantProjet" class="form-control" required>
-                                <span class="input-group-addon" style="background-color: white; border: 0">
-                                    <a href="#" data-toggle="tooltip" title="" class="pull-left">
-                                        <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span>
-                                    </a>
-                                </span>
-                            </div>
-                            <div ng-show="myForm.$submitted && myForm.montantProjet.$error.required" class="form-text-error">Veuillez entrer le montant de votre projet</div>
-                        </div>
-                        <div class="col-sm-3"></div>
-                    </div>
 
                     <div class="row" style="margin-bottom: 5px">
                         <div class="col-sm-3"></div>
                         <div class="col-sm-6">
                             <label>AVEZ-VOUS UN CREDIT PROFESSIONEL ENCOURS ? </label>
                             <div class="input-group">
-                                <select type="number" ng-model="demandepro.creditEncours" name="montantProjet" class="form-control" required>
-                                    <option value="NON"></option>
+                                <select type="number" ng-model="demandepro.patrimoine.credit.creditEncours" name="montantProjet" class="form-control" required>
                                     <option value="OUI">OUI</option>
                                     <option value="NON">NON</option>
                                 </select>
@@ -53,8 +36,8 @@
                         <div class="col-sm-6">
                             <label>AVEZ-VOUS DEJA SOUSCRIT A UN CREDIT PROFESSIONNEL ? </label>
                             <div class="input-group">
-                                <select type="number" ng-model="demandepro.creditProfessionnel" name="creditProfessionnel" class="form-control" required>
-                                    <option value="NON"></option>
+                                <select type="number" ng-model="demandepro.patrimoine.credit.creditProfessionnel" name="creditProfessionnel" class="form-control" required>
+                                    
                                     <option value="OUI">OUI</option>
                                     <option value="NON">NON</option>
                                 </select>
@@ -74,7 +57,7 @@
                         <div class="col-sm-6">
                             <label>DESCRIPTION DU PROJET :</label>
                             <div class="input-group">
-                                <textarea type="number" ng-model="demandepro.descriptionProjet" name="descriptionProjet" 
+                                <textarea type="number" ng-model="demandepro.projet.descriptionProjet" name="descriptionProjet" 
                                 rows="6" class="form-control" required>
                                     </textarea>
                                 <span class="input-group-addon" style="background-color: white; border: 0">

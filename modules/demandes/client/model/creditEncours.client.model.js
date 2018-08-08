@@ -15,6 +15,8 @@ angular.module('demandes.model').factory('CreditEncoursModel', [
       this.mensualite = data.mensualite || '';
       this.restant = data.restant || '';
       this.nbrMois = data.nbrMois || '';
+      this.creditEncours = data.creditEncours || '';
+      this.creditProfessionnel = data.creditProfessionnel || '';
     }
 
     return CreditEncoursModel;

@@ -15,7 +15,7 @@
             <div class="col-sm-6">
               <label>MONTANT TOTAL DE VOTRE PROJET :</label>
               <div class="input-group">
-                <input type="number" ng-model="demandepro.montantProjet" name="montantProjet" ng-change="calculMontantPret()" class="form-control"
+                <input type="number" ng-model="demandepro.projet.montantProjet" name="montantProjet" ng-change="calculMontantPret()" class="form-control"
                   required>
 
                 <span class="input-group-addon">
@@ -39,7 +39,7 @@
             <div class="col-sm-6">
               <label>MONTANT TOTAL DE VOTRE APPORT :</label>
               <div class="input-group">
-                <input type="number" name="montantApport" class="form-control" id="montantApport" ng-model="demandepro.montantApport" ng-change="calculMontantPret()"
+                <input type="number" name="apport" class="form-control" id="apport" ng-model="demandepro.apport.montant" ng-change="calculMontantPret()"
                   required>
                 <span class="input-group-addon">
                   <a class="pull-left">
@@ -61,7 +61,7 @@
             <div class="col-sm-6">
               <label>MONTANT DU PRÊT SOUHAITÉ :</label>
               <div class="input-group">
-                <input type="number" name="montantSouhaite" class="form-control" id="montantSouhaite" ng-model="demandepro.montantSouhaite"
+                <input type="number" name="montantSouhaite" class="form-control" id="montantSouhaite" ng-model="demandepro.apport.montantMaxSouhaite"
                   readonly>
                 <span class="input-group-addon">
                   <a class="pull-left">
@@ -77,6 +77,31 @@
             </div>
             <div class="col-sm-3"></div>
           </div>
+
+          <div class="row" style="margin-bottom: 5px">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <label>QUELLE EST LA DUREE REMBOURSEMENT SOUHAITE ? </label>
+                <div class="input-group">
+                    <select ng-model="demandepro.apport.dureeSouhaite" name="duree" class="form-control" required>
+                        <option value="1">1 ans</option>
+                        <option value="2">2 ans</option>
+                        <option value="3">3 ans</option>
+                        <option value="4">4 ans</option>
+                        <option value="5">5 ans</option>
+                    </select>
+                    <span class="input-group-addon" style="background-color: white; border: 0">
+                        <a href="#" data-toggle="tooltip" title="" class="pull-left">
+                            <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span>
+                        </a>
+                    </span>
+                </div>
+                <div ng-show="myForm.$submitted && myForm.montantProjet.$error.required" class="form-text-error">Veuillez selection est Etat</div>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+
         </div>
       </div>
       <div class="row page-header" style="background-color: #f8f8f8; padding:0px ; margin: 10px; min-height: 50px;">

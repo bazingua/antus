@@ -5,21 +5,17 @@
     .controller('DeposerDemandesProController', DeposerDemandesProController);
 
   DeposerDemandesProController.$inject = ['$scope', '$state', 'DemandesService', 'typeDemande', 'banques', 'DemandesFinancementProModel', '$filter', 'Authentication', 'UsersService', 'Notification'];
-  function DeposerDemandesProController($scope, $state, DemandesService, typeDemande, banques, DemandesFinancementProModel, $filter, Authentication, UsersService, Notification) {
+  function DeposerDemandesProController($scope, $state, DemandesService, typeDemande, banques, DemandesModel, $filter, Authentication, UsersService, Notification) {
     var vm = this;
     vm.viewTreePanel = true;
     vm.viewFormPanel = false;
     vm.typeDemande = typeDemande;
     $scope.typeDemande = vm.typeDemande;
-    $scope.demandepro = new DemandesFinancementProModel();
+    $scope.demandepro = new DemandesModel();
     vm.steps = [
       {
         templateUrl: 'modules/demandes/client/views/demande-Financeent-Pro/fond-commerce.client.view.html',
         title: 'Définissons le montant du prêt'
-      },
-      {
-        templateUrl: 'modules/demandes/client/views/demande-Financeent-Pro/duree-remboursement.client.view.html',
-        title: 'Quel est la durée de remboursement souhaité ?'
       },
       {
         templateUrl: 'modules/demandes/client/views/demande-Financeent-Pro/accord-financement.client.view.html',
@@ -50,8 +46,8 @@
         title: 'Quel est l\'adresse de votre entreprise ?'
       },
       {
-        templateUrl: 'modules/demandes/client/views/demande-Financeent-Pro/detail-demandepro.client.view.html',
-        title: 'Récapitulatif de votre demande'
+        templateUrl: 'modules/demandes/client/views/demande-Financeent-Pro/email-demande.client.view.html',
+        title: 'Récapitulatif de votre demande de financement'
       },
       {
         templateUrl: 'modules/demandes/client/views/demande-Financeent-Pro/detail-demandepro.client.view.html',
@@ -104,6 +100,7 @@
      * la methode qui permet de sauvegarder une demande
      */
     $scope.saveDemande = function () {
+      console.log("+++++++++++++++++------$scope.demandepro", $scope.demandepro, $scope.choicedNode);
       var demandeToSave = angular.copy($scope.demandepro);
       demandeToSave.projet.type = $scope.choicedNode;
       if ($scope.user) {
@@ -122,9 +119,9 @@
             Notification.error({ message: 'Impossible de retrouver vos informations... ', title: 'Une erreur est survenue' });
           });
       } else {
-        $scope.demandeToSave.client.roles = [];
-        $scope.demandeToSave.client.roles.push('pro');
-        UsersService.userSignup($scope.demandeToSave.client)
+        demandeToSave.client.roles = [];
+        demandeToSave.client.roles.push('pro');
+        UsersService.userSignup(demandeToSave.client)
           .then(function (response) {
             demandeToSave.client = response;
             DemandesService.savePro(demandeToSave)
