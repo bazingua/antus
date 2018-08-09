@@ -27,6 +27,7 @@ angular.module('demandes.model').factory('DemandesFinancementProModel', ['Adress
       this.descriptionProjet = data.descriptionProjet || '';
       this.offres = data.offres || [];
       this.client = new UserModel(data.client);
+      this.financement = new FinancementModel(data.financement);
       this.chiffreAffaire = data.chiffreAffaire || '';
       this.banqueContacter = data.banqueContacter || { oui: [], non: true };// les banque cntacté seront dans le tableau d'objet  oui avec un attribut  'reponse: boolean' et 'nom'
       this.infoSociete = data.infoSociete || {
