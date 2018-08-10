@@ -177,18 +177,6 @@
           pageTitle: 'Home Banque'
         }
       })
-      .state('userProHome.homeDeamandePro', {
-        url: '/DemandePro',
-        templateUrl: '/modules/demandes/client/views/homeProDemande.client.view.html',
-        controller: 'ClientProHomeController',
-        controllerAs: 'vm',
-        resolve: {
-          demandes: getOwnerDemandes
-        },
-        data: {
-          pageTitle: 'Home Client Pro'
-        }
-      })
       .state('userHome.homeDeamandebank', {
         url: '/DemandeBanque',
         templateUrl: '/modules/demandes/client/views/homeDemandebank.client.view.html',
