@@ -17,6 +17,12 @@ var DemandeSchema = new Schema({
   id: {
     type: String
   },
+  type: {
+    type: String
+  },
+  societe: {
+    type: Object
+  },
   projet: {
     type: Object
   },

@@ -5,13 +5,14 @@
  */
 var demandesPolicy = require('../policies/demandes.server.policy'),
   demandes = require('../controllers/demandes.server.controller'),
+  paramsDemandesCtrl = require('../controllers/paramsDemandes.server.controller'),
   demandesProCtrl = require('../controllers/demandes.pro.server.controller');
 
 module.exports = function (app) {
   // Demandes collection routes
   app.route('/api/demandes').all(demandesPolicy.isAllowed)
     .get(demandes.list)
-    .post(demandes.setNumeroDemande, demandes.create);
+    .post(function(req, res, next) { req.body.type = 'PART.'; return next();}, paramsDemandesCtrl.setNumeroDemande, demandes.create);
 
   // Single demande routes
   app.route('/api/demandes/:demandeId').all(demandesPolicy.isAllowed)
@@ -38,7 +39,7 @@ module.exports = function (app) {
   // Demandes Pro collection routes
   app.route('/api/demandespro').all(demandesPolicy.isAllowed)
     .get(demandesProCtrl.list)
-    .post(demandesProCtrl.setNumeroDemande, demandesProCtrl.create);
+    .post(function(req, res, next) { req.body.type = 'PRO.'; return next();}, paramsDemandesCtrl.setNumeroDemande, demandesProCtrl.create);
 
 
   // Finish by binding the demande middleware

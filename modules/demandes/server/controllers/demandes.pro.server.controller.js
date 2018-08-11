@@ -6,8 +6,7 @@
 var path = require('path'),
   mongoose = require('mongoose'),
   _ = require('lodash'),
-  DemandePro = mongoose.model('DemandePro'),
-  ParamDemande = mongoose.model('ParamDemande'),
+  DemandePro = mongoose.model('Demande'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller'));
   // etat offre
 var OFFRE_STATE_DEPOSE = 1;
@@ -62,7 +61,7 @@ exports.update = function (req, res) {
   demande.fondCommerce = req.body.fondCommerce;
   demande.adresse = req.body.adresse;
   demande.chiffreAffaire = req.body.chiffreAffaire;
-  demande.infoSociete = req.body.infoSociete;
+  demande.societe = req.body.societe;
   demande.coordonneesEmprunteur = req.body.coordonneesEmprunteur;
   demande.infoDirigeant = req.body.infoDirigeant;
   demande.coordonneesCoEmprunteur = req.body.coordonneesCoEmprunteur;
@@ -241,39 +240,6 @@ exports.demandeByID = function (req, res, next, id) {
     return next();
   });
 };
-
-/**
- * SET Numero DemandePro middleware
- */
-exports.setNumeroDemande = function (req, res, next) {
-  ParamDemande.find().populate().exec(function (err, prmDemande) {
-    if (err || !prmDemande) {
-      return next();
-    }
-    if (prmDemande.length < 1 || !prmDemande[0]) {
-      var numdemande = new Date().getFullYear() + '' + 1; 
-      numdemande = parseInt(numdemande,10);
-      var prmDemande = new ParamDemande({counter: 1, numeroDemande: numdemande});
-    } else {
-      var prmDemande = new ParamDemande(prmDemande[0]);
-      prmDemande.counter ++;
-      var numdemande = new Date().getFullYear() + '' + prmDemande.counter;
-      numdemande = parseInt(numdemande,10);
-      prmDemande.numeroDemande = numdemande;
-    }
-    prmDemande.save(function (err) {
-      if (err) {
-        return res.status(422).send({
-          message: errorHandler.getErrorMessage(err)
-        });
-      }
-      req.body.numeroDemande = prmDemande.numeroDemande;
-      return next();
-    });
-  });
-};
-
-
 /**
  * DemandePro middleware
  */

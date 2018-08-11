@@ -1,9 +1,9 @@
-angular.module('demandes.model').factory('DemandesModel', ['ProjetModel', 'PatrimoineModel', 'FinancementModel', 'UserModel', 'ApportModel',
+angular.module('demandes.model').factory('DemandesModel', ['ProjetModel', 'PatrimoineModel', 'FinancementModel', 'UserModel', 'ApportModel', 'SocieteModel',
   /**
    * @description Demandes model
    * @returns {DemandesModel}
    */
-  function (ProjetModel, PatrimoineModel, FinancementModel, UserModel, ApportModel) {
+  function (ProjetModel, PatrimoineModel, FinancementModel, UserModel, ApportModel, SocieteModel) {
     'use strict';
     /**
      *Descript: model's contructor
@@ -18,18 +18,15 @@ angular.module('demandes.model').factory('DemandesModel', ['ProjetModel', 'Patri
       this.financement = new FinancementModel(data.financement);
       this.client = new UserModel(data.client);
       this.apport = new ApportModel(data.apport);
-      this.infoSociete = data.infoSociete || {
-        StatuJuridique: '',
-        nom: '',
-        id: -1
-      };
+      this.societe = new SocieteModel(data.societe);
       this.offres = data.offres || [];
-      this.created = data.created,
-      this.etat = data.etat || 1,
-      this.numeroDemande = data.numeroDemande || 1,
-      this.active = data.active,
-      this.updated = data.updated,
-      this.isCurrentUserOwner = data.isCurrentUserOwner
+      this.created = data.created;
+      this.etat = data.etat || 1;
+      this.numeroDemande = data.numeroDemande || 1;
+      this.active = data.active;
+      this.updated = data.updated;
+      this.isCurrentUserOwner = data.isCurrentUserOwner;
+      this.type = data.type || 'PART.';
     }
 
     return DemandesModel;
