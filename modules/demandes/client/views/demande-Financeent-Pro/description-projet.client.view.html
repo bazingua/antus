@@ -16,7 +16,7 @@
                         <div class="col-sm-6">
                             <label>AVEZ-VOUS UN CREDIT PROFESSIONEL ENCOURS ? </label>
                             <div class="input-group">
-                                <select type="number" ng-model="demandepro.patrimoine.credit.creditEncours" name="montantProjet" class="form-control" required>
+                                <select type="number" ng-model="demandepro.patrimoine.credit.creditEncours" name="creditEncours" class="form-control" required>
                                     <option value="OUI">OUI</option>
                                     <option value="NON">NON</option>
                                 </select>
@@ -26,7 +26,7 @@
                                     </a>
                                 </span>
                             </div>
-                            <div ng-show="myForm.$submitted && myForm.montantProjet.$error.required" class="form-text-error">Veuillez selection est Etat</div>
+                            <div ng-show="myForm.$submitted && myForm.creditEncours.$error.required" class="form-text-error">Veuillez préciser si vous avez un credit en cours</div>
                         </div>
                         <div class="col-sm-3"></div>
                     </div>
@@ -47,7 +47,7 @@
                                     </a>
                                 </span>
                             </div>
-                            <div ng-show="myForm.$submitted && myForm.creditProfessionnel.$error.required" class="form-text-error">Veuillez selection est Etat</div>
+                            <div ng-show="myForm.$submitted && myForm.creditProfessionnel.$error.required" class="form-text-error">Veuillez préciser si vous avez souscrit à un credit professionel</div>
                         </div>
                         <div class="col-sm-3"></div>
                     </div>
@@ -84,7 +84,7 @@
 
                 <div class="col-md-2  nopadding text-center">
                     <button type="submit" class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px;margin-bottom: 2px"
-                        ng-click="myForm.revenuLocatif.$error.required ? error = false : $nextStep();">
+                        ng-click="myForm.creditEncours.$error.required || myForm.creditProfessionnel.$error.required || myForm.descriptionProjet.$error.required ? error = false : $nextStep();">
                         SUIVANT
                         <span class="glyphicon glyphicon-chevron-right"></span>
                     </button>

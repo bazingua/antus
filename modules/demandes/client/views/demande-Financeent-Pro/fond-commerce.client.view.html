@@ -96,7 +96,7 @@
                         </a>
                     </span>
                 </div>
-                <div ng-show="myForm.$submitted && myForm.montantProjet.$error.required" class="form-text-error">Veuillez selection est Etat</div>
+                <div ng-show="myForm.$submitted && myForm.duree.$error.required" class="form-text-error">Veuillez selectionner la durée souhaité</div>
             </div>
             <div class="col-sm-3"></div>
         </div>
@@ -116,7 +116,7 @@
 
         <div class="col-md-2  nopadding text-center">
           <button type="submit" class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px;margin-bottom: 2px"
-            ng-click="myForm.revenuLocatif.$error.required ? error = false : $nextStep();">
+            ng-click="myForm.montantProjet.$error.required || myForm.duree.$error.required ? error = false : $nextStep();">
             SUIVANT
             <span class="glyphicon glyphicon-chevron-right"></span>
           </button>

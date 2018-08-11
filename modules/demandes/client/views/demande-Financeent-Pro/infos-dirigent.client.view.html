@@ -28,6 +28,8 @@
                   </a>
                 </span>
               </div>
+              <div ng-show="myForm.$submitted && myForm.formation.$error.required" class="form-text-error">Veuillez choisir votre situation civilité</div>
+              
             </div>
             <label class="control-label col-sm-4"></label>
           </div>
@@ -48,7 +50,7 @@
                 </span>
 
               </div>
-              <div ng-show="myForm.$submitted && myForm.situationfamiliale.$error.required" class="form-text-error">Veuillez choisir votre situation familiale</div>
+              <div ng-show="myForm.$submitted && myForm.formation.$error.required" class="form-text-error">Veuillez choisir votre formation professionnelle</div>
             </div>
             <label class="control-label col-sm-4"></label>
           </div>
@@ -67,9 +69,9 @@
                   </a>
                 </span>
               </div>
+              <div ng-show="myForm.$submitted && myForm.nom.$error.required" class="form-text-error">Veuillez entrer votre nom</div>
+              <label class="control-label col-sm-4"> </label>
             </div>
-            <div ng-show="myForm.$submitted && myForm.nom.$error.required" class="form-text-error">Veuillez entrer votre nom</div>
-            <label class="control-label col-sm-4"> </label>
           </div>
         </div>
         <br>
@@ -88,8 +90,6 @@
               </div>
               <div ng-show="myForm.$submitted && myForm.prenom.$error.required" class="form-text-error">Veuillez entrer votre prenom</div>
             </div>
-
-            <label class="control-label col-sm-4"></label>
           </div>
         </div>
         <br>
@@ -148,7 +148,8 @@
           </div>
           <div class="col-md-2  nopadding text-center">
             <button class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px;margin-bottom: 2px" type="submit"
-              ng-click="myForm.adresseActuelle.$error.required  || myForm.dateNaissance.$error.required || myForm.prenom.$error.required || myForm.NumeroTelephone.$error.required || myForm.nom.$error.required ? error = false : $nextStep();">
+              ng-click="myForm.civilite.$error.required  || myForm.formation.$error.required  || myForm.dateNaissance.$error.required || 
+              myForm.prenom.$error.required || myForm.NumeroTelephone.$error.required || myForm.nom.$error.required ? error = false : $nextStep();">
               SUIVANT
               <span class="glyphicon glyphicon-chevron-right"></span>
             </button>

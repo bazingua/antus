@@ -1,6 +1,6 @@
 <section class="row">
     <div class="panel-body">
-                    <form name="montantProjetForm" class="form-horizontal" novalidate>
+                    <form name="myForm" class="form-horizontal" novalidate>
                         <div class="row" style="min-height: 400px;padding: 25px">
                             <div class="">
                                 <div class="" style="margin-top: auto; margin-bottom: auto">
@@ -16,10 +16,16 @@
                                     <div class="col-sm-6">
                                         <label class="text-uppercase">ENTRER LE NOM DE SOCIETE :</label>
                                         <div class="input-group">
-                                            <input type="text" name="nomSociete" class="form-control" ng-model="demandepro.societe.nom" style="width: 500px">
-    
+                                            <input type="text" name="nomSociete" class="form-control" ng-model="demandepro.societe.nom" style="width: 500px" required>
+                                            <span class="input-group-addon" style="background-color: white; border: 0">
+                                                <a href="#" data-toggle="tooltip" title="" class="pull-left">
+                                                  <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span>
+                                                </a>
+                                              </span>
+                                            </div>
+                                            <div ng-show="myForm.$submitted && myForm.nomSociete.$error.required" class="form-text-error">Veuillez entrer le nom de votre entreprise</div>
+                                          
                                         </div>
-                                    </div>
                                     <div class="col-sm-3"></div>
                                 </div>
                                 <div class="row" style="margin-bottom: 5px">
@@ -27,7 +33,7 @@
                                     <div class="col-sm-6">
                                         <label class="text-uppercase">votre statut ou forme juridique :</label>
                                         <div class="input-group">
-                                            <select name="StatusJuridique" class="form-control" ng-model="demandepro.societe.StatusJuridique" style="width: 500px">
+                                            <select name="StatusJuridique" class="form-control" ng-model="demandepro.societe.StatusJuridique" style="width: 500px" required>
                                                 <option label=""></option>
                                                 <option value="EARL "> Entreprise agricole à responsabilité limitée</option>
                                                 <option value="EI "> Entreprise individuelle</option>
@@ -59,8 +65,15 @@
                                                 <option value="SICA "> Société d'intérêt collectif agricole</option>
                                                 <option value="SNC "> Société en nom collectif</option>
                                             </select>
-                                        </div>
-                                    </div>
+                                            <span class="input-group-addon" style="background-color: white; border: 0">
+                                                <a href="#" data-toggle="tooltip" title="" class="pull-left">
+                                                  <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span>
+                                                </a>
+                                              </span>
+                                            </div>
+                                            <div ng-show="myForm.$submitted && myForm.StatusJuridique.$error.required" class="form-text-error">Veuillez entrer le nom de votre status juridique</div>
+                                          
+                                        </div> 
                                     <div class="col-sm-3"></div>
                                 </div>
                                 <div class="row" style="margin-bottom: 5px">
@@ -68,7 +81,7 @@
                                     <div class="col-sm-6">
                                         <label class="text-uppercase">secteur d'activité :</label>
                                         <div class="input-group">
-                                            <select name="StatuJuridique" class="form-control" ng-model="demandepro.societe.secteurActivite" style="width: 500px">
+                                            <select name="secteurActivite" class="form-control" ng-model="demandepro.societe.secteurActivite" style="width: 500px" required>
                                                 <option label="-- Sélectionner --"></option>
                                                 <option value="A">AGRICULTURE, SYLVICULTURE ET PÊCHE</option>
                                                 <option value="B">INDUSTRIES EXTRACTIVES</option>
@@ -98,9 +111,16 @@
                                                                             (USAGE PROPRE)</option>
                                                                         <option value="U">ACTIVITÉS EXTRA-TERRITORIALES</option>
                                             </select>
+                                            <span class="input-group-addon" style="background-color: white; border: 0">
+                                                <a href="#" data-toggle="tooltip" title="" class="pull-left">
+                                                  <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span>
+                                                </a>
+                                              </span>
+                                            </div>
+                                            <div ng-show="myForm.$submitted && myForm.secteurActivite.$error.required" class="form-text-error">Veuillez entrer le nom de votre secteur d'activité</div>
+                                          
     
                                         </div>
-                                    </div>
                                     <div class="col-sm-3"></div>
                                 </div>
                                 <div class="row" style="margin-bottom: 5px">
@@ -130,7 +150,8 @@
                 </div>
     
                 <div class="col-md-2  nopadding text-center">
-                    <button type="submit" class="btn " style="background-color:#663399;color:white;height: 50px; width: 130px;margin: 2px" ng-click="montantProjetForm.notaire.$error.required || montantProjetForm.montantProjet.$error.required ? error = false : $nextStep();">
+                    <button type="submit" class="btn " style="background-color:#663399;color:white;height: 50px; width: 130px;margin: 2px" 
+                    ng-click="myForm.nomSociete.$error.required || myForm.StatusJuridique.$error.required || myForm.secteurActivite.$error.required  ? error = false : $nextStep();">
                         SUIVANT
                         <span class="glyphicon glyphicon-chevron-right"></span>
                     </button>

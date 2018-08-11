@@ -68,7 +68,7 @@
       $scope.endNavigateTree(type);
     };
     $scope.calculMontantPret = function () {
-      $scope.demandepro.montantSouhaite = $scope.demandepro.montantProjet - $scope.demandepro.montantApport;
+      $scope.demandepro.apport.montantMaxSouhaite = $scope.demandepro.projet.montantProjet - $scope.demandepro.apport.montant;
     };
     /**
          * @name  choiceBanquePrincipale
