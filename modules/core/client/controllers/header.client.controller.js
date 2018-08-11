@@ -18,6 +18,8 @@
         $rootScope.espaceUser = 'Espace Client';
       } else if (_.indexOf( vm.authentication.user.roles, 'banque') > -1) {
         $rootScope.espaceUser = 'Espace Banque';
+      }  else if (_.indexOf( vm.authentication.user.roles, 'pro') > -1) {
+        $rootScope.espaceUser = 'Espace Client';
       } else {
         $rootScope.espaceUser = 'Espace Administrateur';
       }
@@ -47,7 +49,9 @@
           $state.go('userHome.client');
         } else if (_.indexOf(vm.authentication.user.roles, 'banque') > -1) {
           $state.go('userHome.banque');
-        } else {
+        } else if (_.indexOf(vm.authentication.user.roles, 'pro') > -1) {
+          $state.go('userHome.client');
+        }else {
           $state.go('homeadmin');
         }
       }
