@@ -106,7 +106,11 @@
       } else if (_.indexOf(response.roles, 'banque') > -1) {
         $rootScope.espaceUser = 'Espace Banque';
         $state.go('userHome.banque');
-      } else {
+      } else if (_.indexOf(response.roles, 'pro') > -1) {
+        $rootScope.espaceUser = 'Espace Client';
+        $state.go('userHome.client');
+      } 
+      else {
         $state.go($state.previous.state.name || 'home', $state.previous.params);
       }
     }

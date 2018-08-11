@@ -238,22 +238,13 @@
       <label class="col-sm-6">Versement : {{demande.financement.versement}} XOF</label>
       <label class="col-sm-6">Banque Principale : {{demande.financement.banque}}</label>
      </div>
-     <table><thead>
-            <tr>
-                <th>
-                    pays
-                </th>
-
-            </tr>
-
-        </thead>
-        <tbody>
-            <tr >
-                <td ng-repaet="p in demande.financement.banqueContacter">{{p}}</td>
-            </tr>
-        </tbody>
-
+     <table ng-controller="myCtrl" border="1">
+        <tr ng-repeat="x in demande.financement.banqueContacter">
+            <td>{{x}}</td>
+           
+        </tr>
     </table>
+     
      <br>
      
       <br>
