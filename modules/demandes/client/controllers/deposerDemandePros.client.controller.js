@@ -87,7 +87,7 @@
     $scope.choiceBanqueConsulte = function (banque) {
       var banqueIn = $filter('filter')($scope.demandepro.financement.banqueContacter, banque.libelle);
       banque.checked = !banque.checked;
-      if (banqueIn.length < 1)
+      if (banqueIn && banqueIn.length < 1)
         $scope.demandepro.financement.banqueContacter.push(banque.libelle);
       else {
         $scope.demandepro.financement.banqueContacter = $filter('filter')($scope.demandepro.banqueContacter, '!' + banque.libelle);

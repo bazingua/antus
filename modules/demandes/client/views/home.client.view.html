@@ -34,16 +34,16 @@
                       </div>
                     </div>
 
-                    <div ng-if="utilsService.isClient">
+                    <div ng-if="vm.utils.isClient()">
                         <p class="promo-block-text" style="text-align: center">
                             <a ui-sref="demandes.create" style="background-color: #663399;color: #FFFFFF" class="btn-theme btn-theme-md btn-default-bg text-uppercase">Déposez une nouvelle demande</a>
                           </p>
-                      </div>
-                      <div ng-if="utilsService.isClientPro()">
-                          <p class="promo-block-text" style="text-align: center">
-                              <a ui-sref="demandes.createDemandeProfessionnel" style="background-color: #663399;color: #FFFFFF" class="btn-theme btn-theme-md btn-default-bg text-uppercase">Déposez une nouvelle demande</a>
-                            </p>
-                        </div>
+                    </div>
+                    <div ng-if="vm.utils.isClientPro()">
+                      <p class="promo-block-text" style="text-align: center">
+                          <a ui-sref="demandes.createDemandeProfessionnel" style="background-color: #663399;color: #FFFFFF" class="btn-theme btn-theme-md btn-default-bg text-uppercase">Déposez une nouvelle demande</a>
+                      </p>
+                    </div>
 
                 </section>
                 
