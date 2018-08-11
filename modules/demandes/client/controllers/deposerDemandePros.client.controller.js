@@ -12,6 +12,7 @@
     vm.typeDemande = typeDemande;
     $scope.typeDemande = vm.typeDemande;
     $scope.demandepro = new DemandesModel();
+    $scope.user = Authentication.user;
     vm.steps = [
       {
         templateUrl: 'modules/demandes/client/views/demande-Financeent-Pro/fond-commerce.client.view.html',
@@ -47,7 +48,7 @@
       },
       {
         templateUrl: 'modules/demandes/client/views/demande-Financeent-Pro/email-demande.client.view.html',
-        title: 'Récapitulatif de votre demande de financement'
+        title: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
       },
       {
         templateUrl: 'modules/demandes/client/views/demande-Financeent-Pro/detail-demandepro.client.view.html',
