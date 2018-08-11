@@ -235,20 +235,24 @@
        <br>
        
       <div class="row">
-      <label class="col-sm-6">Versement : {{demande.financement.versement}} XOF</label>
-      <label class="col-sm-6">Banque Principale : {{demande.financement.banque}}</label>
+      <label class="col-sm-6">
+          <h5>Versement :   {{demande.financement.versement}} XOF</h5>
+      </label>
+      <label class="col-sm-6">
+          <h5>Banque Principale : {{demande.financement.banque}} </h5>
+        </label>
      </div>
-     <table  border="1">
-        <tr ng-repeat="x in demande.financement.banqueContacter">
-            
-          <td>{{x}}</td>
-           
-        </tr>
-    </table>
-     
-     <br>
-     
-      <br>
+    
+     <div class="panel panel-default" style="background-color: #f7f7f7"> 
+      <div class="panel-body">
+
+<h5 style="border-bottom: 1px solid #ddd; padding: 1px; padding-left: 20px; background-color: #7a43b6; color: #fff;  ">Liste des banques consultées</h5>
+<table  class="table table-striped table-bordered">
+  <tr><td ng-repeat="x in demande.financement.banqueContacter">{{x}}</td> </tr>
+</table>
+</div>
+</div>
+     <br> <br>
     
 </div>
   </div>

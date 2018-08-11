@@ -12,6 +12,7 @@
       isBank: isBank,
       isAdmin: isAdmin,
       isClient: isClient,
+      isClientPro: isClientPro,
       isBankCanAddOffer: isBankCanAddOffer
     };
 
@@ -27,6 +28,9 @@
 
     function isClient() {
       return (_.indexOf(Authentication.user.roles, 'user') > -1);
+    }
+    function isClientPro() {
+      return (_.indexOf(Authentication.user.roles, 'pro') > -1);
     }
     function isBankCanAddOffer(demande) {
       if (!demande.offres.length)

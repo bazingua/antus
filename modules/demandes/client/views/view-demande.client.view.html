@@ -16,7 +16,7 @@
 </div>
 </div>
 <div style="background-color: #7a43b6; color: #fff;">
-    <div ng-if="vm.utilsServ.isClient()">
+    <div ng-if="!vm.utilsServ.isClient()">
             <div class="btn-group btn-group-lg">
 
                     <button ui-sref="userHome.client" type="button" class="btn btn-group-lg" style="background-color: #7a43b6; ">Mes Demandes</button>
