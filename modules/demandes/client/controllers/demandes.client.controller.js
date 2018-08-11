@@ -5,9 +5,9 @@
     .module('demandes')
     .controller('DemandesController', DemandesController);
 
-  DemandesController.$inject = ['$scope', 'DemandesModel', 'demande', 'Authentication', 'DemandesService','Utils', '$uibModal'];
+  DemandesController.$inject = ['$scope', 'DemandesModel', 'demande', 'Authentication', 'DemandesService', 'Utils', '$uibModal'];
 
-  function DemandesController($scope,DemandesModel, demande, Authentication, DemandesService,Utils, $uibModal) {
+  function DemandesController($scope, DemandesModel, demande, Authentication, DemandesService, Utils, $uibModal) {
     var vm = this;
     console.log('°°°°°°°°°°°°°°°', demande);
     vm.demande = new DemandesModel(demande);

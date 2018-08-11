@@ -16,7 +16,7 @@
             </label>
             <div class="col-sm-4">
               <div class="input-group">
-                <select name="civilite" class="form-control" ng-model="demandepro.infoDirigeant.civilite" placeholder="Civilité" required
+                <select name="civilite" class="form-control" ng-model="demandepro.client.civilite" placeholder="Civilité" required
                   autofocus>
                   <option label="Mselle">Mselle</option>
                   <option value="monsieur">Monsieur</option>
@@ -39,7 +39,7 @@
             </label>
             <div class="col-sm-4">
               <div class="input-group">
-                <input type="text" name="formation" class="form-control" ng-model="demandepro.infoDirigeant.dateNassance" required>
+                <input type="text" name="formation" class="form-control" ng-model="demandepro.client.dateNassance" required>
 
                 <span class="input-group-addon" style="background-color: white; border: 0">
                   <a href="#" data-toggle="tooltip" title="" class="pull-left">
@@ -60,7 +60,7 @@
             </label>
             <div class="col-sm-4">
               <div class="input-group">
-                <input type="text" name="nom" class="form-control" ng-model="demandepro.infoDirigeant.nom" placeholder="Nom" required>
+                <input type="text" name="nom" class="form-control" ng-model="demandepro.client.nom" placeholder="Nom" required>
                 <span class="input-group-addon" style="background-color: white; border: 0">
                   <a href="#" data-toggle="tooltip" title=" Votre nom est obligatoire" class="pull-left">
                     <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span>
@@ -79,7 +79,7 @@
             </label>
             <div class="col-sm-4">
               <div class="input-group">
-                <input type="text" name="prenom" class="form-control" ng-model="demandepro.infoDirigeant.prenom" placeholder="prénom" required>
+                <input type="text" name="prenom" class="form-control" ng-model="demandepro.client.prenom" placeholder="prénom" required>
                 <span class="input-group-addon" style="background-color: white; border: 0">
                   <a href="#" data-toggle="tooltip" title="Votre Prenom est obligatoire" class="pull-left">
                     <span class="glyphicon glyphicon-asterisk" style="color:#663399" aria-hidden="true"></span>
@@ -100,7 +100,7 @@
             </label>
             <div class="col-sm-4">
               <div class="input-group">
-                <input type="text" name="dateNaissance" kendo-date-picker k-format="'dd/MM/yyyy'" class="form-control" ng-model="demandepro.infoDirigeant.dateNassance"
+                <input type="text" name="dateNaissance" kendo-date-picker k-format="'dd/MM/yyyy'" class="form-control" ng-model="demandepro.client.dateNassance"
                   required>
                 <span class="input-group-addon" style="background-color: white; border: 0">
                   <a href="#" data-toggle="tooltip" title="" class="pull-left">
@@ -121,7 +121,7 @@
             </label>
             <div class="col-sm-4">
               <div class="input-group">
-                <input type="tel" id="NumeroTelephone" name="NumeroTelephone" class="form-control" ng-model="demandepro.infoDirigeant.adresse.telephonePortable"
+                <input type="tel" id="NumeroTelephone" name="NumeroTelephone" class="form-control" ng-model="demandepro.client.adresse.telephonePortable"
                   required>
                 <span class="input-group-addon" style="background-color: white; border: 0">
                   <a href="#" data-toggle="tooltip" title="Votre numero de telephone est obligatoire" class="pull-left">

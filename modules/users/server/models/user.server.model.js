@@ -100,7 +100,7 @@ var UserSchema = new Schema({
     default: ''
   },
   dateNassance: {
-    type: Date,
+    type: String
   },
   nationalite: {
     type: String,
