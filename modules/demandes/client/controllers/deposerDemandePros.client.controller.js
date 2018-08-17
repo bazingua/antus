@@ -48,7 +48,7 @@
       },
       {
         templateUrl: 'modules/demandes/client/views/demande-Financeent-Pro/email-demande.client.view.html',
-        title: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+        title: 'Création de votre compte client'
       },
       {
         templateUrl: 'modules/demandes/client/views/demande-Financeent-Pro/detail-demandepro.client.view.html',

@@ -16,7 +16,8 @@
 </div>
 </div>
 <div style="background-color: #7a43b6; color: #fff;">
-    <div ng-if="!vm.utilsServ.isClient()">
+
+    <div ng-if="vm.utilsServ.isClient() || vm.utilsServ.isClientPro()">
             <div class="btn-group btn-group-lg">
 
                     <button ui-sref="userHome.client" type="button" class="btn btn-group-lg" style="background-color: #7a43b6; ">Mes Demandes</button>
@@ -44,7 +45,7 @@
         <section class="row" ng-show="!vm.stateOffre">
           <details-demande demande = "vm.demande"></details-demande> 
         </section>
-        <div ng-if="vm.utilsServ.isClient()" ng-show="vm.stateOffre">
+        <div ng-if="vm.utilsServ.isClient() || vm.utilsServ.isClientPro()" ng-show="vm.stateOffre">
         <section>
 
                 <h3 style="text-align: center;border-bottom: 0px solid #7a43b6;color: #7a43b6 ">Liste Offres de la Damande N° {{vm.demande.numeroDemande}} </h3>

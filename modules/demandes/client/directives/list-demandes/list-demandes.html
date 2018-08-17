@@ -13,7 +13,10 @@
              
               
               <div class="col-sm-8">
-                  <span style="color: #7a43b6; font-style: normal;font-size: 16px; font-weight: bold; ">  Crédit immobilier</span><br> PROJET  N° {{demande.numeroDemande}}
+                 
+                      <span style="color: #7a43b6; font-style: normal;font-size: 16px; font-weight: bold; ">
+                          CREDIT {{demande.type}}
+                        </span><br> PROJET  N° {{demande.numeroDemande}}
               </div>             
                 <div class="col-sm-4" style="text-align: center">
                   <div ng-if="demande.offres.length  > 0">
