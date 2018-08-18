@@ -24,6 +24,7 @@
      */
     function link(scope) {
       console.log('++++', scope.demandes);
+      scope.isAdmin = Utils.isAdmin();
       // model filtre demande
       scope.filtre = {
         demande: {
