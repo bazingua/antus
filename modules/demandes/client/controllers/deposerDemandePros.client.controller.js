@@ -101,7 +101,6 @@
      * la methode qui permet de sauvegarder une demande
      */
     $scope.saveDemande = function () {
-      console.log("+++++++++++++++++------$scope.demandepro", $scope.demandepro, $scope.choicedNode);
       var demandeToSave = angular.copy($scope.demandepro);
       demandeToSave.projet.type = $scope.choicedNode;
       if ($scope.user) {
