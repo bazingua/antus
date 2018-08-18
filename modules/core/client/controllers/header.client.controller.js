@@ -5,14 +5,15 @@
     .module('core')
     .controller('HeaderController', HeaderController);
 
-  HeaderController.$inject = ['$scope', '$timeout', '$rootScope', '$state', 'Authentication', 'menuService', 'UserRoleService', 'SignOutService'];
+  HeaderController.$inject = ['$scope', '$timeout', '$rootScope', '$state', 'Authentication', 'menuService', 'UserRoleService', 'SignOutService','Utils'];
 
-  function HeaderController($scope, $timeout, $rootScope,$state, Authentication, menuService, UserRoleService, SignOutService) {
+  function HeaderController($scope, $timeout, $rootScope,$state, Authentication, menuService, UserRoleService, SignOutService,Utils) {
     var vm = this;
     vm.accountMenu = menuService.getMenu('account').items[0];
     vm.authentication = Authentication;
     vm.isCollapsed = false;
     vm.menu = menuService.getMenu('topbar');
+    vm.utils = Utils;
     if (vm.authentication.user) {
       if (_.indexOf( vm.authentication.user.roles, 'user') > -1) {
         $rootScope.espaceUser = 'Espace Client';

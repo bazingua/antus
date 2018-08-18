@@ -26,7 +26,7 @@ angular.module('demandes.model').factory('DemandesModel', ['ProjetModel', 'Patri
       this.active = data.active;
       this.updated = data.updated;
       this.isCurrentUserOwner = data.isCurrentUserOwner;
-      this.type = data.type || 'PART.';
+      this.type = data.type || 'PARTICULIER';
     }
 
     return DemandesModel;

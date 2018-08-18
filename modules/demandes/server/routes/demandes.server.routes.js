@@ -45,7 +45,6 @@ module.exports = function (app) {
     .get(demandesProCtrl.list)
     .post(function(req, res, next) { req.body.type = DEMANDE_TYPE_PRO; return next();}, paramsDemandesCtrl.setNumeroDemande, demandesProCtrl.create);
 
-
   // Finish by binding the demande middleware
   app.param('demandeId', demandes.demandeByID);
   app.param('state', demandes.state);
