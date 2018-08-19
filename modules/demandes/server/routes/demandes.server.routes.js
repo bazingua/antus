@@ -48,6 +48,10 @@ module.exports = function (app) {
   app.route('/api/demandes/:demandeId/offre/:offreId/transferer').all(demandesPolicy.isAllowed)
   .put(demandes.transfererOffre);
 
+  // Choisir une Offre
+  app.route('/api/demandes/:demandeId/offre/:offreId/choisir').all(demandesPolicy.isAllowed)
+  .put(demandes.choisirOffre);
+
   // Demandes Pro collection routes
   app.route('/api/demandespro').all(demandesPolicy.isAllowed)
     .get(demandesProCtrl.list)

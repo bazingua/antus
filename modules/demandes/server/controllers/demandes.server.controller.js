@@ -11,6 +11,7 @@ var path = require('path'),
   // etat offre
 var OFFRE_STATE_DEPOSE = 1;
 var OFFRE_STATE_TRANFERE = 5;
+var OFFRE_STATE_CHOISIT = 10;
   // etat demande
 var DEMANDE_STATE_DEPOSER = 1;
 var DEMANDE_STATE_VALIDER = 5;
@@ -187,6 +188,36 @@ exports.transfererOffre = function (req, res) {
   });
 };
 
+
+/**
+ * Choisir une offre
+ * changer l'etat d'une offre qui est en tranferer pour le mettre à chsoiit
+ */
+exports.choisirOffre = function (req, res) {
+  var demande = req.demande;
+  demande.updated = new Date();
+  var offres = demande.offres.slice();
+  var index = _.findIndex(offres, { 'id': parseInt(req.params.offreId, 10), 'etat': OFFRE_STATE_TRANFERE });
+  if (!offres[index])
+    return res.status(422).send({
+      code: '500.3',
+      message: "Cette offre n'est pas valide",
+      details: "L'offre avec cet identifiant n'est pas dans la liste des offres à choisir "
+    });
+
+  offres[index].etat = OFFRE_STATE_CHOISIT;
+  demande.offres = offres;
+  demande.markModified('offres');
+  demande.save(function (err, data) {
+    if (err) {
+      return res.status(422).send({
+        message: errorHandler.getErrorMessage(err)
+      });
+    } else {
+      return res.json(demande);
+    }
+  });
+};
 
 /**
  * Update an demande
