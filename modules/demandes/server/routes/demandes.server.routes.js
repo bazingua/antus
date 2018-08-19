@@ -36,6 +36,10 @@ module.exports = function (app) {
   app.route('/api/demandes/:demandeId/rejeter').all(demandesPolicy.isAllowed)
   .put(demandes.rejeterDemande);
 
+  // Archiver une  demande routes
+  app.route('/api/demandes/:demandeId/cloturer').all(demandesPolicy.isAllowed)
+  .put(demandes.cloturerDemande);
+
   // Deposer  une offre
   app.route('/api/demandes/:demandeId/offre/deposer').all(demandesPolicy.isAllowed)
   .put(demandes.deposerOffre);

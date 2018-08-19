@@ -12,10 +12,11 @@ var path = require('path'),
 var OFFRE_STATE_DEPOSE = 1;
 var OFFRE_STATE_TRANFERE = 5;
   // etat demande
-var DEMANDE_STATE_DEPOSE = 1;
-var DEMANDE_STATE_VALIDE = 5;
-var DEMANDE_STATE_REJETE = 0;
-var DEMANDE_STATE_ACCEPTE = 10;
+var DEMANDE_STATE_DEPOSER = 1;
+var DEMANDE_STATE_VALIDER = 5;
+var DEMANDE_STATE_REJETER = 0;
+var DEMANDE_STATE_ACCEPTER = 10;
+var DEMANDE_STATE_ARCHIVER = -5;
 /**
  * Create an demande
  */
@@ -87,7 +88,7 @@ exports.deposerOffre = function (req, res) {
   req.body.banque = req.user;
   req.body.created = new Date();
   demande.offres.push(req.body);
- // demande.etat = DEMANDE_STATE_ACCEPTE;
+ // demande.etat = DEMANDE_STATE_ACCEPTER;
   demande.save(function (err) {
     if (err) {
       return res.status(422).send({
@@ -106,7 +107,26 @@ exports.deposerOffre = function (req, res) {
 exports.rejeterDemande = function (req, res) {
   var demande = req.demande;
   demande.updated = new Date();
-  demande.etat = DEMANDE_STATE_REJETE;
+  demande.etat = DEMANDE_STATE_REJETER;
+  demande.save(function (err) {
+    if (err) {
+      return res.status(422).send({
+        message: errorHandler.getErrorMessage(err)
+      });
+    } else {
+      return res.json(demande);
+    }
+  });
+};
+
+
+/**
+ * Archiver une demande
+ */
+exports.cloturerDemande = function (req, res) {
+  var demande = req.demande;
+  demande.updated = new Date();
+  demande.etat = DEMANDE_STATE_ARCHIVER;
   demande.save(function (err) {
     if (err) {
       return res.status(422).send({
@@ -125,7 +145,7 @@ exports.rejeterDemande = function (req, res) {
 exports.validerDemande = function (req, res) {
   var demande = req.demande;
   demande.updated = new Date();
-  demande.etat = DEMANDE_STATE_VALIDE;
+  demande.etat = DEMANDE_STATE_VALIDER;
   demande.save(function (err) {
     if (err) {
       return res.status(422).send({
@@ -166,7 +186,6 @@ exports.transfererOffre = function (req, res) {
     }
   });
 };
-
 
 
 /**
