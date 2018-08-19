@@ -36,7 +36,7 @@ module.exports = function (app) {
   app.route('/api/demandes/:demandeId/offre/deposer').all(demandesPolicy.isAllowed)
   .put(demandes.deposerOffre);
 
-  // Deposer  demande routes
+  // Transferer une Offre
   app.route('/api/demandes/:demandeId/offre/:offreId/transferer').all(demandesPolicy.isAllowed)
   .put(demandes.transfererOffre);
 

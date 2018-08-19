@@ -44,6 +44,10 @@ exports.invokeRolesPolicies = function () {
     allows: [{
       resources: '/api/demandes/:demandeId/valider',
       permissions: '*'
+    },
+    {
+      resources: '/api/demandes/:demandeId/offre/:offreId/transferer',
+      permissions: '*'
     }]
   },
   {
