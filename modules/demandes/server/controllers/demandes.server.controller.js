@@ -59,6 +59,8 @@ exports.update = function (req, res) {
   demande.patrimoine = req.body.patrimoine;
   demande.financement = req.body.financement;
   demande.apport = req.body.apport;
+  demande.offres = req.body.offres;
+  demande.societe = req.body.societe;
   demande.updated = new Date();
   demande.__v = req.demande.__v + 1;
   demande.etat = req.demande.etat;
@@ -118,7 +120,7 @@ exports.validerDemande = function (req, res) {
 
 
 /**
- * deposerOffre an demande
+ * Transferer une offre
  */
 exports.transfererOffre = function (req, res) {
   var demande = req.demande;
@@ -145,6 +147,7 @@ exports.transfererOffre = function (req, res) {
     }
   });
 };
+
 
 
 /**
