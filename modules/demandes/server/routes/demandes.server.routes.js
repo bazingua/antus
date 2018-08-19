@@ -32,6 +32,10 @@ module.exports = function (app) {
   app.route('/api/demandes/:demandeId/valider').all(demandesPolicy.isAllowed)
   .put(demandes.validerDemande);
 
+  // Rejeter une  demande routes
+  app.route('/api/demandes/:demandeId/rejeter').all(demandesPolicy.isAllowed)
+  .put(demandes.rejeterDemande);
+
   // Deposer  une offre
   app.route('/api/demandes/:demandeId/offre/deposer').all(demandesPolicy.isAllowed)
   .put(demandes.deposerOffre);

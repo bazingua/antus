@@ -101,6 +101,25 @@ exports.deposerOffre = function (req, res) {
 
 
 /**
+ * Rejeter une demande
+ */
+exports.rejeterDemande = function (req, res) {
+  var demande = req.demande;
+  demande.updated = new Date();
+  demande.etat = DEMANDE_STATE_REJETE;
+  demande.save(function (err) {
+    if (err) {
+      return res.status(422).send({
+        message: errorHandler.getErrorMessage(err)
+      });
+    } else {
+      return res.json(demande);
+    }
+  });
+};
+
+
+/**
  * valider demande
  */
 exports.validerDemande = function (req, res) {
