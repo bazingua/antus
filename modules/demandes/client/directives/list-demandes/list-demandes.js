@@ -1,7 +1,7 @@
-(function() {
+(function () {
   'use strict';
   angular.module('demandes.directives')
-        .directive('listDemandes', listDemandes);
+    .directive('listDemandes', listDemandes);
 
   listDemandes.$inject = ['Utils'];
 

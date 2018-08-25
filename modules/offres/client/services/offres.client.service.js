@@ -12,9 +12,9 @@
     return $resource('api/offres/:offreId', {
       offreId: '@_id'
     }, {
-      update: {
-        method: 'PUT'
-      }
-    });
+        update: {
+          method: 'PUT'
+        }
+      });
   }
 }());
