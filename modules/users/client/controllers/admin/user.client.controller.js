@@ -5,15 +5,17 @@
     .module('users.admin')
     .controller('AdminController', AdminController);
 
-  AdminController.$inject = ['$rootScope','$scope', '$state', '$window', 'Authentication', 'userResolve', 'Notification', 'demandes', 'UsersService'];
+  AdminController.$inject = ['$rootScope', '$scope', '$state', '$window', 'Authentication', 'userResolve', 'Notification', 'demandes', 'UsersService', 'Utils'];
 
-  function AdminController($rootScope, $scope, $state, $window, Authentication, user, Notification, demandes, UsersService) {
+  function AdminController($rootScope, $scope, $state, $window, Authentication, user, Notification, demandes, UsersService, Utils) {
     var vm = this;
     vm.authentication = Authentication;
     vm.user = user;
     vm.remove = remove;
     vm.update = update;
     vm.demandes = demandes;
+    if (!Authentication.user)
+      $state.go('authentication.signin');
     vm.isContextUserSelf = isContextUserSelf;
 
     function remove(user) {
@@ -52,7 +54,7 @@
     }
 
     function isContextUserSelf() {
-      return vm.user.username === vm.authentication.user.username;
+      return vm.authentication.user && vm.authentication.user.username && vm.user.username === vm.authentication.user.username;
     }
 
     vm.createuser = function (isValid) {
@@ -66,7 +68,7 @@
       UsersService.createUser(vm.credentials)
         .then(onCreateBankSuccess)
         .catch(onCreateBankError);
-    }
+    };
 
     function onCreateBankSuccess(response) {
       vm.authentication.user = response;

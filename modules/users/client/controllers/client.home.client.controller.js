@@ -5,9 +5,9 @@
     .module('users')
     .controller('ClientHomeController', ClientHomeController);
 
-    ClientHomeController.$inject = ['$scope', '$state', '$stateParams', 'DemandesModel', '$timeout', 'demandes', 'Authentication', 'DemandesService'];
+    ClientHomeController.$inject = ['$scope', '$state', '$stateParams', 'DemandesModel', '$timeout', 'demandes', 'Authentication', 'DemandesService', 'Utils'];
 
-    function ClientHomeController($scope, $state, $stateParams, DemandesModel, $timeout, demandes, Authentication, DemandesService) {
+    function ClientHomeController($scope, $state, $stateParams, DemandesModel, $timeout, demandes, Authentication, DemandesService, Utils) {
       var vm = this;
       if (!Authentication && !demandes.length)
         $state.go('authentication.signin', { reload: true });
@@ -17,5 +17,6 @@
       $timeout(function() {
         vm.feedBackMessage = false;
       }, 100000);
+      vm.utils = Utils;
     }
   }());

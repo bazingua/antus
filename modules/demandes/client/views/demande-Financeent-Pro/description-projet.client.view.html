@@ -84,7 +84,7 @@
 
                 <div class="col-md-2  nopadding text-center">
                     <button type="submit" class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px;margin-bottom: 2px"
-                        ng-click="myForm.creditEncours.$error.required || myForm.creditProfessionnel.$error.required || myForm.descriptionProjet.$error.required ? error = false : $nextStep();">
+                        ng-click="myForm.creditEncours.$error.required || myForm.creditProfessionnel.$error.required || myForm.descriptionProjet.$error.required ? error = false : (user ? $setActiveIndex($getActiveIndex() + 4) : $nextStep())">
                         SUIVANT
                         <span class="glyphicon glyphicon-chevron-right"></span>
                     </button>

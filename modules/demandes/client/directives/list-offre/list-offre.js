@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
 
     angular.module('demandes.directives')
@@ -12,7 +12,7 @@
             transclude: false,
             templateUrl: 'modules/demandes/client/directives/list-offre/list-offre.html',
             scope: {
-              demandes: '='
+                demandes: '='
             },
             link: link
         };

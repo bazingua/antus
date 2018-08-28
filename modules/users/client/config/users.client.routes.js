@@ -70,11 +70,7 @@
         data: {
           pageTitle: 'Signup'
         },
-        resolve: {
-          userType: function () {
-            return 'Part.';
-          }
-        }
+        resolve: {}
       })
       .state('authentication.signup_pro', {
         url: '/signup-pro',
@@ -84,11 +80,7 @@
         data: {
           pageTitle: 'Signup'
         },
-        resolve: {
-          userType: function () {
-            return 'Pro.';
-          }
-        }
+        resolve: {}
       })
       .state('authentication.signup', {
         url: '/signup',

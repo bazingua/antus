@@ -44,7 +44,16 @@ exports.invokeRolesPolicies = function () {
     allows: [{
       resources: '/api/demandes/:demandeId/valider',
       permissions: '*'
-    }]
+    },
+    {
+      resources: '/api/demandes/:demandeId/offre/:offreId/transferer',
+      permissions: '*'
+    },
+    {
+      resources: '/api/demandes/:demandeId/rejeter',
+      permissions: '*'
+    }
+  ]
   },
   {
     roles: ['user', 'admin', 'pro'],
@@ -57,6 +66,13 @@ exports.invokeRolesPolicies = function () {
     roles: ['admin', 'pro'],
     allows: [{
       resources: '/api/demandespro',
+      permissions: '*'
+    }]
+  },
+  {
+    roles: ['user', 'pro'],
+    allows: [{
+      resources: '/api/demandes/:demandeId/offre/:offreId/choisir',
       permissions: '*'
     }]
   }

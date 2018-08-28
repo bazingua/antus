@@ -12,6 +12,7 @@
     vm.typeDemande = typeDemande;
     $scope.typeDemande = vm.typeDemande;
     $scope.demandepro = new DemandesModel();
+    $scope.user = Authentication.user;
     vm.steps = [
       {
         templateUrl: 'modules/demandes/client/views/demande-Financeent-Pro/fond-commerce.client.view.html',
@@ -47,7 +48,7 @@
       },
       {
         templateUrl: 'modules/demandes/client/views/demande-Financeent-Pro/email-demande.client.view.html',
-        title: 'Récapitulatif de votre demande de financement'
+        title: 'Création de votre compte client'
       },
       {
         templateUrl: 'modules/demandes/client/views/demande-Financeent-Pro/detail-demandepro.client.view.html',
@@ -87,7 +88,7 @@
     $scope.choiceBanqueConsulte = function (banque) {
       var banqueIn = $filter('filter')($scope.demandepro.financement.banqueContacter, banque.libelle);
       banque.checked = !banque.checked;
-      if (banqueIn.length < 1)
+      if (banqueIn && banqueIn.length < 1)
         $scope.demandepro.financement.banqueContacter.push(banque.libelle);
       else {
         $scope.demandepro.financement.banqueContacter = $filter('filter')($scope.demandepro.banqueContacter, '!' + banque.libelle);
@@ -100,7 +101,6 @@
      * la methode qui permet de sauvegarder une demande
      */
     $scope.saveDemande = function () {
-      console.log("+++++++++++++++++------$scope.demandepro", $scope.demandepro, $scope.choicedNode);
       var demandeToSave = angular.copy($scope.demandepro);
       demandeToSave.projet.type = $scope.choicedNode;
       if ($scope.user) {

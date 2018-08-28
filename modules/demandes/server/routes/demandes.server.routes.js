@@ -8,11 +8,15 @@ var demandesPolicy = require('../policies/demandes.server.policy'),
   paramsDemandesCtrl = require('../controllers/paramsDemandes.server.controller'),
   demandesProCtrl = require('../controllers/demandes.pro.server.controller');
 
+
+var DEMANDE_TYPE_PART = 'PART.';
+var DEMANDE_TYPE_PRO = 'PRO.';
+
 module.exports = function (app) {
   // Demandes collection routes
   app.route('/api/demandes').all(demandesPolicy.isAllowed)
     .get(demandes.list)
-    .post(function(req, res, next) { req.body.type = 'PART.'; return next();}, paramsDemandesCtrl.setNumeroDemande, demandes.create);
+    .post(function(req, res, next) { req.body.type = DEMANDE_TYPE_PART; return next();}, paramsDemandesCtrl.setNumeroDemande, demandes.create);
 
   // Single demande routes
   app.route('/api/demandes/:demandeId').all(demandesPolicy.isAllowed)
@@ -28,19 +32,30 @@ module.exports = function (app) {
   app.route('/api/demandes/:demandeId/valider').all(demandesPolicy.isAllowed)
   .put(demandes.validerDemande);
 
-  // Deposer  demande routes
+  // Rejeter une  demande routes
+  app.route('/api/demandes/:demandeId/rejeter').all(demandesPolicy.isAllowed)
+  .put(demandes.rejeterDemande);
+
+  // Archiver une  demande routes
+  app.route('/api/demandes/:demandeId/cloturer').all(demandesPolicy.isAllowed)
+  .put(demandes.cloturerDemande);
+
+  // Deposer  une offre
   app.route('/api/demandes/:demandeId/offre/deposer').all(demandesPolicy.isAllowed)
   .put(demandes.deposerOffre);
 
-  // Deposer  demande routes
+  // Transferer une Offre
   app.route('/api/demandes/:demandeId/offre/:offreId/transferer').all(demandesPolicy.isAllowed)
   .put(demandes.transfererOffre);
+
+  // Choisir une Offre
+  app.route('/api/demandes/:demandeId/offre/:offreId/choisir').all(demandesPolicy.isAllowed)
+  .put(demandes.choisirOffre);
 
   // Demandes Pro collection routes
   app.route('/api/demandespro').all(demandesPolicy.isAllowed)
     .get(demandesProCtrl.list)
-    .post(function(req, res, next) { req.body.type = 'PRO.'; return next();}, paramsDemandesCtrl.setNumeroDemande, demandesProCtrl.create);
-
+    .post(function(req, res, next) { req.body.type = DEMANDE_TYPE_PRO; return next();}, paramsDemandesCtrl.setNumeroDemande, demandesProCtrl.create);
 
   // Finish by binding the demande middleware
   app.param('demandeId', demandes.demandeByID);

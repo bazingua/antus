@@ -16,6 +16,7 @@ var DEMANDE_STATE_DEPOSE = 1;
 var DEMANDE_STATE_VALIDE = 5;
 var DEMANDE_STATE_REJETE = 0;
 var DEMANDE_STATE_ACCEPTE = 10;
+var DEMANDE_STATE_ARCHIVE = -5;
 /**
  * Créer une demande de financement Pro
  */

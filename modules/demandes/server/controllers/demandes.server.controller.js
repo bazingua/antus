@@ -11,11 +11,13 @@ var path = require('path'),
   // etat offre
 var OFFRE_STATE_DEPOSE = 1;
 var OFFRE_STATE_TRANFERE = 5;
+var OFFRE_STATE_CHOISIT = 10;
   // etat demande
-var DEMANDE_STATE_DEPOSE = 1;
-var DEMANDE_STATE_VALIDE = 5;
-var DEMANDE_STATE_REJETE = 0;
-var DEMANDE_STATE_ACCEPTE = 10;
+var DEMANDE_STATE_DEPOSER = 1;
+var DEMANDE_STATE_VALIDER = 5;
+var DEMANDE_STATE_REJETER = 0;
+var DEMANDE_STATE_ACCEPTER = 10;
+var DEMANDE_STATE_ARCHIVER = -5;
 /**
  * Create an demande
  */
@@ -59,6 +61,8 @@ exports.update = function (req, res) {
   demande.patrimoine = req.body.patrimoine;
   demande.financement = req.body.financement;
   demande.apport = req.body.apport;
+  demande.offres = req.body.offres;
+  demande.societe = req.body.societe;
   demande.updated = new Date();
   demande.__v = req.demande.__v + 1;
   demande.etat = req.demande.etat;
@@ -85,7 +89,45 @@ exports.deposerOffre = function (req, res) {
   req.body.banque = req.user;
   req.body.created = new Date();
   demande.offres.push(req.body);
- // demande.etat = DEMANDE_STATE_ACCEPTE;
+ // demande.etat = DEMANDE_STATE_ACCEPTER;
+  demande.save(function (err) {
+    if (err) {
+      return res.status(422).send({
+        message: errorHandler.getErrorMessage(err)
+      });
+    } else {
+      return res.json(demande);
+    }
+  });
+};
+
+
+/**
+ * Rejeter une demande
+ */
+exports.rejeterDemande = function (req, res) {
+  var demande = req.demande;
+  demande.updated = new Date();
+  demande.etat = DEMANDE_STATE_REJETER;
+  demande.save(function (err) {
+    if (err) {
+      return res.status(422).send({
+        message: errorHandler.getErrorMessage(err)
+      });
+    } else {
+      return res.json(demande);
+    }
+  });
+};
+
+
+/**
+ * Archiver une demande
+ */
+exports.cloturerDemande = function (req, res) {
+  var demande = req.demande;
+  demande.updated = new Date();
+  demande.etat = DEMANDE_STATE_ARCHIVER;
   demande.save(function (err) {
     if (err) {
       return res.status(422).send({
@@ -104,7 +146,7 @@ exports.deposerOffre = function (req, res) {
 exports.validerDemande = function (req, res) {
   var demande = req.demande;
   demande.updated = new Date();
-  demande.etat = DEMANDE_STATE_VALIDE;
+  demande.etat = DEMANDE_STATE_VALIDER;
   demande.save(function (err) {
     if (err) {
       return res.status(422).send({
@@ -118,7 +160,7 @@ exports.validerDemande = function (req, res) {
 
 
 /**
- * deposerOffre an demande
+ * Transferer une offre
  */
 exports.transfererOffre = function (req, res) {
   var demande = req.demande;
@@ -146,6 +188,36 @@ exports.transfererOffre = function (req, res) {
   });
 };
 
+
+/**
+ * Choisir une offre
+ * changer l'etat d'une offre qui est en tranferer pour le mettre à chsoiit
+ */
+exports.choisirOffre = function (req, res) {
+  var demande = req.demande;
+  demande.updated = new Date();
+  var offres = demande.offres.slice();
+  var index = _.findIndex(offres, { 'id': parseInt(req.params.offreId, 10), 'etat': OFFRE_STATE_TRANFERE });
+  if (!offres[index])
+    return res.status(422).send({
+      code: '500.3',
+      message: "Cette offre n'est pas valide",
+      details: "L'offre avec cet identifiant n'est pas dans la liste des offres à choisir "
+    });
+
+  offres[index].etat = OFFRE_STATE_CHOISIT;
+  demande.offres = offres;
+  demande.markModified('offres');
+  demande.save(function (err, data) {
+    if (err) {
+      return res.status(422).send({
+        message: errorHandler.getErrorMessage(err)
+      });
+    } else {
+      return res.json(demande);
+    }
+  });
+};
 
 /**
  * Update an demande

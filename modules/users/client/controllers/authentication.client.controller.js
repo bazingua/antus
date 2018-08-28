@@ -5,9 +5,9 @@
     .module('users')
     .controller('AuthenticationController', AuthenticationController);
 
-  AuthenticationController.$inject = ['$scope', '$rootScope', '$state', 'UsersService', '$location', '$window', 'Authentication', 'PasswordValidator', 'Notification', 'userType'];
+  AuthenticationController.$inject = ['$scope', '$rootScope', '$state', 'UsersService', '$location', '$window', 'Authentication', 'PasswordValidator', 'Notification'];
 
-  function AuthenticationController($scope, $rootScope, $state, UsersService, $location, $window, Authentication, PasswordValidator, Notification, userType) {
+  function AuthenticationController($scope, $rootScope, $state, UsersService, $location, $window, Authentication, PasswordValidator, Notification) {
     var vm = this;
 
     vm.authentication = Authentication;
@@ -35,11 +35,7 @@
         return false;
       }
       vm.credentials.roles = [];
-      if (userType === 'Pro.') {
-        vm.credentials.roles.push('pro');
-      } else {
-        vm.credentials.roles.push('user');
-      }
+      vm.credentials.roles.push('user');
       UsersService.userSignup(vm.credentials)
         .then(onUserSignupSuccess)
         .catch(onUserSignupError);

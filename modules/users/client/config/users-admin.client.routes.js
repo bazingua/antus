@@ -34,87 +34,86 @@
       }
     })
     .state('admin.users', {
-        url: '/list',
-        templateUrl: '/modules/users/client/views/admin/list-users.client.view.html',
-        controller: 'UserListController',
-        controllerAs: 'vm',
-        data: {
-          pageTitle: 'Users List'
+      url: '/list',
+      templateUrl: '/modules/users/client/views/admin/list-users.client.view.html',
+      controller: 'UserListController',
+      controllerAs: 'vm',
+      data: {
+        pageTitle: 'Users List'
+      }
+    })
+    .state('homeadmin', {
+      url: '/home-admin',
+      templateUrl: '/modules/users/client/views/admin/view-user.client.view.html',
+      controller: 'AdminController',
+      controllerAs: 'vm',
+      resolve: {
+        userResolve: getUser,
+        demandes: getDemandes
+      },
+      data: {
+        pageTitle: 'Edit {{ userResolve.displayName }}'
+      }
+    })
+    .state('homeadmin.demandesoumises', {
+      url: '/demandes',
+      views: {
+        admin_home_right_side: {
+          templateUrl: '/modules/users/client/views/admin/demandes-soumises.client.view.html'
         }
-      })
-      .state('homeadmin', {
-        url: '/home-admin',
-        templateUrl: '/modules/users/client/views/admin/view-user.client.view.html',
-        controller: 'AdminController',
-        controllerAs: 'vm',
-        resolve: {
-          userResolve: getUser,
-          demandes: getDemandes
-        },
-        data: {
-          pageTitle: 'Edit {{ userResolve.displayName }}'
+      }
+    })
+    .state('homeadmin.demandesoumisesFinancementPro', {
+      url: '/demandes',
+      views: {
+        admin_home_right_side: {
+          templateUrl: '/modules/users/client/views/admin/demandes-soumiseFinanPro.client.view.html'
         }
-      })  
-      .state('homeadmin.demandesoumises', {
-        url: "/demandes",
-        views: {
-              "admin_home_right_side": {
-                templateUrl: '/modules/users/client/views/admin/demandes-soumises.client.view.html'
-              }
-          }
-      }) 
-      .state('homeadmin.demandesoumisesFinancementPro', {
-        url: "/demandes",
-        views: {
-              "admin_home_right_side": {
-                templateUrl: '/modules/users/client/views/admin/demandes-soumiseFinanPro.client.view.html'
-              }
-          }
-      }) 
-      .state('homeadmin.users', {
-        url: "/users/:role",
-        views: {
-          "admin_home_right_side": { templateUrl: "/modules/users/client/views/admin/clients.client.view.html" }          
-          }
-      }) 
-      .state('homeadmin.addBanque', {
-        url: "/addBanque",
-        views: {
-          "admin_home_right_side": { templateUrl: "/modules/users/client/views/admin/add.banque.client.view.html" }          
-          }
-      })
-      .state('homeadmin.addAdmin', {
-        url: "/addAdmin",
-        views: {
-          "admin_home_right_side": { templateUrl: "/modules/users/client/views/admin/add.admin.client.view.html" }          
-          }
-      }) 
-      .state('admin.user', {
-        url: '/:userId',
-        templateUrl: '/modules/users/client/views/admin/view-user.client.view.html',
-       
-        controller: 'AdminController',
-        controllerAs: 'vm',
-        resolve: {
-          userResolve: getUser,
-          demandes: getDemandes
-        },
-        data: {
-          pageTitle: 'Edit {{ userResolve.displayName }}'
-        }
-      })
-      .state('admin.user-edit', {
-        url: '/:userId/edit',
-        templateUrl: '/modules/users/client/views/admin/edit-user.client.view.html',
-        controller: 'AdminController',
-        controllerAs: 'vm',
-        resolve: {
-          userResolve: getUser
-        },
-        data: {
-          pageTitle: 'Edit User {{ userResolve.displayName }}'
-        }
-      });
+      }
+    })
+    .state('homeadmin.users', {
+      url: '/users/:role',
+      views: {
+        admin_home_right_side: { templateUrl: '/modules/users/client/views/admin/clients.client.view.html' }
+      }
+    })
+    .state('homeadmin.addBanque', {
+      url: '/addBanque',
+      views: {
+        admin_home_right_side: { templateUrl: '/modules/users/client/views/admin/add.banque.client.view.html' }
+      }
+    })
+    .state('homeadmin.addAdmin', {
+      url: '/addAdmin',
+      views: {
+        'admin_home_right_side': { templateUrl: '/modules/users/client/views/admin/add.admin.client.view.html' }
+      }
+    })
+    .state('admin.user', {
+      url: '/:userId',
+      templateUrl: '/modules/users/client/views/admin/view-user.client.view.html',
+      controller: 'AdminController',
+      controllerAs: 'vm',
+      resolve: {
+        userResolve: getUser,
+        demandes: getDemandes
+      },
+      data: {
+        pageTitle: 'Edit {{ userResolve.displayName }}'
+      }
+    })
+    .state('admin.user-edit', {
+      url: '/:userId/edit',
+      templateUrl: '/modules/users/client/views/admin/edit-user.client.view.html',
+      controller: 'AdminController',
+      controllerAs: 'vm',
+      resolve: {
+        userResolve: getUser
+      },
+      data: {
+        pageTitle: 'Edit User {{ userResolve.displayName }}'
+      }
+    });
 
     getUser.$inject = ['$stateParams', 'AdminService', 'Authentication'];
     function getUser($stateParams, AdminService, Authentication) {
@@ -124,8 +123,8 @@
     function getDemandes(DemandesService, Authentication) {
     //  DemandesService.find({etat: 5}).then(function (data) {
       if (Authentication.user)
-        return DemandesService.find({etat: 1});
-      else 
+        return DemandesService.find();
+      else
         return [];
     }
 
