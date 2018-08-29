@@ -52,6 +52,10 @@ exports.invokeRolesPolicies = function () {
     {
       resources: '/api/demandes/:demandeId/rejeter',
       permissions: '*'
+    },
+    {
+      resources: '/api/demandes/:demandeId/cloturer',
+      permissions: '*'
     }
   ]
   },
