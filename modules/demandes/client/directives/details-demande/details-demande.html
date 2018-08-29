@@ -1,12 +1,10 @@
-<div class="panel-body service" data-height="height style=" min-height: 400px ">
 
-    <div class="panel panel-default " style="min-width: 900px; margin: auto; margin-bottom: 30px; border: 0; font-size:
-  12px ">
-      <div ng-if="!recap " style="width: 100%; margin-left: auto; margin-right: auto; margin-bottom: 30px " class=" text-center ">
-        <span style="color: #555 ">
-          <i class="material-icons "></i>
-        </span>
-        <span style="color: #777; position: relative;top: -8px;font-style: italic;font-size: 16px; " class="text-uppercase ">Détail demandes financement {{demande.type}}  N° {{demande.numeroDemande}} </span> 
+    <div class="panel panel-default " style="min-width: 900px; margin: auto; margin-bottom: 10px; font-size:
+  12px; border: 0">
+  <div class="panel-body ">
+      <div ng-if="!recap " style="width: 100%; margin-left: auto; margin-right: auto; margin-bottom: 10px " class=" text-center ">
+  
+        <span style="color: #777; font-style: italic;font-size: 16px;font-weight: bold " class="text-uppercase ">Détail demandes financement {{demande.type}}  N° {{demande.numeroDemande}} </span> 
       </div>
       <div ng-if="!utilsService.isBank() ">
        <div class="panel panel-default " style="background-color: #f7f7f7 "> 
@@ -44,7 +42,7 @@
        </div> 
    </div>
   </div>
-  <div ng-show="demande.type==='PARTICULIER' "> 
+  <div ng-show="demande.type==='PART.' "> 
  <div class="panel panel-default " style="background-color: #f7f7f7 "> 
        	<div class="panel-body ">
       <h5 style="border-bottom: 1px solid #ddd; padding: 1px; padding-left: 20px; background-color: #7a43b6; color: #fff; ">VOTRE PROJET </h5>
@@ -262,7 +260,7 @@
   </div>
 </div>
   <!-------------------------DEBUT-------DEMANDE PRO ---------------->
-  <div ng-show="demande.type==='PROFESSIONNEL' "> 
+  <div ng-show="demande.type==='PRO.' "> 
       
   <div class="panel panel-default " style="background-color: #f7f7f7 "> 
     <div class="panel-body ">
@@ -409,20 +407,35 @@
 <!----------------------------FIN DEMANE PRO-------------------->
   
   </div>
-  <div ng-if="!recap " ng-switch="demande.etat "  style="text-align:center ">
-  <div ng-switch-when="1 ">
-      <div ng-if="utilsService.isAdmin() ">
-  	<button  ng-click="validerDemande() "  type="button " style="background-color: #663399;color: #FFFFFF " class="btn-theme
-  btn-theme-md btn-default-bg text-uppercase ">Valider</button>
+  <div class="row">
+    <div class="col-sm-4">
+        <div ng-if="!recap " ng-switch="demande.etat "  style="text-align:center ">
+            <div ng-switch-when="1 ">
+                <div ng-if="utilsService.isAdmin() ">
+              <button  ng-click="validerDemande() "  type="button " style="background-color: #663399;color: #FFFFFF " class="btn-theme
+            btn-theme-md btn-default-bg text-uppercase ">Valider</button>
+            </div>
+          </div>
+            <div ng-switch-when="5 ">
+                <div ng-if="utilsService.isBank() && utilsService.isBankCanAddOffer(demande) ">
+              <a ui-sref="offres.deposer({demandeId: demande.id}) " type="button " style="background-color: #663399;color: #FFFFFF
+            " class="btn-theme btn-theme-md btn-default-bg text-uppercase ">Déposer Offre</a>
+            </div>
+            </div>
+          </div>
+    </div>
+    <div class="col-sm-4">
+        <div ng-if="utilsService.isAdmin() && demande.etat === 1 " style="text-align: center">
+            <button  ng-click="RejeterDemande()"  type="button " style="background-color: crimson;color: #FFFFFF " class="btn-theme
+          btn-theme-md btn-default-bg text-uppercase ">Rejeter</button>
+          </div>
+    </div>
+    <div class="col-sm-4">
+        <div ng-if="utilsService.isAdmin() && demande.etat !== -5 " style="text-align: center">
+            <button  ng-click="ArchiverDemande()"  type="button " style="background-color: blue;color: #FFFFFF " class="btn-theme
+          btn-theme-md btn-default-bg text-uppercase ">Archiver</button>
+          </div>
+    </div>
   </div>
-</div>
-  <div ng-switch-when="5 ">
-      <div ng-if="utilsService.isBank() && utilsService.isBankCanAddOffer(demande) ">
-  	<a ui-sref="offres.deposer({demandeId: demande.id}) " type="button " style="background-color: #663399;color: #FFFFFF
-  " class="btn-theme btn-theme-md btn-default-bg text-uppercase ">Déposer Offre</a>
-  </div>
-  </div>
-  
-</div>
 
     </div>

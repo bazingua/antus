@@ -30,8 +30,17 @@
         DemandesService.validerDemande(scope.demande.id)
         .then(successCallback)
         .catch(errorCallback);
-      };
-
+      }
+      scope.ArchiverDemande = function () {
+        DemandesService.ArchiverDemande(scope.demande.id)
+        .then(successCallback)
+        .catch(errorCallback);
+      }
+      scope.RejeterDemande = function () {
+        DemandesService.RejeterDemande(scope.demande.id)
+        .then(successCallback)
+        .catch(errorCallback);
+      }
       function successCallback(res) {
         $state.transitionTo($state.current, $stateParams, {
           reload: true,

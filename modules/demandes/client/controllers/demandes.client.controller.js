@@ -22,9 +22,13 @@
         resolve: {
           offreResolve: function () {
             return offre;
+          },
+          demandeResolve: function () {
+            return demande;
           }
         }
       });
     };
+    
   }
 }());

@@ -17,7 +17,10 @@
       remove: { method: 'PUT', url: '/api/logicdelete/:demandeId/:state', params: { demandeId: '@demandeId', state: '@state' } },
       deposerOfr: { method: 'PUT', url: '/api/demandes/:demandeId/offre/deposer', params: { demandeId: '@demandeId' } },
       validerDmd: { method: 'PUT', url: '/api/demandes/:demandeId/valider', params: { demandeId: '@demandeId' } },
+      archiverDmd: { method: 'PUT', url: '/api/demandes/:demandeId/cloturer', params: { demandeId: '@demandeId' } },
+      rejeterDmd: { method: 'PUT', url: '/api/demandes/:demandeId/rejeter', params: { demandeId: '@demandeId' } },
       transfererOfr: { method: 'PUT', url: '/api/demandes/:demandeId/offre/:offreId/transferer', params: { demandeId: '@demandeId', offreId: '@offreId' } },
+      ChoixOffre: { method: 'PUT', url: '/api/demandes/:demandeId/offre/:offreId/choisir', params: { demandeId: '@demandeId', offreId: '@offreId' } },
       update: { method: 'PUT' },
       saveDemande: { method: 'POST', url: '/api/demandes' },
       saveDemandePro: { method: 'POST', url: '/api/demandespro' }
@@ -78,6 +81,14 @@
       validerDemande: function (demandeId) {
         return this.validerDmd({ demandeId: demandeId }).$promise;
       },
+
+      ArchiverDemande: function (demandeId) {
+        return this.archiverDmd({ demandeId: demandeId }).$promise;
+      },
+
+      RejeterDemande: function (demandeId) {
+        return this.rejeterDmd({ demandeId: demandeId }).$promise;
+      },
       /**
        *deposerOffre
         Cette fonction permet de une offre sur une demande ,
@@ -86,6 +97,9 @@
        */
       deposerOffre: function (demandeId, offre) {
         return this.deposerOfr({ demandeId: demandeId }, offre).$promise;
+      },
+      ChoisirOffre: function (demandeId, offreId) {
+        return this.ChoixOffre({ demandeId: demandeId, offreId: offreId }).$promise;
       },
       /**
        *transfererOffre

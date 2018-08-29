@@ -6,19 +6,39 @@
     .module('offres')
     .controller('OffresController', OffresController);
 
-  OffresController.$inject = ['$scope', '$state', '$window', 'Authentication', 'offreResolve','Utils'];
+  OffresController.$inject = ['$scope', 'DemandesService','$state', '$window', 'Authentication', 'offreResolve','Utils','demandeResolve','Notification'];
 
-  function OffresController ($scope, $state, $window, Authentication, offreResolve,Utils) {
+  function OffresController ($scope, DemandesService,$state, $window, Authentication, offreResolve,Utils,demandeResolve,Notification) {
     var vm = this;
 
     vm.authentication = Authentication;
     $scope.offre = offreResolve;
-    vm.utilsServ = Utils;
+    $scope.demande = demandeResolve;
+   // vm.utilsServ = Utils;
+    $scope.utilsServ = Utils;
     console.log('++++', $scope.offre);
     vm.error = null;
     vm.form = {};
     vm.remove = remove;
     vm.save = save;
+
+    $scope.TransfererOffre = function () {
+      DemandesService.transfererOffre($scope.demande.id,$scope.offre.id)
+      .then(successCallback)
+      .catch(errorCallback);
+    }
+    $scope.ChoisirOffre = function () {
+      DemandesService.transfererOffre($scope.demande.id,$scope.offre.id)
+      .then(successCallback)
+      .catch(errorCallback);
+    }
+    function successCallback(res) {
+      Notification.success({ message: '<i class="glyphicon glyphicon-ok"></i> Offre transferer avec succes' });
+         
+    }
+    function errorCallback(error) {
+      $scope.error = error.data;
+    }
 
     // Remove existing Offre
     function remove() {

@@ -1,33 +1,209 @@
 <div class="panel panel-default">
-        
-        <div class="panel-body" style="padding: 20px; min-height: 400px">
-            
-          <section class="row">
-                    <details-demande recap="true" demande = "demandepro"></details-demande>
-              </section>
-              
-        </div>
 
-        <div class="row page-header" style="background-color: #f8f8f8; padding:0px ; margin: 10px; min-height: 50px;">
-          <div class="col-md-4"></div>
-          <div class="col-md-2 nopadding text-center">
-            <button ng-disabled="$isFirst()" class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px;margin-bottom: 2px" ng-click="$previousStep()">
-              <span class="glyphicon glyphicon-chevron-left"></span>
-              PRECEDENT
-            </button>
-          </div>
-          <div class="col-md-2  nopadding text-center">
-            <button type="submit" class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px;margin-bottom: 2px"
-            ng-click="myForm.revenuLocatif.$error.required ? error = false : saveDemande();">
-            TERMINER
-            <span class="glyphicon glyphicon-chevron-right"></span>
-          </button>
-  
-          </div>
-          <div class="col-md-4"></div>
+  <div class="panel-body" style="padding: 20px; min-height: 400px">
+
+    <section class="row">
+
+      <div class="panel panel-default " style="background-color: #f7f7f7 ">
+        <div class="panel-body ">
+          <div class="panel panel-default " style="background-color: #f7f7f7 "> 
+            <div class="panel-body ">
+        <h5 style="border-bottom: 1px solid #ddd; padding: 1px; padding-left: 20px; background-color: #7a43b6; color: #fff; ">EMPRUNTEUR </h5>
+        <div class="row ">
+         <label class="col-sm-6 ">Prénom : {{demandepro.client.prenom}}</label>
+         <label class="col-sm-6 ">Nom : {{demandepro.client.nom}}</label>
         </div>
         
-         </div>
+        <div class="row ">
+         <label class="col-sm-6 ">Civilité : {{demandepro.client.civilite}}</label>
+         <label class="col-sm-6 ">Situation Familliale : {{demandepro.client.situationfamiliale}}</label>
+        </div>
+        
+        <div class="row ">
+         <label class="col-sm-6 ">Date de Naissance : {{demandepro.client.dateNassance}}</label>
+         <label class="col-sm-6 ">Nationalité : {{demandepro.client.nationalite}}</label>
+        </div>
+        <div class="row ">
+         <label class="col-sm-6 ">Pays : {{demandepro.client.adresse.pays}}</label>
+         <label class="col-sm-6 ">Ville : {{vm.demandepro.client.adresse.ville}}</label>
+        </div>
+   
+        <div class="row ">
+         <label class="col-sm-6 ">Adresse : {{demandepro.client.adresse.adresse}}</label>
+         <label class="col-sm-6 ">Email : {{demandepro.client.email}}</label>
+        </div>
+        <div class="row ">
+         <label class="col-sm-6 ">Téléphone : {{demandepro.client.adresse.telephonePortable}}</label>
+        
+   </div>
+   </div>
+        </div>
+          <h5 style="border-bottom: 1px solid #ddd; padding: 1px; padding-left: 20px; background-color: #7a43b6; color: #fff; ">projet de crédit professionnel </h5>
+          <table class="table table-striped table-bordered " style="text-align: center; ">
+            <tr>
+              <td>Montant total du projet </td>
+              <td>Montant total l'apport </td>
+              <td>Montant de financement souhaité </td>
+              <td>Durée de remboursement</td>
+            </tr>
+            <tr>
+              <td>{{demandepro.projet.montantProjet}} XOF</td>
+              <td>{{demandepro.apport.montant}} XOF</td>
+              <td>{{demandepro.apport.montantMaxSouhaite}} XOF</td>
+              <td>{{demandepro.apport.dureeSouhaite}} ANS</td>
+            </tr>
+          </table>
+          <br>
+          <table class="table table-striped table-bordered " style="text-align: center; ">
+            <tr>
+              <td>CREDIT PROFESSIONEL ENCOURS</td>
+              <td>AVEZ-VOUS DEJA SOUSCRIT A UN CREDIT PROFESSIONNEL</td>
+              <td>DESCRIPTION DU PROJET</td>
+            </tr>
+            <tr>
+              <td>{{demandepro.patrimoine.credit.creditEncours}}</td>
+              <td>{{demandepro.patrimoine.credit.creditProfessionnel}}</td>
+              <td>{{demandepro.projet.descriptionProjet}}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="panel panel-default " style="background-color: #f7f7f7 ">
+        <div class="panel-body ">
+
+          <h5 style="border-bottom: 1px solid #ddd; padding: 1px; padding-left: 20px; background-color: #7a43b6; color: #fff; ">Adresse du projet de crédit professionnel </h5>
+          <table class="table table-striped table-bordered " style="text-align: center; ">
+            <tr>
+              <td>Ville du projet </td>
+              <td>Code postal</td>
+              <td>Pays</td>
+              <td>ADRESSE</td>
+            </tr>
+            <tr>
+              <td>{{demandepro.client.adresse.ville}}</td>
+              <td>{{demandepro.client.adresse.codePostale}} </td>
+              <td>{{demandepro.client.adresse.pays}}</td>
+              <td>{{demandepro.client.adresse.adresse}}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
 
 
- 
+
+      <div class="panel panel-default " style="background-color: #f7f7f7 ">
+        <div class="panel-body ">
+          <h5 style="border-bottom: 1px solid #ddd; padding: 1px; padding-left: 20px; background-color: #7a43b6; color: #fff; ">Chiffre d’affaires</h5>
+          <table class="table table-striped table-bordered " style="text-align: center; ">
+            <tr>
+              <td>votre niveau de chiffre d’affaires moyens </td>
+              <td></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+
+
+      <div class="panel panel-default " style="background-color: #f7f7f7 ">
+        <div class="panel-body ">
+          <h5 style="border-bottom: 1px solid #ddd; padding: 1px; padding-left: 20px; background-color: #7a43b6; color: #fff; ">Etablissements financiers contactés </h5>
+          <table class="table table-striped table-bordered " style="text-align: center; ">
+            <tr>
+              <td>Banque Principale</td>
+              <td>{{demandepro.financement.banque}}</td>
+            </tr>
+          </table>
+          <h5 style="border-bottom: 1px solid #ddd; padding: 1px; padding-left: 20px; background-color: #7a43b6; color: #fff; ">Liste des banques consultées</h5>
+          <table class="table table-striped table-bordered ">
+            <tr>
+              <td ng-repeat="x in demandepro.financement.banqueContacter ">{{x}}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+
+
+      <div class="panel panel-default " style="background-color: #f7f7f7 ">
+        <div class="panel-body ">
+          <h5 style="border-bottom: 1px solid #ddd; padding: 1px; padding-left: 20px; background-color: #7a43b6; color: #fff; ">Société</h5>
+          <table class="table table-striped table-bordered " style="text-align: center; ">
+            <tr>
+              <td>Enseigne commercial</td>
+              <td>Statut ou forme juridique</td>
+              <td>Secteur d'activité</td>
+            </tr>
+            <tr>
+              <td>{{demandepro.societe.nom}}</td>
+              <td>{{demandepro.societe.StatusJuridique}}</td>
+              <td>{{demandepro.societe.secteurActivite}}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+
+
+      <div class="panel panel-default " style="background-color: #f7f7f7 ">
+        <div class="panel-body ">
+          <h5 style="border-bottom: 1px solid #ddd; padding: 1px; padding-left: 20px; background-color: #7a43b6; color: #fff; ">Emprunteur </h5>
+          <table class="table table-striped table-bordered " style="text-align: center; ">
+            <tr>
+              <td>Nom</td>
+              <td>Prenom</td>
+              <td>Date de naissance</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="panel panel-default " style="background-color: #f7f7f7 ">
+        <div class="panel-body ">
+          <h5 style="border-bottom: 1px solid #ddd; padding: 1px; padding-left: 20px; background-color: #7a43b6; color: #fff; ">Co-Emprunteur </h5>
+          <table class="table table-striped table-bordered " style="text-align: center; ">
+            <tr>
+              <td>Nom</td>
+              <td>Prenom</td>
+              <td>Date de naissance</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <!----------------------------FIN DEMANE PRO-------------------->
+    </section>
+
+  </div>
+
+  <div class="row page-header" style="background-color: #f8f8f8; padding:0px ; margin: 10px; min-height: 50px;">
+    <div class="col-md-4"></div>
+    <div class="col-md-2 nopadding text-center">
+      <button ng-disabled="$isFirst()" class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px;margin-bottom: 2px"
+        ng-click="$previousStep()">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        PRECEDENT
+      </button>
+    </div>
+    <div class="col-md-2  nopadding text-center">
+      <button type="submit" class="btn" style="background-color:#663399;color:white; height: 50px; width: 130px;margin-bottom: 2px"
+        ng-click="myForm.revenuLocatif.$error.required ? error = false : saveDemande();">
+        TERMINER
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </button>
+
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+
+</div>
