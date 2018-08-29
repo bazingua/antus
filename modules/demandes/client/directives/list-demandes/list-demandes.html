@@ -33,42 +33,81 @@
       </div>
       <div class="clearfix"></div>
     </div>
+    
     <div class="clearfix"></div>
     <div class="panel-body" style="padding: 20px; min-height: 400px">
-        <div class="" ng-repeat="demande in demandes | filter: {numeroDemande : filtre.demande.numeroDemande} | filter: {etat : filtre.demande.currentstatus.code} | filter: {etat : filtre.demande.offre ? 15 : 1} |  filter: {type : filtre.demande.currentType.value} ">
-          <table class="table table-striped table-bordered table-hover" style="width: 70%; margin-right: auto; margin-left: auto;">
-            <tr>
-                <td style=" width: 50px; text-align: center">{{demande.created}}</td>
-                <td>
-                  
-                  <div class="col-sm-8">
-                      <a ui-sref="demandes.view({demandeId : demande._id })">
-                          <span style="color: #7a43b6; font-style: normal;font-size: 16px; font-weight: bold; ">  Crédit {{demande.type}}</span><br> PROJET  N° {{demande.numeroDemande}}
-                      </a>    
-                  </div>             
-                    <div class="col-sm-4" style="text-align: center">
-                      <div ng-if="demande.offres.length  > 0">
-                          
-                              OFFRE <span class="badge badge-light" style="background-color: red; color: white">{{demande.offres.length}}</span>
-                          
-                    </div>
-                    </div>
-                </td>
-                <td style="text-align: center;width: 200px; border-left: 2px solid #7a43b6; ">
-                  <strong>
-                      <a ui-sref="demandes.view({demandeId : demande._id })">
-                          Montant projet<br>
-                {{demande.projet.montantProjet}} XOF
-                      </a>    
-                  </strong>
-                
-              </td>
-            </tr>
-         </table>
-      </div>
-      <div ng-show="! ( (demandes | filter: {numeroDemande : filtre.demande.numeroDemande}).length &&(demandes | filter: {etat : filtre.demande.currentstatus.code}).length && (demandes |  filter: {etat : filtre.demande.offre ? 15 : 1}).length && (demandes |  filter: {type : filtre.demande.currentType.value}).length ) ">
-         <p class="text-center" style="color: #333"> Aucune demande trouvée </p> 
-      </div>
+        <div ng-show="isAdmin">
+          <!--  <div class="" ng-repeat="demande in demandes | filter: {numeroDemande : filtre.demande.numeroDemande} | filter: {etat : filtre.demande.currentstatus.code} | filter: {etat : filtre.demande.offre ? 15 : 1} |  filter: {type : filtre.demande.currentType.value} "> -->
+              <div class="" ng-repeat="demande in demandes | filter: {numeroDemande : filtre.demande.numeroDemande} | filter: {etat : filtre.demande.currentstatus.code}">
+          
+            <table class="table table-striped table-bordered table-hover" style="width: 70%; margin-right: auto; margin-left: auto;">
+                  <tr>
+                      <td style=" width: 50px; text-align: center">{{demande.created}}</td>
+                      <td>
+                        
+                        <div class="col-sm-8">
+                            <a ui-sref="demandes.view({demandeId : demande._id })">
+                                <span style="color: #7a43b6; font-style: normal;font-size: 16px; font-weight: bold; ">  Crédit {{demande.type}}</span><br> PROJET  N° {{demande.numeroDemande}}
+                            </a>    
+                        </div>             
+                          <div class="col-sm-4" style="text-align: center">
+                            <div ng-if="demande.offres.length  > 0">
+                                
+                                    OFFRE <span class="badge badge-light" style="background-color: red; color: white">{{demande.offres.length}}</span>
+                                
+                          </div>
+                          </div>
+                      </td>
+                      <td style="text-align: center;width: 200px; border-left: 2px solid #7a43b6; ">
+                        <strong>
+                            <a ui-sref="demandes.view({demandeId : demande._id })">
+                                Montant projet<br>
+                      {{demande.projet.montantProjet}} XOF
+                            </a>    
+                        </strong>
+                      
+                    </td>
+                  </tr>
+               </table>
+            </div> 
+            <div ng-show="!((demandes | filter: {numeroDemande : filtre.demande.numeroDemande}).length &&(demandes | filter: {etat : filtre.demande.currentstatus.code}).length && (demandes |  filter: {etat : filtre.demande.offre ? 15 : 1}).length && (demandes |  filter: {type : filtre.demande.currentType.value}).length ) ">
+                <p class="text-center" style="color: #333"> Aucune demande trouvée </p> 
+             </div>
+        </div>
+        <div ng-show="isClient || isClientPro || isBank">
+            <div class="" ng-repeat="demande in demandes">
+                <table class="table table-striped table-bordered table-hover" style="width: 70%; margin-right: auto; margin-left: auto;">
+                  <tr>
+                      <td style=" width: 50px; text-align: center">{{demande.created}}</td>
+                      <td>
+                        
+                        <div class="col-sm-8">
+                            <a ui-sref="demandes.view({demandeId : demande._id })">
+                                <span style="color: #7a43b6; font-style: normal;font-size: 16px; font-weight: bold; ">  Crédit {{demande.type}}</span><br> PROJET  N° {{demande.numeroDemande}}
+                            </a>    
+                        </div>             
+                          <div class="col-sm-4" style="text-align: center">
+                            <div ng-if="demande.offres.length  > 0">
+                                
+                                    OFFRE <span class="badge badge-light" style="background-color: red; color: white">{{demande.offres.length}}</span>
+                                
+                          </div>
+                          </div>
+                      </td>
+                      <td style="text-align: center;width: 200px; border-left: 2px solid #7a43b6; ">
+                        <strong>
+                            <a ui-sref="demandes.view({demandeId : demande._id })">
+                                Montant projet<br>
+                      {{demande.projet.montantProjet}} XOF
+                            </a>    
+                        </strong>
+                      
+                    </td>
+                  </tr>
+               </table>
+            </div> 
+        </div>
+      
 
     </div>
    

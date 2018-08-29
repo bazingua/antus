@@ -28,13 +28,24 @@
                 </div>
 
    </div>
+   <div ng-if="vm.utilsServ.isAdmin()">
+      <div class="btn-group btn-group-lg">
+
+              <button ui-sref="homeadmin" type="button" class="btn btn-group-lg" style="background-color: #7a43b6; ">Home</button>
+            
+              <button  ng-click="vm.stateOffre = !vm.stateOffre" type="button" class="btn btn-group-lg" style="background-color: #7a43b6;">Offres
+              
+         </button>
+          </div>
+
+</div>
 
    <div ng-if="vm.utilsServ.isBank()">
     <div class="btn-group btn-group-lg">
 
             <button ui-sref="userHome.banque" type="button" class="btn btn-group-lg" style="background-color: #7a43b6; ">Demandes</button>
           
-            <button  ng-click="vm.stateOffre = !vm.stateOffre" type="button" class="btn btn-group-lg" style="background-color: #7a43b6;"></button>
+            <button  ng-click="vm.stateOffre = !vm.stateOffre" type="button" class="btn btn-group-lg" style="background-color: #7a43b6;">Offres</button>
         </div>
 
 </div>
@@ -45,44 +56,148 @@
         <section class="row" ng-show="!vm.stateOffre">
           <details-demande demande = "vm.demande"></details-demande> 
         </section>
-        <div ng-if="vm.utilsServ.isClient() || vm.utilsServ.isClientPro()" ng-show="vm.stateOffre">
+        <!-- Partie Admin -->
         <section>
-
+        <div ng-if="vm.utilsServ.isAdmin()" ng-show="vm.stateOffre">
+                    <h3 style="text-align: center;border-bottom: 0px solid #7a43b6;color: #7a43b6 ">Liste Offres de la Damande N° {{vm.demande.numeroDemande}} </h3>
+                    <div class="panel-body" style="padding: 20px; min-height: 400px">
+               
+                   
+                        <div ng-repeat="offre in vm.demande.offres">
+                     <!--- si l'etat de l'offre est a 1 l'offre nest pas transferer--> 
+                     <div ng-if="vm.demande.offres.length > 0">
+                          <a  ng-click="showViewOffre(offre);" style="cursor: pointer">
+                      <table class="table table-striped table-bordered table-hover" style="width: 70%; margin-right: auto; margin-left: auto;">
+                      
+                        <tr>
+                           <td style=" width: 40px; text-align: center">
+                             {{offre.created}}
+                            <p>
+                                <div ng-switch="offre.etat "  style="text-align:center ">
+                                    <div ng-switch-when="1 " style="color: #330664;font-size: 14px;font-weight: bolder"> <i class="glyphicon glyphicon-exclamation-sign"></i> En attente</div>
+                                    <div ng-switch-when="5 " style="color:darkgreen;font-size: 14px;font-weight: bolder"><i class="glyphicon glyphicon-share-alt"></i> transferer</div>
+                                    <div ng-switch-when="10 " style="color: darkblue;font-size: 14px;font-weight: bolder"><i class="glyphicon glyphicon-ok"></i> Accepter</div>
+                                  </div>
+                            </p>
+                            </td>
+                           
+                            <td>
+                             <span style="color: #7a43b6; font-style: normal;font-size: 16px; font-weight: bold; "> Offre demande de  Crédit {{vm.demande.type}} N° :  {{offre.id}}</span><br> 
+                             Par la Banque : {{offre.banque.displayName}}          
+                               
+                           </td>
+                            <td style="text-align: center;width: 200px; border-left: 2px solid #7a43b6; ">
+                              <strong>
+                                 TAUX INTERET<br>
+                            {{offre.tauxInteret}} %
+                              </strong>
+                          </td>
+                        </tr>
+                        
+                        </table>
+                          </a>
+                        </div> 
+                        </div>
+                        
+    
+    
+                      <div ng-if="vm.demande.offres.length < 1" class="service " data-height="height">
+                        <div>
+                          <div class="alert alert-info">aucun OFFRE n'a été trouvé</div>
+                        </div>
+                      </div>
+                    </div>
+          </div>
+        </section>
+        <!-- Fin partie admin -->
+        <!-- partie client-->
+        <section>
+        <div ng-if="vm.utilsServ.isClient() || vm.utilsServ.isClientPro()" ng-show="vm.stateOffre">
                 <h3 style="text-align: center;border-bottom: 0px solid #7a43b6;color: #7a43b6 ">Liste Offres de la Damande N° {{vm.demande.numeroDemande}} </h3>
                 <div class="panel-body" style="padding: 20px; min-height: 400px">
-           
-                  <div ng-if="vm.demande.offres.length > 0">
                     <div ng-repeat="offre in vm.demande.offres">
+                 <!--- si l'etat de l'offre est a 1 l'offre nest pas transferer--> 
+                 <div ng-if="vm.demande.offres.length > 0 && (offre.etat ===5 || offre.etat ===10)">
                       <a  ng-click="showViewOffre(offre);" style="cursor: pointer">
                   <table class="table table-striped table-bordered table-hover" style="width: 70%; margin-right: auto; margin-left: auto;">
                   
                     <tr>
-                       <td style=" width: 40px; text-align: center">{{offre.created}}</td>
+                       <td style=" width: 40px; text-align: center">{{offre.created}}
+                        <p>
+                          <div ng-switch="offre.etat "  style="text-align:center ">
+                              <div ng-switch-when="1 " style="color: #330664;font-size: 14px;font-weight: bolder"> <i class="glyphicon glyphicon-exclamation-sign"></i> En attente</div>
+                              <div ng-switch-when="5 " style="color:darkgreen;font-size: 14px;font-weight: bolder"><i class="glyphicon glyphicon-share-alt"></i> transferer</div>
+                              <div ng-switch-when="10 " style="color: darkblue;font-size: 14px;font-weight: bolder"><i class="glyphicon glyphicon-ok"></i> Accepter</div>
+                            </div>
+                      </p>
+                       </td>
                        
                         <td>
-                         <span style="color: #7a43b6; font-style: normal;font-size: 16px; font-weight: bold; "> Offre Crédit immobilier N° :  {{offre.id}}</span><br> 
+                         <span style="color: #7a43b6; font-style: normal;font-size: 16px; font-weight: bold; "> Offre demande de  Crédit {{vm.demande.type}} N° :  {{offre.id}}</span><br> 
+                         <div ng-show="offre.etat ===10">
                          Par la Banque : {{offre.banque.displayName}}          
-                           
+                         </div>  
                        </td>
                         <td style="text-align: center;width: 200px; border-left: 2px solid #7a43b6; ">
                           <strong>
                              TAUX INTERET<br>
-                        {{offre.tauxInteret}}
+                        {{offre.tauxInteret}} %
                           </strong>
                       </td>
                     </tr>
                     
                     </table>
                       </a>
-                    </div>   
-                  </div>
+                    </div> 
+                    </div>
                   <div ng-if="vm.demande.offres.length < 1" class="service " data-height="height">
                     <div>
                       <div class="alert alert-info">aucun OFFRE n'a été trouvé</div>
                     </div>
                   </div>
-        </section>
+                </div>
       </div>
+    </section>
+     <!--Fin partie client-->
+        <!-- partie Bank-->
+        <section>
+            <div ng-if="vm.utilsServ.isBank()" ng-show="vm.stateOffre">
+                    <h3 style="text-align: center;border-bottom: 0px solid #7a43b6;color: #7a43b6 ">Liste Offres de la Damande N° {{vm.demande.numeroDemande}} </h3>
+                    <div class="panel-body" style="padding: 20px; min-height: 400px">
+                        <div ng-repeat="offre in vm.demande.offres">
+                     <!--- si l'etat de l'offre est a 1 l'offre nest pas transferer--> 
+                     <div ng-if="vm.demande.offres.length > 0 && offre.etat ===1">
+                          <a  ng-click="showViewOffre(offre);" style="cursor: pointer">
+                      <table class="table table-striped table-bordered table-hover" style="width: 70%; margin-right: auto; margin-left: auto;">
+                      
+                        <tr>
+                           <td style=" width: 40px; text-align: center">{{offre.created}}</td>
+                           
+                            <td>
+                             <span style="color: #7a43b6; font-style: normal;font-size: 16px; font-weight: bold; "> Offre demande de  Crédit {{vm.demande.type}} N° :  {{offre.id}}</span><br> 
+                           
+                           </td>
+                            <td style="text-align: center;width: 200px; border-left: 2px solid #7a43b6; ">
+                              <strong>
+                                 TAUX INTERET<br>
+                            {{offre.tauxInteret}} %
+                              </strong>
+                          </td>
+                        </tr>
+                        
+                        </table>
+                          </a>
+                        </div> 
+                        </div>
+                      <div ng-if="vm.demande.offres.length < 1" class="service " data-height="height">
+                        <div>
+                          <div class="alert alert-info">aucun OFFRE n'a été trouvé</div>
+                        </div>
+                      </div>
+                    </div>
+          </div>
+        </section>
+         <!--Fin partie Bank-->
     </div>
     
-     </div>
+   

@@ -1,26 +1,34 @@
 <section>
   <section>
       <h3 style="text-align: center;border-bottom: 0px solid #7a43b6;color: #7a43b6 ">Détail Offre  N° {{offre.id}} </h3>
-      <table class="table table-striped table-bordered table-hover" style="width: 100%; margin-right: auto; margin-left: auto;padding: 15px">
+      <table class="table table-striped table-bordered table-hover" style="width: 90%; margin-right: auto; margin-left: auto;padding: 15px">
           <tr>
-             <td style="padding: 35px">
-                <div ng-if="!vm.utilsServ.isClient()">
-                    <div class="col-md-6"> Banque :</div><div class="col-md-6">{{offre.banque.displayName}}</div>
+             <td style="padding: 0">
+                <div ng-if="(utilsServ.isClient() || utilsServ.isClientPro()) && offre.etat ==='10'" style="text-align: center; padding: 10px; background-color: #663399; font-weight: bold; color: #FFFFFF">
+                     Banque :{{offre.banque.displayName}}
                   </div>
+                  <div ng-show="utilsServ.isAdmin()" style="text-align: center; padding: 10px; background-color: #663399; font-weight: bold; color: #FFFFFF">
+                     Banque : {{offre.banque.displayName}}
+                    </div>
+                <table class="table table-striped table-bordered table-hover" style="width: 100%; margin-right: auto; margin-left: auto;margin-bottom: 0">
+                  <!-- si l'offre est accepté par le client on lui permet de voir la bank qui a la proposition-->  
                
-                <div class="col-md-6"> Montant Prêt : </div><div class="col-md-6"> {{offre.montantPret}} XOF</div>
-                <div class="col-md-6"> Durée du Prêt :</div><div class="col-md-6"> {{offre.dureePret}} </div>
-                <div class="col-md-6">Taux d'Interêt :</div><div class="col-md-6"> {{offre.tauxInteret}}  % </div>
-                <div class="col-md-6">Echéance :</div><div class="col-md-6">{{offre.echeance}}  XOF</div>
-                <div class="col-md-6">Frais Dossier :</div><div class="col-md-6">{{offre.fraisDossier}} XOF</div>
-                <div class="col-md-6">Assurance Offre :</div><div class="col-md-6">{{offre.assuranceOffre}} XOF</div>
-                <div class="col-md-6">Frais Notaire :</div><div class="col-md-6">{{offre.fraisNotaire}} XOF </div>
-                <div class="col-md-6">Assurance :</div><div class="col-md-6">{{offre.assurance}}  XOF</div>
-                <div class="col-md-6">Date Dépot :</div><div class="col-md-6"> {{offre.created}} </div>
+                <tr><td> Montant Prêt :</td><td>{{offre.montantPret}}</td></tr>
+                <tr><td> Durée du Prêt :</td><td>{{offre.dureePret}}</td></tr>
+                <tr><td> Taux d'Interêt :</td><td>{{offre.tauxInteret}}  %</td></tr>
+                <tr><td> Echéance :</td><td>{{offre.echeance}}  XOF</td></tr>
+                <tr><td> Frais Dossier :</td><td>{{offre.fraisDossier}} XOF</td></tr>
+                <tr><td> Assurance Offre :</td><td>{{offre.assuranceOffre}} XOF</td></tr>
+                <tr><td> Frais Notaire :</td><td>{{offre.fraisNotaire}} XOF</td></tr>
+                <tr><td> Assurance :</td><td>{{offre.assurance}}  XOF</td></tr>
+                <tr><td> Date Dépot :</td><td>{{offre.created}}</td></tr>
+
+                </table>
+      
              </td>
               <td style="text-align: center;width: 200px; border-left: 2px solid #7a43b6; ">
                 <br><br><br><br>
-                <strong>
+                <strong style="font-size: 26px; font-weight: bold; color: indigo">
                    TAUX INTERET<br>
               {{offre.tauxInteret}} %
                 </strong>
@@ -29,6 +37,21 @@
           </tr>
           
           </table>
+          <div ng-switch="offre.etat "  style="text-align:center;margin: 20px">
+              <div ng-switch-when="1 ">
+                  <div ng-if="utilsServ.isAdmin() ">
+                <button  ng-click="TransfererOffre()"  type="button " style="background-color: #663399;color: #FFFFFF " class="btn-theme
+                btn-theme-md btn-default-bg text-uppercase ">Transferer Offre</button>
+              </div>
+            </div>
+              <div ng-switch-when="5 ">
+                  <div ng-if="utilsServ.isClientPro() || utilsServ.isClient()">
+                <a  ng-click="ChoisirOffre()"  type="button " style="background-color: #663399;color: #FFFFFF
+              " class="btn-theme btn-theme-md btn-default-bg text-uppercase ">Accepter Offre</a>
+              </div>
+              </div>
+              
+            </div>
   </section>
   
 </section>

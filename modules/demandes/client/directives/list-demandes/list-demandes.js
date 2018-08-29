@@ -25,6 +25,9 @@
     function link(scope) {
       console.log('++++', scope.demandes);
       scope.isAdmin = Utils.isAdmin();
+      scope.isClient = Utils.isClient();
+      scope.isClientPro = Utils.isClientPro();
+      scope.isBank = Utils.isBank();
       // model filtre demande
       scope.filtre = {
         demande: {
