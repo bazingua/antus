@@ -64,6 +64,14 @@
         title: 'Vos coordonnées'
       },
       {
+        templateUrl: 'modules/demandes/client/views/form-create-demande/emprunteur-demande.client.view.html',
+        title: 'Emprunteur'
+      },
+      {
+        templateUrl: 'modules/demandes/client/views/form-create-demande/co-emprunteur-demande.client.view.html',
+        title: 'Co-emprunteur'
+      },
+      {
         templateUrl: 'modules/demandes/client/views/form-create-demande/detail-demande.client.view.html',
         title: 'Récapitulatif de votre demande'
       }

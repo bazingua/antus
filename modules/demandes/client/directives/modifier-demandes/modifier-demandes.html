@@ -1,0 +1,558 @@
+<form name="myForm" class="form-horizontal" novalidate>    
+    <div class="panel panel-default " style="min-width: 900px; margin: auto; margin-bottom: 10px; font-size:
+    12px; border: 0">
+    <div class="panel-body ">
+        <div ng-if="!recap " style="width: 100%; margin-left: auto; margin-right: auto; margin-bottom: 10px " class=" text-center ">
+    
+          <span style="color: #777; font-style: italic;font-size: 16px;font-weight: bold " class="text-uppercase ">Détail demandes financement {{demande.type}}  N° {{demande.numeroDemande}} </span> 
+        </div>
+        <div ng-if="!utilsService.isBank() ">
+         <div class="panel panel-default " style="background-color: #f7f7f7 "> 
+             <div class="panel-body ">
+       <h5 style="border-bottom: 1px solid #ddd; padding: 1px; padding-left: 20px; background-color: #7a43b6; color: #fff; ">EMPRUNTEUR </h5>
+       <div class="row ">
+        <label class="col-sm-6 ">Prénom : <input type="text" name="prenom" class="form-control" 
+            value="demande.client.prenom" ng-model="demande.client.prenom"></label>
+
+        <label class="col-sm-6 ">Nom :<input type="text" name="nom" class="form-control" 
+            value="demande.client.nom" ng-model="demande.client.nom"></label>
+       </div>
+       
+       <div class="row ">
+        <label class="col-sm-6 ">Civilité : <input type="text" name="civilite" class="form-control" 
+            value="demande.client.civilite" ng-model="demande.client.civilite"></label>
+
+        <label class="col-sm-6 ">Situation Familliale : <input type="text" name="situationfamiliale" class="form-control" 
+            value="demande.client.situationfamiliale" ng-model="demande.client.situationfamiliale"></label>
+       </div>
+       
+       <div class="row ">
+        <label class="col-sm-6 ">Date de Naissance : <input type="text" name="dateNassance" class="form-control" 
+            value="demande.client.dateNassance" ng-model="demande.client.dateNassance"></label>
+
+        <label class="col-sm-6 ">Nationalité :  <input type="text" name="nationalite" class="form-control" 
+            value="demande.client.nationalite" ng-model="demande.client.nationalite"></label>
+       </div>
+       <div class="row ">
+        <label class="col-sm-6 ">Pays : <input type="text" name="pays" class="form-control" 
+            value="demande.client.adresse.pays" ng-model="demande.client.adresse.pays"></label>
+
+        <label class="col-sm-6 ">Ville : <input type="text" name="ville" class="form-control" 
+            value="demande.client.adresse.ville" ng-model="demande.client.adresse.ville"></label>
+       </div>
+  
+       <div class="row ">
+        <label class="col-sm-6 ">Adresse : <input type="text" name="adresse" class="form-control" 
+            value="demande.client.adresse.adresse" ng-model="demande.client.adresse.adresse"></label>
+
+        <label class="col-sm-6 ">Email :  <input type="text" name="email" class="form-control" 
+            value="demande.client.email" ng-model="demande.client.email"></label>
+       </div>
+       <div class="row ">
+        <label class="col-sm-6 ">Téléphone : {{demande.client.adresse.telephonePortable}}</label>
+       
+  </div>
+  </div>
+       </div>
+         </div> 
+     </div>
+    </div>
+    <div ng-show="demande.type==='PART.' "> 
+   <div class="panel panel-default " style="background-color: #f7f7f7 "> 
+             <div class="panel-body ">
+        <h5 style="border-bottom: 1px solid #ddd; padding: 1px; padding-left: 20px; background-color: #7a43b6; color: #fff; ">VOTRE PROJET </h5>
+        <div class="row ">
+        <label class="col-sm-6 ">Type Demande : <input type="text" name="type" class="form-control" 
+            value="demande.type" ng-model="demande.type"></label>
+        <label class="col-sm-6 ">Numero Demande : <input type="text" name="type" class="form-control" 
+            value="demande.numeroDemande" ng-model="demande.numeroDemande" readonly></label>
+        <label class="col-sm-6 ">Montant projet : <input type="number" name="montantProjet" class="form-control" 
+            value="demande.projet.montantProjet" ng-model="demande.projet.montantProjet"> XOF</label>
+       </div>
+       <div class="row ">
+        <label class="col-sm-6 ">Montant traveau : <input type="number" name="montantTravaux" class="form-control" 
+            value="demande.projet.montantTravaux" ng-model="demande.projet.montantTravaux"> XOF</label>
+        <label class="col-sm-6 ">Frais notaire : <input type="number" name="fraisNotaire" class="form-control" 
+            value="demande.projet.fraisNotaire" ng-model="demande.projet.fraisNotaire"> XOF</label>
+       </div>
+       <div class="row ">
+       <label class="col-sm-6 ">Budget total estimé du projet : {{demande.projet.montantProjet + demande.projet.montantTravaux + demande.projet.fraisNotaire}}</label>
+     
+       </div>
+        
+        </div>
+        </div>
+        
+  <div class="panel panel-default " style="background-color: #f7f7f7 "> 
+             <div class="panel-body ">
+   
+   <h5  style="border-bottom: 1px solid #ddd; padding: 1px; padding-left: 20px; background-color: #7a43b6; color: #fff; ">PATRIMOINE </h5>
+       
+        <div class="row ">
+        <label class="col-sm-6 ">Bien Principal : <input type="number" name="bienPrincipal" class="form-control" 
+            value="demande.patrimoine.bienPrincipal" ng-model="demande.patrimoine.bienPrincipal"> XOF</label>
+        <label class="col-sm-6 ">Durée Principale : <input type="number" name="bienPrincipal" class="form-control" 
+            value="demande.patrimoine.duPrincipal" ng-model="demande.patrimoine.duPrincipal"></label>
+       </div>
+  
+       <div class="row ">
+        <label class="col-sm-6 ">Bien Secondaire : <input type="number" name="bienSecondaire" class="form-control" 
+            value="demande.patrimoine.bienSecondaire" ng-model="demande.patrimoine.bienSecondaire"> XOF</label>
+        <label class="col-sm-6 ">Durée Secondaire : <input type="number" name="duSecondaire" class="form-control" 
+            value="demande.patrimoine.duSecondaire" ng-model="demande.patrimoine.duSecondaire"></label>
+       </div>
+  
+       <div class="row ">
+        <label class="col-sm-6 ">Bien Locatif : <input type="number" name="bienLocatif" class="form-control" 
+            value="demande.patrimoine.bienLocatif" ng-model="demande.patrimoine.bienLocatif"> XOF</label>
+        <label class="col-sm-6 ">Durée Locatif : <input type="text" name="duLocatif" class="form-control" 
+            value="demande.patrimoine.duLocatif" ng-model="demande.patrimoine.duLocatif"></label>
+       </div>
+       <div class="row ">
+        <label class="col-sm-6 ">Autre Bien : <input type="text" name="bienAutre" class="form-control" 
+            value="demande.patrimoine.bienAutre" ng-model="demande.patrimoine.bienAutre"> XOF</label>
+        <label class="col-sm-6 ">Durée Autre Bien : <input type="text" name="duAutre" class="form-control" 
+            value="ddemande.patrimoine.duAutre" ng-model="demande.patrimoine.duAutre"></label>
+       </div><br>  
+   </div>
+  </div>
+  
+  <div class="panel panel-default " style="background-color: #f7f7f7 "> 
+             <div class="panel-body ">
+   
+   <h5  style="border-bottom: 1px solid #ddd; padding: 1px; padding-left: 20px; background-color: #7a43b6; color: #fff; ">CREDIT  </h5>
+       
+       
+         <table class="table table-striped table-bordered " style="text-align: center; ">
+           <tr>
+               <td>Principal</td>
+               <td>Secondaire</td>
+               <td>Locatif</td>
+               <td>Autre</td>
+           </tr>
+            <tr>
+               <td style="padding: 0 ">
+                 <table class="table table-striped " style="width: 100% " style="text-align: center; ">
+                 <tr>
+               <td>Mensualité</td>
+               <td>Restant</td>
+               <td>nbr Mois</td>
+               </tr>
+                 <tr>
+               <td><input type="number" name="mensualite" class="form-control" 
+                value="demande.patrimoine.credit.principal.mensualite" ng-model="demande.patrimoine.credit.principal.mensualite"> XOF</td>
+               <td><input type="number" name="restant" class="form-control" 
+                value="demande.patrimoine.credit.principal.restant" ng-model="demande.patrimoine.credit.principal.restant">
+                    XOF</td>
+               <td><input type="number" name="nbrMois" class="form-control" 
+                value="demande.patrimoine.credit.principal.nbrMois" ng-model="demande.patrimoine.credit.principal.nbrMois">
+                   </td>
+               </tr>
+                </table>
+               </td>
+              <td style="padding: 0 ">
+                 <table class="table table-striped " style="width: 100%;text-align: center; ">
+                 <tr>
+               <td>Mensualité</td>
+               <td>Restant</td>
+               <td>nbr Mois</td>
+               </tr>
+                 <tr>
+               <td><input type="number" name="nbrMois" class="form-control" 
+                value="demande.patrimoine.credit.secondaire.mensualite" ng-model="demande.patrimoine.credit.secondaire.mensualite">
+                    XOF</td>
+               <td><input type="number" name="restant" class="form-control" 
+                value="demande.patrimoine.credit.secondaire.restant" ng-model="demande.patrimoine.credit.secondaire.restant">
+                  XOF</td>
+               <td><input type="number" name="nbrMois" class="form-control" 
+                value="demande.patrimoine.credit.secondaire.nbrMois" ng-model="demande.patrimoine.credit.secondaire.nbrMois">
+                    XOF</td>
+               </tr>
+                </table>
+               </td>
+               <td style="padding: 0 ">
+               <table class="table table-striped " style="width: 100%; text-align: center; ">
+                 <tr>
+               <td>Mensualité</td>
+               <td>Restant</td>
+               <td>nbr Mois</td>
+               </tr>
+                 <tr>
+                     <td><input type="number" name="mensualite" class="form-control" 
+                value="demande.patrimoine.credit.locatif.mensualite" ng-model="demande.patrimoine.credit.locatif.mensualite">
+                    XOF</td>
+               <td><input type="number" name="restant" class="form-control" 
+                value="demande.patrimoine.credit.locatif.restant" ng-model="demande.patrimoine.credit.locatif.restant">
+                  XOF</td>
+               <td><input type="number" name="nbrMois" class="form-control" 
+                value="demande.patrimoine.credit.locatif.nbrMois" ng-model="demande.patrimoine.credit.locatif.nbrMois">
+                    XOF</td>
+               </tr>
+                </table>
+               </td>
+               <td style="padding: 0 ">
+               <table class="table table-striped " style="width: 100%;text-align:center;font-size: 11px ">
+                 <tr>
+               <td>Mensualité</td>
+               <td>Restant</td>
+               <td>nbr Mois</td>
+               </tr>
+                 <tr>
+                        <td><input type="number" name="mensualite" class="form-control" 
+                   value="demande.patrimoine.credit.autre.mensualite" ng-model="demande.patrimoine.credit.autre.mensualite">
+                       XOF</td>
+                  <td><input type="number" name="restant" class="form-control" 
+                   value="demande.patrimoine.credit.autre.restant" ng-model="demande.patrimoine.credit.autre.restant">
+                     XOF</td>
+                  <td><input type="number" name="nbrMois" class="form-control" 
+                   value="demande.patrimoine.credit.autre.nbrMois" ng-model="demande.patrimoine.credit.autre.nbrMois">
+                       XOF</td>
+               </tr>
+                </table>
+               </td>
+           </tr>
+         </table><br>
+  
+        
+   </div>
+  </div>
+  
+  <div class="panel panel-default " style="background-color: #f7f7f7 "> 
+             <div class="panel-body ">
+   
+   <h5 style="border-bottom: 1px solid #ddd; padding: 1px; padding-left: 20px; background-color: #7a43b6; color: #fff; ">REVENU </h5>
+       
+         
+        <table class="table table-striped table-bordered " style="text-align: center; ">
+           <tr>
+               <td>Mensuel</td>
+               <td>Nombre de mois</td>
+               <td>Prime</td>
+               <td>Locatif</td>
+               <td>Pension Alimentaire</td>
+               <td>Cession Salaire</td>
+           </tr>
+           <tr>
+               <td>
+                    <input type="number" name="nbrMois" class="form-control" 
+                    value="demande.patrimoine.revenu.mensuel" ng-model="demande.patrimoine.revenu.mensuel">
+                     XOF</td>
+               <td>
+                    <input type="number" name="nbrMois" class="form-control" 
+                    value="demande.patrimoine.revenu.nbrMois" ng-model="demande.patrimoine.revenu.nbrMois">
+                   </td>
+               <td>
+                    <input type="number" name="nbrMois" class="form-control" 
+                    value="demande.patrimoine.revenu.prime" ng-model="demande.patrimoine.revenu.prime">
+                     XOF</td>
+               <td>
+                    <input type="number" name="nbrMois" class="form-control" 
+                    value="demande.patrimoine.revenu.locatif" ng-model="demande.patrimoine.revenu.locatif">
+                    XOF</td>
+               <td>
+                    <input type="number" name="nbrMois" class="form-control" 
+                    value="demande.patrimoine.revenu.pensionAlimentaire" ng-model="demande.patrimoine.revenu.pensionAlimentaire">
+                    XOF</td>
+               <td>
+                    <input type="number" name="nbrMois" class="form-control" 
+                    value="demande.patrimoine.revenu.cessionSalaire" ng-model="demande.patrimoine.revenu.cessionSalaire">
+                    XOF</td>
+           </tr>
+         </table>
+        
+   </div>
+  </div>
+  
+  <div class="panel panel-default " style="background-color: #f7f7f7 "> 
+             <div class="panel-body ">
+   
+   <h5 style="border-bottom: 1px solid #ddd; padding: 1px; padding-left: 20px; background-color: #7a43b6; color: #fff; ">SITUATION PROFESSIONNELLE </h5>
+         <table class="table table-striped table-bordered " style="text-align: center; ">
+           <tr>
+               <td>Situation</td>
+               <td>Type Contrat</td>
+               <td>Durée Contrat</td>
+           </tr>
+            <tr>
+               <td><input type="text" name="nbrMois" class="form-control" 
+                value="demande.patrimoine.profession.situation" ng-model="demande.patrimoine.profession.situation">
+                </td>
+               <td><input type="text" name="nbrMois" class="form-control" 
+                value="demande.patrimoine.profession.typeContrat" ng-model="demande.patrimoine.profession.typeContrat">
+                </td>
+               <td><input type="text" name="nbrMois" class="form-control" 
+                value="demande.patrimoine.profession.dureeContrat" ng-model="demande.patrimoine.profession.dureeContrat">
+                </td>
+           </tr>
+         </table>
+   </div>
+  </div>
+  
+  
+      <div class="panel panel-default " style="background-color: #f7f7f7 "> 
+             <div class="panel-body ">
+                  <h5 style="border-bottom: 1px solid #ddd; padding: 1px; padding-left: 20px; background-color: #7a43b6; color:
+    #fff; ">FINANCEMENT </h5>
+        
+     
+         <table class="table table-striped table-bordered " style="text-align: center; ">
+           <tr>
+               <td>Montant</td>
+               <td>Montant Final</td>
+               <td>Durée Souhaitée</td>
+               <td>montant Maximun Souhaité</td>
+           </tr>
+           <tr>
+               <td><input type="number" name="nbrMois" class="form-control" 
+                value="demande.apport.montant" ng-model="demande.apport.montant">
+                 XOF</td>
+               <td><input type="number" name="nbrMois" class="form-control" 
+                value="demande.apport.montantFinale" ng-model="demande.apport.montantFinale">
+                 XOF</td>
+               <td><input type="number" name="nbrMois" class="form-control" 
+                value="demande.apport.dureeSouhaite" ng-model="demande.apport.dureeSouhaite">
+                 ANS</td>
+               <td><input type="number" name="nbrMois" class="form-control" 
+                value="demande.apport.montantMaxSouhaite" ng-model="demande.apport.montantMaxSouhaite">
+                 XOF</td>
+           </tr>
+         </table>
+         <br>
+         
+        <div class="row ">
+        <label class="col-sm-6 ">
+            <h5>Versement :   <input type="number" name="nbrMois" class="form-control" 
+                value="demande.financement.versement" ng-model="demande.financement.versement">
+                  XOF</h5>
+        </label>
+        <label class="col-sm-6 ">
+            <h5>Banque Principale : {{demande.financement.banque}} </h5>
+          </label>
+       </div>
+      
+       <div class="panel panel-default " style="background-color: #f7f7f7 "> 
+        <div class="panel-body ">
+  
+  <h5 style="border-bottom: 1px solid #ddd; padding: 1px; padding-left: 20px; background-color: #7a43b6; color: #fff; ">Liste des banques consultées</h5>
+  <table  class="table table-striped table-bordered ">
+    <tr><td ng-repeat="x in demande.financement.banqueContacter ">{{x}}</td> </tr>
+  </table>
+  </div>
+  </div>
+       <br> <br>
+      
+  </div>
+    </div>
+  </div>
+    <!-------------------------DEBUT-------DEMANDE PRO ---------------->
+    <div ng-show="demande.type==='PRO.' "> 
+        
+    <div class="panel panel-default " style="background-color: #f7f7f7 "> 
+      <div class="panel-body ">
+  
+  <h5 style="border-bottom: 1px solid #ddd; padding: 1px; padding-left: 20px; background-color: #7a43b6; color: #fff; ">projet de crédit professionnel </h5>
+    <table class="table table-striped table-bordered " style="text-align: center; ">
+      <tr>
+          <td>Montant total du projet </td>
+          <td>Montant total l'apport </td>
+          <td>Montant de financement souhaité </td>
+          <td>Durée de remboursement</td>
+      </tr>
+       <tr>
+          <td><input type="number" name="nbrMois" class="form-control" 
+            value="demande.projet.montantProjet" ng-model="demande.projet.montantProjet">
+              XOF</td>
+          <td><input type="number" name="nbrMois" class="form-control" 
+            value="demande.apport.montant" ng-model="demande.apport.montant">
+             XOF</td>
+          <td><input type="number" name="nbrMois" class="form-control" 
+            value="demande.apport.montantMaxSouhaite" ng-model="demande.apport.montantMaxSouhaite">
+             XOF</td>
+          <td><input type="number" name="nbrMois" class="form-control" 
+            value="demande.apport.dureeSouhaite" ng-model="demande.apport.dureeSouhaite">
+            {{}} ANS</td>
+      </tr>
+    </table>
+    <br>
+    <table class="table table-striped table-bordered " style="text-align: center; ">
+      <tr>
+          <td>CREDIT PROFESSIONEL ENCOURS</td>
+          <td>AVEZ-VOUS DEJA SOUSCRIT A UN CREDIT PROFESSIONNEL</td>
+          <td>DESCRIPTION DU PROJET</td>
+      </tr>
+      <tr>
+          <td><input type="number" name="nbrMois" class="form-control" 
+        value="demande.patrimoine.credit.creditEncours" ng-model="demande.patrimoine.credit.creditEncours">
+          XOF</td>
+      <td><input type="text" name="nbrMois" class="form-control" 
+        value="demande.patrimoine.credit.creditProfessionnel" ng-model="demande.patrimoine.credit.creditProfessionnel">
+         XOF</td>
+      <td><input type="text" name="nbrMois" class="form-control" 
+        value="demande.projet.descriptionProjet" ng-model="demande.projet.descriptionProjet">
+         </td>
+        
+    </tr>
+    </table>
+  </div>
+  </div>
+  
+  <div class="panel panel-default " style="background-color: #f7f7f7 "> 
+    <div class="panel-body ">
+  
+  <h5 style="border-bottom: 1px solid #ddd; padding: 1px; padding-left: 20px; background-color: #7a43b6; color: #fff; ">Adresse du projet de crédit professionnel </h5>
+  <table class="table table-striped table-bordered " style="text-align: center; ">
+    <tr>
+        <td>Ville du projet </td>
+        <td>Code postal</td>
+        <td>Pays</td>
+        <td>ADRESSE</td>
+    </tr>
+     <tr>
+
+          <td><input type="number" name="nbrMois" class="form-control" 
+        value="demande.client.adresse.ville" ng-model="demande.client.adresse.ville">
+          XOF</td>
+      <td><input type="text" name="nbrMois" class="form-control" 
+        value="demande.client.adresse.codePostale" ng-model="demande.client.adresse.codePostale">
+         XOF</td>
+      <td><input type="text" name="nbrMois" class="form-control" 
+        value="demande.client.adresse.pays" ng-model="demande.client.adresse.pays">
+         </td>
+
+        <td><input type="text" name="nbrMois" class="form-control" 
+            value="demande.client.adresse.adresse" ng-model="demande.client.adresse.adresse"></td>
+    
+    </tr>
+  </table>
+  </div>
+  </div>
+  
+  
+  
+  <div class="panel panel-default " style="background-color: #f7f7f7 "> 
+    <div class="panel-body ">
+  <h5 style="border-bottom: 1px solid #ddd; padding: 1px; padding-left: 20px; background-color: #7a43b6; color: #fff; ">Chiffre d’affaires</h5>
+  <table class="table table-striped table-bordered " style="text-align: center; ">
+    <tr>
+        <td>votre niveau de  chiffre d’affaires moyens </td><td></td>
+    </tr>
+  </table>
+  </div>
+  </div>
+  
+  
+  
+  <div class="panel panel-default " style="background-color: #f7f7f7 "> 
+    <div class="panel-body ">
+  <h5 style="border-bottom: 1px solid #ddd; padding: 1px; padding-left: 20px; background-color: #7a43b6; color: #fff; ">Etablissements financiers contactés </h5>
+  <table class="table table-striped table-bordered " style="text-align: center; ">
+    <tr>
+        <td>Banque Principale</td><td>{{demande.financement.banque}}</td>
+    </tr>
+  </table>
+  <h5 style="border-bottom: 1px solid #ddd; padding: 1px; padding-left: 20px; background-color: #7a43b6; color: #fff; ">Liste des banques consultées</h5>
+  <table  class="table table-striped table-bordered ">
+    <tr><td ng-repeat="x in demande.financement.banqueContacter ">{{x}}</td> </tr>
+  </table>
+  </div>
+  </div>
+  
+  
+  
+  <div class="panel panel-default " style="background-color: #f7f7f7 "> 
+    <div class="panel-body ">
+  <h5 style="border-bottom: 1px solid #ddd; padding: 1px; padding-left: 20px; background-color: #7a43b6; color: #fff; ">Société</h5>
+  <table class="table table-striped table-bordered " style="text-align: center; ">
+    <tr>
+        <td>Enseigne commercial</td>
+        <td>Statut ou forme juridique</td>
+        <td>Secteur d'activité</td>
+    </tr>
+    <tr>
+         <td><input type="number" name="nbrMois" class="form-control" 
+        value="demande.societe.nom" ng-model="demande.societe.nom">
+          XOF</td>
+      <td><input type="text" name="nbrMois" class="form-control" 
+        value="demande.societe.StatusJuridique" ng-model="demande.societe.StatusJuridique">
+         XOF</td>
+      <td><input type="text" name="nbrMois" class="form-control" 
+        value="demande.societe.secteurActivite" ng-model="demande.societe.secteurActivite">
+         </td>
+  </tr>
+  </table>
+  </div>
+  </div>
+  
+  
+  
+  <div class="panel panel-default " style="background-color: #f7f7f7 "> 
+    <div class="panel-body ">
+  <h5 style="border-bottom: 1px solid #ddd; padding: 1px; padding-left: 20px; background-color: #7a43b6; color: #fff; ">Emprunteur </h5>
+  <table class="table table-striped table-bordered " style="text-align: center; ">
+    <tr>
+        <td>Nom</td>
+        <td>Prenom</td>
+        <td>Date de naissance</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+  </tr>
+  </table>
+  </div>
+  </div>
+  <div class="panel panel-default " style="background-color: #f7f7f7 "> 
+    <div class="panel-body ">
+  <h5 style="border-bottom: 1px solid #ddd; padding: 1px; padding-left: 20px; background-color: #7a43b6; color: #fff; ">Co-Emprunteur </h5>
+  <table class="table table-striped table-bordered " style="text-align: center; ">
+    <tr>
+        <td>Nom</td>
+        <td>Prenom</td>
+        <td>Date de naissance</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+  </tr>
+  </table>
+  </div>
+  </div>
+  </div>
+</form>
+  <!----------------------------FIN DEMANE PRO-------------------->
+    
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+          <div ng-if="!recap " ng-switch="demande.etat "  style="text-align:center ">
+              <div ng-switch-when="1 ">
+                  <div ng-if="utilsService.isAdmin() ">
+                <button  ng-click="validerDemande() "  type="button " style="background-color: #663399;color: #FFFFFF " class="btn-theme
+              btn-theme-md btn-default-bg text-uppercase ">Valider</button>
+              </div>
+            </div>
+              <div ng-switch-when="5 ">
+                  <div ng-if="utilsService.isBank() && utilsService.isBankCanAddOffer(demande) ">
+                <a ui-sref="offres.deposer({demandeId: demande.id}) " type="button " style="background-color: #663399;color: #FFFFFF
+              " class="btn-theme btn-theme-md btn-default-bg text-uppercase ">Déposer Offre</a>
+              </div>
+              </div>
+            </div>
+      </div>
+      <div class="col-sm-4">
+          <div ng-if="utilsService.isAdmin() && demande.etat === 1 " style="text-align: center">
+              <button  ng-click="RejeterDemande()"  type="button " style="background-color: crimson;color: #FFFFFF " class="btn-theme
+            btn-theme-md btn-default-bg text-uppercase ">Rejeter</button>
+            </div>
+      </div>
+      <div class="col-sm-4">
+          <div ng-if="utilsService.isAdmin() && demande.etat !== -5 " style="text-align: center">
+              <button  ng-click="ArchiverDemande()"  type="button " style="background-color: blue;color: #FFFFFF " class="btn-theme
+            btn-theme-md btn-default-bg text-uppercase ">Archiver</button>
+            </div>
+      </div>
+    </div>
+  
+      </div>

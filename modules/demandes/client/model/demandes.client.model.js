@@ -17,6 +17,8 @@ angular.module('demandes.model').factory('DemandesModel', ['ProjetModel', 'Patri
       this.patrimoine = new PatrimoineModel(data.patrimoine);
       this.financement = new FinancementModel(data.financement);
       this.client = new UserModel(data.client);
+      this.emprunteur = new UserModel(data.emprunteur);
+      this.coemprunteur = new UserModel(data.coemprunteur);
       this.apport = new ApportModel(data.apport);
       this.societe = new SocieteModel(data.societe);
       this.offres = data.offres || [];
