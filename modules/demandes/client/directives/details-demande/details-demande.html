@@ -409,10 +409,10 @@
   </div>
   <div class="row">
     <div class="col-sm-4">
-        <div ng-if="!recap " ng-switch="demande.etat "  style="text-align:center ">
+        <div ng-if="!recap " ng-switch="demande.etat"  style="text-align:center ">
             <div ng-switch-when="1 ">
-                <div ng-if="utilsService.isAdmin() ">
-              <button  ng-click="validerDemande() "  type="button " style="background-color: #663399;color: #FFFFFF " class="btn-theme
+                <div ng-if="utilsService.isAdmin()">
+              <button  ng-click="validerDemande()"  type="button " style="background-color: #663399;color: #FFFFFF " class="btn-theme
             btn-theme-md btn-default-bg text-uppercase ">Valider</button>
             </div>
           </div>

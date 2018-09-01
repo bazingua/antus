@@ -6,9 +6,9 @@
     .module('offres')
     .controller('OffresController', OffresController);
 
-  OffresController.$inject = ['$scope', 'DemandesService','$state', '$window', 'Authentication', 'offreResolve','Utils','demandeResolve','Notification'];
+  OffresController.$inject = ['$scope', 'DemandesService','$state', '$window', 'Authentication', 'offreResolve','Utils','demandeResolve','Notification','$stateParams','$uibModalInstance'];
 
-  function OffresController ($scope, DemandesService,$state, $window, Authentication, offreResolve,Utils,demandeResolve,Notification) {
+  function OffresController ($scope, DemandesService,$state, $window, Authentication, offreResolve,Utils,demandeResolve,Notification,$stateParams,$uibModalInstance) {
     var vm = this;
 
     vm.authentication = Authentication;
@@ -16,28 +16,36 @@
     $scope.demande = demandeResolve;
    // vm.utilsServ = Utils;
     $scope.utilsServ = Utils;
-    console.log('++++', $scope.offre);
     vm.error = null;
     vm.form = {};
     vm.remove = remove;
     vm.save = save;
-
     $scope.TransfererOffre = function () {
       DemandesService.transfererOffre($scope.demande.id,$scope.offre.id)
       .then(successCallback)
       .catch(errorCallback);
     }
     $scope.ChoisirOffre = function () {
-      DemandesService.transfererOffre($scope.demande.id,$scope.offre.id)
+      DemandesService.ChoisirOffre($scope.demande.id,$scope.offre.id)
       .then(successCallback)
       .catch(errorCallback);
     }
+    $scope.dismiss = function () {
+      $uibModalInstance.dismiss();
+    }
     function successCallback(res) {
-      Notification.success({ message: '<i class="glyphicon glyphicon-ok"></i> Offre transferer avec succes' });
+      Notification.success({ message: '<i class="glyphicon glyphicon-ok"></i> Opération reussie avec succes' });
+      $uibModalInstance.dismiss();
+      $state.transitionTo($state.current, $stateParams, {
+        reload: true,
+        inherit: false,
+        notify: true
+      });
          
     }
     function errorCallback(error) {
-      $scope.error = error.data;
+      Notification.error({ message: '<i class="glyphicon glyphicon-minus-sign"></i>  Opération non reussie ' });
+      
     }
 
     // Remove existing Offre
