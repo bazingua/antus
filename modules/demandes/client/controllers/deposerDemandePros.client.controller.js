@@ -43,6 +43,14 @@
         title: 'COORDONNÉES DU DIRIGEANT ?'
       },
       {
+        templateUrl: 'modules/demandes/client/views/demande-Financeent-Pro/emprunteur-demande.client.view.html',
+        title: 'Emprunteur'
+      },
+      {
+        templateUrl: 'modules/demandes/client/views/demande-Financeent-Pro/coemprunteur-demande.client.view.html',
+        title: 'Co-emprunteur'
+      },
+      {
         templateUrl: 'modules/demandes/client/views/demande-Financeent-Pro/adresse-projet.view.client.html',
         title: 'Quel est l\'adresse de votre entreprise ?'
       },
