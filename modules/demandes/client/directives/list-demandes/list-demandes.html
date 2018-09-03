@@ -42,7 +42,17 @@
           
             <table class="table table-striped table-bordered table-hover" style="width: 70%; margin-right: auto; margin-left: auto;">
                   <tr>
-                      <td style=" width: 50px; text-align: center">{{demande.created}}</td>
+                      <td style=" width: 50px; text-align: center">
+                          {{demande.created}}
+                          <p>
+                                <div ng-switch="demande.etat "  style="text-align:center ">
+                                    <div ng-switch-when="1 " style="color: #330664;font-size: 14px;font-weight: bolder"> <i class="glyphicon glyphicon-exclamation-sign"></i> En attente</div>
+                                    <div ng-switch-when="5 " style="color:darkgreen;font-size: 14px;font-weight: bolder"><i class="glyphicon glyphicon-share-alt"></i> Validée</div>
+                                    <div ng-switch-when="10 " style="color: darkblue;font-size: 14px;font-weight: bolder"><i class="glyphicon glyphicon-ok"></i> Acceptée</div>
+                                    <div ng-switch-when="-5 " style="color: darkblue;font-size: 14px;font-weight: bolder"><i class="glyphicon glyphicon-file"></i> Archivée</div>
+                                  </div>
+                            </p>
+                        </td>
                       <td>
                         
                         <div class="col-sm-8">
@@ -76,9 +86,18 @@
         </div>
         <div ng-show="isClient || isClientPro || isBank">
             <div class="" ng-repeat="demande in demandes">
+                    <div ng-if="demande.etat !== -5">
                 <table class="table table-striped table-bordered table-hover" style="width: 70%; margin-right: auto; margin-left: auto;">
                   <tr>
-                      <td style=" width: 50px; text-align: center">{{demande.created}}</td>
+                      <td style=" width: 50px; text-align: center">{{demande.created}}
+                            <p>
+                                    <div ng-switch="demande.etat "  style="text-align:center ">
+                                        <div ng-switch-when="1 " style="color: #330664;font-size: 14px;font-weight: bolder"> <i class="glyphicon glyphicon-exclamation-sign"></i> En attente</div>
+                                        <div ng-switch-when="5 " style="color:darkgreen;font-size: 14px;font-weight: bolder"><i class="glyphicon glyphicon-share-alt"></i> Validée</div>
+                                        <div ng-switch-when="10 " style="color: darkblue;font-size: 14px;font-weight: bolder"><i class="glyphicon glyphicon-ok"></i> Acceptée</div>
+                                        </div>
+                                </p>
+                        </td>
                       <td>
                         
                         <div class="col-sm-8">
@@ -105,6 +124,7 @@
                     </td>
                   </tr>
                </table>
+            </div> 
             </div> 
         </div>
       
