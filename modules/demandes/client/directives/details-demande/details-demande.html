@@ -40,6 +40,9 @@
 </div>
      </div>
        </div> 
+               <div ng-if="utilsService.isClient() || utilsService.isClientPro()" style="text-align: right">
+                <button ui-sref="" type="button" class="btn btn-group-lg" style="background-color: #2f774b; color: #fff ">Modifier</button>
+               </div>
    </div>
   </div>
   <div ng-show="demande.type==='PART.' "> 
@@ -59,7 +62,9 @@
      <label class="col-sm-6 ">Budget total estimé du projet : {{demande.projet.montantProjet + demande.projet.montantTravaux + demande.projet.fraisNotaire}}</label>
    
      </div>
-      
+     <div ng-if="utilsService.isClient() || utilsService.isClientPro()" style="text-align: right">
+      <button ui-sref="" type="button" class="btn btn-group-lg" style="background-color: #2f774b; color: #fff ">Modifier</button>
+     </div>
       </div>
       </div>
       
@@ -86,6 +91,9 @@
       <label class="col-sm-6 ">Autre Bien : {{demande.patrimoine.bienAutre}} XOF</label>
       <label class="col-sm-6 ">Durée Autre Bien : {{demande.patrimoine.duAutre}}</label>
      </div><br>  
+     <div ng-if="utilsService.isClient() || utilsService.isClientPro()" style="text-align: right">
+      <button ui-sref="" type="button" class="btn btn-group-lg" style="background-color: #2f774b; color: #fff ">Modifier</button>
+     </div>
  </div>
 </div>
 
@@ -162,7 +170,9 @@
          </tr>
        </table><br>
 
-      
+       <div ng-if="utilsService.isClient() || utilsService.isClientPro()" style="text-align: right">
+        <button ui-sref="" type="button" class="btn btn-group-lg" style="background-color: #2f774b; color: #fff ">Modifier</button>
+       </div>
  </div>
 </div>
 
@@ -190,7 +200,9 @@
              <td>{{demande.patrimoine.revenu.cessionSalaire}} XOF</td>
          </tr>
        </table>
-      
+       <div ng-if="utilsService.isClient() || utilsService.isClientPro()" style="text-align: right">
+        <button ui-sref="" type="button" class="btn btn-group-lg" style="background-color: #2f774b; color: #fff ">Modifier</button>
+       </div>
  </div>
 </div>
 
@@ -210,6 +222,9 @@
              <td>{{demande.patrimoine.profession.dureeContrat}}</td>
          </tr>
        </table>
+       <div ng-if="utilsService.isClient() || utilsService.isClientPro()" style="text-align: right">
+        <button ui-sref="" type="button" class="btn btn-group-lg" style="background-color: #2f774b; color: #fff ">Modifier</button>
+       </div>
  </div>
 </div>
 
@@ -254,7 +269,9 @@
 </table>
 </div>
 </div>
-     <br> <br>
+<div ng-if="utilsService.isClient() || utilsService.isClientPro()" style="text-align: right">
+  <button ui-sref="" type="button" class="btn btn-group-lg" style="background-color: #2f774b; color: #fff ">Modifier</button>
+ </div>
     
 </div>
   </div>
@@ -293,6 +310,9 @@
               <td>{{demande.projet.descriptionProjet}}</td>
   </tr>
   </table>
+  <div ng-if="utilsService.isClient() || utilsService.isClientPro()" style="text-align: right">
+    <button ui-sref="" type="button" class="btn btn-group-lg" style="background-color: #2f774b; color: #fff ">Modifier</button>
+   </div>
 </div>
 </div>
 
@@ -314,6 +334,9 @@
       <td>{{demande.client.adresse.adresse}}</td>
   </tr>
 </table>
+<div ng-if="utilsService.isClient() || utilsService.isClientPro()" style="text-align: right">
+  <button ui-sref="" type="button" class="btn btn-group-lg" style="background-color: #2f774b; color: #fff ">Modifier</button>
+ </div>
 </div>
 </div>
 
@@ -327,10 +350,11 @@
       <td>votre niveau de  chiffre d’affaires moyens </td><td>{{demande.projet.type.libelle}} F CFA</td>
   </tr>
 </table>
+<div ng-if="utilsService.isClient() || utilsService.isClientPro()" style="text-align: right">
+  <button ui-sref="" type="button" class="btn btn-group-lg" style="background-color: #2f774b; color: #fff ">Modifier</button>
+ </div>
 </div>
 </div>
-
-
 
 <div class="panel panel-default " style="background-color: #f7f7f7 "> 
   <div class="panel-body ">
@@ -340,10 +364,21 @@
       <td>Banque Principale</td><td>{{demande.financement.banque}}</td>
   </tr>
 </table>
+<div ng-if="utilsService.isClient() || utilsService.isClientPro()" style="text-align: right">
+  <button ui-sref="" type="button" class="btn btn-group-lg" style="background-color: #2f774b; color: #fff ">Modifier</button>
+ </div>
+</div>
+</div>
+
+<div class="panel panel-default " style="background-color: #f7f7f7 "> 
+  <div class="panel-body ">
 <h5 style="border-bottom: 1px solid #ddd; padding: 1px; padding-left: 20px; background-color: #7a43b6; color: #fff; ">Liste des banques consultées</h5>
 <table  class="table table-striped table-bordered ">
   <tr><td ng-repeat="x in demande.financement.banqueContacter ">{{x}}</td> </tr>
 </table>
+<div ng-if="utilsService.isClient() || utilsService.isClientPro()" style="text-align: right">
+  <button ui-sref="" type="button" class="btn btn-group-lg" style="background-color: #2f774b; color: #fff ">Modifier</button>
+ </div>
 </div>
 </div>
 
@@ -364,6 +399,9 @@
     <td>{{demande.societe.secteurActivite}}</td>
 </tr>
 </table>
+<div ng-if="utilsService.isClient() || utilsService.isClientPro()" style="text-align: right">
+  <button ui-sref="" type="button" class="btn btn-group-lg" style="background-color: #2f774b; color: #fff ">Modifier</button>
+ </div>
 </div>
 </div>
 
@@ -384,6 +422,9 @@
     <td></td>
 </tr>
 </table>
+<div ng-if="utilsService.isClient() || utilsService.isClientPro()" style="text-align: right">
+  <button ui-sref="" type="button" class="btn btn-group-lg" style="background-color: #2f774b; color: #fff ">Modifier</button>
+ </div>
 </div>
 </div>
 <div class="panel panel-default " style="background-color: #f7f7f7 "> 
@@ -401,6 +442,9 @@
     <td></td>
 </tr>
 </table>
+<div ng-if="utilsService.isClient() || utilsService.isClientPro()" style="text-align: right">
+  <button ui-sref="" type="button" class="btn btn-group-lg" style="background-color: #2f774b; color: #fff ">Modifier</button>
+ </div>
 </div>
 </div>
 </div>
