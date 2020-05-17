@@ -1,13 +1,13 @@
 ---
 declared-services:
-  mean-mongo:
+  antus-mongo:
     label: mongodb
     plan: 100
 applications:
-- name: mean
-  host: mean-${random-word}
+- name: antus
+  host: antus-${random-word}
   memory: 128M
   services:
-  - mean-mongo
+  - antus-mongo
   env:
     NODE_ENV: cloud-foundry

@@ -130,7 +130,7 @@ describe('Demande Admin CRUD tests', function () {
             }
 
             // Update demande title
-            demande.title = 'WHY YOU GOTTA BE SO MEAN?';
+            demande.title = 'WHY YOU GOTTA BE SO ANTUS?';
 
             // Update an existing demande
             agent.put('/api/demandes/' + demandeSaveRes.body._id)
@@ -144,7 +144,7 @@ describe('Demande Admin CRUD tests', function () {
 
                 // Set assertions
                 (demandeUpdateRes.body._id).should.equal(demandeSaveRes.body._id);
-                (demandeUpdateRes.body.title).should.match('WHY YOU GOTTA BE SO MEAN?');
+                (demandeUpdateRes.body.title).should.match('WHY YOU GOTTA BE SO ANTUS?');
 
                 // Call the assertion callback
                 done();
