@@ -193,7 +193,7 @@ var initGlobalConfig = function () {
   // Merge config files
   var config = _.merge(defaultConfig, environmentConfig);
 
-  // read package.json for ANTUS.JS project information
+  // read package.json for ANTUS project information
   var pkg = require(path.resolve('./package.json'));
   config.antus = pkg;
 

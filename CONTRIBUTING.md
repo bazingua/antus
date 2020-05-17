@@ -1,9 +1,9 @@
 # How to contribute
 
 Support and contributions from the open source community are essential for keeping
-ANTUS.js up to date and always improving! There are a few guidelines that we need
+ANTUS up to date and always improving! There are a few guidelines that we need
 contributors to follow to keep the project consistent, as well as allow us to keep
-maintaining ANTUS.js in a reasonable amount of time.
+maintaining ANTUS in a reasonable amount of time.
 
 ## Creating an Issue
 
@@ -68,7 +68,7 @@ Fixes #82
 ## Submitting the Pull Request
 
 * Push your changes to your topic branch on your fork of the repo.
-* Submit a pull request from your topic branch to the master branch on the ANTUS.JS repository.
+* Submit a pull request from your topic branch to the master branch on the ANTUS repository.
 * Be sure to tag any issues your pull request is taking care of / contributing to.
 	* By adding "Closes #xyz" to a commit message will auto close the issue once the pull request is merged in.
 * Small changes are usually accepted and merged in within a week (provided that 2 collaborators give the okay)

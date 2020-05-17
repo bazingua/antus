@@ -46,7 +46,7 @@ module.exports.start = function start(callback) {
       console.log(chalk.green('Database:        ' + config.db.uri));
       console.log(chalk.green('App version:     ' + config.antus.version));
       if (config.antus['antus-version'])
-        console.log(chalk.green('ANTUS.JS version: ' + config.antus['antus-version']));
+        console.log(chalk.green('ANTUS version: ' + config.antus['antus-version']));
       console.log('--');
 
       if (callback) callback(app, db, config);
