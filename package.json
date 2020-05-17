@@ -70,7 +70,7 @@
     "sendmail": "~1.2.0",
     "serve-favicon": "~2.4.5",
     "socket.io": "~2.0.4",
-    "swagger-ui": "~2.1.2",
+    "swagger-ui": "~3.23.11",
     "validator": "~8.0.0",
     "winston": "~2.4.0",
     "wiredep": "~4.0.0"
