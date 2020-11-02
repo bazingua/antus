@@ -2,7 +2,7 @@
 
 module.exports = {
   app: {
-    title: 'MEAN.JS',
+    title: 'ANTUS',
     description: 'Full-Stack JavaScript with MongoDB, Express, AngularJS, and Node.js',
     keywords: 'mongodb, express, angularjs, node.js, mongoose, passport',
     googleAnalyticsTrackingID: process.env.GOOGLE_ANALYTICS_TRACKING_ID || 'GOOGLE_ANALYTICS_TRACKING_ID'
@@ -28,7 +28,7 @@ module.exports = {
     secure: false
   },
   // sessionSecret should be changed for security measures and concerns
-  sessionSecret: process.env.SESSION_SECRET || 'MEAN',
+  sessionSecret: process.env.SESSION_SECRET || 'ANTUS',
   // sessionKey is the cookie session name
   sessionKey: 'sessionId',
   sessionCollection: 'sessions',
@@ -42,7 +42,7 @@ module.exports = {
   },
   logo: 'modules/core/client/img/brand/logo.png',
   favicon: 'modules/core/client/img/brand/favicon.ico',
-  illegalUsernames: ['meanjs', 'administrator', 'password', 'admin', 'user',
+  illegalUsernames: ['antus', 'administrator', 'password', 'admin', 'user',
     'unknown', 'anonymous', 'null', 'undefined', 'api'
   ],
   uploads: {

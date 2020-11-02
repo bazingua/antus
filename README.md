@@ -72,7 +72,7 @@ $ npm run start:prod
 Explore `config/env/production.js` for production environment configuration options.
 
 ## Testing Your Application
-You can run the full test suite included with MEAN.JS with the test task:
+You can run the full test suite included with ANTUS with the test task:
 
 ```bash
 $ npm test
