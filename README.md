@@ -1,6 +1,6 @@
 # Antus
 
-Antus est une application Client pour *****
+Antus est une application de comparaison de credit.
 
 ## Version
 
